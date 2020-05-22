@@ -1,0 +1,43 @@
+{
+  "name": "jaxreiff-site",
+  "version": "1.0.0",
+  "description": "Portfolio site for Jax Reiff.",
+  "main": "index.tsx",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html",
+    "test": "jest"
+  },
+  "alias": {
+    "src": "./src"
+  },
+  "jest": {
+    "clearMocks": true,
+    "coverageDirectory": "coverage",
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaxreiff/jaxreiff.github.io.git"
+  },
+  "author": "Jax Reiff <jaxreiff@me.com> (https://jaxreiff.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaxreiff/jaxreiff.github.io/issues"
+  },
+  "homepage": "https://jaxreiff.com/",
+  "dependencies": {
+    "preact": "^10.4.4",
+    "preact-router": "^3.2.1",
+    "typescript": "^3.9.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.3",
+    "jest": "^26.0.1",
+    "parcel-bundler": "^1.12.4",
+    "ts-jest": "^26.0.0"
+  }
+}
