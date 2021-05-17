@@ -2,12 +2,14 @@
   "name": "jaxreiff-site",
   "version": "1.0.0",
   "description": "Portfolio site for Jax Reiff.",
-  "main": "index.tsx",
+  "main": "dist/index.html",
   "scripts": {
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html",
+    "test": "tsc --noEmit && jest",
     "cname": "cp CNAME dist/",
-    "test": "tsc --noEmit && jest"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "alias": {
     "src": "./src",
@@ -51,6 +53,7 @@
     "@types/jest": "^25.2.3",
     "enzyme": "^3.11.0",
     "enzyme-adapter-preact-pure": "^2.2.0",
+    "gh-pages": "^3.1.0",
     "jest": "^26.0.1",
     "parcel-bundler": "^1.12.4",
     "ts-jest": "^26.0.0"
