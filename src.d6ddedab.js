@@ -3,6 +3,6 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{}],"KbTx":[function(require,module,exports) {
 "use strict";function e(e,t){return e+t}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=e;
 },{}],"zo2T":[function(require,module,exports) {
-"use strict";var e=require("preact"),r=u(require("src/sum"));function u(e){return e&&e.__esModule?e:{default:e}}var t=function(){return(0,e.h)("h1",null,"hello world! 1 + 2 = ",(0,r.default)(1,2))};(0,e.render)((0,e.h)(t,null),document.getElementById("root"));
+"use strict";var e=require("preact"),r=u(require("src/sum"));function u(e){return e&&e.__esModule?e:{default:e}}var t=function(){return(0,e.h)("h1",null,"hello world! 2 + 4 = ",(0,r.default)(2,4))};(0,e.render)((0,e.h)(t,null),document.getElementById("root"));
 },{"preact":"aSor","src/sum":"KbTx"}]},{},["zo2T"], null)
-//# sourceMappingURL=/src.49ed57ec.js.map
+//# sourceMappingURL=/src.d6ddedab.js.map
