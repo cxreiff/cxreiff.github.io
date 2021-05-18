@@ -1,7 +1,7 @@
 import { h, render } from 'preact'
 
-import sum from 'src/sum'
+import App from 'src/app/App'
 
-const App = () => <h1>hello world! 2 + 4 = {sum(2, 4)}</h1>
+import 'src/index.scss'
 
 render(<App/>, document.getElementById('root'))
