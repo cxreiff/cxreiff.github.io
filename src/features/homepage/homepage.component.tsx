@@ -11,15 +11,20 @@ const Homepage: React.FC = () => {
     const counter = useAppSelector((state) => state.homepage.counter)
 
     return (
-        <h1>
-            Count is { sum(1, counter) }
-            <div onClick={() => dispatch(increment({interval: 2}))}>
+        <section>
+            <header>
+                <h2>Homepage</h2>
+            </header>
+            <p>
+                Count is { sum(1, counter) }
+            </p>
+            <button onClick={() => dispatch(increment({interval: 2}))}>
               INCREMENT
-            </div>
-            <div onClick={() => dispatch(decrement({interval: 2}))}>
+            </button>
+            <button onClick={() => dispatch(decrement({interval: 2}))}>
               DECREMENT
-            </div>
-        </h1>
+            </button>
+        </section>
     )
 }
 
