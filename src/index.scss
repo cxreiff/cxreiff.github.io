@@ -1,5 +1,50 @@
-$primary-color: #2f4f4f;
+$font-family: -apple-system,"Helvetica Neue",Arial,sans-serif;
+$primary-color: #cfcfd3;
+
+@mixin boxshadow() {
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+}
 
 body {
-    background: $primary-color;
+    font-family: $font-family;
+    background:
+        linear-gradient(45deg, #f6f6f6 12%, transparent 0, transparent 88%, #f6f6f6 0),
+        linear-gradient(135deg, transparent 37%, #f9f9f9 0, #f9f9f9 63%, transparent 0),
+        linear-gradient(45deg, transparent 37%, #f6f6f6 0, #f6f6f6 63%, transparent 0) #eee;
+    background-size: 10px 10px;
+}
+
+nav {
+    @include boxshadow();
+    margin: 2rem 1rem;
+    background: #F8F8F8;
+}
+nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+nav li {
+    flex: 1;
+    padding: 1rem;
+    max-width: 100px;
+    background:#ddd;
+}
+nav li a {
+    flex: 1;
+    padding: 1rem;
+    text-decoration: none;
+    height: max-height;
+    width: 100px;
+}
+
+main {
+    @include boxshadow();
+    margin: 2rem 1rem;
+    padding: 2rem;
+    background: #F8F8F8;
+    color: #333;
 }
