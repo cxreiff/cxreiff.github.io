@@ -1,11 +1,11 @@
 import { h, FunctionalComponent } from 'preact'
 
-const Homepage: FunctionalComponent = () => {
+const Resume: FunctionalComponent = () => {
     return (
         <section>
             <header>
                 <h2>
-                    Writing
+                    Resume
                 </h2>
             </header>
             <article>
@@ -38,4 +38,4 @@ const Homepage: FunctionalComponent = () => {
     )
 }
 
-export default Homepage
+export default Resume

@@ -10,6 +10,8 @@
         "jsx": "react",
         /* Handle JSX using preact */
         "jsxFactory": "h",
+        /* Handle JSX fragments using Fragment */
+        "jsxFragmentFactory": "Fragment",
         /* Generate corresponding .map files */
         "sourceMap": true,
         /* Enable all strict type-checking options */
