@@ -1,11 +1,11 @@
-import { h } from 'preact'
+import { h, FunctionalComponent } from 'preact'
 
 import { useAppSelector, useAppDispatch } from 'src/app/store'
 import sum from 'src/utilities/sum'
 
 import { increment, decrement } from './homepage.slice'
 
-const Homepage: React.FC = () => {
+const Homepage: FunctionalComponent = () => {
 
     const dispatch = useAppDispatch()
     const counter = useAppSelector((state) => state.homepage.counter)
