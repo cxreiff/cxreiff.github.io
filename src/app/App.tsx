@@ -2,6 +2,8 @@ import { h, FunctionalComponent } from 'preact'
 import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'connected-react-router'
 
+import 'normalize.css'
+
 import store from './store'
 import history from './history'
 
