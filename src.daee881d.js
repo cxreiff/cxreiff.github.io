@@ -157,4 +157,4 @@ var e;!function(){"use strict";var t={}.hasOwnProperty;function r(){for(var e=[]
 },{}],"zo2T":[function(require,module,exports) {
 "use strict";var e=require("preact"),r=t(require("src/app/App"));function t(e){return e&&e.__esModule?e:{default:e}}require("src/index.scss"),(0,e.render)((0,e.h)(r.default,null),document.getElementById("root"));
 },{"preact":"aSor","src/app/App":"D7z2","src/index.scss":"eHzx"}]},{},["zo2T"], null)
-//# sourceMappingURL=/src.51fb1f6b.js.map
+//# sourceMappingURL=/src.daee881d.js.map
