@@ -33,20 +33,22 @@ body {
 }
 
 nav {
-    // @include boxshadow();
+    @include boxshadow();
     margin: 2rem 1rem;
     background: $accent-color;
 
     ul {
         display: flex;
+        flex-direction: column;
         margin: 0;
         padding: 0;
-        height: 3rem;
-        list-style-type: none;
+        list-style: none;
+        min-height: 3rem;
     }
 
     li {
-        pointer-events: none;
+        height: 3rem;
+        width: 100%;
     }
     li:hover {
         background: $accent-color-darker;
@@ -54,53 +56,74 @@ nav {
     li:active {
         background: $accent-color-darkest;
     }
-
+    li.logo {
+        z-index: 1;
+        flex: 2;
+        margin: 0 0 1rem 0;
+    }
+    li.navlink {
+        flex: 1;
+    }
+    
     a {
-        pointer-events: auto;
-        cursor: pointer;
-        min-width: 130px;
-        display: block;
-        padding: 0.5rem 1rem;
+        display: inline-block;
         text-align: center;
+        cursor: pointer;
         text-decoration: none;
         color: #333333;
         font-size: 1.5rem;
-        height: 2rem;
+        width: 100%;
     }
-    li:hover:not(.layout-title) a {
+    li.logo a {
+        white-space: nowrap;
+        font-size: 4.7rem;
+        margin: -1.6rem 0;
+    }
+    li.logo:hover a {
+        color: #FFFFFF;
+        text-shadow:
+            -1px -1px 0 $accent-color-darker,
+            1px -1px 0 $accent-color-darker,
+            -1px 1px 0 $accent-color-darker,
+            1px 1px 0 $accent-color-darker,
+            -1px 0 0 $accent-color-darker,
+            1px 0 0 $accent-color-darker,
+            0 -1px 0 $accent-color-darker,
+            0 1px 0 $accent-color-darker;
+    }
+    li.logo:active a {
+        text-shadow:
+            -1px -1px 0 $accent-color-darkest,
+            1px -1px 0 $accent-color-darkest,
+            -1px 1px 0 $accent-color-darkest,
+            1px 1px 0 $accent-color-darkest,
+            -1px 0 0 $accent-color-darkest,
+            1px 0 0 $accent-color-darkest,
+            0 -1px 0 $accent-color-darkest,
+            0 1px 0 $accent-color-darkest;
+    }
+
+    li.navlink a {
+        font-size: 1.5rem;
+        height: 3rem;
+        line-height: 3rem;
+    }
+    li.navlink:hover a {
         color: #FFFFFF;
     }
     li.current a {
         color: #FFFFFF;
         text-decoration: underline;
     }
-    li.layout-title a {
-        font-size: 4.7rem;
-        margin: -2.1rem 0;
-        padding: 0.5rem 2rem;
-    }
-    li.layout-title:hover a {
-        color: #FFFFFF;
-        text-shadow:
-            -2px -2px 0 $accent-color-darker,
-            2px -2px 0 $accent-color-darker,
-            -2px 2px 0 $accent-color-darker,
-            2px 2px 0 $accent-color-darker,
-            -2px 0 0 $accent-color-darker,
-            2px 0 0 $accent-color-darker,
-            0 -2px 0 $accent-color-darker,
-            0 2px 0 $accent-color-darker;
-    }
-    li.layout-title:active a {
-        text-shadow:
-            -2px -2px 0 $accent-color-darkest,
-            2px -2px 0 $accent-color-darkest,
-            -2px 2px 0 $accent-color-darkest,
-            2px 2px 0 $accent-color-darkest,
-            -2px 0 0 $accent-color-darkest,
-            2px 0 0 $accent-color-darkest,
-            0 -2px 0 $accent-color-darkest,
-            0 2px 0 $accent-color-darkest;
+
+    @media only screen and (min-width: 768px) {
+        ul {
+            flex-direction: row;
+        }
+
+        li.logo {
+            margin: 0;
+        }
     }
 }
 
