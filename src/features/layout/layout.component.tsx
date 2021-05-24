@@ -45,13 +45,13 @@ const Layout: FunctionalComponent = () => {
         <div>
             <nav>
                 <ul>
-                    <li className={'layout-title'}>
+                    <li className={'logo'}>
                         <a onClick={() => navigate('/')}>
                             jax reiff
                         </a>
                     </li>
                     {pages.map(({path, label, component}) => (
-                        <li className={cn({'current': (pathname === path)})}>
+                        <li className={cn('navlink', {'current': (pathname === path)})}>
                             <a onClick={() => navigate(path)}>
                                 {label}
                             </a>
