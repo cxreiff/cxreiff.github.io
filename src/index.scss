@@ -50,9 +50,6 @@ nav {
         height: 3rem;
         width: 100%;
     }
-    li:hover {
-        background: $accent-color-darker;
-    }
     li:active {
         background: $accent-color-darkest;
     }
@@ -61,8 +58,16 @@ nav {
         flex: 2;
         margin: 0 0 1rem 0;
     }
+    @media (hover: hover) {
+        li.logo:hover {
+            background: $accent-color-darker;
+        }
+    }
     li.navlink {
         flex: 1;
+    }
+    li.navlink:hover {
+        background: $accent-color-darker;
     }
     
     a {
@@ -79,17 +84,19 @@ nav {
         font-size: 4.7rem;
         margin: -1.6rem 0;
     }
-    li.logo:hover a {
-        color: #FFFFFF;
-        text-shadow:
-            -1px -1px 0 $accent-color-darker,
-            1px -1px 0 $accent-color-darker,
-            -1px 1px 0 $accent-color-darker,
-            1px 1px 0 $accent-color-darker,
-            -1px 0 0 $accent-color-darker,
-            1px 0 0 $accent-color-darker,
-            0 -1px 0 $accent-color-darker,
-            0 1px 0 $accent-color-darker;
+    @media (hover: hover) {
+      li.logo:hover a {
+          color: #FFFFFF;
+          text-shadow:
+              -1px -1px 0 $accent-color-darker,
+              1px -1px 0 $accent-color-darker,
+              -1px 1px 0 $accent-color-darker,
+              1px 1px 0 $accent-color-darker,
+              -1px 0 0 $accent-color-darker,
+              1px 0 0 $accent-color-darker,
+              0 -1px 0 $accent-color-darker,
+              0 1px 0 $accent-color-darker;
+      }
     }
     li.logo:active a {
         text-shadow:
