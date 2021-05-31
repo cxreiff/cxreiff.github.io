@@ -13,6 +13,7 @@
   },
   "alias": {
     "src": "./src",
+    "assets": "./assets",
     "react": "preact/compat",
     "react-dom/test-utils": "preact/test-utils",
     "react-dom": "preact/compat"
@@ -22,6 +23,7 @@
     "coverageDirectory": "coverage",
     "moduleNameMapper": {
       "^src/(.*)$": "<rootDir>/src/$1",
+      "^assets/(.*)$": "<rootDir>/assets/$1",
       "^react$": "preact/compat",
       "^react-dom/test-utils$": "preact/test-utils",
       "^react-dom$": "preact/compat"
@@ -44,11 +46,14 @@
   "homepage": "https://jaxreiff.com/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.1",
+    "app": "^0.1.0",
+    "assets": "^3.0.1",
     "connected-react-router": "^6.9.1",
     "history": "^4.10.1",
     "normalize.css": "^8.0.1",
     "preact": "^10.5.13",
     "preact-router": "^3.2.1",
+    "react-markdown": "^6.0.2",
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0"
   },
@@ -64,6 +69,7 @@
     "enzyme-adapter-preact-pure": "^2.2.0",
     "gh-pages": "^3.1.0",
     "jest": "^26.0.1",
+    "marked": "^2.0.5",
     "parcel-bundler": "^1.12.4",
     "react-router": "^5.2.0",
     "sass": "^1.32.13",

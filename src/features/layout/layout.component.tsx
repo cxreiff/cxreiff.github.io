@@ -1,5 +1,5 @@
 import { h, FunctionalComponent } from 'preact'
-import { Route, Switch, Link } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import { push } from 'connected-react-router'
 import cn from 'classnames'
 
@@ -41,6 +41,10 @@ const Layout: FunctionalComponent = () => {
         },
     ]
 
+    const comparePaths = (path: string, pathname: string) => (
+        path.split('/')[1] === pathname.split('/')[1]
+    )
+
     return (
         <div>
             <nav>
@@ -51,7 +55,7 @@ const Layout: FunctionalComponent = () => {
                         </a>
                     </li>
                     {pages.map(({path, label, component}) => (
-                        <li className={cn('navlink', {'current': (pathname === path)})}>
+                        <li className={cn('navlink', {'current': comparePaths(path, pathname)})}>
                             <a onClick={() => navigate(path)}>
                                 {label}
                             </a>
