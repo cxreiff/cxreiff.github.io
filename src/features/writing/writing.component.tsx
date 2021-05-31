@@ -1,41 +1,17 @@
 import { h, FunctionalComponent } from 'preact'
+import { Switch, Route } from 'react-router-dom'
 
-const Homepage: FunctionalComponent = () => {
+import posts from './posts'
+import WritingList from './writingList.component'
+import WritingContent from './writingContent.component'
+
+const Writing: FunctionalComponent = () => {
     return (
-        <section>
-            <header>
-                <h2>
-                    Writing
-                </h2>
-            </header>
-            <article>
-                <header>
-                    <h3>
-                        Article 1
-                    </h3>
-                </header>
-                <p>
-                    Article 1 Content
-                </p>
-                <p>
-                    Article 1 More Content
-                </p>
-            </article>
-            <article>
-                <header>
-                    <h3>
-                        Article 2
-                    </h3>
-                </header>
-                <p>
-                    Article 2 Content
-                </p>
-                <p>
-                    Article 2 More Content
-                </p>
-            </article>
-        </section>
+        <Switch>
+            <Route exact path={'/writing'} component={WritingList} />
+            <Route path={'/writing/:id'} component={WritingContent} />
+        </Switch>
     )
 }
 
-export default Homepage
+export default Writing
