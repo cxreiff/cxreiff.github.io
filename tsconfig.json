@@ -22,7 +22,8 @@
         "baseUrl": ".",
         /* Maps imports to locations */
         "paths": {
-            "src/*": ["./src/*"]
+            "src/*": ["./src/*"],
+            "assets/*": ["./assets/*"]
         },
         /* allow import React instead of import * as React */
         "allowSyntheticDefaultImports": true,
