@@ -1,3 +1,4 @@
+
 $font-family: -apple-system,"Helvetica Neue",Arial,sans-serif;
 
 $primary-color: #3D4D60;
@@ -9,6 +10,10 @@ $accent-color-darker: #81403C;
 $accent-color-darkest: #71302C;
 
 $alt-color-1: #FDF0EC;
+$alt-color-2: #EDE0DC;
+$alt-color-3: #DFD2CE;
+$alt-color-4: #DBCDCA;
+
 $stipple-color-1: #222A34;
 $stipple-color-2: #2D1D30;
 $stipple-color-3: #1D2D40;
@@ -30,114 +35,6 @@ $stipple-color-3: #1D2D40;
 body {
     margin: 0;
     padding: 0;
-}
-
-nav {
-    @include boxshadow();
-    margin: 2rem 1rem;
-    background: $accent-color;
-
-    ul {
-        display: flex;
-        flex-direction: column;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        min-height: 3rem;
-    }
-
-    li {
-        height: 3rem;
-        width: 100%;
-    }
-    li.logo {
-        // display: flex;
-        // align-items: center;
-        flex: 2;
-        z-index: 1;
-        margin: 0 0 1rem 0;
-    }
-    li.navlink {
-        flex: 1;
-    }
-
-    a {
-        display: inline-block;
-        text-align: center;
-        cursor: pointer;
-        text-decoration: none;
-        color: #333333;
-        font-size: 1.5rem;
-        width: 100%;
-        vertical-align: top;
-        line-height: 3rem;
-    }
-    li.logo a {
-        white-space: nowrap;
-        font-size: 4.8rem;
-        margin: -0.5rem 0;
-    }
-    li.current a {
-        color: #FFFFFF;
-        background: $accent-color-darker;
-        text-decoration: underline;
-    }
-
-    @media (hover: hover) {
-        li:hover {
-            background: $accent-color-darker;
-        }
-        li:active {
-            background: $accent-color-darkest;
-        }
-
-        li.logo:hover a {
-            color: #FFFFFF;
-            text-shadow:
-                -1px -1px 0 $accent-color-darker,
-                1px -1px 0 $accent-color-darker,
-                -1px 1px 0 $accent-color-darker,
-                1px 1px 0 $accent-color-darker,
-                -1px 0 0 $accent-color-darker,
-                1px 0 0 $accent-color-darker,
-                0 -1px 0 $accent-color-darker,
-                0 1px 0 $accent-color-darker;
-        }
-        li.logo:active a {
-            text-shadow:
-                -1px -1px 0 $accent-color-darkest,
-                1px -1px 0 $accent-color-darkest,
-                -1px 1px 0 $accent-color-darkest,
-                1px 1px 0 $accent-color-darkest,
-                -1px 0 0 $accent-color-darkest,
-                1px 0 0 $accent-color-darkest,
-                0 -1px 0 $accent-color-darkest,
-                0 1px 0 $accent-color-darkest;
-        }
-
-        li.navlink:hover a {
-            color: #FFFFFF;
-        }
-        li.navlink:active a {
-            text-decoration: underline;
-        }
-    }
-
-    @-moz-document url-prefix() {
-        li.logo a {
-            margin: 0;
-        }
-    }
-
-    @media only screen and (min-width: 768px) {
-        ul {
-            flex-direction: row;
-        }
-
-        li.logo {
-            margin: 0;
-        }
-    }
 }
 
 main {
