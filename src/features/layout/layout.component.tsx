@@ -11,6 +11,8 @@ import Drawing from 'src/features/drawing/drawing.component'
 import Writing from 'src/features/writing/writing.component'
 import Resume from 'src/features/resume/resume.component'
 
+import * as styles from './layout.module.scss'
+
 const Layout: FunctionalComponent = () => {
     
     const pathname = useAppSelector(state => state.router.location.pathname)
@@ -47,15 +49,15 @@ const Layout: FunctionalComponent = () => {
 
     return (
         <div>
-            <nav>
+            <nav className={styles.layoutnav}>
                 <ul>
-                    <li className={'logo'}>
+                    <li className={styles.logo}>
                         <a onClick={() => navigate('/')}>
                             jax reiff
                         </a>
                     </li>
                     {pages.map(({path, label, component}) => (
-                        <li className={cn('navlink', {'current': comparePaths(path, pathname)})}>
+                        <li className={cn(styles.navlink, {[styles.current]: comparePaths(path, pathname)})}>
                             <a onClick={() => navigate(path)}>
                                 {label}
                             </a>
