@@ -1,0 +1,14 @@
+@use 'src/index.scss' as *;
+
+.main {
+    cursor: pointer;
+    margin: 0 0 1rem 0;
+    padding: 0.5rem 1rem;
+    background: $alt-color-2;
+}
+.main:hover {
+    background: $alt-color-3;
+}
+.main:active {
+    background: $alt-color-4;
+}

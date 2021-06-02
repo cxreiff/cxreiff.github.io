@@ -5,6 +5,8 @@ import { useAppSelector, useAppDispatch } from 'src/app/store'
 
 import { Post } from './posts'
 
+import * as style from './writingListTile.module.scss'
+
 interface WritingListTileProps {
     id: string,
     post: Post,
@@ -18,21 +20,19 @@ const WritingListTile: FunctionalComponent<WritingListTileProps> = ({ id, post }
     const {title, description, date, content} = post
 
     return (
-        <a onClick={() => navigate('/writing/' + id)}>
-            <article>
-                <header>
-                    <h2>
-                        {title}
-                    </h2>
-                </header>
-                <footer>
-                    {date.toDateString()}
-                </footer>
-                <p>
-                    {description}
-                </p>
-            </article>
-        </a>
+        <article className={style.main} onClick={() => navigate('/writing/' + id)}>
+            <header>
+                <h2>
+                    {title}
+                </h2>
+            </header>
+            <footer>
+                {date.toDateString()}
+            </footer>
+            <p>
+                {description}
+            </p>
+        </article>
     )
 }
 

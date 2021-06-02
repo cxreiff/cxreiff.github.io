@@ -8,15 +8,22 @@ import homepage from 'src/features/homepage/homepage.slice'
 
 const router = connectRouter(history)
 
+const middleware = [
+    ...getDefaultMiddleware(),
+    routerMiddleware(history),
+];
+ 
+if (process.env.NODE_ENV === 'development') {
+  const { logger } = require('redux-logger');
+  middleware.push(logger);
+}
+
 const store = configureStore({
     reducer: {
         router,
         homepage,
     },
-    middleware: [
-        ...getDefaultMiddleware(),
-        routerMiddleware(history),
-    ],
+    middleware,
 })
 
 export type AppDispatch = typeof store.dispatch
