@@ -19,7 +19,7 @@ const WritingContent: FunctionalComponent = () => {
             <footer>
                 {date.toDateString()}
             </footer>
-            <ReactMarkdown children={content} />
+            <ReactMarkdown children={content.toString()} />
         </article>
     )
 }

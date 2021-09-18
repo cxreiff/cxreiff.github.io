@@ -4,7 +4,7 @@ import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
 import { connectRouter, routerMiddleware } from 'connected-react-router'
 
 import history from './history'
-import homepage from 'src/features/homepage/homepage.slice'
+import homepage from '~/src/features/homepage/homepage.slice'
 
 const router = connectRouter(history)
 

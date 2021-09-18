@@ -10,7 +10,7 @@ const WritingList: FunctionalComponent = () => (
                 Writing
             </h2>
         </header>
-        {Object.keys(posts).map(id => {
+        {Object.keys(posts).map((id: string) => {
             return <WritingListTile id={id} post={posts[id]}/>
         })}
     </section>

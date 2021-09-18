@@ -1,4 +1,4 @@
-@use 'src/index.scss' as *;
+@use '../../index.scss' as *;
 
 nav.layoutnav {
     @include boxshadow();
@@ -19,7 +19,7 @@ nav.layoutnav {
         width: 100%;
     }
     li.logo {
-        flex: 2;
+        flex: 1;
         z-index: 1;
         margin: 0 0 1rem 0;
     }
@@ -41,8 +41,8 @@ nav.layoutnav {
 
     li.logo a {
         white-space: nowrap;
-        font-size: 4.8rem;
-        margin: -0.5rem 0;
+        font-size: 5.2rem;
+        margin: -0.4rem 0 0 1.5rem;
     }
     
     li.current a {
@@ -52,9 +52,6 @@ nav.layoutnav {
     }
 
     @media (hover: hover) {
-        li:hover {
-            background: $accent-color-darker;
-        }
         li:active {
             background: $accent-color-darkest;
         }
@@ -104,6 +101,14 @@ nav.layoutnav {
 
         li.logo {
             margin: 0;
+        }
+
+        li.logo a {
+            text-align: left;
+        }
+
+        li.navlink {
+            flex: 0 1 140px;
         }
     }
 }
