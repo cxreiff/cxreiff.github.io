@@ -3,19 +3,18 @@
         "outDir": "./dist",
         "target": "es6",
         "module": "es6",
-        "jsx": "react",
-        "jsxFactory": "h",
-        "jsxFragmentFactory": "Fragment",
+        "isolatedModules": true,
+        "jsx": "react-jsx",
+        "jsxImportSource": "preact",
         "sourceMap": true,
         "strict": true,
         "moduleResolution": "node",
-        "baseUrl": ".",
-        "paths": {
-            "src/*": ["./src/*"],
-            "assets/*": ["./assets/*"]
-        },
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
+        "baseUrl": ".",
+        "paths": {
+          "~*": ["./*"]
+        },
     },
     "include": [
         "./src/**/*"

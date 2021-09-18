@@ -1,7 +1,7 @@
 import { h, FunctionalComponent } from 'preact'
 import { push } from 'connected-react-router'
 
-import { useAppSelector, useAppDispatch } from 'src/app/store'
+import { useAppSelector, useAppDispatch } from '~/src/app/store'
 
 import { Post } from './posts'
 

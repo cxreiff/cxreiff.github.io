@@ -1,7 +1,6 @@
 import { h, FunctionalComponent } from 'preact'
 import { Switch, Route } from 'react-router-dom'
 
-import posts from './posts'
 import WritingList from './writingList.component'
 import WritingContent from './writingContent.component'
 
