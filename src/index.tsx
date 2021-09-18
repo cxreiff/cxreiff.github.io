@@ -1,7 +1,7 @@
 import { h, render } from 'preact'
 
-import App from 'src/app/App'
+import App from '~/src/app/App'
 
-import 'src/index.scss'
+import './index.scss'
 
 render(<App/>, document.getElementById('root')!)

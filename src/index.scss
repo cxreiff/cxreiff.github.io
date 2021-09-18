@@ -19,9 +19,8 @@ $stipple-color-2: #2D1D30;
 $stipple-color-3: #1D2D40;
 
 @mixin boxshadow() {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    border: 1px solid $accent-color-darker;
+    box-shadow: $accent-color-darker 3px 3px;
 }
 
 @mixin stippled_background() {

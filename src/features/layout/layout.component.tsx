@@ -3,13 +3,13 @@ import { Route, Switch } from 'react-router-dom'
 import { push } from 'connected-react-router'
 import cn from 'classnames'
 
-import { useAppSelector, useAppDispatch } from 'src/app/store'
+import { useAppSelector, useAppDispatch } from '~/src/app/store'
 
-import Homepage from 'src/features/homepage/homepage.component'
-import Projects from 'src/features/projects/projects.component'
-import Drawing from 'src/features/drawing/drawing.component'
-import Writing from 'src/features/writing/writing.component'
-import Resume from 'src/features/resume/resume.component'
+import Homepage from '~/src/features/homepage/homepage.component'
+import Projects from '~/src/features/projects/projects.component'
+import Drawing from '~/src/features/drawing/drawing.component'
+import Writing from '~/src/features/writing/writing.component'
+import Resume from '~/src/features/resume/resume.component'
 
 import * as styles from './layout.module.scss'
 

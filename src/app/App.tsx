@@ -7,7 +7,7 @@ import 'normalize.css'
 import store from './store'
 import history from './history'
 
-import Layout from 'src/features/layout/layout.component'
+import Layout from '~/src/features/layout/layout.component'
 
 const App: FunctionalComponent = () => (
     <Provider store={store}>
