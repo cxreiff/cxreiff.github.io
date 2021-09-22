@@ -1,10 +1,10 @@
-import { h, FunctionalComponent } from 'preact'
+import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
 import WritingList from './writingList.component'
 import WritingContent from './writingContent.component'
 
-const Writing: FunctionalComponent = () => {
+const Writing: React.FC = () => {
     return (
         <Switch>
             <Route exact path={'/writing'} component={WritingList} />

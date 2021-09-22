@@ -1,9 +1,9 @@
-import { h, FunctionalComponent } from 'preact'
+import React from 'react'
 
 import posts from './posts'
 import WritingListTile from './writingListTile.component'
 
-const WritingList: FunctionalComponent = () => (
+const WritingList: React.FC = () => (
     <section>
         <header>
             <h2>

@@ -1,6 +1,6 @@
-import { h, FunctionalComponent } from 'preact'
+import React from 'react'
 
-const Drawing: FunctionalComponent = () => {
+const Drawing: React.FC = () => {
     return (
         <section>
             <header>

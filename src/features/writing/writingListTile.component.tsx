@@ -1,4 +1,4 @@
-import { h, FunctionalComponent } from 'preact'
+import React from 'react'
 import { push } from 'connected-react-router'
 
 import { useAppSelector, useAppDispatch } from '~/src/app/store'
@@ -12,7 +12,7 @@ interface WritingListTileProps {
     post: Post,
 }
 
-const WritingListTile: FunctionalComponent<WritingListTileProps> = ({ id, post }) => {
+const WritingListTile: React.FC<WritingListTileProps> = ({ id, post }) => {
 
     const dispatch = useAppDispatch()
     const navigate = (pathname: string) => dispatch(push(pathname))
