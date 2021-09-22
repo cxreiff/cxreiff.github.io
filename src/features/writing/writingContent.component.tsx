@@ -1,10 +1,10 @@
-import { h, FunctionalComponent } from 'preact'
+import React from 'react'
 import { useParams } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 
 import posts from './posts'
 
-const WritingContent: FunctionalComponent = () => {
+const WritingContent: React.FC = () => {
 
     const { id } = useParams<{id: string}>()
     const { title, description, date, content } = posts[id]
