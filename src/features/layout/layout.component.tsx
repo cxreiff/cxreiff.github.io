@@ -1,4 +1,4 @@
-import { h, FunctionalComponent } from 'preact'
+import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { push } from 'connected-react-router'
 import cn from 'classnames'
@@ -13,14 +13,14 @@ import Resume from '~/src/features/resume/resume.component'
 
 import * as styles from './layout.module.scss'
 
-const Layout: FunctionalComponent = () => {
+const Layout: React.FC = () => {
     
     const pathname = useAppSelector(state => state.router.location.pathname)
     
     const dispatch = useAppDispatch()
     const navigate = (pathname: string) => dispatch(push(pathname))
 
-    const pages: { path: string, label: string, component: FunctionalComponent }[] = [
+    const pages: { path: string, label: string, component: React.FC }[] = [
         {
             path: '/projects',
             label: 'projects',
@@ -65,7 +65,7 @@ const Layout: FunctionalComponent = () => {
                     ))}
                 </ul>
             </nav>
-            <main>
+            <main className={styles.layoutmain}>
                 <Switch>
                     <Route exact path="/" component={Homepage}/>
                     {pages.map(({path, label, component}) => (

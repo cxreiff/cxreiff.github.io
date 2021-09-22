@@ -1,4 +1,4 @@
-import { h, FunctionalComponent } from 'preact'
+import React from 'react'
 import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'connected-react-router'
 
@@ -9,7 +9,7 @@ import history from './history'
 
 import Layout from '~/src/features/layout/layout.component'
 
-const App: FunctionalComponent = () => (
+const App: React.FC = () => (
     <Provider store={store}>
         <ConnectedRouter history={history}>
             <Layout/>
