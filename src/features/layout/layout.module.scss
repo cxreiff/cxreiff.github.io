@@ -32,6 +32,7 @@ nav.layoutnav {
         margin: 0 0 2em 0;
     }
     li.navlink {
+        position: relative;
         flex: 1;
     }
 
@@ -109,6 +110,17 @@ nav.layoutnav {
 
         li.navlink {
             flex: 0 1 140px;
+        }
+
+        li:not(.current).navlink:not(:last-child):after {
+            content: '';
+            opacity: 0.2;
+            position: absolute;
+            height: 60%;
+            border-left: 2px solid $accent-color-darker;
+            width: 1px;
+            top: 20%;
+            right: -2px;
         }
     }
 }
