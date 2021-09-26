@@ -29,7 +29,7 @@ nav.layoutnav {
     li.logo {
         z-index: 1;
         flex: 1;
-        margin: 0 0 2rem 0;
+        margin: 0 0 2em 0;
     }
     li.navlink {
         flex: 1;
@@ -43,16 +43,16 @@ nav.layoutnav {
         text-decoration: none;
         color: $accent-color-darkest;
         font-size: 1.3rem;
+        height: 100%;
         width: 100%;
-        vertical-align: top;
+        vertical-align: middle;
         line-height: 3rem;
     }
 
     li.logo a {
         white-space: nowrap;
-        font-size: 5.2rem;
-        margin: -0.4rem 0 0 0.5rem;
-        padding: 0 1rem;
+        font-size: 4.9rem;
+        margin-top: -0.4rem;
     }
     
     li.current a {
@@ -103,6 +103,8 @@ nav.layoutnav {
 
         li.logo a {
             width: min-content;
+            margin-left: 0.5rem;
+            padding: 0 1rem;
         }
 
         li.navlink {
