@@ -12,7 +12,7 @@ import Layout from '~/src/features/layout/layout.component'
 const App: React.FC = () => (
     <Provider store={store}>
         <ConnectedRouter history={history}>
-            <Layout/>
+            <Layout />
         </ConnectedRouter>
     </Provider>
 )
