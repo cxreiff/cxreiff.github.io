@@ -13,7 +13,9 @@ const Homepage: React.FC = () => {
     return (
         <section>
             <header>
-                <h2>Homepage</h2>
+                <h2>
+                    Homepage
+                </h2>
             </header>
             <p>
                 Count is { sum(1, counter) }.
