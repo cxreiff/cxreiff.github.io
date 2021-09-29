@@ -7,7 +7,7 @@ import posts from './posts'
 const WritingContent: React.FC = () => {
 
     const { id } = useParams<{id: string}>()
-    const { title, description, date, content } = posts[id]
+    const { title, date, content } = posts[id]
 
     return (
         <article>
