@@ -1,7 +1,7 @@
 import React from 'react'
 import { push } from 'connected-react-router'
 
-import { useAppSelector, useAppDispatch } from '~/src/app/store'
+import { useAppDispatch } from '~/src/app/store'
 
 import { Post } from './posts'
 
@@ -17,10 +17,10 @@ const WritingListTile: React.FC<WritingListTileProps> = ({ id, post }) => {
     const dispatch = useAppDispatch()
     const navigate = (pathname: string) => dispatch(push(pathname))
 
-    const {title, description, date, content} = post
+    const { title, description, date } = post
 
     return (
-        <article className={style.main} onClick={() => navigate('/writing/' + id)}>
+        <article className={style.main} onClick={() => navigate(`/writing/${id}`)}>
             <header>
                 <h2>
                     {title}

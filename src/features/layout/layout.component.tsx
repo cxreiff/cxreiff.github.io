@@ -11,7 +11,7 @@ import Drawing from '~/src/features/drawing/drawing.component'
 import Writing from '~/src/features/writing/writing.component'
 import Resume from '~/src/features/resume/resume.component'
 
-import * as styles from './layout.module.scss'
+import styles from './layout.module.scss'
 
 const Layout: React.FC = () => {
     
@@ -56,8 +56,8 @@ const Layout: React.FC = () => {
                             jax reiff
                         </a>
                     </li>
-                    {pages.map(({path, label, component}) => (
-                        <li className={cn(styles.navlink, {[styles.current]: comparePaths(path, pathname)})}>
+                    {pages.map(({path, label}) => (
+                        <li key={path} className={cn(styles.navlink, {[styles.current]: comparePaths(path, pathname)})}>
                             <a onClick={() => navigate(path)}>
                                 {label}
                             </a>
@@ -67,9 +67,9 @@ const Layout: React.FC = () => {
             </nav>
             <main className={styles.layoutmain}>
                 <Switch>
-                    <Route exact path="/" component={Homepage}/>
-                    {pages.map(({path, label, component}) => (
-                        <Route path={path} component={component}/>
+                    <Route exact path="/" component={Homepage} />
+                    {pages.map(({path, component}) => (
+                        <Route key={path} path={path} component={component} />
                     ))}
                 </Switch>
             </main>
