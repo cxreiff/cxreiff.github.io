@@ -3,8 +3,6 @@ import { Provider } from 'react-redux'
 import configureMockStore from 'redux-mock-store'
 import { shallow } from 'enzyme'
 
-import { increment, decrement } from './homepage.slice'
-
 import Homepage from './homepage.component'
 
 describe('homepage', () => {
@@ -22,7 +20,7 @@ describe('homepage', () => {
         const component = shallow(
             //@ts-ignore
             <Provider store={store}>
-                <Homepage/>
+                <Homepage />
             </Provider>
         );
         expect(component).toMatchSnapshot();
