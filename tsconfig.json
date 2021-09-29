@@ -18,6 +18,7 @@
     },
     "include": [
         "./src/**/*",
+        "./tst/**/*",
         "./jest.config.ts"
     ]
 }

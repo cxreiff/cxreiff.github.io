@@ -1,6 +1,6 @@
 @use '../../index.scss' as *;
 
-main {
+main.layoutmain {
     @include boxshadow($accent-color-darker);
     @include background_noise($accent-color-lightest);
     margin: 1rem;

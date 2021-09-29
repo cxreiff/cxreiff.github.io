@@ -12,12 +12,13 @@
   "scripts": {
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html",
-    "test": "tsm src && tsc --noEmit && jest",
+    "lint": "npx eslint . --ext .ts,.tsx",
+    "watch": "tsm src --watch & tsc -w",
+    "test": "tsm src --L error && tsc --noEmit && jest",
     "cname": "cp CNAME dist/",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "postinstall": "touch node_modules/.nosync",
-    "lint": "npx eslint . --ext .ts,.tsx"
+    "prepare": "husky install"
   },
   "alias": {
     "react": "preact/compat",
@@ -74,6 +75,7 @@
     "ts-jest": "^27.0.5",
     "ts-node": "^10.2.1",
     "typed-scss-modules": "^4.1.1",
-    "typescript": "^4.4.3"
+    "typescript": "^4.4.3",
+    "husky": "^7.0.0"
   }
 }

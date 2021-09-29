@@ -4,3 +4,4 @@
 dist
 node_modules
 node_modules.nosync
+*.scss.d.ts
