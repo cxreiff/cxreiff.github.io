@@ -12,10 +12,11 @@
   "scripts": {
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html",
-    "lint": "npx eslint --cache",
     "watch": "tsm src --watch & tsc -w",
     "tsc": "tsm src --L error && tsc --noEmit",
-    "test": "npm run tsc && jest",
+    "jest": "jest",
+    "lint": "eslint --cache --ext .ts,.tsx .",
+    "test": "npm run tsc && npm run jest && npm run lint",
     "cname": "cp CNAME dist/",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
