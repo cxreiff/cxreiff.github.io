@@ -1,5 +1,6 @@
 .cache
 .parcel-cache
+.eslintcache
 .DS_Store
 dist
 node_modules
