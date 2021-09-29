@@ -1,7 +1,0 @@
-{
-    "*.{ts,tsx}": [
-        "npm run tsc",
-        "jest --findRelatedTests",
-        "npm run lint"
-    ]
-}
