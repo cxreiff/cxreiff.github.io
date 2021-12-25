@@ -4,8 +4,11 @@ main.layoutmain {
     @include boxshadow($accent-color-darker);
     @include background_noise($accent-color-lightest);
     margin: 1rem;
-    padding: 0.5rem 2rem 2rem 2rem;
     color: $accent-color-darkest;
+
+    section {
+        margin: 0.5rem 2rem 2rem 2rem;
+    }
 }
 
 nav.layoutnav {
@@ -53,7 +56,7 @@ nav.layoutnav {
     li.logo a {
         white-space: nowrap;
         font-size: 5.2rem;
-        margin-top: -0.4rem;
+        margin-top: -0.5rem;
     }
     
     li.current a {
@@ -84,12 +87,6 @@ nav.layoutnav {
         }
         li:not(.current).navlink:active a {
             color: $accent-color-lightest;
-        }
-    }
-
-    @-moz-document url-prefix() {
-        li.logo a {
-            margin: 0;
         }
     }
 

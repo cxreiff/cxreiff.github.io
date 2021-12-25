@@ -1,0 +1,26 @@
+@use 'sass:color';
+@use '../../index.scss' as *;
+
+.spinner {
+  width: 100%;
+  text-align: center;
+  margin: 1rem;
+}
+
+.spinner_inner {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  border: 3px solid color.scale($accent-color-darker, $lightness: 55%);
+  border-top-color: $accent-color-darker;
+  border-radius: 50%;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
