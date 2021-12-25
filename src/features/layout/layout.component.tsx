@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { push } from 'connected-react-router'
 import cn from 'classnames'
@@ -10,6 +10,9 @@ import Projects from '~/src/features/projects/projects.component'
 import Drawing from '~/src/features/drawing/drawing.component'
 import Writing from '~/src/features/writing/writing.component'
 import Resume from '~/src/features/resume/resume.component'
+const Babylon = lazy(() => import('~/src/features/babylon/babylon.component'))
+
+import Spinner from '~/src/common/spinner/spinner.component'
 
 import styles from './layout.module.scss'
 
@@ -41,6 +44,11 @@ const Layout: React.FC = () => {
             label: 'resume',
             component: Resume,
         },
+        {
+            path: '/babylon',
+            label: 'babylon',
+            component: Babylon,
+        }
     ]
 
     const comparePaths = (path: string, pathname: string) => (
@@ -66,12 +74,14 @@ const Layout: React.FC = () => {
                 </ul>
             </nav>
             <main className={styles.layoutmain}>
-                <Switch>
-                    <Route exact path="/" component={Homepage} />
-                    {pages.map(({path, component}) => (
-                        <Route key={path} path={path} component={component} />
-                    ))}
-                </Switch>
+                <Suspense fallback={<Spinner />}>
+                    <Switch>
+                        <Route exact path="/" component={Homepage} />
+                        {pages.map(({path, component}) => (
+                            <Route key={path} path={path} component={component} />
+                        ))}
+                    </Switch>
+                </Suspense>
             </main>
         </div>
     )
