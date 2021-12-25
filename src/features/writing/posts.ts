@@ -20,7 +20,7 @@ const posts: {[index: string]: Post} = {
         title: 'Title 2',
         description: 'test 2 subtitle',
         date: new Date(2021, 5, 24),
-        content: readFileSync('assets/markdown/test1.md', MARKDOWN_ENCODING)
+        content: readFileSync('assets/markdown/test2.md', MARKDOWN_ENCODING)
     },
 }
 

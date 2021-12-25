@@ -10,7 +10,7 @@ const WritingContent: React.FC = () => {
     const { title, date, content } = posts[id]
 
     return (
-        <article>
+        <section>
             <header>
                 <h2>
                     {title}
@@ -20,7 +20,7 @@ const WritingContent: React.FC = () => {
                 {date.toDateString()}
             </footer>
             <ReactMarkdown children={content.toString()} />
-        </article>
+        </section>
     )
 }
 

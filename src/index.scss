@@ -1,13 +1,10 @@
 
-$font-family: -apple-system,"Helvetica Neue",Arial,sans-serif;
+$font-family: "Times New Roman",serif;
 
 $primary-color: #3D4D60;
 $secondary-color: #2D3D50;
 $tertiary-color: #98BEC8;
 
-// $accent-color: #BE827F;
-// $accent-color-darker: #81403C;
-// $accent-color-darkest: #71302C;
 $accent-color-lightest: #FFFFFF;
 $accent-color-lighter: #EEEEEE;
 $accent-color: #DDCCCC;
@@ -59,6 +56,9 @@ $accent-color-darkest: #221111;
     }
 }
 
+html {
+    font-family: $font-family;
+}
 body {
     margin: 0;
     padding: 0;

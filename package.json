@@ -13,7 +13,7 @@
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html",
     "watch": "tsm src --watch & tsc -w",
-    "tsc": "tsm src --L error && tsc --noEmit",
+    "tsc": "tsm src -n dashes --L error && tsc --noEmit",
     "jest": "jest",
     "lint": "eslint --cache --ext .ts,.tsx .",
     "test": "npm run tsc && npm run jest && npm run lint",
@@ -28,9 +28,12 @@
     "react-dom": "preact/compat"
   },
   "dependencies": {
+    "@babylonjs/core": "^4.2.0",
+    "@babylonjs/gui": "^4.2.0",
     "@reduxjs/toolkit": "^1.5.1",
     "app": "^0.1.0",
     "assets": "^3.0.1",
+    "babylonjs-hook": "^0.1.0",
     "buffer": "^6.0.3",
     "classnames": "^2.3.1",
     "connected-react-router": "^6.9.1",
