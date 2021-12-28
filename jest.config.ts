@@ -19,6 +19,7 @@ const config: Config.InitialOptions = {
   setupFiles: [
     "./src/jestSetup.ts"
   ],
+  snapshotSerializers: ["enzyme-to-json/serializer"],
   transform: {
       "^.+\\.[t|j]sx?$": "babel-jest"
     }

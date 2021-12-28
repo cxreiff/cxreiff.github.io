@@ -14,7 +14,7 @@ const Babylon = lazy(() => import('~/src/features/babylon/babylon.component'))
 
 import Spinner from '~/src/common/spinner/spinner.component'
 
-import styles from './layout.module.scss'
+import * as styles from './layout.module.scss'
 
 const Layout: React.FC = () => {
     
