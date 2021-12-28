@@ -33,7 +33,7 @@ const homepageSlice = createSlice({
 
 export const {
     increment,
-		decrement,
+    decrement,
 } = homepageSlice.actions
 
 export default homepageSlice.reducer
