@@ -18,7 +18,7 @@ const Homepage: React.FC = () => {
                 </h2>
             </header>
             <p>
-                Count is { sum(1, counter) }.
+                Count is { sum(0, counter) }.
             </p>
             <button onClick={() => dispatch(increment({interval: 2}))}>
               INCREMENT

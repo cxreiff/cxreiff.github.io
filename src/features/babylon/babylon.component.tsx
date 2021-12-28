@@ -9,7 +9,7 @@ const Babylon: React.FC = () => {
 
     const onSceneReady = (scene: Scene) => {
         // This creates and positions a free camera (non-mesh)
-        var camera = new FreeCamera("camera1", new Vector3(0, 5, -10), scene);
+        const camera = new FreeCamera("camera1", new Vector3(0, 5, -10), scene);
         
         // This targets the camera to scene origin
         camera.setTarget(Vector3.Zero());
@@ -20,7 +20,7 @@ const Babylon: React.FC = () => {
         camera.attachControl(canvas, true);
         
         // This creates a light, aiming 0,1,0 - to the sky (non-mesh)
-        var light = new HemisphericLight("light", new Vector3(0, 1, 0), scene);
+        const light = new HemisphericLight("light", new Vector3(0, 1, 0), scene);
         
         // Default intensity is 1. Let's dim the light a small amount
         light.intensity = 0.7;
@@ -46,7 +46,7 @@ const Babylon: React.FC = () => {
     */
     const onRender = (scene: Scene) => {
         if (box !== undefined) {
-            var deltaTimeInMillis = scene.getEngine().getDeltaTime();
+            const deltaTimeInMillis = scene.getEngine().getDeltaTime();
         
             const rpm = 10;
             box.rotation.y += (rpm / 60) * Math.PI * 2 * (deltaTimeInMillis / 1000);

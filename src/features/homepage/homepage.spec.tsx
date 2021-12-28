@@ -10,19 +10,19 @@ describe('homepage', () => {
     const mockStore = configureMockStore()
 
     afterEach(() => {
-        jest.restoreAllMocks();
-    });
+        jest.restoreAllMocks()
+    })
 
     it('should render', () => {
         const store = mockStore({
           counter: 0,
-        });
+        })
         const component = shallow(
             //@ts-ignore
             <Provider store={store}>
                 <Homepage />
             </Provider>
-        );
-        expect(component).toMatchSnapshot();
+        )
+        expect(component).toMatchSnapshot()
     })
 })
