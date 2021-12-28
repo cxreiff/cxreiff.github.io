@@ -5,11 +5,11 @@ const config: Config.InitialOptions = {
   testEnvironment: "node",
   clearMocks: true,
   roots: [
-    "<rootDir>/src",
-    "<rootDir>/tst",
+    "<rootDir>/src"
   ],
   coverageDirectory: "coverage",
   moduleNameMapper: {
+    "\\.(css|less|sass|scss)$": "identity-obj-proxy",
     "^react$": "preact/compat",
     "^react-dom/test-utils$": "preact/test-utils",
     "^react-dom$": "preact/compat",
@@ -17,7 +17,7 @@ const config: Config.InitialOptions = {
     "^~/(.*)$": "<rootDir>/$1"
   },
   setupFiles: [
-    "./tst/setup.ts"
+    "./src/jestSetup.ts"
   ],
   transform: {
       "^.+\\.[t|j]sx?$": "babel-jest"
