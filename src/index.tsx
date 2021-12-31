@@ -1,6 +1,6 @@
 import h, { render } from 'preact'
 
-import App from '~/src/app/App'
+import App from '~/src/app/app'
 
 import './index.scss'
 
