@@ -1,28 +1,49 @@
 import type { Config } from '@jest/types';
 
 const config: Config.InitialOptions = {
-  preset: "ts-jest",
-  testEnvironment: "node",
+  preset: 'ts-jest',
+  testEnvironment: 'node',
   clearMocks: true,
   roots: [
-    "<rootDir>/src"
+    '<rootDir>/src'
   ],
-  coverageDirectory: "coverage",
+  coverageDirectory: 'coverage',
   moduleNameMapper: {
-    "\\.(css|less|sass|scss)$": "identity-obj-proxy",
-    "^react$": "preact/compat",
-    "^react-dom/test-utils$": "preact/test-utils",
-    "^react-dom$": "preact/compat",
-    "^/(.*)$": "<rootDir>/src/$1",
-    "^~/(.*)$": "<rootDir>/$1"
+    '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
+    '^react$': 'preact/compat',
+    '^react-dom/test-utils$': 'preact/test-utils',
+    '^react-dom$': 'preact/compat',
+    '^/(.*)$': '<rootDir>/src/$1',
+    '^~/(.*)$': '<rootDir>/$1'
   },
   setupFiles: [
-    "./src/jestSetup.ts"
+    './jest.setup.ts'
   ],
-  snapshotSerializers: ["enzyme-to-json/serializer"],
+  snapshotSerializers: [
+    'enzyme-to-json/serializer'
+  ],
   transform: {
-      "^.+\\.[t|j]sx?$": "babel-jest"
-    }
+    '^.+\\.[t|j]sx?$': 'babel-jest'
+  },
+  transformIgnorePatterns: [
+    '<rootDir>/node_modules/(?!('
+    + 'react-markdown'
+    + '|vfile'
+    + '|vfile-message'
+    + '|unist-.*|unist-.*-.*|unist-.*-.*-.*'
+    + '|unified'
+    + '|bail'
+    + '|trough'
+    + '|remark-.*'
+    + '|mdast-.*-.*|mdast-.*-.*-.*'
+    + '|micromark|micromark-.*|micromark-.*-.*'
+    + '|parse-entities'
+    + '|character-entities'
+    + '|property-information'
+    + '|space-separated-tokens'
+    + '|comma-separated-tokens'
+    + ')/)'
+  ]
 };
 
 export default config;
