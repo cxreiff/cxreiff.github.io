@@ -1,0 +1,427 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`layout should render 1`] = `
+<Provider
+  store={
+    Object {
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Provider
+    value={
+      Object {
+        "store": Object {
+          "@@observable": [Function],
+          "dispatch": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "subscription": Object {
+          "addNestedSub": [Function],
+          "getListeners": [Function],
+          "handleChangeWrapper": [Function],
+          "isSubscribed": [Function],
+          "notifyNestedSubs": [Function],
+          "onStateChange": [Function],
+          "trySubscribe": [Function],
+          "tryUnsubscribe": [Function],
+        },
+      }
+    }
+  >
+    <Connect(ConnectedRouterWithContext)
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <Connect(ConnectedRouterWithContext)
+        history={
+          Object {
+            "action": "POP",
+            "block": [Function],
+            "createHref": [Function],
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "length": 1,
+            "listen": [Function],
+            "location": Object {
+              "hash": "",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            },
+            "push": [Function],
+            "replace": [Function],
+          }
+        }
+      >
+        <ConnectedRouterWithContext
+          history={
+            Object {
+              "action": "POP",
+              "block": [Function],
+              "createHref": [Function],
+              "go": [Function],
+              "goBack": [Function],
+              "goForward": [Function],
+              "length": 1,
+              "listen": [Function],
+              "location": Object {
+                "hash": "",
+                "pathname": "/",
+                "search": "",
+                "state": undefined,
+              },
+              "push": [Function],
+              "replace": [Function],
+            }
+          }
+          onLocationChanged={[Function]}
+        >
+          <Consumer>
+            <ConnectedRouter
+              history={
+                Object {
+                  "action": "POP",
+                  "block": [Function],
+                  "createHref": [Function],
+                  "go": [Function],
+                  "goBack": [Function],
+                  "goForward": [Function],
+                  "length": 1,
+                  "listen": [Function],
+                  "location": Object {
+                    "hash": "",
+                    "pathname": "/",
+                    "search": "",
+                    "state": undefined,
+                  },
+                  "push": [Function],
+                  "replace": [Function],
+                }
+              }
+              onLocationChanged={[Function]}
+              store={
+                Object {
+                  "@@observable": [Function],
+                  "dispatch": [Function],
+                  "getState": [Function],
+                  "replaceReducer": [Function],
+                  "subscribe": [Function],
+                }
+              }
+            >
+              <Router
+                history={
+                  Object {
+                    "action": "POP",
+                    "block": [Function],
+                    "createHref": [Function],
+                    "go": [Function],
+                    "goBack": [Function],
+                    "goForward": [Function],
+                    "length": 1,
+                    "listen": [Function],
+                    "location": Object {
+                      "hash": "",
+                      "pathname": "/",
+                      "search": "",
+                      "state": undefined,
+                    },
+                    "push": [Function],
+                    "replace": [Function],
+                  }
+                }
+              >
+                <Provider
+                  value={
+                    Object {
+                      "history": Object {
+                        "action": "POP",
+                        "block": [Function],
+                        "createHref": [Function],
+                        "go": [Function],
+                        "goBack": [Function],
+                        "goForward": [Function],
+                        "length": 1,
+                        "listen": [Function],
+                        "location": Object {
+                          "hash": "",
+                          "pathname": "/",
+                          "search": "",
+                          "state": undefined,
+                        },
+                        "push": [Function],
+                        "replace": [Function],
+                      },
+                      "location": Object {
+                        "hash": "",
+                        "pathname": "/",
+                        "search": "",
+                        "state": undefined,
+                      },
+                      "match": Object {
+                        "isExact": true,
+                        "params": Object {},
+                        "path": "/",
+                        "url": "/",
+                      },
+                      "staticContext": undefined,
+                    }
+                  }
+                >
+                  <Provider
+                    value={
+                      Object {
+                        "action": "POP",
+                        "block": [Function],
+                        "createHref": [Function],
+                        "go": [Function],
+                        "goBack": [Function],
+                        "goForward": [Function],
+                        "length": 1,
+                        "listen": [Function],
+                        "location": Object {
+                          "hash": "",
+                          "pathname": "/",
+                          "search": "",
+                          "state": undefined,
+                        },
+                        "push": [Function],
+                        "replace": [Function],
+                      }
+                    }
+                  >
+                    <Layout>
+                      <div>
+                        <nav>
+                          <ul>
+                            <li>
+                              <a
+                                onClick={[Function]}
+                              >
+                                jax reiff
+                              </a>
+                            </li>
+                            <li
+                              className=""
+                              key="/projects"
+                            >
+                              <a
+                                onClick={[Function]}
+                              >
+                                projects
+                              </a>
+                            </li>
+                            <li
+                              className=""
+                              key="/drawing"
+                            >
+                              <a
+                                onClick={[Function]}
+                              >
+                                drawing
+                              </a>
+                            </li>
+                            <li
+                              className=""
+                              key="/writing"
+                            >
+                              <a
+                                onClick={[Function]}
+                              >
+                                writing
+                              </a>
+                            </li>
+                            <li
+                              className=""
+                              key="/resume"
+                            >
+                              <a
+                                onClick={[Function]}
+                              >
+                                resume
+                              </a>
+                            </li>
+                            <li
+                              className=""
+                              key="/babylon"
+                            >
+                              <a
+                                onClick={[Function]}
+                              >
+                                babylon
+                              </a>
+                            </li>
+                          </ul>
+                        </nav>
+                        <main>
+                          <d
+                            fallback={<Spinner />}
+                          >
+                            <Switch>
+                              <Consumer>
+                                <Route
+                                  component={[Function]}
+                                  computedMatch={
+                                    Object {
+                                      "isExact": true,
+                                      "params": Object {},
+                                      "path": "/",
+                                      "url": "/",
+                                    }
+                                  }
+                                  exact={true}
+                                  location={
+                                    Object {
+                                      "hash": "",
+                                      "pathname": "/",
+                                      "search": "",
+                                      "state": undefined,
+                                    }
+                                  }
+                                  path="/"
+                                >
+                                  <Consumer>
+                                    <Provider
+                                      value={
+                                        Object {
+                                          "history": Object {
+                                            "action": "POP",
+                                            "block": [Function],
+                                            "createHref": [Function],
+                                            "go": [Function],
+                                            "goBack": [Function],
+                                            "goForward": [Function],
+                                            "length": 1,
+                                            "listen": [Function],
+                                            "location": Object {
+                                              "hash": "",
+                                              "pathname": "/",
+                                              "search": "",
+                                              "state": undefined,
+                                            },
+                                            "push": [Function],
+                                            "replace": [Function],
+                                          },
+                                          "location": Object {
+                                            "hash": "",
+                                            "pathname": "/",
+                                            "search": "",
+                                            "state": undefined,
+                                          },
+                                          "match": Object {
+                                            "isExact": true,
+                                            "params": Object {},
+                                            "path": "/",
+                                            "url": "/",
+                                          },
+                                          "staticContext": undefined,
+                                        }
+                                      }
+                                    >
+                                      <Homepage
+                                        history={
+                                          Object {
+                                            "action": "POP",
+                                            "block": [Function],
+                                            "createHref": [Function],
+                                            "go": [Function],
+                                            "goBack": [Function],
+                                            "goForward": [Function],
+                                            "length": 1,
+                                            "listen": [Function],
+                                            "location": Object {
+                                              "hash": "",
+                                              "pathname": "/",
+                                              "search": "",
+                                              "state": undefined,
+                                            },
+                                            "push": [Function],
+                                            "replace": [Function],
+                                          }
+                                        }
+                                        location={
+                                          Object {
+                                            "hash": "",
+                                            "pathname": "/",
+                                            "search": "",
+                                            "state": undefined,
+                                          }
+                                        }
+                                        match={
+                                          Object {
+                                            "isExact": true,
+                                            "params": Object {},
+                                            "path": "/",
+                                            "url": "/",
+                                          }
+                                        }
+                                      >
+                                        <section>
+                                          <header>
+                                            <h2>
+                                              Homepage
+                                            </h2>
+                                          </header>
+                                          <p>
+                                            Count is 
+                                            0
+                                            .
+                                          </p>
+                                          <button
+                                            onClick={[Function]}
+                                          >
+                                            INCREMENT
+                                          </button>
+                                          <button
+                                            onClick={[Function]}
+                                          >
+                                            DECREMENT
+                                          </button>
+                                        </section>
+                                      </Homepage>
+                                    </Provider>
+                                  </Consumer>
+                                </Route>
+                              </Consumer>
+                            </Switch>
+                          </d>
+                        </main>
+                      </div>
+                    </Layout>
+                  </Provider>
+                </Provider>
+              </Router>
+            </ConnectedRouter>
+          </Consumer>
+        </ConnectedRouterWithContext>
+      </Connect(ConnectedRouterWithContext)>
+    </Connect(ConnectedRouterWithContext)>
+  </Provider>
+</Provider>
+`;
