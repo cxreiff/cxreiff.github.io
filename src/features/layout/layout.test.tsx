@@ -1,17 +1,17 @@
-import { mount } from 'enzyme';
+import { mount } from 'enzyme'
 
-import wrapComponent from '~/src/utilities/wrapComponent';
-import Layout from './layout.component';
+import wrapper from '~/src/app/wrapper'
+import Layout from './layout.component'
 
 describe('layout', () => {
 
     afterEach(() => {
-        jest.restoreAllMocks();
-    });
+        jest.restoreAllMocks()
+    })
 
     it('should render', () => {
-        const component = mount(wrapComponent(Layout));
-        expect(component).toMatchSnapshot();
-        component.unmount();
-    });
-});
+        const component = mount(wrapper(Layout))
+        expect(component).toMatchSnapshot()
+        component.unmount()
+    })
+})
