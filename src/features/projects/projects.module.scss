@@ -1,0 +1,5 @@
+@use '../../index.scss' as *;
+
+.projects {
+  @include text_page_padding();
+}

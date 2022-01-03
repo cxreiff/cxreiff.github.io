@@ -1,6 +1,6 @@
 import { mount } from 'enzyme'
 
-import wrapper from '~/src/app/wrapper'
+import Wrapper from '~/src/app/wrapper'
 import Homepage from './homepage.component'
 
 describe('homepage', () => {
@@ -10,7 +10,11 @@ describe('homepage', () => {
     })
 
     it('should render', () => {
-        const component = mount(wrapper(Homepage))
+        const component = mount(
+            <Wrapper>
+                <Homepage />
+            </Wrapper>
+        )
         expect(component).toMatchSnapshot()
         component.unmount()
     })
