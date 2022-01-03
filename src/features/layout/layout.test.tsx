@@ -1,17 +1,39 @@
-import { mount } from 'enzyme'
+import { mount, ReactWrapper } from 'enzyme'
 
-import wrapper from '~/src/app/wrapper'
+import Wrapper from '~/src/app/wrapper'
 import Layout from './layout.component'
 
 describe('layout', () => {
+    
+    let component: ReactWrapper<typeof Wrapper, void>
+    
+    beforeAll(() => {
+        component = mount<typeof Wrapper, void>(
+            <Wrapper>
+                <Layout />
+            </Wrapper>
+        )
+    })
+    
+    afterAll(() => {
+        component.unmount()
+    })
 
     afterEach(() => {
         jest.restoreAllMocks()
     })
 
     it('should render', () => {
-        const component = mount(wrapper(Layout))
-        expect(component).toMatchSnapshot()
-        component.unmount()
+        expect(component.find(Layout)).toMatchSnapshot()
+    })
+    
+    it('should navigate to projects tab', () => {
+        component.find('#nav-projects>a').simulate('click')
+        expect(component.find(Layout)).toMatchSnapshot()
+    })
+    
+    it('should navigate to photos tab', () => {
+        component.find('#nav-photos>a').simulate('click')
+        expect(component.find(Layout)).toMatchSnapshot()
     })
 })

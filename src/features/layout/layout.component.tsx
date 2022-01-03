@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react'
+import { FC, Suspense, lazy } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { push } from 'connected-react-router'
 import cn from 'classnames'
@@ -7,7 +7,7 @@ import { useAppSelector, useAppDispatch } from '~/src/app/store'
 
 import Homepage from '~/src/features/homepage/homepage.component'
 import Projects from '~/src/features/projects/projects.component'
-import Drawing from '~/src/features/drawing/drawing.component'
+import Photos from '~/src/features/photos/photos.component'
 import Writing from '~/src/features/writing/writing.component'
 import Resume from '~/src/features/resume/resume.component'
 const Babylon = lazy(() => import('~/src/features/babylon/babylon.component'))
@@ -16,23 +16,23 @@ import Spinner from '~/src/common/spinner/spinner.component'
 
 import * as styles from './layout.module.scss'
 
-const Layout: React.FC = () => {
+const Layout: FC = () => {
     
     const pathname = useAppSelector(state => state.router.location.pathname)
     
     const dispatch = useAppDispatch()
     const navigate = (pathname: string) => dispatch(push(pathname))
 
-    const pages: { path: string, label: string, component: React.FC }[] = [
+    const pages: { path: string, label: string, component: FC }[] = [
         {
             path: '/projects',
             label: 'projects',
             component: Projects,
         },
         {
-            path: '/drawing',
-            label: 'drawing',
-            component: Drawing,
+            path: '/photos',
+            label: 'photos',
+            component: Photos,
         },
         {
             path: '/writing',
@@ -56,8 +56,8 @@ const Layout: React.FC = () => {
     )
 
     return (
-        <div>
-            <nav className={styles.layoutnav}>
+        <div className={styles.layout}>
+            <nav>
                 <ul>
                     <li className={styles.logo}>
                         <a onClick={() => navigate('/')}>
@@ -65,7 +65,7 @@ const Layout: React.FC = () => {
                         </a>
                     </li>
                     {pages.map(({path, label}) => (
-                        <li key={path} className={cn(styles.navlink, {[styles.current]: comparePaths(path, pathname)})}>
+                        <li key={path} id={`nav-${label}`} className={cn(styles.navlink, {[styles.current]: comparePaths(path, pathname)})}>
                             <a onClick={() => navigate(path)}>
                                 {label}
                             </a>
@@ -73,7 +73,7 @@ const Layout: React.FC = () => {
                     ))}
                 </ul>
             </nav>
-            <main className={styles.layoutmain}>
+            <main>
                 <Suspense fallback={<Spinner />}>
                     <Switch>
                         <Route exact path="/" component={Homepage} />

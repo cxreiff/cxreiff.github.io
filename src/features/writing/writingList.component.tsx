@@ -1,10 +1,12 @@
-import React from 'react'
+import { FC } from 'react'
 
 import posts from './posts'
 import WritingListTile from './writingListTile.component'
 
-const WritingList: React.FC = () => (
-    <section>
+import * as styles from './writingList.module.scss'
+
+const WritingList: FC = () => (
+    <section className={styles.writing_list}>
         <header>
             <h2>
                 Writing

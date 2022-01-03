@@ -1,16 +1,18 @@
-import React from 'react'
+import { FC } from 'react'
 import { useParams } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 
 import posts from './posts'
 
-const WritingContent: React.FC = () => {
+import * as styles from './writingContent.module.scss'
+
+const WritingContent: FC = () => {
 
     const { id } = useParams<{id: string}>()
     const { title, date, content } = posts[id]
 
     return (
-        <section>
+        <section className={styles.writing_content}>
             <header>
                 <h2>
                     {title}

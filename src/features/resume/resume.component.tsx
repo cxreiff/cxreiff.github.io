@@ -1,8 +1,10 @@
-import React from 'react'
+import { FC } from 'react'
 
-const Resume: React.FC = () => {
+import * as styles from './resume.module.scss'
+
+const Resume: FC = () => {
     return (
-        <section>
+        <section className={styles.resume}>
             <header>
                 <h2>
                     Resume

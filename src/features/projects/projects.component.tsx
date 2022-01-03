@@ -1,8 +1,10 @@
-import React from 'react'
+import { FC } from 'react'
 
-const Projects: React.FC = () => {
+import * as styles from './projects.module.scss'
+
+const Projects: FC = () => {
     return (
-        <section>
+        <section className={styles.projects}>
             <header>
                 <h2>
                     Projects

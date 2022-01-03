@@ -1,8 +1,8 @@
-import React from 'react'
+import { FC } from 'react'
 import SceneComponent from 'babylonjs-hook'
 import { Scene, FreeCamera, Vector3, HemisphericLight, MeshBuilder, Mesh } from '@babylonjs/core';
 
-const Babylon: React.FC = () => {
+const Babylon: FC = () => {
     
     let box: Mesh;
     let sphere: Mesh;

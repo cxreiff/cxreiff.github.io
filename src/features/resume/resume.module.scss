@@ -1,0 +1,5 @@
+@use '../../index.scss' as *;
+
+.resume {
+  @include text_page_padding();
+}

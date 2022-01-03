@@ -4,13 +4,13 @@ import { connectRouter, routerMiddleware } from 'connected-react-router'
 
 import history from './history'
 import homepage from '~/src/features/homepage/homepage.slice'
+import photos from '~/src/features/photos/photos.slice'
 
 const router = connectRouter(history)
 
-const middleware = [
-    ...getDefaultMiddleware(),
-    routerMiddleware(history),
-];
+const middleware = getDefaultMiddleware().concat(
+    routerMiddleware(history)
+)
  
 if (process.env.NODE_ENV === 'development') {
   // eslint-disable-next-line
@@ -22,6 +22,7 @@ const store = configureStore({
     reducer: {
         router,
         homepage,
+        photos,
     },
     middleware,
 })
