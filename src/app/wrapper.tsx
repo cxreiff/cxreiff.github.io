@@ -1,18 +1,18 @@
-import React, { ComponentType, ReactElement } from 'react'
+import { FC } from 'react'
 import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'connected-react-router'
 
 import store from './store'
 import history from './history'
 
-const wrapper = (Component: ComponentType, props = {}): ReactElement => {
+const Wrapper: FC = ({children}) => {
   return (
     <Provider store={store}>
       <ConnectedRouter history={history}>
-        <Component {...props} />
+        {children}
       </ConnectedRouter>
     </Provider>
   )
 }
 
-export default wrapper
+export default Wrapper

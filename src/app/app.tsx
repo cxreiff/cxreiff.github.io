@@ -1,9 +1,13 @@
 import { FC } from 'react'
 import 'normalize.css'
 
-import wrapper from './wrapper'
+import Wrapper from './wrapper'
 import Layout from '~/src/features/layout/layout.component'
 
-const App: FC = () => wrapper(Layout)
+const App: FC = () => (
+  <Wrapper>
+    <Layout />
+  </Wrapper>
+)
 
 export default App

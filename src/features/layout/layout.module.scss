@@ -1,17 +1,13 @@
 @use '../../index.scss' as *;
 
-main.layoutmain {
+.layout>main {
     @include boxshadow($accent-color-darker);
     @include background_noise($accent-color-lightest);
     margin: 1rem;
     color: $accent-color-darkest;
-
-    section {
-        margin: 0.5rem 2rem 2rem 2rem;
-    }
 }
 
-nav.layoutnav {
+.layout>nav {
     @include boxshadow($accent-color-darker);
     @include background_noise($accent-color);
     margin: 2rem 1rem;

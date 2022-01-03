@@ -1,59 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`homepage should render 1`] = `
-<Provider
-  store={
-    Object {
-      "@@observable": [Function],
-      "dispatch": [Function],
-      "getState": [Function],
-      "replaceReducer": [Function],
-      "subscribe": [Function],
-    }
-  }
->
+<Wrapper>
   <Provider
-    value={
+    store={
       Object {
-        "store": Object {
-          "@@observable": [Function],
-          "dispatch": [Function],
-          "getState": [Function],
-          "replaceReducer": [Function],
-          "subscribe": [Function],
-        },
-        "subscription": Object {
-          "addNestedSub": [Function],
-          "getListeners": [Function],
-          "handleChangeWrapper": [Function],
-          "isSubscribed": [Function],
-          "notifyNestedSubs": [Function],
-          "onStateChange": [Function],
-          "trySubscribe": [Function],
-          "tryUnsubscribe": [Function],
-        },
+        "@@observable": [Function],
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
       }
     }
   >
-    <Connect(ConnectedRouterWithContext)
-      history={
+    <Provider
+      value={
         Object {
-          "action": "POP",
-          "block": [Function],
-          "createHref": [Function],
-          "go": [Function],
-          "goBack": [Function],
-          "goForward": [Function],
-          "length": 1,
-          "listen": [Function],
-          "location": Object {
-            "hash": "",
-            "pathname": "/",
-            "search": "",
-            "state": undefined,
+          "store": Object {
+            "@@observable": [Function],
+            "dispatch": [Function],
+            "getState": [Function],
+            "replaceReducer": [Function],
+            "subscribe": [Function],
           },
-          "push": [Function],
-          "replace": [Function],
+          "subscription": Object {
+            "addNestedSub": [Function],
+            "getListeners": [Function],
+            "handleChangeWrapper": [Function],
+            "isSubscribed": [Function],
+            "notifyNestedSubs": [Function],
+            "onStateChange": [Function],
+            "trySubscribe": [Function],
+            "tryUnsubscribe": [Function],
+          },
         }
       }
     >
@@ -79,7 +58,7 @@ exports[`homepage should render 1`] = `
           }
         }
       >
-        <ConnectedRouterWithContext
+        <Connect(ConnectedRouterWithContext)
           history={
             Object {
               "action": "POP",
@@ -100,42 +79,32 @@ exports[`homepage should render 1`] = `
               "replace": [Function],
             }
           }
-          onLocationChanged={[Function]}
         >
-          <Consumer>
-            <ConnectedRouter
-              history={
-                Object {
-                  "action": "POP",
-                  "block": [Function],
-                  "createHref": [Function],
-                  "go": [Function],
-                  "goBack": [Function],
-                  "goForward": [Function],
-                  "length": 1,
-                  "listen": [Function],
-                  "location": Object {
-                    "hash": "",
-                    "pathname": "/",
-                    "search": "",
-                    "state": undefined,
-                  },
-                  "push": [Function],
-                  "replace": [Function],
-                }
+          <ConnectedRouterWithContext
+            history={
+              Object {
+                "action": "POP",
+                "block": [Function],
+                "createHref": [Function],
+                "go": [Function],
+                "goBack": [Function],
+                "goForward": [Function],
+                "length": 1,
+                "listen": [Function],
+                "location": Object {
+                  "hash": "",
+                  "pathname": "/",
+                  "search": "",
+                  "state": undefined,
+                },
+                "push": [Function],
+                "replace": [Function],
               }
-              onLocationChanged={[Function]}
-              store={
-                Object {
-                  "@@observable": [Function],
-                  "dispatch": [Function],
-                  "getState": [Function],
-                  "replaceReducer": [Function],
-                  "subscribe": [Function],
-                }
-              }
-            >
-              <Router
+            }
+            onLocationChanged={[Function]}
+          >
+            <Consumer>
+              <ConnectedRouter
                 history={
                   Object {
                     "action": "POP",
@@ -156,98 +125,131 @@ exports[`homepage should render 1`] = `
                     "replace": [Function],
                   }
                 }
+                onLocationChanged={[Function]}
+                store={
+                  Object {
+                    "@@observable": [Function],
+                    "dispatch": [Function],
+                    "getState": [Function],
+                    "replaceReducer": [Function],
+                    "subscribe": [Function],
+                  }
+                }
               >
-                <Provider
-                  value={
+                <Router
+                  history={
                     Object {
-                      "history": Object {
-                        "action": "POP",
-                        "block": [Function],
-                        "createHref": [Function],
-                        "go": [Function],
-                        "goBack": [Function],
-                        "goForward": [Function],
-                        "length": 1,
-                        "listen": [Function],
-                        "location": Object {
-                          "hash": "",
-                          "pathname": "/",
-                          "search": "",
-                          "state": undefined,
-                        },
-                        "push": [Function],
-                        "replace": [Function],
-                      },
+                      "action": "POP",
+                      "block": [Function],
+                      "createHref": [Function],
+                      "go": [Function],
+                      "goBack": [Function],
+                      "goForward": [Function],
+                      "length": 1,
+                      "listen": [Function],
                       "location": Object {
                         "hash": "",
                         "pathname": "/",
                         "search": "",
                         "state": undefined,
                       },
-                      "match": Object {
-                        "isExact": true,
-                        "params": Object {},
-                        "path": "/",
-                        "url": "/",
-                      },
-                      "staticContext": undefined,
+                      "push": [Function],
+                      "replace": [Function],
                     }
                   }
                 >
                   <Provider
                     value={
                       Object {
-                        "action": "POP",
-                        "block": [Function],
-                        "createHref": [Function],
-                        "go": [Function],
-                        "goBack": [Function],
-                        "goForward": [Function],
-                        "length": 1,
-                        "listen": [Function],
+                        "history": Object {
+                          "action": "POP",
+                          "block": [Function],
+                          "createHref": [Function],
+                          "go": [Function],
+                          "goBack": [Function],
+                          "goForward": [Function],
+                          "length": 1,
+                          "listen": [Function],
+                          "location": Object {
+                            "hash": "",
+                            "pathname": "/",
+                            "search": "",
+                            "state": undefined,
+                          },
+                          "push": [Function],
+                          "replace": [Function],
+                        },
                         "location": Object {
                           "hash": "",
                           "pathname": "/",
                           "search": "",
                           "state": undefined,
                         },
-                        "push": [Function],
-                        "replace": [Function],
+                        "match": Object {
+                          "isExact": true,
+                          "params": Object {},
+                          "path": "/",
+                          "url": "/",
+                        },
+                        "staticContext": undefined,
                       }
                     }
                   >
-                    <Homepage>
-                      <section>
-                        <header>
-                          <h2>
-                            Homepage
-                          </h2>
-                        </header>
-                        <p>
-                          Count is 
-                          0
-                          .
-                        </p>
-                        <button
-                          onClick={[Function]}
-                        >
-                          INCREMENT
-                        </button>
-                        <button
-                          onClick={[Function]}
-                        >
-                          DECREMENT
-                        </button>
-                      </section>
-                    </Homepage>
+                    <Provider
+                      value={
+                        Object {
+                          "action": "POP",
+                          "block": [Function],
+                          "createHref": [Function],
+                          "go": [Function],
+                          "goBack": [Function],
+                          "goForward": [Function],
+                          "length": 1,
+                          "listen": [Function],
+                          "location": Object {
+                            "hash": "",
+                            "pathname": "/",
+                            "search": "",
+                            "state": undefined,
+                          },
+                          "push": [Function],
+                          "replace": [Function],
+                        }
+                      }
+                    >
+                      <Homepage>
+                        <section>
+                          <header>
+                            <h2>
+                              Homepage
+                            </h2>
+                          </header>
+                          <p>
+                            Count is 
+                            0
+                            .
+                          </p>
+                          <button
+                            onClick={[Function]}
+                          >
+                            INCREMENT
+                          </button>
+                          <button
+                            onClick={[Function]}
+                          >
+                            DECREMENT
+                          </button>
+                        </section>
+                      </Homepage>
+                    </Provider>
                   </Provider>
-                </Provider>
-              </Router>
-            </ConnectedRouter>
-          </Consumer>
-        </ConnectedRouterWithContext>
+                </Router>
+              </ConnectedRouter>
+            </Consumer>
+          </ConnectedRouterWithContext>
+        </Connect(ConnectedRouterWithContext)>
       </Connect(ConnectedRouterWithContext)>
-    </Connect(ConnectedRouterWithContext)>
+    </Provider>
   </Provider>
-</Provider>
+</Wrapper>
 `;

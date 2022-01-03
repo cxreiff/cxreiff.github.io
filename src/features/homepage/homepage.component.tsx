@@ -1,17 +1,18 @@
-import React from 'react'
-
+import { FC } from 'react'
 import { useAppSelector, useAppDispatch } from '~/src/app/store'
 import sum from '~/src/utilities/sum'
 
 import { increment, decrement } from './homepage.slice'
 
-const Homepage: React.FC = () => {
+import * as styles from './homepage.module.scss'
+
+const Homepage: FC = () => {
 
     const dispatch = useAppDispatch()
     const counter = useAppSelector((state) => state.homepage.counter)
 
     return (
-        <section>
+        <section className={styles.homepage}>
             <header>
                 <h2>
                     Homepage

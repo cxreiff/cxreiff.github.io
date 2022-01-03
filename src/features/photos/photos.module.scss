@@ -1,0 +1,16 @@
+@use '../../index.scss' as *;
+
+.photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem 1rem;
+  padding: 1rem;
+}
+
+.tile {
+  @include boxshadow($accent-color-darker);
+  font-size: 0px;
+}
+.tile>img {
+  width: 100%;
+}
