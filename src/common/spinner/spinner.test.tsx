@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme'
 
-import Spinner from './spinner.component'
+import { Spinner } from './spinner.component'
 
 describe('spinner', () => {
   it('should render', () => {

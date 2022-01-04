@@ -7,7 +7,7 @@ import { Post } from './posts'
 
 import * as styles from './writingListTile.module.scss'
 
-interface WritingListTileProps {
+type WritingListTileProps = {
     id: string,
     post: Post,
 }

@@ -11,9 +11,10 @@ const router = connectRouter(history)
 const middleware = getDefaultMiddleware().concat(
     routerMiddleware(history)
 )
- 
+
+/* istanbul ignore next */
 if (process.env.NODE_ENV === 'development') {
-  // eslint-disable-next-line
+  /* eslint-disable-next-line */
   const { logger } = require('redux-logger');
   middleware.push(logger);
 }

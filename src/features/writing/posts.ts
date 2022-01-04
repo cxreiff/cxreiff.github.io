@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs'
 
-export interface Post {
+export type Post = {
     title: string,
     description: string,
     date: Date,
