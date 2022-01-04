@@ -41,6 +41,7 @@ const config: Config.InitialOptions = {
     + '|property-information'
     + '|space-separated-tokens'
     + '|comma-separated-tokens'
+    + '|babylonjs-hook'
     + ')/)'
   ]
 };

@@ -7,5 +7,3 @@ export const Spinner: FC = () => (
         <div className={styles.spinner_inner} />
     </div>
 )
-
-export default Spinner

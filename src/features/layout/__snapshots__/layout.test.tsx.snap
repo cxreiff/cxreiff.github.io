@@ -402,6 +402,584 @@ exports[`layout should navigate to projects tab 1`] = `
 </Layout>
 `;
 
+exports[`layout should navigate to resume tab 1`] = `
+<Layout>
+  <div>
+    <nav>
+      <ul>
+        <li>
+          <a
+            onClick={[Function]}
+          >
+            jax reiff
+          </a>
+        </li>
+        <li
+          className=""
+          id="nav-projects"
+          key="/projects"
+        >
+          <a
+            onClick={[Function]}
+          >
+            projects
+          </a>
+        </li>
+        <li
+          className=""
+          id="nav-photos"
+          key="/photos"
+        >
+          <a
+            onClick={[Function]}
+          >
+            photos
+          </a>
+        </li>
+        <li
+          className=""
+          id="nav-writing"
+          key="/writing"
+        >
+          <a
+            onClick={[Function]}
+          >
+            writing
+          </a>
+        </li>
+        <li
+          className="undefined"
+          id="nav-resume"
+          key="/resume"
+        >
+          <a
+            onClick={[Function]}
+          >
+            resume
+          </a>
+        </li>
+        <li
+          className=""
+          id="nav-babylon"
+          key="/babylon"
+        >
+          <a
+            onClick={[Function]}
+          >
+            babylon
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <d
+        fallback={<Spinner />}
+      >
+        <Switch>
+          <Consumer>
+            <Route
+              component={[Function]}
+              computedMatch={
+                Object {
+                  "isExact": true,
+                  "params": Object {},
+                  "path": "/resume",
+                  "url": "/resume",
+                }
+              }
+              key="/resume"
+              location={
+                Object {
+                  "hash": "",
+                  "pathname": "/resume",
+                  "search": "",
+                  "state": undefined,
+                }
+              }
+              path="/resume"
+            >
+              <Consumer>
+                <Provider
+                  value={
+                    Object {
+                      "history": Object {
+                        "action": "PUSH",
+                        "block": [Function],
+                        "createHref": [Function],
+                        "go": [Function],
+                        "goBack": [Function],
+                        "goForward": [Function],
+                        "length": 5,
+                        "listen": [Function],
+                        "location": Object {
+                          "hash": "",
+                          "pathname": "/resume",
+                          "search": "",
+                          "state": undefined,
+                        },
+                        "push": [Function],
+                        "replace": [Function],
+                      },
+                      "location": Object {
+                        "hash": "",
+                        "pathname": "/resume",
+                        "search": "",
+                        "state": undefined,
+                      },
+                      "match": Object {
+                        "isExact": true,
+                        "params": Object {},
+                        "path": "/resume",
+                        "url": "/resume",
+                      },
+                      "staticContext": undefined,
+                    }
+                  }
+                >
+                  <Resume
+                    history={
+                      Object {
+                        "action": "PUSH",
+                        "block": [Function],
+                        "createHref": [Function],
+                        "go": [Function],
+                        "goBack": [Function],
+                        "goForward": [Function],
+                        "length": 5,
+                        "listen": [Function],
+                        "location": Object {
+                          "hash": "",
+                          "pathname": "/resume",
+                          "search": "",
+                          "state": undefined,
+                        },
+                        "push": [Function],
+                        "replace": [Function],
+                      }
+                    }
+                    location={
+                      Object {
+                        "hash": "",
+                        "pathname": "/resume",
+                        "search": "",
+                        "state": undefined,
+                      }
+                    }
+                    match={
+                      Object {
+                        "isExact": true,
+                        "params": Object {},
+                        "path": "/resume",
+                        "url": "/resume",
+                      }
+                    }
+                  >
+                    <section>
+                      <header>
+                        <h2>
+                          Resume
+                        </h2>
+                      </header>
+                      <article>
+                        <header>
+                          <h3>
+                            Article 1
+                          </h3>
+                        </header>
+                        <p>
+                          Article 1 Content
+                        </p>
+                        <p>
+                          Article 1 More Content
+                        </p>
+                      </article>
+                      <article>
+                        <header>
+                          <h3>
+                            Article 2
+                          </h3>
+                        </header>
+                        <p>
+                          Article 2 Content
+                        </p>
+                        <p>
+                          Article 2 More Content
+                        </p>
+                      </article>
+                    </section>
+                  </Resume>
+                </Provider>
+              </Consumer>
+            </Route>
+          </Consumer>
+        </Switch>
+      </d>
+    </main>
+  </div>
+</Layout>
+`;
+
+exports[`layout should navigate to writing tab 1`] = `
+<Layout>
+  <div>
+    <nav>
+      <ul>
+        <li>
+          <a
+            onClick={[Function]}
+          >
+            jax reiff
+          </a>
+        </li>
+        <li
+          className=""
+          id="nav-projects"
+          key="/projects"
+        >
+          <a
+            onClick={[Function]}
+          >
+            projects
+          </a>
+        </li>
+        <li
+          className=""
+          id="nav-photos"
+          key="/photos"
+        >
+          <a
+            onClick={[Function]}
+          >
+            photos
+          </a>
+        </li>
+        <li
+          className="undefined"
+          id="nav-writing"
+          key="/writing"
+        >
+          <a
+            onClick={[Function]}
+          >
+            writing
+          </a>
+        </li>
+        <li
+          className=""
+          id="nav-resume"
+          key="/resume"
+        >
+          <a
+            onClick={[Function]}
+          >
+            resume
+          </a>
+        </li>
+        <li
+          className=""
+          id="nav-babylon"
+          key="/babylon"
+        >
+          <a
+            onClick={[Function]}
+          >
+            babylon
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <d
+        fallback={<Spinner />}
+      >
+        <Switch>
+          <Consumer>
+            <Route
+              component={[Function]}
+              computedMatch={
+                Object {
+                  "isExact": true,
+                  "params": Object {},
+                  "path": "/writing",
+                  "url": "/writing",
+                }
+              }
+              key="/writing"
+              location={
+                Object {
+                  "hash": "",
+                  "pathname": "/writing",
+                  "search": "",
+                  "state": undefined,
+                }
+              }
+              path="/writing"
+            >
+              <Consumer>
+                <Provider
+                  value={
+                    Object {
+                      "history": Object {
+                        "action": "PUSH",
+                        "block": [Function],
+                        "createHref": [Function],
+                        "go": [Function],
+                        "goBack": [Function],
+                        "goForward": [Function],
+                        "length": 4,
+                        "listen": [Function],
+                        "location": Object {
+                          "hash": "",
+                          "pathname": "/writing",
+                          "search": "",
+                          "state": undefined,
+                        },
+                        "push": [Function],
+                        "replace": [Function],
+                      },
+                      "location": Object {
+                        "hash": "",
+                        "pathname": "/writing",
+                        "search": "",
+                        "state": undefined,
+                      },
+                      "match": Object {
+                        "isExact": true,
+                        "params": Object {},
+                        "path": "/writing",
+                        "url": "/writing",
+                      },
+                      "staticContext": undefined,
+                    }
+                  }
+                >
+                  <Writing
+                    history={
+                      Object {
+                        "action": "PUSH",
+                        "block": [Function],
+                        "createHref": [Function],
+                        "go": [Function],
+                        "goBack": [Function],
+                        "goForward": [Function],
+                        "length": 4,
+                        "listen": [Function],
+                        "location": Object {
+                          "hash": "",
+                          "pathname": "/writing",
+                          "search": "",
+                          "state": undefined,
+                        },
+                        "push": [Function],
+                        "replace": [Function],
+                      }
+                    }
+                    location={
+                      Object {
+                        "hash": "",
+                        "pathname": "/writing",
+                        "search": "",
+                        "state": undefined,
+                      }
+                    }
+                    match={
+                      Object {
+                        "isExact": true,
+                        "params": Object {},
+                        "path": "/writing",
+                        "url": "/writing",
+                      }
+                    }
+                  >
+                    <Switch>
+                      <Consumer>
+                        <Route
+                          component={[Function]}
+                          computedMatch={
+                            Object {
+                              "isExact": true,
+                              "params": Object {},
+                              "path": "/writing",
+                              "url": "/writing",
+                            }
+                          }
+                          exact={true}
+                          location={
+                            Object {
+                              "hash": "",
+                              "pathname": "/writing",
+                              "search": "",
+                              "state": undefined,
+                            }
+                          }
+                          path="/writing"
+                        >
+                          <Consumer>
+                            <Provider
+                              value={
+                                Object {
+                                  "history": Object {
+                                    "action": "PUSH",
+                                    "block": [Function],
+                                    "createHref": [Function],
+                                    "go": [Function],
+                                    "goBack": [Function],
+                                    "goForward": [Function],
+                                    "length": 4,
+                                    "listen": [Function],
+                                    "location": Object {
+                                      "hash": "",
+                                      "pathname": "/writing",
+                                      "search": "",
+                                      "state": undefined,
+                                    },
+                                    "push": [Function],
+                                    "replace": [Function],
+                                  },
+                                  "location": Object {
+                                    "hash": "",
+                                    "pathname": "/writing",
+                                    "search": "",
+                                    "state": undefined,
+                                  },
+                                  "match": Object {
+                                    "isExact": true,
+                                    "params": Object {},
+                                    "path": "/writing",
+                                    "url": "/writing",
+                                  },
+                                  "staticContext": undefined,
+                                }
+                              }
+                            >
+                              <WritingList
+                                history={
+                                  Object {
+                                    "action": "PUSH",
+                                    "block": [Function],
+                                    "createHref": [Function],
+                                    "go": [Function],
+                                    "goBack": [Function],
+                                    "goForward": [Function],
+                                    "length": 4,
+                                    "listen": [Function],
+                                    "location": Object {
+                                      "hash": "",
+                                      "pathname": "/writing",
+                                      "search": "",
+                                      "state": undefined,
+                                    },
+                                    "push": [Function],
+                                    "replace": [Function],
+                                  }
+                                }
+                                location={
+                                  Object {
+                                    "hash": "",
+                                    "pathname": "/writing",
+                                    "search": "",
+                                    "state": undefined,
+                                  }
+                                }
+                                match={
+                                  Object {
+                                    "isExact": true,
+                                    "params": Object {},
+                                    "path": "/writing",
+                                    "url": "/writing",
+                                  }
+                                }
+                              >
+                                <section>
+                                  <header>
+                                    <h2>
+                                      Writing
+                                    </h2>
+                                  </header>
+                                  <WritingListTile
+                                    id="title-one"
+                                    key="title-one"
+                                    post={
+                                      Object {
+                                        "content": "First Test Markdown
+===
+
+First test markdown.
+
+Second paragraph.",
+                                        "date": 2021-07-01T00:00:00.000Z,
+                                        "description": "test 1 subtitle",
+                                        "title": "Title 1",
+                                      }
+                                    }
+                                  >
+                                    <article
+                                      onClick={[Function]}
+                                    >
+                                      <header>
+                                        <h2>
+                                          Title 1
+                                        </h2>
+                                      </header>
+                                      <footer>
+                                        Thu Jul 01 2021
+                                      </footer>
+                                      <p>
+                                        test 1 subtitle
+                                      </p>
+                                    </article>
+                                  </WritingListTile>
+                                  <WritingListTile
+                                    id="title-two"
+                                    key="title-two"
+                                    post={
+                                      Object {
+                                        "content": "Second Test Markdown
+===
+
+Second test markdown.
+",
+                                        "date": 2021-06-24T00:00:00.000Z,
+                                        "description": "test 2 subtitle",
+                                        "title": "Title 2",
+                                      }
+                                    }
+                                  >
+                                    <article
+                                      onClick={[Function]}
+                                    >
+                                      <header>
+                                        <h2>
+                                          Title 2
+                                        </h2>
+                                      </header>
+                                      <footer>
+                                        Thu Jun 24 2021
+                                      </footer>
+                                      <p>
+                                        test 2 subtitle
+                                      </p>
+                                    </article>
+                                  </WritingListTile>
+                                </section>
+                              </WritingList>
+                            </Provider>
+                          </Consumer>
+                        </Route>
+                      </Consumer>
+                    </Switch>
+                  </Writing>
+                </Provider>
+              </Consumer>
+            </Route>
+          </Consumer>
+        </Switch>
+      </d>
+    </main>
+  </div>
+</Layout>
+`;
+
 exports[`layout should render 1`] = `
 <Layout>
   <div>

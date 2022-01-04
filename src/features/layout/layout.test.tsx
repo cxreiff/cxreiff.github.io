@@ -36,4 +36,14 @@ describe('layout', () => {
         component.find('#nav-photos>a').simulate('click')
         expect(component.find(Layout)).toMatchSnapshot()
     })
+
+    it('should navigate to writing tab', () => {
+        component.find('#nav-writing>a').simulate('click')
+        expect(component.find(Layout)).toMatchSnapshot()
+    })
+
+    it('should navigate to resume tab', () => {
+        component.find('#nav-resume>a').simulate('click')
+        expect(component.find(Layout)).toMatchSnapshot()
+    })
 })
