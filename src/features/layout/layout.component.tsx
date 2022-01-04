@@ -12,7 +12,7 @@ import Writing from '~/src/features/writing/writing.component'
 import Resume from '~/src/features/resume/resume.component'
 const Babylon = lazy(() => import('~/src/features/babylon/babylon.component'))
 
-import Spinner from '~/src/common/spinner/spinner.component'
+import { Spinner } from '~/src/common/spinner/spinner.component'
 
 import * as styles from './layout.module.scss'
 

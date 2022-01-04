@@ -2,15 +2,16 @@
 
 .photos {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem 1rem;
   padding: 1rem;
+  grid-template-columns: 1fr;
+  
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 .tile {
   @include boxshadow($accent-color-darker);
   font-size: 0px;
-}
-.tile>img {
-  width: 100%;
 }

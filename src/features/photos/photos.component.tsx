@@ -1,6 +1,7 @@
 import { FC, useEffect } from 'react'
 
 import { useAppSelector, useAppDispatch } from '~/src/app/store'
+import { ImageLoader } from '~/src/common/imageLoader/imageLoader.component'
 import { OBJECT_STORE_ASSETS_URL } from '~/src/utilities/constants'
 
 import { fetchPhotos } from './photos.slice'
@@ -18,7 +19,7 @@ const Photos: FC = () => {
         <section className={styles.photos}>
             {photoKeys.map(key => (
                 <article key={key} className={styles.tile}>
-                    <img src={OBJECT_STORE_ASSETS_URL + key} />
+                    <ImageLoader src={OBJECT_STORE_ASSETS_URL + key} />
                 </article>
             ))}
         </section>
