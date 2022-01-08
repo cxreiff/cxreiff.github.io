@@ -5,12 +5,14 @@ import { Lightbox } from 'react-modal-image'
 import * as styles from './imageLoader.module.scss'
 
 type ImageLoaderProps = {
-  src: string,
+  small: string,
+  medium: string,
+  large: string,
   alt?: string,
   className?: string,
 }
 
-export const ImageLoader: FC<ImageLoaderProps> = ({ src, alt, className }) => {
+export const ImageLoader: FC<ImageLoaderProps> = ({ small, medium, large, alt, className }) => {
 
   const [loaded, setLoaded] = useState(false)
   const [opened, setOpened] = useState(false)
@@ -20,8 +22,16 @@ export const ImageLoader: FC<ImageLoaderProps> = ({ src, alt, className }) => {
       <svg viewBox={'0 0 100 100'}>
         <rect width={'100'} height={'100'} />
       </svg>
-      <img src={src} onLoad={() => setLoaded(true)} onClick={() => setOpened(true)} />
-      { opened && <Lightbox medium={src} alt={alt} onClose={() => setOpened(false)} /> }
+      <img src={small} onLoad={() => setLoaded(true)} onClick={() => setOpened(true)} />
+      { opened && (
+        <Lightbox
+          medium={medium}
+          large={large}
+          alt={alt}
+          hideDownload={true}
+          onClose={() => setOpened(false)}
+        />
+      )}
     </div>
   )
 }

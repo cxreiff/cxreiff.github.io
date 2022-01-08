@@ -8,7 +8,13 @@ describe('imageLoader', () => {
     
     beforeEach(() => {
         component = mount<typeof ImageLoader, void>(
-            <ImageLoader src={'test'} alt={'test'} className={'test'} />
+            <ImageLoader
+                small={'test'}
+                medium={'test'}
+                large={'test'}
+                alt={'test'}
+                className={'test'}
+            />
         )
     })
     
@@ -23,7 +29,7 @@ describe('imageLoader', () => {
 
     it('should close lightbox', () => {
         component.find('img').simulate('click')
-        component.find('.__react_modal_image__icon_menu').childAt(2).simulate('click')
+        component.find('.__react_modal_image__icon_menu').childAt(1).simulate('click')
         expect(component).toMatchSnapshot()
     })
 })
