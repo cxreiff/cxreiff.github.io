@@ -5,7 +5,9 @@ exports[`imageLoader should close lightbox 1`] = `
   alt="test"
   class="test"
   className="test"
-  src="test"
+  large="test"
+  medium="test"
+  small="test"
 >
   <div
     className="test undefined"
@@ -32,7 +34,9 @@ exports[`imageLoader should render 1`] = `
   alt="test"
   class="test"
   className="test"
-  src="test"
+  large="test"
+  medium="test"
+  small="test"
 >
   <div
     className="test undefined"
@@ -59,7 +63,9 @@ exports[`imageLoader should render lightbox 1`] = `
   alt="test"
   class="test"
   className="test"
-  src="test"
+  large="test"
+  medium="test"
+  small="test"
 >
   <div
     className="test undefined"
@@ -79,6 +85,8 @@ exports[`imageLoader should render lightbox 1`] = `
     />
     <Lightbox
       alt="test"
+      hideDownload={true}
+      large="test"
       medium="test"
       onClose={[Function]}
     >
@@ -230,7 +238,7 @@ exports[`imageLoader should render lightbox 1`] = `
           </div>
           <Header
             alt="test"
-            enableDownload={true}
+            enableDownload={false}
             enableRotate={false}
             enableZoom={true}
             image="test"
@@ -245,28 +253,6 @@ exports[`imageLoader should render lightbox 1`] = `
               <span
                 className="__react_modal_image__icon_menu"
               >
-                <a
-                  download=""
-                  href="test"
-                >
-                  <DownloadIcon>
-                    <svg
-                      fill="#ffffff"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"
-                      />
-                      <path
-                        d="M0 0h24v24H0z"
-                        fill="none"
-                      />
-                    </svg>
-                  </DownloadIcon>
-                </a>
                 <a
                   onClick={[Function]}
                 >

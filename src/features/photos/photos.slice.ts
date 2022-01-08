@@ -1,11 +1,12 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import xml2js from 'xml2js'
 
-import { OBJECT_STORE_ASSETS_URL } from '~/src/utilities/constants'
+import { OBJECT_STORE_ASSETS_URL, PHOTO_SIZE_PREFIXES } from '~/src/utilities/constants'
 
-type PhotosState = {
-    status: 'idle' | 'pending' | 'failed',
-    photoKeys: string[],
+type PhotoSet = {
+    small: string,
+    medium: string,
+    large: string,
 }
 
 type ObjectStoreListObjectsResponse = {
@@ -17,23 +18,38 @@ type ObjectStoreListObjectsResponse = {
     }
 }
 
-const initialState: PhotosState = {
-    status: 'idle',
-    photoKeys: [],
+type PhotosState = {
+    status: 'idle' | 'pending' | 'failed',
+    photoSets: PhotoSet[],
 }
 
-export const fetchPhotos = createAsyncThunk<string[]>(
+const initialState: PhotosState = {
+    status: 'idle',
+    photoSets: [],
+}
+
+export const fetchPhotos = createAsyncThunk<PhotoSet[]>(
     'photos/fetchPhotos',
     async () => {
-        const response = await fetch(`${OBJECT_STORE_ASSETS_URL}?prefix=photos/`)
+        const response = await fetch(
+            `${OBJECT_STORE_ASSETS_URL}?prefix=photos/${PHOTO_SIZE_PREFIXES.SMALL}`
+        )
         const jsonResponse = await xml2js.parseStringPromise(
             await response.text()
         ) as ObjectStoreListObjectsResponse
-        return jsonResponse.ListBucketResult.Contents.filter(
-            (object) => parseInt(object.Size[0], 10) > 0
-        ).map(
+        return jsonResponse.ListBucketResult.Contents.map(
             (object) => object.Key[0]
-        )
+        ).map(key => ({
+            small: OBJECT_STORE_ASSETS_URL + key,
+            medium: OBJECT_STORE_ASSETS_URL + key.replace(
+                PHOTO_SIZE_PREFIXES.SMALL,
+                PHOTO_SIZE_PREFIXES.MEDIUM
+            ),
+            large: OBJECT_STORE_ASSETS_URL + key.replace(
+                PHOTO_SIZE_PREFIXES.SMALL,
+                PHOTO_SIZE_PREFIXES.LARGE
+            ),
+        }))
     }
 )
 
@@ -47,7 +63,7 @@ const photosSlice = createSlice({
         })
         builder.addCase(fetchPhotos.fulfilled, (state, { payload }) => {
             state.status = 'idle'
-            state.photoKeys = payload
+            state.photoSets = payload
         })
         builder.addCase(fetchPhotos.rejected, (state) => {
             state.status = 'failed'
