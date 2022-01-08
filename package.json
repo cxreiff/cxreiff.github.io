@@ -40,6 +40,7 @@
     "connected-react-router": "^6.9.1",
     "history": "^4.10.1",
     "normalize.css": "^8.0.1",
+    "node-forge": ">=1.0.0",
     "preact": "^10.5.13",
     "preact-router": "^3.2.1",
     "react-infinite-scroll-hook": "^4.0.1",
