@@ -1,4 +1,4 @@
-import { FC, Suspense, lazy } from 'react'
+import { FC, Suspense, useEffect, lazy } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { push } from 'connected-react-router'
 import cn from 'classnames'
@@ -8,11 +8,13 @@ import { useAppSelector, useAppDispatch } from '~/src/app/store'
 import Homepage from '~/src/features/homepage/homepage.component'
 import Projects from '~/src/features/projects/projects.component'
 import Photos from '~/src/features/photos/photos.component'
-import Writing from '~/src/features/writing/writing.component'
+const Writing = lazy(() => import('~/src/features/writing/writing.component'))
 import Resume from '~/src/features/resume/resume.component'
 const Babylon = lazy(() => import('~/src/features/babylon/babylon.component'))
 
 import { Spinner } from '~/src/common/spinner/spinner.component'
+
+import { DOCUMENT_TITLE_ROOT } from '~/src/utilities/constants'
 
 import * as styles from './layout.module.scss'
 
@@ -22,6 +24,11 @@ const Layout: FC = () => {
     
     const dispatch = useAppDispatch()
     const navigate = (pathname: string) => dispatch(push(pathname))
+
+    useEffect(() => {
+        const baseRoute = pathname.split('/')[1]
+        document.title = baseRoute ? `${DOCUMENT_TITLE_ROOT} — ${baseRoute}` : DOCUMENT_TITLE_ROOT
+    }, [pathname])
 
     const pages: { path: string, label: string, component: FC }[] = [
         {
@@ -65,7 +72,11 @@ const Layout: FC = () => {
                         </a>
                     </li>
                     {pages.map(({path, label}) => (
-                        <li key={path} id={`nav-${label}`} className={cn(styles.navlink, {[styles.current]: comparePaths(path, pathname)})}>
+                        <li
+                            key={path}
+                            id={`nav-${label}`}
+                            className={cn(styles.navlink, {[styles.current]: comparePaths(path, pathname)})}
+                        >
                             <a onClick={() => navigate(path)}>
                                 {label}
                             </a>

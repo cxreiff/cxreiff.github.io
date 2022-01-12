@@ -9,7 +9,7 @@ import * as styles from './writingContent.module.scss'
 const WritingContent: FC = () => {
 
     const { id } = useParams<{id: string}>()
-    const { title, date, content } = posts[id]
+    const { content, data: { title, date }} = posts[id]
 
     return (
         <section className={styles.writing_content}>
@@ -19,9 +19,9 @@ const WritingContent: FC = () => {
                 </h2>
             </header>
             <footer>
-                {date.toDateString()}
+                {new Date(date).toDateString()}
             </footer>
-            <ReactMarkdown children={content.toString()} />
+            <ReactMarkdown children={content} />
         </section>
     )
 }

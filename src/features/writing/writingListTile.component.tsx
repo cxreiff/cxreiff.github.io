@@ -17,7 +17,7 @@ const WritingListTile: FC<WritingListTileProps> = ({ id, post }) => {
     const dispatch = useAppDispatch()
     const navigate = (pathname: string) => dispatch(push(pathname))
 
-    const { title, description, date } = post
+    const { data: { title, description, date }} = post
 
     return (
         <article className={styles.main} onClick={() => navigate(`/writing/${id}`)}>
@@ -27,7 +27,7 @@ const WritingListTile: FC<WritingListTileProps> = ({ id, post }) => {
                 </h2>
             </header>
             <footer>
-                {date.toDateString()}
+                {new Date(date).toDateString()}
             </footer>
             <p>
                 {description}
