@@ -3,7 +3,6 @@
 exports[`imageLoader should close lightbox 1`] = `
 <ImageLoader
   alt="test"
-  class="test"
   className="test"
   large="test"
   medium="test"
@@ -32,7 +31,6 @@ exports[`imageLoader should close lightbox 1`] = `
 exports[`imageLoader should render 1`] = `
 <ImageLoader
   alt="test"
-  class="test"
   className="test"
   large="test"
   medium="test"
@@ -61,7 +59,6 @@ exports[`imageLoader should render 1`] = `
 exports[`imageLoader should render lightbox 1`] = `
 <ImageLoader
   alt="test"
-  class="test"
   className="test"
   large="test"
   medium="test"
@@ -186,7 +183,6 @@ exports[`imageLoader should render lightbox 1`] = `
             ontouchstart={[Function]}
           >
             <Image
-              class="__react_modal_image__medium_img"
               className="__react_modal_image__medium_img"
               contextMenu={false}
               handleDoubleClick={[Function]}

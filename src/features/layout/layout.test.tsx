@@ -37,8 +37,8 @@ describe('layout', () => {
         expect(component.find(Layout)).toMatchSnapshot()
     })
 
-    it('should navigate to writing tab', () => {
-        component.find('#nav-writing>a').simulate('click')
+    it('should navigate to posts tab', () => {
+        component.find('#nav-posts>a').simulate('click')
         expect(component.find(Layout)).toMatchSnapshot()
     })
 
