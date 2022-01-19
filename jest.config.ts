@@ -44,6 +44,7 @@ const config: Config.InitialOptions = {
     + '|babylonjs-hook'
     + '|decode-named-character-reference'
     + '|hast-util-whitespace'
+    + '|react-syntax-highlighter'
     + ')/)'
   ]
 };

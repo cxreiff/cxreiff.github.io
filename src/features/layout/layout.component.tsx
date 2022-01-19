@@ -8,7 +8,7 @@ import { useAppSelector, useAppDispatch } from '~/src/app/store'
 import Homepage from '~/src/features/homepage/homepage.component'
 import Projects from '~/src/features/projects/projects.component'
 import Photos from '~/src/features/photos/photos.component'
-const Writing = lazy(() => import('~/src/features/writing/writing.component'))
+const Posts = lazy(() => import('~/src/features/posts/posts.component'))
 import Resume from '~/src/features/resume/resume.component'
 const Babylon = lazy(() => import('~/src/features/babylon/babylon.component'))
 
@@ -42,9 +42,9 @@ const Layout: FC = () => {
             component: Photos,
         },
         {
-            path: '/writing',
-            label: 'writing',
-            component: Writing,
+            path: '/posts',
+            label: 'posts',
+            component: Posts,
         },
         {
             path: '/resume',

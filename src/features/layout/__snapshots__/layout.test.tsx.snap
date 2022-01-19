@@ -36,13 +36,13 @@ exports[`layout should navigate to photos tab 1`] = `
         </li>
         <li
           className=""
-          id="nav-writing"
-          key="/writing"
+          id="nav-posts"
+          key="/posts"
         >
           <a
             onClick={[Function]}
           >
-            writing
+            posts
           </a>
         </li>
         <li
@@ -185,6 +185,90 @@ exports[`layout should navigate to photos tab 1`] = `
 </Layout>
 `;
 
+exports[`layout should navigate to posts tab 1`] = `
+<Layout>
+  <div>
+    <nav>
+      <ul>
+        <li>
+          <a
+            onClick={[Function]}
+          >
+            jax reiff
+          </a>
+        </li>
+        <li
+          className=""
+          id="nav-projects"
+          key="/projects"
+        >
+          <a
+            onClick={[Function]}
+          >
+            projects
+          </a>
+        </li>
+        <li
+          className=""
+          id="nav-photos"
+          key="/photos"
+        >
+          <a
+            onClick={[Function]}
+          >
+            photos
+          </a>
+        </li>
+        <li
+          className="undefined"
+          id="nav-posts"
+          key="/posts"
+        >
+          <a
+            onClick={[Function]}
+          >
+            posts
+          </a>
+        </li>
+        <li
+          className=""
+          id="nav-resume"
+          key="/resume"
+        >
+          <a
+            onClick={[Function]}
+          >
+            resume
+          </a>
+        </li>
+        <li
+          className=""
+          id="nav-babylon"
+          key="/babylon"
+        >
+          <a
+            onClick={[Function]}
+          >
+            babylon
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <d
+        fallback={<Spinner />}
+      >
+        <Spinner>
+          <div>
+            <div />
+          </div>
+        </Spinner>
+      </d>
+    </main>
+  </div>
+</Layout>
+`;
+
 exports[`layout should navigate to projects tab 1`] = `
 <Layout>
   <div>
@@ -221,13 +305,13 @@ exports[`layout should navigate to projects tab 1`] = `
         </li>
         <li
           className=""
-          id="nav-writing"
-          key="/writing"
+          id="nav-posts"
+          key="/posts"
         >
           <a
             onClick={[Function]}
           >
-            writing
+            posts
           </a>
         </li>
         <li
@@ -438,13 +522,13 @@ exports[`layout should navigate to resume tab 1`] = `
         </li>
         <li
           className=""
-          id="nav-writing"
-          key="/writing"
+          id="nav-posts"
+          key="/posts"
         >
           <a
             onClick={[Function]}
           >
-            writing
+            posts
           </a>
         </li>
         <li
@@ -619,90 +703,6 @@ exports[`layout should navigate to resume tab 1`] = `
 </Layout>
 `;
 
-exports[`layout should navigate to writing tab 1`] = `
-<Layout>
-  <div>
-    <nav>
-      <ul>
-        <li>
-          <a
-            onClick={[Function]}
-          >
-            jax reiff
-          </a>
-        </li>
-        <li
-          className=""
-          id="nav-projects"
-          key="/projects"
-        >
-          <a
-            onClick={[Function]}
-          >
-            projects
-          </a>
-        </li>
-        <li
-          className=""
-          id="nav-photos"
-          key="/photos"
-        >
-          <a
-            onClick={[Function]}
-          >
-            photos
-          </a>
-        </li>
-        <li
-          className="undefined"
-          id="nav-writing"
-          key="/writing"
-        >
-          <a
-            onClick={[Function]}
-          >
-            writing
-          </a>
-        </li>
-        <li
-          className=""
-          id="nav-resume"
-          key="/resume"
-        >
-          <a
-            onClick={[Function]}
-          >
-            resume
-          </a>
-        </li>
-        <li
-          className=""
-          id="nav-babylon"
-          key="/babylon"
-        >
-          <a
-            onClick={[Function]}
-          >
-            babylon
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <main>
-      <d
-        fallback={<Spinner />}
-      >
-        <Spinner>
-          <div>
-            <div />
-          </div>
-        </Spinner>
-      </d>
-    </main>
-  </div>
-</Layout>
-`;
-
 exports[`layout should render 1`] = `
 <Layout>
   <div>
@@ -739,13 +739,13 @@ exports[`layout should render 1`] = `
         </li>
         <li
           className=""
-          id="nav-writing"
-          key="/writing"
+          id="nav-posts"
+          key="/posts"
         >
           <a
             onClick={[Function]}
           >
-            writing
+            posts
           </a>
         </li>
         <li

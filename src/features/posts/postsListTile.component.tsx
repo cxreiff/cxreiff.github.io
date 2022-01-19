@@ -3,16 +3,16 @@ import { push } from 'connected-react-router'
 
 import { useAppDispatch } from '~/src/app/store'
 
-import { Post } from './posts'
+import { Post } from './markdown'
 
-import * as styles from './writingListTile.module.scss'
+import * as styles from './postsListTile.module.scss'
 
-type WritingListTileProps = {
+type PostsListTileProps = {
     id: string,
     post: Post,
 }
 
-const WritingListTile: FC<WritingListTileProps> = ({ id, post }) => {
+const PostsListTile: FC<PostsListTileProps> = ({ id, post }) => {
 
     const dispatch = useAppDispatch()
     const navigate = (pathname: string) => dispatch(push(pathname))
@@ -20,7 +20,7 @@ const WritingListTile: FC<WritingListTileProps> = ({ id, post }) => {
     const { data: { title, description, date }} = post
 
     return (
-        <article className={styles.main} onClick={() => navigate(`/writing/${id}`)}>
+        <article className={styles.posts_list_tile} onClick={() => navigate(`/posts/${id}`)}>
             <header>
                 <h2>
                     {title}
@@ -36,4 +36,4 @@ const WritingListTile: FC<WritingListTileProps> = ({ id, post }) => {
     )
 }
 
-export default WritingListTile
+export default PostsListTile

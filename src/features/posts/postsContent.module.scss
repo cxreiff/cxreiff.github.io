@@ -1,0 +1,9 @@
+@use '../../index.scss' as *;
+
+.posts_content {
+  @include text_page_padding();
+}
+
+.posts_content_code {
+    @include boxshadow($accent-color-dark)
+}
