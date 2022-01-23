@@ -1,16 +1,9 @@
 @use '../../index.scss' as *;
 
-.layout>main {
-    @include boxshadow($accent-color-darker);
-    @include background_noise($accent-color-lightest);
-    margin: 1rem;
-    color: $accent-color-darkest;
-}
-
-.layout>nav {
+.layout>.navbar {
     @include boxshadow($accent-color-darker);
     @include background_noise($accent-color);
-    margin: 2rem 1rem;
+    margin: 2rem 1rem 2rem;
 
     ul {
         display: flex;
