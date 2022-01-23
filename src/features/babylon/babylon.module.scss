@@ -1,0 +1,6 @@
+@use '../../index.scss' as *;
+
+.babylon {
+    @include boxshadow($accent-color-darker);
+    margin: 0rem 1rem 1rem;
+}

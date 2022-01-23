@@ -2,10 +2,9 @@ import { FC } from 'react'
 import { push } from 'connected-react-router'
 
 import { useAppDispatch } from '~/src/app/store'
+import { Card } from '~/src/common/card/card.component'
 
 import { Post } from './markdown'
-
-import * as styles from './postsListTile.module.scss'
 
 type PostsListTileProps = {
     id: string,
@@ -20,19 +19,12 @@ const PostsListTile: FC<PostsListTileProps> = ({ id, post }) => {
     const { data: { title, description, date }} = post
 
     return (
-        <article className={styles.posts_list_tile} onClick={() => navigate(`/posts/${id}`)}>
-            <header>
-                <h2>
-                    {title}
-                </h2>
-            </header>
-            <footer>
-                {new Date(date).toDateString()}
-            </footer>
-            <p>
-                {description}
-            </p>
-        </article>
+        <Card
+            onClick={() => navigate(`/posts/${id}`)}
+            primary={title}
+            secondary={new Date(date).toDateString()}
+            tertiary={description}
+        />
     )
 }
 

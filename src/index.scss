@@ -7,13 +7,14 @@ $tertiary-color: #98BEC8;
 
 $accent-color-lightest: #FFFFFF;
 $accent-color-lighter: #EEEEEE;
+$accent-color-light: #DDDDDD;
 $accent-color: #DDCCCC;
 $accent-color-dark: #AA9999;
 $accent-color-darker: #3D3333;
 $accent-color-darkest: #221111;
 
 @mixin text_page_padding() {
-  padding: 0.5rem 2rem 2rem;
+  padding: 0rem 2rem 2rem;
 }
 
 @mixin boxshadow($color) {
@@ -59,6 +60,13 @@ $accent-color-darkest: #221111;
             T072iKG0EnOS0arEYgXqYnXcYHwjTtUNAcMelOd4xpkoqiTYICWFq0JSiPfPDQdnt+4/wuqcXY47QILbgAAAABJRU5ErkJggg=="
         );
     }
+}
+
+@mixin wide_card($background, $shadow) {
+    @if ($background) { @include background_noise($background); }
+    @if ($shadow) { @include boxshadow($shadow); }
+    margin: 0rem -1rem 1rem;
+    padding: 0.5rem 1rem 0.5rem;
 }
 
 html {
