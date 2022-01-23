@@ -1,0 +1,36 @@
+@use '../../index.scss' as *;
+
+.card {
+    @include wide_card($accent-color-lighter, $accent-color-darker);
+    display: flex;
+    flex-wrap: wrap;
+
+    header {
+        flex: 1 0;
+        font-size: 1.2rem;
+        
+        h4 {
+            margin: 0.5rem 0;
+        }
+    }
+
+    footer {
+        flex: 0 0 auto;
+        font-size: 1.1rem;
+        padding: 0.5rem;
+    }
+
+    p {
+        flex: 0 0 100%;
+    }
+}
+
+.card_clickable {
+    cursor: pointer;
+}
+.card_clickable:hover {
+    background: $accent-color-lightest;
+}
+.card_clickable:active {
+    background: $accent-color-light;
+}

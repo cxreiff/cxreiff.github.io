@@ -10,13 +10,22 @@ import Projects from '~/src/features/projects/projects.component'
 import Photos from '~/src/features/photos/photos.component'
 const Posts = lazy(() => import('~/src/features/posts/posts.component'))
 import Resume from '~/src/features/resume/resume.component'
-const Babylon = lazy(() => import('~/src/features/babylon/babylon.component'))
+
+/* Commenting out while not being worked on. */
+// const Babylon = lazy(() => import('~/src/features/babylon/babylon.component'))
 
 import { Spinner } from '~/src/common/spinner/spinner.component'
 
 import { DOCUMENT_TITLE_ROOT } from '~/src/utilities/constants'
 
 import * as styles from './layout.module.scss'
+
+type Page = {
+    path: string,
+    label: string,
+    component: FC,
+    children?: Page[],
+}
 
 const Layout: FC = () => {
     
@@ -30,11 +39,19 @@ const Layout: FC = () => {
         document.title = baseRoute ? `${DOCUMENT_TITLE_ROOT} — ${baseRoute}` : DOCUMENT_TITLE_ROOT
     }, [pathname])
 
-    const pages: { path: string, label: string, component: FC }[] = [
+    const pages: Page[] = [
         {
             path: '/projects',
             label: 'projects',
             component: Projects,
+            /* Commenting out while not being worked on. */
+            // children: [
+            //     {
+            //         path: '/babylon',
+            //         label: 'babylon',
+            //         component: Babylon,
+            //     },
+            // ],
         },
         {
             path: '/photos',
@@ -51,20 +68,29 @@ const Layout: FC = () => {
             label: 'resume',
             component: Resume,
         },
-        {
-            path: '/babylon',
-            label: 'babylon',
-            component: Babylon,
-        }
     ]
 
     const comparePaths = (path: string, pathname: string) => (
         path.split('/')[1] === pathname.split('/')[1]
     )
+    
+    const flattenPages = (pages: Page[], prefix = '') => (
+        pages.reduce((flattened, { path, label, component, children }) => {
+            if (children) {
+                flattened.push(...flattenPages(children, prefix + path))
+            }
+            
+            return flattened.concat({
+                path: prefix + path,
+                label,
+                component,
+            })
+        }, [] as Page[])
+    )
 
     return (
         <div className={styles.layout}>
-            <nav>
+            <nav className={styles.navbar} aria-label={'primary'}>
                 <ul>
                     <li className={styles.logo}>
                         <a onClick={() => navigate('/')}>
@@ -87,8 +113,8 @@ const Layout: FC = () => {
             <main>
                 <Suspense fallback={<Spinner />}>
                     <Switch>
-                        <Route exact path="/" component={Homepage} />
-                        {pages.map(({path, component}) => (
+                        <Route exact path={'/'} component={Homepage} />
+                        {flattenPages(pages, '').map(({ path, component }) => (
                             <Route key={path} path={path} component={component} />
                         ))}
                     </Switch>

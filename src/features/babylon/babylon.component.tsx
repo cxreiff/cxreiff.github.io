@@ -2,6 +2,8 @@ import { FC } from 'react'
 import SceneComponent from 'babylonjs-hook'
 import { Scene, FreeCamera, Vector3, HemisphericLight, MeshBuilder, Mesh } from '@babylonjs/core';
 
+import * as styles from './babylon.module.scss'
+
 const Babylon: FC = () => {
     
     let box: Mesh;
@@ -54,12 +56,14 @@ const Babylon: FC = () => {
     };
 
     return (
-        <SceneComponent
-            antialias
-            onSceneReady={onSceneReady}
-            onRender={onRender}
-            style={{width: '100%', verticalAlign: 'middle'}}
-        />
+        <div className={styles.babylon}>
+            <SceneComponent
+                antialias
+                onSceneReady={onSceneReady}
+                onRender={onRender}
+                style={{width: '100%', verticalAlign: 'middle'}}
+            />
+        </div>
     )
 }
 

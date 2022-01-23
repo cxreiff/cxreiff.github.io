@@ -1,8 +1,15 @@
 import { FC } from 'react'
+import { push } from 'connected-react-router'
+
+import { useAppDispatch } from '~/src/app/store'
 
 import * as styles from './projects.module.scss'
 
 const Projects: FC = () => {
+    
+    const dispatch = useAppDispatch()
+    const navigate = (pathname: string) => dispatch(push(pathname))
+    
     return (
         <section className={styles.projects}>
             <header>
@@ -17,10 +24,7 @@ const Projects: FC = () => {
                     </h3>
                 </header>
                 <p>
-                    Article 1 Content
-                </p>
-                <p>
-                    Article 1 More Content
+                    <a onClick={() => navigate('/projects/test1')}>test1</a>
                 </p>
             </article>
             <article>
@@ -30,10 +34,7 @@ const Projects: FC = () => {
                     </h3>
                 </header>
                 <p>
-                    Article 2 Content
-                </p>
-                <p>
-                    Article 2 More Content
+                    <a onClick={() => navigate('/projects/test2')}>test2</a>
                 </p>
             </article>
         </section>

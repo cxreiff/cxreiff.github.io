@@ -2,6 +2,7 @@ import { FC, CSSProperties } from 'react'
 import { useParams } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 
+import { Card } from '~/src/common/card/card.component'
 import { SyntaxHighlighter, syntaxStyle } from '~/src/utilities/syntaxHighlighter'
 
 import posts from './markdown'
@@ -14,14 +15,7 @@ const PostsContent: FC = () => {
 
     return (
         <section className={styles.posts_content}>
-            <header>
-                <h2>
-                    {title}
-                </h2>
-            </header>
-            <footer>
-                {new Date(date).toDateString()}
-            </footer>
+            <Card primary={title} secondary={new Date(date).toDateString()} />
             <ReactMarkdown
                 children={content}
                 components={{
@@ -33,7 +27,6 @@ const PostsContent: FC = () => {
                                 children={String(children).replace(/\n$/, '')}
                                 style={syntaxStyle as unknown as CSSProperties}
                                 language={(!inline && match) ? match[1] : 'text'}
-                                PreTag={'div'}
                                 {...props}
                             />
                         )

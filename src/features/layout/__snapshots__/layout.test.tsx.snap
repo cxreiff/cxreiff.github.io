@@ -3,7 +3,9 @@
 exports[`layout should navigate to photos tab 1`] = `
 <Layout>
   <div>
-    <nav>
+    <nav
+      aria-label="primary"
+    >
       <ul>
         <li>
           <a
@@ -54,17 +56,6 @@ exports[`layout should navigate to photos tab 1`] = `
             onClick={[Function]}
           >
             resume
-          </a>
-        </li>
-        <li
-          className=""
-          id="nav-babylon"
-          key="/babylon"
-        >
-          <a
-            onClick={[Function]}
-          >
-            babylon
           </a>
         </li>
       </ul>
@@ -188,7 +179,9 @@ exports[`layout should navigate to photos tab 1`] = `
 exports[`layout should navigate to posts tab 1`] = `
 <Layout>
   <div>
-    <nav>
+    <nav
+      aria-label="primary"
+    >
       <ul>
         <li>
           <a
@@ -239,17 +232,6 @@ exports[`layout should navigate to posts tab 1`] = `
             onClick={[Function]}
           >
             resume
-          </a>
-        </li>
-        <li
-          className=""
-          id="nav-babylon"
-          key="/babylon"
-        >
-          <a
-            onClick={[Function]}
-          >
-            babylon
           </a>
         </li>
       </ul>
@@ -272,7 +254,9 @@ exports[`layout should navigate to posts tab 1`] = `
 exports[`layout should navigate to projects tab 1`] = `
 <Layout>
   <div>
-    <nav>
+    <nav
+      aria-label="primary"
+    >
       <ul>
         <li>
           <a
@@ -323,17 +307,6 @@ exports[`layout should navigate to projects tab 1`] = `
             onClick={[Function]}
           >
             resume
-          </a>
-        </li>
-        <li
-          className=""
-          id="nav-babylon"
-          key="/babylon"
-        >
-          <a
-            onClick={[Function]}
-          >
-            babylon
           </a>
         </li>
       </ul>
@@ -454,10 +427,11 @@ exports[`layout should navigate to projects tab 1`] = `
                           </h3>
                         </header>
                         <p>
-                          Article 1 Content
-                        </p>
-                        <p>
-                          Article 1 More Content
+                          <a
+                            onClick={[Function]}
+                          >
+                            test1
+                          </a>
                         </p>
                       </article>
                       <article>
@@ -467,10 +441,11 @@ exports[`layout should navigate to projects tab 1`] = `
                           </h3>
                         </header>
                         <p>
-                          Article 2 Content
-                        </p>
-                        <p>
-                          Article 2 More Content
+                          <a
+                            onClick={[Function]}
+                          >
+                            test2
+                          </a>
                         </p>
                       </article>
                     </section>
@@ -489,7 +464,9 @@ exports[`layout should navigate to projects tab 1`] = `
 exports[`layout should navigate to resume tab 1`] = `
 <Layout>
   <div>
-    <nav>
+    <nav
+      aria-label="primary"
+    >
       <ul>
         <li>
           <a
@@ -540,17 +517,6 @@ exports[`layout should navigate to resume tab 1`] = `
             onClick={[Function]}
           >
             resume
-          </a>
-        </li>
-        <li
-          className=""
-          id="nav-babylon"
-          key="/babylon"
-        >
-          <a
-            onClick={[Function]}
-          >
-            babylon
           </a>
         </li>
       </ul>
@@ -706,7 +672,9 @@ exports[`layout should navigate to resume tab 1`] = `
 exports[`layout should render 1`] = `
 <Layout>
   <div>
-    <nav>
+    <nav
+      aria-label="primary"
+    >
       <ul>
         <li>
           <a
@@ -757,17 +725,6 @@ exports[`layout should render 1`] = `
             onClick={[Function]}
           >
             resume
-          </a>
-        </li>
-        <li
-          className=""
-          id="nav-babylon"
-          key="/babylon"
-        >
-          <a
-            onClick={[Function]}
-          >
-            babylon
           </a>
         </li>
       </ul>
