@@ -1,6 +1,5 @@
 import { FC } from 'react'
 import { useAppSelector, useAppDispatch } from '~/src/app/store'
-import sum from '~/src/utilities/sum'
 
 import { increment, decrement } from './homepage.slice'
 
@@ -19,7 +18,7 @@ const Homepage: FC = () => {
                 </h2>
             </header>
             <p>
-                Count is { sum(0, counter) }.
+                Count is {counter}.
             </p>
             <button onClick={() => dispatch(increment({interval: 2}))}>
               INCREMENT
