@@ -90,6 +90,7 @@
     "json-schema": ">=0.4.0",
     "lint-staged": "^11.1.2",
     "marked": "^4.0.10",
+    "nanoid": "^3.2.0",
     "parcel": "^2.0.1",
     "postcss-modules": "^4.2.2",
     "react-router": "^5.2.0",
