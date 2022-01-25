@@ -1,4 +1,9 @@
-@use '../../index.scss' as *;
+@use '../../shared.scss' as *;
+
+.layout {
+    max-width: $max-width;
+    margin: auto;
+}
 
 .layout>.navbar {
     @include boxshadow($accent-color-darker);
@@ -21,7 +26,7 @@
     li.logo {
         z-index: 1;
         flex: 1;
-        margin: 0 0 2em 0;
+        margin: 0 0 0.8em 0;
     }
     li.navlink {
         position: relative;
@@ -44,8 +49,23 @@
 
     li.logo a {
         white-space: nowrap;
-        font-size: 5.2rem;
-        margin-top: -0.5rem;
+        font-size: 4.8rem;
+        margin-top: -0.4rem;
+
+        &:before {
+            content: '{';
+            padding-right: 1rem;
+        }
+        &:after {
+            content: '}';
+            padding-left: 1rem;
+        }
+        &:before, &:after {
+            font-size: 2rem;
+            transform: translateY(-12px);
+            display: inline-block;
+            color: #A77;
+        }
     }
     
     li.current a {
@@ -79,7 +99,7 @@
         }
     }
 
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: $mobile-breakpoint) {
         ul {
             flex-direction: row;
         }
@@ -90,7 +110,6 @@
 
         li.logo a {
             width: min-content;
-            margin-left: 0.5rem;
             padding: 0 1rem;
         }
 

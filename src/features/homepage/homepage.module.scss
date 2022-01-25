@@ -1,4 +1,4 @@
-@use '../../index.scss' as *;
+@use '../../shared.scss' as *;
 
 .homepage {
   @include text_page_padding();
