@@ -1,5 +1,5 @@
 @use '../../shared.scss' as *;
 
 .homepage {
-    
+    @include wide_card($accent-color-lighter, $accent-color-darker);
 }
