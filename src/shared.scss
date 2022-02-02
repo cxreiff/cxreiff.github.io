@@ -1,6 +1,9 @@
+@use "sass:math";
+
 $max-width: 1200px;
 $font-family: montserrat, Trebuchet MS, Verdana, Geneva, sans-serif;
 $mobile-breakpoint: 800px;
+$a4-ratio: math.div(70, 99);
 
 $primary-color: #3D4D60;
 $secondary-color: #2D3D50;
@@ -16,10 +19,10 @@ $accent-color-darker: #3D3333;
 $accent-color-darkest: #221111;
 
 @mixin text_page_padding() {
-  padding: 0rem 2rem 2rem;
+    padding: 0rem 1rem;
 }
 
-@mixin boxshadow($color) {
+@mixin box_shadow($color) {
     border: 1px solid $color;
     box-shadow: $color 3px 3px;
 }
@@ -58,7 +61,7 @@ $accent-color-darkest: #221111;
             70IPbfBHKK+/q/AWR0tJzYHRULOa4MP+W/HfGadZUbfw177G7j/OGbIs8TahLyynl4X4RinF793Oz+BU0saXtUHrVBFT/DnA3ctN\
             PoGbs4hRIjTok8i+algT1lTHi4SxFvONKNrgQFAq2/gFnWMXgwffgYMJpiKYkmW3tTg3ZQ9Jq+f8XN+A5eeUKHWvJWJ2sgJ1Sop+\
             wwhqFVijqWaJhwtD8MNlSBeWNNWTa5Z5kPZw5+LbVT99wqTdx29lMUH4OIG/D86ruKEauBjvH5xy6um/Sfj7ei6UUVk4AIl3MyD4\
-            MSSTOFgSwsH/QJWaQ5as7ZcmgBZkzjjU1UrQ74ci1gWBCSGHtuV1H2mhSnO3Wp/3fEV5a+4wz/6/qy8JxjZsmxxy5+4w9CDNJY09\
+            MSSTOFgSwsH/QJWaQ5as7ZcmgBZkzjjU1UrQ74ci1gWBCSGHtuV1H2mhSnO3Wp/3fEV5a+4wz//6qy8JxjZsmxxy5+4w9CDNJY09\
             T072iKG0EnOS0arEYgXqYnXcYHwjTtUNAcMelOd4xpkoqiTYICWFq0JSiPfPDQdnt+4/wuqcXY47QILbgAAAABJRU5ErkJggg=="
         );
     }
@@ -66,7 +69,7 @@ $accent-color-darkest: #221111;
 
 @mixin wide_card($background, $shadow) {
     @if ($background) { @include background_noise($background); }
-    @if ($shadow) { @include boxshadow($shadow); }
-    margin: 0rem -1rem 1rem;
+    @if ($shadow) { @include box_shadow($shadow); }
+    margin: 0rem 0rem 1rem;
     padding: 0.5rem 1rem 0.5rem;
 }

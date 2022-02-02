@@ -625,37 +625,12 @@ exports[`layout should navigate to resume tab 1`] = `
                     }
                   >
                     <section>
-                      <header>
-                        <h2>
-                          Resume
-                        </h2>
-                      </header>
-                      <article>
-                        <header>
-                          <h3>
-                            Article 1
-                          </h3>
-                        </header>
-                        <p>
-                          Article 1 Content
-                        </p>
-                        <p>
-                          Article 1 More Content
-                        </p>
-                      </article>
-                      <article>
-                        <header>
-                          <h3>
-                            Article 2
-                          </h3>
-                        </header>
-                        <p>
-                          Article 2 Content
-                        </p>
-                        <p>
-                          Article 2 More Content
-                        </p>
-                      </article>
+                      <embed
+                        height="100%"
+                        src="https://jaxreiff.com/resume/resume.pdf#toolbar=0"
+                        type="application/pdf"
+                        width="100%"
+                      />
                     </section>
                   </Resume>
                 </Provider>

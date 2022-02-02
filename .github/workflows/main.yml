@@ -1,4 +1,4 @@
-name: Build & deploy
+name: build & deploy
 
 on:
   push:
@@ -10,50 +10,52 @@ on:
 
 jobs:
   build:
-    name: Build
+    name: build
     runs-on: ubuntu-latest
-    
+
     steps:
-    - name: Checkout code
+
+    - name: checkout code
       uses: actions/checkout@v2
     
-    - name: Install Node.js
+    - name: install nodejs
       uses: actions/setup-node@v1
       with:
         node-version: 14.x
     
-    - name: Install NPM packages
+    - name: install npm packages
       run: npm ci
     
-    - name: Build project
+    - name: build project
       run: npm run build
     
-    - name: Run tests
+    - name: run tests
       run: npm run test
 
-    - name: Copy CNAME
+    - name: copy CNAME
       run: npm run cname
 
-    - name: Upload production-ready build files
+    - name: upload build artifacts
       uses: actions/upload-artifact@v2
       with:
         name: build-artifacts
         path: ./dist
   
   deploy:
-    name: Deploy
+    name: deploy
     needs: build
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
-    
+
     steps:
-    - name: Download artifact
+
+    - name: download artifacts
       uses: actions/download-artifact@v2
       with:
         name: build-artifacts
         path: ./dist
 
-    - name: Deploy to gh-pages
+    - name: deploy to gh-pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
