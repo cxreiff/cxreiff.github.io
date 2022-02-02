@@ -14,9 +14,10 @@ const PostsContent: FC = () => {
     const { content, data: { title, date }} = posts[id]
 
     return (
-        <section className={styles.posts_content}>
+        <section>
             <Card primary={title} secondary={new Date(date).toDateString()} />
             <ReactMarkdown
+                className={styles.posts_content}
                 children={content}
                 components={{
                     code({ inline, className, children, ...props }) {

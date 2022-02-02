@@ -5,8 +5,8 @@
     margin: auto;
 }
 
-.layout>.navbar {
-    @include boxshadow($accent-color-darker);
+.layout>nav {
+    @include box_shadow($accent-color-darker);
     @include background_noise($accent-color);
     margin: 2rem 1rem 2rem;
 
@@ -128,4 +128,8 @@
             right: -2px;
         }
     }
+}
+
+.layout>main {
+    margin: 0 1rem 2rem;
 }

@@ -90,7 +90,7 @@ const Layout: FC = () => {
 
     return (
         <div className={styles.layout}>
-            <nav className={styles.navbar} aria-label={'primary'}>
+            <nav aria-label={'primary'}>
                 <ul>
                     <li className={styles.logo}>
                         <a onClick={() => navigate('/')}>

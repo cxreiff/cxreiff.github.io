@@ -3,7 +3,7 @@
 .photos {
   display: grid;
   gap: 1rem 1rem;
-  padding: 0 1rem 1rem;
+  // padding: 0 1rem 1rem;
   grid-template-columns: 1fr;
   
   @media only screen and (min-width: $mobile-breakpoint) {
@@ -12,7 +12,7 @@
 }
 
 .tile {
-  @include boxshadow($accent-color-darker);
+  @include box_shadow($accent-color-darker);
   font-size: 0px;
   line-height: 0;
 }
