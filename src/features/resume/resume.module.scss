@@ -1,5 +1,8 @@
 @use '../../shared.scss' as *;
 
-.resume {
-  @include text_page_padding();
+.pdf {
+    @include box_shadow($accent-color-darker);
+    @include background_noise($accent-color-lighter);
+    width: 100%;
+    min-height: calc(min(100vw, $max-width) * (1 / $a4-ratio));
 }

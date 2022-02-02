@@ -4,38 +4,14 @@ import * as styles from './resume.module.scss'
 
 const Resume: FC = () => {
     return (
-        <section className={styles.resume}>
-            <header>
-                <h2>
-                    Resume
-                </h2>
-            </header>
-            <article>
-                <header>
-                    <h3>
-                        Article 1
-                    </h3>
-                </header>
-                <p>
-                    Article 1 Content
-                </p>
-                <p>
-                    Article 1 More Content
-                </p>
-            </article>
-            <article>
-                <header>
-                    <h3>
-                        Article 2
-                    </h3>
-                </header>
-                <p>
-                    Article 2 Content
-                </p>
-                <p>
-                    Article 2 More Content
-                </p>
-            </article>
+        <section>
+            <embed
+                className={styles.pdf}
+                src={'https://jaxreiff.com/resume/resume.pdf#toolbar=0'}
+                type={'application/pdf'}
+                width={'100%'}
+                height={'100%'}
+            />
         </section>
     )
 }

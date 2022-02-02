@@ -1,7 +1,7 @@
 @use '../../shared.scss' as *;
 
 .posts_content {
-  @include text_page_padding();
+    @include text_page_padding();
 }
 
 .posts_content_code {
