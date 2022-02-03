@@ -26,11 +26,11 @@
 }
 
 .card_clickable {
-    cursor: pointer;
-}
-.card_clickable:hover {
-    background: $accent-color-lightest;
-}
-.card_clickable:active {
-    background: $accent-color-light;
+    @include interactable(
+        0.4rem,
+        $accent-color-darker,
+        $accent-color-darkest,
+        $accent-color-secondary,
+        $accent-color-darkest
+    );
 }

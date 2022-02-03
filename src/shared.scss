@@ -13,7 +13,8 @@ $accent-color-lightest: #FFFFFF;
 $accent-color-lighter: #EEEEEE;
 $accent-color-light: #DDDDDD;
 $accent-color: #DDCCCC;
-$accent-color-secondary: #AA7777;
+$accent-color-secondary: #BBBBBB;
+$accent-color-tertiary: #AA7777;
 $accent-color-dark: #AA9999;
 $accent-color-darker: #3D3333;
 $accent-color-darkest: #221111;
@@ -25,6 +26,43 @@ $accent-color-darkest: #221111;
 @mixin box_shadow($color) {
     border: 1px solid $color;
     box-shadow: $color 3px 3px;
+}
+
+@mixin wide_card($background, $shadow) {
+    @if ($background) { @include background_noise($background); }
+    @if ($shadow) { @include box_shadow($shadow); }
+    margin: 0rem 0rem 1rem;
+    padding: 0.5rem 1rem 0.5rem;
+}
+
+@mixin interactable($gutter, $hover-bg, $hover-color, $active-bg, $active-color) {
+    cursor: pointer;
+    
+    @media (hover: hover) {
+        &:hover::after {
+            content: '';
+            position: absolute;
+            width: calc(100% - ($gutter * 2));
+            height: calc(100% - ($gutter * 2));
+            top: $gutter;
+            right: $gutter;
+            bottom: $gutter;
+            left: $gutter;
+            opacity: 0.2;
+            border-radius: 0.2rem;
+            background: $hover-bg;
+            color: $hover-color;
+        }
+        
+        &:active {
+            background: $active-bg;
+            color: $active-color;
+            
+            &::after {
+                content: none;
+            }
+        }
+    }
 }
 
 @mixin background_noise($color) {
@@ -65,11 +103,4 @@ $accent-color-darkest: #221111;
             T072iKG0EnOS0arEYgXqYnXcYHwjTtUNAcMelOd4xpkoqiTYICWFq0JSiPfPDQdnt+4/wuqcXY47QILbgAAAABJRU5ErkJggg=="
         );
     }
-}
-
-@mixin wide_card($background, $shadow) {
-    @if ($background) { @include background_noise($background); }
-    @if ($shadow) { @include box_shadow($shadow); }
-    margin: 0rem 0rem 1rem;
-    padding: 0.5rem 1rem 0.5rem;
 }
