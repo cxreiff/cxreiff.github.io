@@ -64,39 +64,24 @@
             font-size: 2rem;
             transform: translateY(-12px);
             display: inline-block;
-            color: $accent-color-secondary;
+            color: $accent-color-tertiary;
         }
     }
-    
+
     li.current a {
         color: $accent-color-lightest;
         background: $accent-color-darker;
         text-decoration: underline;
     }
 
-    @media (hover: hover) {
-        li:not(.current).navlink:hover a {
-            color: $accent-color-darkest;
-        }
-        li:not(.current).navlink:hover a::after {
-            content: '';
-            position: absolute;
-            width: calc(100% - 0.5rem);
-            height: calc(100% - 0.5rem);
-            top: 0.25rem;
-            right: 0.25rem;
-            bottom: 0.25rem;
-            left: 0.25rem;
-            background-color: $accent-color-darker;
-            opacity: 0.2;
-            border-radius: 0.2rem;
-        }
-        li.navlink:active {
-            background: $accent-color-darkest;
-        }
-        li:not(.current).navlink:active a {
-            color: $accent-color-lightest;
-        }
+    li.navlink>a {
+        @include interactable(
+            0.3rem,
+            $accent-color-darker,
+            $accent-color-darkest,
+            $accent-color-darkest,
+            $accent-color-lightest
+        );
     }
 
     @media only screen and (min-width: $mobile-breakpoint) {
