@@ -8,6 +8,9 @@
     header {
         flex: 1 0;
         font-size: 1.2rem;
+        text-decoration: underline;
+        text-decoration-color: $accent-color-secondary;
+        text-underline-offset: 2px;
         
         h4 {
             margin: 0.5rem 0;
