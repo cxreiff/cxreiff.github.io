@@ -1,15 +1,10 @@
 import { FC } from 'react'
-import { useAppSelector, useAppDispatch } from '~/src/app/store'
 
-import { increment, decrement } from './homepage.slice'
+import { Loader } from '~/src/common/loader/loader.component'
 
 import * as styles from './homepage.module.scss'
 
 const Homepage: FC = () => {
-
-    const dispatch = useAppDispatch()
-    const counter = useAppSelector((state) => state.homepage.counter)
-
     return (
         <section className={styles.homepage}>
             <header>
@@ -17,15 +12,10 @@ const Homepage: FC = () => {
                     Homepage
                 </h2>
             </header>
-            <p>
-                Count is {counter}.
-            </p>
-            <button onClick={() => dispatch(increment({interval: 2}))}>
-              INCREMENT
-            </button>
-            <button onClick={() => dispatch(decrement({interval: 2}))}>
-              DECREMENT
-            </button>
+            <div style={{textAlign: 'center'}}>
+                Site under construction
+            </div>
+            <Loader />
         </section>
     )
 }

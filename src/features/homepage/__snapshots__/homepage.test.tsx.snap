@@ -224,21 +224,31 @@ exports[`homepage should render 1`] = `
                               Homepage
                             </h2>
                           </header>
-                          <p>
-                            Count is 
-                            0
-                            .
-                          </p>
-                          <button
-                            onClick={[Function]}
+                          <div
+                            style={
+                              Object {
+                                "textAlign": "center",
+                              }
+                            }
                           >
-                            INCREMENT
-                          </button>
-                          <button
-                            onClick={[Function]}
-                          >
-                            DECREMENT
-                          </button>
+                            Site under construction
+                          </div>
+                          <Loader>
+                            <div>
+                              <span
+                                key={1}
+                              />
+                              <span
+                                key={2}
+                              />
+                              <span
+                                key={3}
+                              />
+                              <span
+                                key={4}
+                              />
+                            </div>
+                          </Loader>
                         </section>
                       </Homepage>
                     </Provider>
