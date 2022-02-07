@@ -14,7 +14,7 @@ import Resume from '~/src/features/resume/resume.component'
 /* Commenting out while not being worked on. */
 // const Babylon = lazy(() => import('~/src/features/babylon/babylon.component'))
 
-import { Spinner } from '~/src/common/spinner/spinner.component'
+import { Loader } from '~/src/common/loader/loader.component'
 
 import { DOCUMENT_TITLE_ROOT } from '~/src/utilities/constants'
 
@@ -111,7 +111,7 @@ const Layout: FC = () => {
                 </ul>
             </nav>
             <main>
-                <Suspense fallback={<Spinner />}>
+                <Suspense fallback={<Loader />}>
                     <Switch>
                         <Route exact path={'/'} component={Homepage} />
                         {flattenPages(pages, '').map(({ path, component }) => (
