@@ -1,0 +1,9 @@
+@use '../../shared.scss' as *;
+
+.pixijs {
+    @include box_shadow($accent-color-darker);
+    width: 100% !important;
+    line-height: 0;
+    background: #EEDDDD;
+    overflow: hidden;
+}

@@ -13,6 +13,7 @@ const config: Config.InitialOptions = {
     '^react$': 'preact/compat',
     '^react-dom/test-utils$': 'preact/test-utils',
     '^react-dom$': 'preact/compat',
+    '^react/jsx-runtime$': 'preact/jsx-runtime',
     '^/(.*)$': '<rootDir>/src/$1',
     '^~/(.*)$': '<rootDir>/$1'
   },
@@ -23,7 +24,8 @@ const config: Config.InitialOptions = {
     'enzyme-to-json/serializer'
   ],
   transform: {
-    '^.+\\.[t|j]sx?$': 'babel-jest'
+    '^.+\\.[t|j]sx?$': 'babel-jest',
+    '^.+\\.(css|scss|png|jpg|svg)$': 'jest-transform-stub'
   },
   transformIgnorePatterns: [
     '<rootDir>/node_modules/(?!('
@@ -45,6 +47,7 @@ const config: Config.InitialOptions = {
     + '|decode-named-character-reference'
     + '|hast-util-whitespace'
     + '|react-syntax-highlighter'
+    + '|is-plain-obj'
     + ')/)'
   ]
 };
