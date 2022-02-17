@@ -12,12 +12,13 @@ const middleware = getDefaultMiddleware().concat(
     routerMiddleware(history)
 )
 
+/* eslint-disable */
 /* istanbul ignore next */
 if (process.env.NODE_ENV === 'development') {
-  /* eslint-disable-next-line */
-  const { logger } = require('redux-logger');
-  middleware.push(logger);
+    const { logger } = require('redux-logger');
+    middleware.push(logger);
 }
+/* eslint-enable */
 
 const store = configureStore({
     reducer: {

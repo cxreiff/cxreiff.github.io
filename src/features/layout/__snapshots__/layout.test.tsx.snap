@@ -426,39 +426,26 @@ exports[`layout should navigate to projects tab 1`] = `
                     }
                   >
                     <section>
-                      <header>
-                        <h2>
-                          Projects
-                        </h2>
-                      </header>
-                      <article>
-                        <header>
-                          <h3>
-                            Article 1
-                          </h3>
-                        </header>
-                        <p>
-                          <a
-                            onClick={[Function]}
-                          >
-                            test1
-                          </a>
-                        </p>
-                      </article>
-                      <article>
-                        <header>
-                          <h3>
-                            Article 2
-                          </h3>
-                        </header>
-                        <p>
-                          <a
-                            onClick={[Function]}
-                          >
-                            test2
-                          </a>
-                        </p>
-                      </article>
+                      <Card
+                        image=""
+                        onClick={[Function]}
+                        primary="pixi.js project"
+                        secondary="pixi.js"
+                      >
+                        <article
+                          className="undefined"
+                          onClick={[Function]}
+                        >
+                          <header>
+                            <h4>
+                              pixi.js project
+                            </h4>
+                          </header>
+                          <footer>
+                            pixi.js
+                          </footer>
+                        </article>
+                      </Card>
                     </section>
                   </Projects>
                 </Provider>

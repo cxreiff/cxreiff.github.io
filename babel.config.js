@@ -7,7 +7,7 @@ module.exports = {
   plugins: [
     ['@babel/transform-react-jsx', {
       runtime: 'automatic',
-      importSource: 'preact',
+      importSource: 'preact/compat',
     }]
   ],
 }

@@ -1,5 +1,11 @@
 @use '../../shared.scss' as *;
 
 .projects {
-  @include text_page_padding();
+  display: grid;
+  gap: 1rem 1rem;
+  grid-template-columns: 1fr;
+  
+  @media only screen and (min-width: $mobile-breakpoint) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
