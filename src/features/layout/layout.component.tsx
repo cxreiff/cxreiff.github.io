@@ -8,9 +8,9 @@ import { useAppSelector, useAppDispatch } from '~/src/app/store'
 import Homepage from '~/src/features/homepage/homepage.component'
 import Projects from '~/src/features/projects/projects.component'
 import Photos from '~/src/features/photos/photos.component'
-const Posts = lazy(() => import('~/src/features/posts/posts.component'))
 import Resume from '~/src/features/resume/resume.component'
-
+const Pixijs = lazy(() => import('~/src/features/pixijs/pixijs.component'))
+const Posts = lazy(() => import('~/src/features/posts/posts.component'))
 /* Commenting out while not being worked on. */
 // const Babylon = lazy(() => import('~/src/features/babylon/babylon.component'))
 
@@ -44,14 +44,19 @@ const Layout: FC = () => {
             path: '/projects',
             label: 'projects',
             component: Projects,
-            /* Commenting out while not being worked on. */
-            // children: [
-            //     {
-            //         path: '/babylon',
-            //         label: 'babylon',
-            //         component: Babylon,
-            //     },
-            // ],
+            children: [
+                {
+                    path: '/pixijs',
+                    label: 'pixijs',
+                    component: Pixijs,
+                },
+                /* Commenting out while not being worked on. */
+                // {
+                //     path: '/babylon',
+                //     label: 'babylon',
+                //     component: Babylon,
+                // },
+            ],
         },
         {
             path: '/photos',
