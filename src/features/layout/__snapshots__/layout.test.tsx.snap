@@ -446,6 +446,26 @@ exports[`layout should navigate to projects tab 1`] = `
                           </footer>
                         </article>
                       </Card>
+                      <Card
+                        image=""
+                        onClick={[Function]}
+                        primary="babylon.js project"
+                        secondary="babylon.js"
+                      >
+                        <article
+                          className="undefined"
+                          onClick={[Function]}
+                        >
+                          <header>
+                            <h4>
+                              babylon.js project
+                            </h4>
+                          </header>
+                          <footer>
+                            babylon.js
+                          </footer>
+                        </article>
+                      </Card>
                     </section>
                   </Projects>
                 </Provider>

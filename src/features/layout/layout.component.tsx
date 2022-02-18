@@ -11,8 +11,7 @@ import Photos from '~/src/features/photos/photos.component'
 import Resume from '~/src/features/resume/resume.component'
 const Pixijs = lazy(() => import('~/src/features/pixijs/pixijs.component'))
 const Posts = lazy(() => import('~/src/features/posts/posts.component'))
-/* Commenting out while not being worked on. */
-// const Babylon = lazy(() => import('~/src/features/babylon/babylon.component'))
+const Babylonjs = lazy(() => import('~/src/features/babylonjs/babylonjs.component'))
 
 import { Loader } from '~/src/common/loader/loader.component'
 
@@ -50,12 +49,11 @@ const Layout: FC = () => {
                     label: 'pixijs',
                     component: Pixijs,
                 },
-                /* Commenting out while not being worked on. */
-                // {
-                //     path: '/babylon',
-                //     label: 'babylon',
-                //     component: Babylon,
-                // },
+                {
+                    path: '/babylonjs',
+                    label: 'babylonjs',
+                    component: Babylonjs,
+                },
             ],
         },
         {
