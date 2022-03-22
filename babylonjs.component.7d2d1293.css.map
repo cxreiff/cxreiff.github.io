@@ -1,0 +1,1 @@
+{"mappings":"AAAA,8BAGE,eAAmB,CAFnB,wBAAyB,CACzB,0BAEF","sources":["src/features/babylonjs/babylonjs.module.scss"],"sourcesContent":[".babylonjs {\n  border: 1px solid #3D3333;\n  box-shadow: #3D3333 3px 3px;\n  background: #EEDDDD;\n}"],"names":[],"version":3,"file":"babylonjs.component.7d2d1293.css.map"}
