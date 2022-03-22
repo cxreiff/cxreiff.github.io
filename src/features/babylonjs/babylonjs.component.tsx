@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import SceneComponent from 'babylonjs-hook'
-import { Scene, FreeCamera, Vector3, HemisphericLight, MeshBuilder, Mesh } from '@babylonjs/core';
+import { Scene, FreeCamera, Vector3, HemisphericLight, MeshBuilder, Mesh, Color4 } from '@babylonjs/core';
 
 import * as styles from './babylonjs.module.scss'
 
@@ -10,8 +10,12 @@ const Babylonjs: FC = () => {
     let sphere: Mesh;
 
     const onSceneReady = (scene: Scene) => {
+
+        // Set background color
+        scene.clearColor = Color4.FromHexString('#EEDDDDFF')
+
         // This creates and positions a free camera (non-mesh)
-        const camera = new FreeCamera('camera1', new Vector3(0, 5, -10), scene);
+        const camera = new FreeCamera('camera1', new Vector3(0, 5, -8), scene);
         
         // This targets the camera to scene origin
         camera.setTarget(Vector3.Zero());
