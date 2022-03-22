@@ -1,63 +1,30 @@
-import { Application, DisplayObject } from 'pixi.js'
+import { Application } from 'pixi.js'
 
-import { Player } from './pixijsPlayer'
-import { Wiggly } from './pixijsWiggly'
+import { PixijsScene } from './abstract/pixijsScene'
+import { View } from './static/view'
+import { Keyboard } from './static/keyboard'
+import { DashScene } from './scenes/dashScene'
 
-export interface Updatable {
-    update: (delta: number, elapsed: number) => void,
-}
+export class PixijsProject extends Application {
 
-export interface Drawable {
-    draw: (x: (x: number) => number, y: (y: number) => number) => void,
-}
-
-export class PixijsProject extends Application implements Updatable, Drawable {
-
-    wiggly: Wiggly
-    player: Player
-
-    elapsed = 0.0
-    updateList: Updatable[] = []
-    drawList: Drawable[] = []
+    private currentScene: PixijsScene
 
     constructor (viewElement: HTMLCanvasElement, viewRect: DOMRect) {
         super({
             view: viewElement,
             resizeTo: viewElement,
-            backgroundColor: 0xeedddd,
+            backgroundColor: 0xEEDDDD,
             autoDensity: true,
             antialias: true,
             width: viewRect.width,
             height: viewRect.height,
         })
 
-        this.ticker.add((delta) => {
-            this.elapsed += delta
-            this.update(delta, this.elapsed)
-            this.draw(
-                (x: number) => this.view.width * x,
-                (y: number) => this.view.height * y
-            )
-        })
+        View.initialize(viewElement)
+        Keyboard.initialize()
 
-        this.wiggly = new Wiggly(this.view)
-        this.addLoopable(this.wiggly)
-
-        this.player = new Player(this.wiggly)
-        this.addLoopable(this.player)
-    }
-    
-    addLoopable (loopable: DisplayObject & Updatable & Drawable) {
-        this.stage.addChild(loopable)
-        this.updateList.push(loopable)
-        this.drawList.push(loopable)
-    }
-
-    update: Updatable['update'] = (delta, elapsed) => {
-        this.updateList.forEach(updatable => updatable.update(delta, this.elapsed))
-    }
-    
-    draw: Drawable['draw'] = (x, y) => {
-        this.drawList.forEach(drawable => drawable.draw(x, y))
+        this.currentScene = new DashScene()
+        this.stage.addChild(this.currentScene)
+        this.currentScene.start()
     }
 }
