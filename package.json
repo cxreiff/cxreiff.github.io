@@ -30,7 +30,7 @@
     "react/jsx-runtime": "preact/jsx-runtime"
   },
   "dependencies": {
-    "@babylonjs/core": "^4.2.0",
+    "@babylonjs/core": "^4.2.2",
     "@babylonjs/gui": "^4.2.0",
     "@pixi/filter-rgb-split": "^4.1.3",
     "@reduxjs/toolkit": "^1.5.1",
