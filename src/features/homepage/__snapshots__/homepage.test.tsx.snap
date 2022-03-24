@@ -234,7 +234,9 @@ exports[`homepage should render 1`] = `
                             Site under construction
                           </div>
                           <Loader>
-                            <div>
+                            <div
+                              className="loader"
+                            >
                               <span
                                 key={1}
                               />
