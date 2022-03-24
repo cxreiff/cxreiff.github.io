@@ -241,7 +241,9 @@ exports[`layout should navigate to posts tab 1`] = `
         fallback={<Loader />}
       >
         <Loader>
-          <div>
+          <div
+            className="loader"
+          >
             <span
               key={1}
             />
@@ -841,7 +843,9 @@ exports[`layout should render 1`] = `
                         Site under construction
                       </div>
                       <Loader>
-                        <div>
+                        <div
+                          className="loader"
+                        >
                           <span
                             key={1}
                           />
