@@ -67,7 +67,7 @@
     "@parcel/transformer-sass": "^2.4.0",
     "@types/enzyme": "^3.10.5",
     "@types/history": "^4.7.8",
-    "@types/jest": "^27.0.1",
+    "@types/jest": "^27.4.1",
     "@types/jsdom": "^16.2.3",
     "@types/react": "^17.0.42",
     "@types/react-router": "^5.1.14",
