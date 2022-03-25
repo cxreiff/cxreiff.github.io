@@ -6,36 +6,56 @@ import { Keyboard } from '../static/keyboard'
 
 export class DasherEntity extends PixijsEntity<Graphics> {
 
+    private static CONTROLS = {
+        BOOST: 'Space',
+        TURN_LEFT: 'ArrowLeft',
+        TURN_RIGHT: 'ArrowRight',
+        FORWARD: 'ArrowUp',
+        BACKWARD: 'ArrowDown',
+    }
+
     private speed = 0.01
 
     constructor (ticker: Ticker) {
         super(ticker, new Graphics())
         this.relativePosition.x = 0.5
         this.relativePosition.y = 0.2
+
+        Object.values(DasherEntity.CONTROLS).forEach(code => Keyboard.listenFor(code))
     }
 
     override update = (delta: number) => {
 
-        if (Keyboard.state.get('Space')) {
+        if (Keyboard.isPressed(DasherEntity.CONTROLS.BOOST)) {
             this.speed = 0.015
         } else {
             this.speed = 0.01
         }
 
-        if (Keyboard.state.get('ArrowLeft')) {
+        if (Keyboard.isPressed(DasherEntity.CONTROLS.TURN_LEFT)) {
             this.object.rotation -= 0.06
         }
 
-        if (Keyboard.state.get('ArrowRight')) {
+        if (Keyboard.isPressed(DasherEntity.CONTROLS.TURN_RIGHT)) {
             this.object.rotation += 0.06
         }
 
-        if (Keyboard.state.get('ArrowUp')) {
+        if (Keyboard.isPressed(DasherEntity.CONTROLS.FORWARD)) {
             this.relativePosition.x += this.speed * Math.sin(this.object.rotation)
             this.relativePosition.y -= this.speed * Math.cos(this.object.rotation)
             this.boundPositionToView(0.01)
         }
 
+        if (Keyboard.isPressed(DasherEntity.CONTROLS.BACKWARD)) {
+            this.relativePosition.x -= this.speed * Math.sin(this.object.rotation)
+            this.relativePosition.y += this.speed * Math.cos(this.object.rotation)
+            this.boundPositionToView(0.01)
+        }
+
+        this.draw()
+    }
+
+    draw = () => {
         this.object.clear()
         this.object.lineStyle(0)
         this.object.beginFill(0x3D3333, 1)
