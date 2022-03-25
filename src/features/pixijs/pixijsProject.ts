@@ -21,7 +21,7 @@ export class PixijsProject extends Application {
         })
 
         View.initialize(viewElement)
-        Keyboard.initialize()
+        Keyboard.initialize(viewElement)
 
         this.currentScene = new DashScene()
         this.stage.addChild(this.currentScene)
