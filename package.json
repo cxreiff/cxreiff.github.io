@@ -47,7 +47,7 @@
     "preact": "^10.6.5",
     "preact-router": "^4.0.1",
     "react-infinite-scroll-hook": "^4.0.1",
-    "react-markdown": "^7.1.2",
+    "react-markdown": "^8.0.1",
     "react-modal-image": "^2.5.0",
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
