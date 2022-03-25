@@ -39,7 +39,7 @@
     "buffer": "^6.0.3",
     "classnames": "^2.3.1",
     "connected-react-router": "^6.9.1",
-    "follow-redirects": "^1.14.7",
+    "follow-redirects": "^1.14.9",
     "gray-matter": "^4.0.3",
     "history": "^4.10.1",
     "normalize.css": "^8.0.1",
