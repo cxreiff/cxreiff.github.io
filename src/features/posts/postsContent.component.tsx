@@ -10,7 +10,7 @@ import * as styles from './postsContent.module.scss'
 
 const PostsContent: FC = () => {
 
-    const { id } = useParams<{id: string}>()
+    const { id = '' } = useParams<{id: string}>()
     const { content, data: { title, date }} = posts[id]
 
     return (
