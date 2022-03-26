@@ -3,6 +3,7 @@
 .eslintcache
 .DS_Store
 dist
+tsm
 coverage
 node_modules
 *.scss.d.ts
