@@ -1,5 +1,4 @@
 import { FC } from 'react'
-import 'normalize.css'
 
 import { Layout } from '~/src/features/layout/layout.component'
 import { Wrapper } from './wrapper'

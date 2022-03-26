@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import cn from 'classnames'
 
-import * as styles from './card.module.scss'
+import styles from './card.module.scss'
 
 type CardProps = {
     image?: string,

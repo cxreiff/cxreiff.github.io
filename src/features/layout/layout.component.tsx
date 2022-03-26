@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import cn from 'classnames'
 
 import { RouteDefinition } from '~/src/app/routing'
-import * as styles from './layout.module.scss'
+import styles from './layout.module.scss'
 
 type LayoutProps = {
     routes: RouteDefinition[],

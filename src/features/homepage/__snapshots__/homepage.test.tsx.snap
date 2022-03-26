@@ -110,7 +110,9 @@ exports[`homepage should render 1`] = `
               }
             >
               <Homepage>
-                <section>
+                <section
+                  className="homepage"
+                >
                   <header>
                     <h2>
                       Homepage

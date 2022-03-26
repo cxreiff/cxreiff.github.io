@@ -6,7 +6,7 @@ import { ImageLoader } from '~/src/common/imageLoader/imageLoader.component'
 
 import { fetchPhotos } from './photos.slice'
 
-import * as styles from './photos.module.scss'
+import styles from './photos.module.scss'
 
 const Photos: FC = () => {
 

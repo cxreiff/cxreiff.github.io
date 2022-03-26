@@ -39,12 +39,16 @@ exports[`layout should navigate to photos tab 1`] = `
     ]
   }
 >
-  <div>
+  <div
+    className="layout"
+  >
     <nav
       aria-label="primary"
     >
       <ul>
-        <li>
+        <li
+          className="logo"
+        >
           <a
             onClick={[Function]}
           >
@@ -52,7 +56,7 @@ exports[`layout should navigate to photos tab 1`] = `
           </a>
         </li>
         <li
-          className=""
+          className="navlink"
           id="nav-projects"
           key="projects"
         >
@@ -63,7 +67,7 @@ exports[`layout should navigate to photos tab 1`] = `
           </a>
         </li>
         <li
-          className="undefined"
+          className="navlink current"
           id="nav-photos"
           key="photos"
         >
@@ -74,7 +78,7 @@ exports[`layout should navigate to photos tab 1`] = `
           </a>
         </li>
         <li
-          className=""
+          className="navlink"
           id="nav-posts"
           key="posts"
         >
@@ -85,7 +89,7 @@ exports[`layout should navigate to photos tab 1`] = `
           </a>
         </li>
         <li
-          className=""
+          className="navlink"
           id="nav-resume"
           key="resume"
         >
@@ -141,12 +145,16 @@ exports[`layout should navigate to posts tab 1`] = `
     ]
   }
 >
-  <div>
+  <div
+    className="layout"
+  >
     <nav
       aria-label="primary"
     >
       <ul>
-        <li>
+        <li
+          className="logo"
+        >
           <a
             onClick={[Function]}
           >
@@ -154,7 +162,7 @@ exports[`layout should navigate to posts tab 1`] = `
           </a>
         </li>
         <li
-          className=""
+          className="navlink"
           id="nav-projects"
           key="projects"
         >
@@ -165,7 +173,7 @@ exports[`layout should navigate to posts tab 1`] = `
           </a>
         </li>
         <li
-          className=""
+          className="navlink"
           id="nav-photos"
           key="photos"
         >
@@ -176,7 +184,7 @@ exports[`layout should navigate to posts tab 1`] = `
           </a>
         </li>
         <li
-          className="undefined"
+          className="navlink current"
           id="nav-posts"
           key="posts"
         >
@@ -187,7 +195,7 @@ exports[`layout should navigate to posts tab 1`] = `
           </a>
         </li>
         <li
-          className=""
+          className="navlink"
           id="nav-resume"
           key="resume"
         >
@@ -243,12 +251,16 @@ exports[`layout should navigate to projects tab 1`] = `
     ]
   }
 >
-  <div>
+  <div
+    className="layout"
+  >
     <nav
       aria-label="primary"
     >
       <ul>
-        <li>
+        <li
+          className="logo"
+        >
           <a
             onClick={[Function]}
           >
@@ -256,7 +268,7 @@ exports[`layout should navigate to projects tab 1`] = `
           </a>
         </li>
         <li
-          className="undefined"
+          className="navlink current"
           id="nav-projects"
           key="projects"
         >
@@ -267,7 +279,7 @@ exports[`layout should navigate to projects tab 1`] = `
           </a>
         </li>
         <li
-          className=""
+          className="navlink"
           id="nav-photos"
           key="photos"
         >
@@ -278,7 +290,7 @@ exports[`layout should navigate to projects tab 1`] = `
           </a>
         </li>
         <li
-          className=""
+          className="navlink"
           id="nav-posts"
           key="posts"
         >
@@ -289,7 +301,7 @@ exports[`layout should navigate to projects tab 1`] = `
           </a>
         </li>
         <li
-          className=""
+          className="navlink"
           id="nav-resume"
           key="resume"
         >
@@ -345,12 +357,16 @@ exports[`layout should navigate to resume tab 1`] = `
     ]
   }
 >
-  <div>
+  <div
+    className="layout"
+  >
     <nav
       aria-label="primary"
     >
       <ul>
-        <li>
+        <li
+          className="logo"
+        >
           <a
             onClick={[Function]}
           >
@@ -358,7 +374,7 @@ exports[`layout should navigate to resume tab 1`] = `
           </a>
         </li>
         <li
-          className=""
+          className="navlink"
           id="nav-projects"
           key="projects"
         >
@@ -369,7 +385,7 @@ exports[`layout should navigate to resume tab 1`] = `
           </a>
         </li>
         <li
-          className=""
+          className="navlink"
           id="nav-photos"
           key="photos"
         >
@@ -380,7 +396,7 @@ exports[`layout should navigate to resume tab 1`] = `
           </a>
         </li>
         <li
-          className=""
+          className="navlink"
           id="nav-posts"
           key="posts"
         >
@@ -391,7 +407,7 @@ exports[`layout should navigate to resume tab 1`] = `
           </a>
         </li>
         <li
-          className="undefined"
+          className="navlink current"
           id="nav-resume"
           key="resume"
         >
@@ -447,12 +463,16 @@ exports[`layout should render 1`] = `
     ]
   }
 >
-  <div>
+  <div
+    className="layout"
+  >
     <nav
       aria-label="primary"
     >
       <ul>
-        <li>
+        <li
+          className="logo"
+        >
           <a
             onClick={[Function]}
           >
@@ -460,7 +480,7 @@ exports[`layout should render 1`] = `
           </a>
         </li>
         <li
-          className=""
+          className="navlink"
           id="nav-projects"
           key="projects"
         >
@@ -471,7 +491,7 @@ exports[`layout should render 1`] = `
           </a>
         </li>
         <li
-          className=""
+          className="navlink"
           id="nav-photos"
           key="photos"
         >
@@ -482,7 +502,7 @@ exports[`layout should render 1`] = `
           </a>
         </li>
         <li
-          className=""
+          className="navlink"
           id="nav-posts"
           key="posts"
         >
@@ -493,7 +513,7 @@ exports[`layout should render 1`] = `
           </a>
         </li>
         <li
-          className=""
+          className="navlink"
           id="nav-resume"
           key="resume"
         >
