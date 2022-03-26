@@ -2,7 +2,7 @@ import { FC } from 'react'
 import SceneComponent from 'babylonjs-hook'
 import { Scene, FreeCamera, Vector3, HemisphericLight, MeshBuilder, Mesh, Color4 } from '@babylonjs/core';
 
-import * as styles from './babylonjs.module.scss'
+import styles from './babylonjs.module.scss'
 
 const Babylonjs: FC = () => {
     

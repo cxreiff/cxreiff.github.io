@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import * as styles from './resume.module.scss'
+import styles from './resume.module.scss'
 
 const Resume: FC = () => {
     return (
