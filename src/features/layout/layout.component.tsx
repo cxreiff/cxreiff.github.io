@@ -1,94 +1,21 @@
-import { FC, Suspense, useEffect, lazy } from 'react'
-import { Route, Switch } from 'react-router-dom'
-import { push } from 'connected-react-router'
+import { FC } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
 import cn from 'classnames'
 
-import { useAppSelector, useAppDispatch } from '~/src/app/store'
-
-import Homepage from '~/src/features/homepage/homepage.component'
-import Projects from '~/src/features/projects/projects.component'
-import Photos from '~/src/features/photos/photos.component'
-import Resume from '~/src/features/resume/resume.component'
-const Pixijs = lazy(() => import('~/src/features/pixijs/pixijs.component'))
-const Posts = lazy(() => import('~/src/features/posts/posts.component'))
-const Babylonjs = lazy(() => import('~/src/features/babylonjs/babylonjs.component'))
-
-import { Loader } from '~/src/common/loader/loader.component'
-
-import { DOCUMENT_TITLE_ROOT } from '~/src/utilities/constants'
-
+import { RouteDefinition } from '~/src/app/routing'
 import * as styles from './layout.module.scss'
 
-type Page = {
-    path: string,
-    label: string,
-    component: FC,
-    children?: Page[],
+type LayoutProps = {
+    routes: RouteDefinition[],
 }
 
-const Layout: FC = () => {
+export const Layout: FC<LayoutProps> = ({ children, routes }) => {
     
-    const pathname = useAppSelector(state => state.router.location.pathname)
-    
-    const dispatch = useAppDispatch()
-    const navigate = (pathname: string) => dispatch(push(pathname))
-
-    useEffect(() => {
-        const baseRoute = pathname.split('/')[1]
-        document.title = baseRoute ? `${DOCUMENT_TITLE_ROOT} — ${baseRoute}` : DOCUMENT_TITLE_ROOT
-    }, [pathname])
-
-    const pages: Page[] = [
-        {
-            path: '/projects',
-            label: 'projects',
-            component: Projects,
-            children: [
-                {
-                    path: '/pixijs',
-                    label: 'pixijs',
-                    component: Pixijs,
-                },
-                {
-                    path: '/babylonjs',
-                    label: 'babylonjs',
-                    component: Babylonjs,
-                },
-            ],
-        },
-        {
-            path: '/photos',
-            label: 'photos',
-            component: Photos,
-        },
-        {
-            path: '/posts',
-            label: 'posts',
-            component: Posts,
-        },
-        {
-            path: '/resume',
-            label: 'resume',
-            component: Resume,
-        },
-    ]
+    const pathname = useLocation().pathname
+    const navigate = useNavigate()
 
     const comparePaths = (path: string, pathname: string) => (
-        path.split('/')[1] === pathname.split('/')[1]
-    )
-    
-    const flattenPages = (pages: Page[], prefix = '') => (
-        pages.reduce((flattened, { path, label, component, children }) => {
-            if (children) {
-                flattened.push(...flattenPages(children, prefix + path))
-            }
-            
-            return flattened.concat({
-                path: prefix + path,
-                label,
-                component,
-            })
-        }, [] as Page[])
+        path === pathname.split('/')[1]
     )
 
     return (
@@ -100,31 +27,24 @@ const Layout: FC = () => {
                             jax reiff
                         </a>
                     </li>
-                    {pages.map(({path, label}) => (
+                    {routes.map(({ path }) => (
                         <li
                             key={path}
-                            id={`nav-${label}`}
-                            className={cn(styles.navlink, {[styles.current]: comparePaths(path, pathname)})}
+                            id={`nav-${path}`}
+                            className={cn(styles.navlink, {
+                                [styles.current]: comparePaths(path, pathname)
+                            })}
                         >
                             <a onClick={() => navigate(path)}>
-                                {label}
+                                {path}
                             </a>
                         </li>
                     ))}
                 </ul>
             </nav>
             <main>
-                <Suspense fallback={<Loader />}>
-                    <Switch>
-                        <Route exact path={'/'} component={Homepage} />
-                        {flattenPages(pages, '').map(({ path, component }) => (
-                            <Route key={path} path={path} component={component} />
-                        ))}
-                    </Switch>
-                </Suspense>
+                {children}
             </main>
         </div>
     )
 }
-
-export default Layout

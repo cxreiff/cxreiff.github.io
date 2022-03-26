@@ -36,231 +36,119 @@ exports[`homepage should render 1`] = `
         }
       }
     >
-      <Connect(ConnectedRouterWithContext)
-        history={
-          Object {
-            "action": "POP",
-            "block": [Function],
-            "createHref": [Function],
-            "go": [Function],
-            "goBack": [Function],
-            "goForward": [Function],
-            "length": 1,
-            "listen": [Function],
-            "location": Object {
+      <HashRouter>
+        <Router
+          location={
+            Object {
               "hash": "",
+              "key": "default",
               "pathname": "/",
               "search": "",
-              "state": undefined,
-            },
-            "push": [Function],
-            "replace": [Function],
+              "state": null,
+            }
           }
-        }
-      >
-        <Connect(ConnectedRouterWithContext)
-          history={
+          navigationType="POP"
+          navigator={
             Object {
               "action": "POP",
+              "back": [Function],
               "block": [Function],
               "createHref": [Function],
+              "forward": [Function],
               "go": [Function],
-              "goBack": [Function],
-              "goForward": [Function],
-              "length": 1,
               "listen": [Function],
               "location": Object {
                 "hash": "",
+                "key": "default",
                 "pathname": "/",
                 "search": "",
-                "state": undefined,
+                "state": null,
               },
               "push": [Function],
               "replace": [Function],
             }
           }
         >
-          <ConnectedRouterWithContext
-            history={
+          <Provider
+            value={
               Object {
-                "action": "POP",
-                "block": [Function],
-                "createHref": [Function],
-                "go": [Function],
-                "goBack": [Function],
-                "goForward": [Function],
-                "length": 1,
-                "listen": [Function],
-                "location": Object {
-                  "hash": "",
-                  "pathname": "/",
-                  "search": "",
-                  "state": undefined,
+                "basename": "/",
+                "navigator": Object {
+                  "action": "POP",
+                  "back": [Function],
+                  "block": [Function],
+                  "createHref": [Function],
+                  "forward": [Function],
+                  "go": [Function],
+                  "listen": [Function],
+                  "location": Object {
+                    "hash": "",
+                    "key": "default",
+                    "pathname": "/",
+                    "search": "",
+                    "state": null,
+                  },
+                  "push": [Function],
+                  "replace": [Function],
                 },
-                "push": [Function],
-                "replace": [Function],
+                "static": false,
               }
             }
-            onLocationChanged={[Function]}
           >
-            <Consumer>
-              <ConnectedRouter
-                history={
-                  Object {
-                    "action": "POP",
-                    "block": [Function],
-                    "createHref": [Function],
-                    "go": [Function],
-                    "goBack": [Function],
-                    "goForward": [Function],
-                    "length": 1,
-                    "listen": [Function],
-                    "location": Object {
-                      "hash": "",
-                      "pathname": "/",
-                      "search": "",
-                      "state": undefined,
-                    },
-                    "push": [Function],
-                    "replace": [Function],
-                  }
+            <Provider
+              value={
+                Object {
+                  "location": Object {
+                    "hash": "",
+                    "key": "default",
+                    "pathname": "/",
+                    "search": "",
+                    "state": null,
+                  },
+                  "navigationType": "POP",
                 }
-                onLocationChanged={[Function]}
-                store={
-                  Object {
-                    "@@observable": [Function],
-                    "dispatch": [Function],
-                    "getState": [Function],
-                    "replaceReducer": [Function],
-                    "subscribe": [Function],
-                  }
-                }
-              >
-                <Router
-                  history={
-                    Object {
-                      "action": "POP",
-                      "block": [Function],
-                      "createHref": [Function],
-                      "go": [Function],
-                      "goBack": [Function],
-                      "goForward": [Function],
-                      "length": 1,
-                      "listen": [Function],
-                      "location": Object {
-                        "hash": "",
-                        "pathname": "/",
-                        "search": "",
-                        "state": undefined,
-                      },
-                      "push": [Function],
-                      "replace": [Function],
-                    }
-                  }
-                >
-                  <Provider
-                    value={
+              }
+            >
+              <Homepage>
+                <section>
+                  <header>
+                    <h2>
+                      Homepage
+                    </h2>
+                  </header>
+                  <div
+                    style={
                       Object {
-                        "history": Object {
-                          "action": "POP",
-                          "block": [Function],
-                          "createHref": [Function],
-                          "go": [Function],
-                          "goBack": [Function],
-                          "goForward": [Function],
-                          "length": 1,
-                          "listen": [Function],
-                          "location": Object {
-                            "hash": "",
-                            "pathname": "/",
-                            "search": "",
-                            "state": undefined,
-                          },
-                          "push": [Function],
-                          "replace": [Function],
-                        },
-                        "location": Object {
-                          "hash": "",
-                          "pathname": "/",
-                          "search": "",
-                          "state": undefined,
-                        },
-                        "match": Object {
-                          "isExact": true,
-                          "params": Object {},
-                          "path": "/",
-                          "url": "/",
-                        },
-                        "staticContext": undefined,
+                        "textAlign": "center",
                       }
                     }
                   >
-                    <Provider
-                      value={
-                        Object {
-                          "action": "POP",
-                          "block": [Function],
-                          "createHref": [Function],
-                          "go": [Function],
-                          "goBack": [Function],
-                          "goForward": [Function],
-                          "length": 1,
-                          "listen": [Function],
-                          "location": Object {
-                            "hash": "",
-                            "pathname": "/",
-                            "search": "",
-                            "state": undefined,
-                          },
-                          "push": [Function],
-                          "replace": [Function],
-                        }
-                      }
+                    Site under construction
+                  </div>
+                  <Loader>
+                    <div
+                      className="loader"
                     >
-                      <Homepage>
-                        <section>
-                          <header>
-                            <h2>
-                              Homepage
-                            </h2>
-                          </header>
-                          <div
-                            style={
-                              Object {
-                                "textAlign": "center",
-                              }
-                            }
-                          >
-                            Site under construction
-                          </div>
-                          <Loader>
-                            <div
-                              className="loader"
-                            >
-                              <span
-                                key={1}
-                              />
-                              <span
-                                key={2}
-                              />
-                              <span
-                                key={3}
-                              />
-                              <span
-                                key={4}
-                              />
-                            </div>
-                          </Loader>
-                        </section>
-                      </Homepage>
-                    </Provider>
-                  </Provider>
-                </Router>
-              </ConnectedRouter>
-            </Consumer>
-          </ConnectedRouterWithContext>
-        </Connect(ConnectedRouterWithContext)>
-      </Connect(ConnectedRouterWithContext)>
+                      <span
+                        key={1}
+                      />
+                      <span
+                        key={2}
+                      />
+                      <span
+                        key={3}
+                      />
+                      <span
+                        key={4}
+                      />
+                    </div>
+                  </Loader>
+                </section>
+              </Homepage>
+            </Provider>
+          </Provider>
+        </Router>
+      </HashRouter>
     </Provider>
   </Provider>
 </Wrapper>

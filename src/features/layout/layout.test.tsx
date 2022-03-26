@@ -1,7 +1,8 @@
 import { mount, ReactWrapper } from 'enzyme'
 
-import Wrapper from '~/src/app/wrapper'
-import Layout from './layout.component'
+import { Wrapper } from '~/src/app/wrapper'
+import { ROUTES } from '~/src/app/routing'
+import { Layout } from './layout.component'
 
 describe('layout', () => {
     
@@ -10,7 +11,7 @@ describe('layout', () => {
     beforeAll(() => {
         component = mount<typeof Wrapper, void>(
             <Wrapper>
-                <Layout />
+                <Layout routes={ROUTES} />
             </Wrapper>
         )
     })

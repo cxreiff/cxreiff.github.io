@@ -1,13 +1,18 @@
 import { FC } from 'react'
 import 'normalize.css'
 
-import Wrapper from './wrapper'
-import Layout from '~/src/features/layout/layout.component'
+import { Layout } from '~/src/features/layout/layout.component'
+import { Wrapper } from './wrapper'
+import { Routing, ROUTES } from './routing'
 
-const App: FC = () => (
-  <Wrapper>
-    <Layout />
-  </Wrapper>
-)
+const App: FC = () => {
+    return (
+        <Wrapper>
+            <Layout routes={ROUTES}>
+                <Routing />
+            </Layout>
+        </Wrapper>
+    )
+}
 
 export default App

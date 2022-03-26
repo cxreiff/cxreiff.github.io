@@ -1,6 +1,6 @@
 import { mount } from 'enzyme'
 
-import Wrapper from '~/src/app/wrapper'
+import { Wrapper } from '~/src/app/wrapper'
 import Homepage from './homepage.component'
 
 describe('homepage', () => {
