@@ -2,7 +2,7 @@ import { FC } from 'react'
 
 import { Loader } from '~/src/common/loader/loader.component'
 
-import * as styles from './homepage.module.scss'
+import styles from './homepage.module.scss'
 
 const Homepage: FC = () => {
     return (

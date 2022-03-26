@@ -5,7 +5,7 @@ import { Card } from '~/src/common/card/card.component'
 import pixijs from '~/src/assets/images/pixijs.png'
 import babylonjs from '~/src/assets/images/babylonjs.png'
 
-import * as styles from './projects.module.scss'
+import styles from './projects.module.scss'
 
 const Projects: FC = () => {
     

@@ -2,7 +2,7 @@ import { FC, useState } from 'react'
 import cn from 'classnames'
 import { Lightbox } from 'react-modal-image'
 
-import * as styles from './imageLoader.module.scss'
+import styles from './imageLoader.module.scss'
 
 type ImageLoaderProps = {
   small: string,

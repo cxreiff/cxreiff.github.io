@@ -3,7 +3,7 @@ import { FC, useEffect } from 'react'
 import { useMeasuredRef } from '~/src/hooks/useMeasuredRef'
 import { PixijsProject } from './pixijsProject'
 
-import * as styles from './pixijs.module.scss'
+import styles from './pixijs.module.scss'
 
 const Pixijs: FC = () => {
 

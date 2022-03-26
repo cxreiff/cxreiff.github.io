@@ -9,7 +9,7 @@ exports[`imageLoader should close lightbox 1`] = `
   small="test"
 >
   <div
-    className="test undefined"
+    className="image_loader test hidden"
   >
     <svg
       viewBox="0 0 100 100"
@@ -37,7 +37,7 @@ exports[`imageLoader should render 1`] = `
   small="test"
 >
   <div
-    className="test undefined"
+    className="image_loader test hidden"
   >
     <svg
       viewBox="0 0 100 100"
@@ -65,7 +65,7 @@ exports[`imageLoader should render lightbox 1`] = `
   small="test"
 >
   <div
-    className="test undefined"
+    className="image_loader test hidden"
   >
     <svg
       viewBox="0 0 100 100"

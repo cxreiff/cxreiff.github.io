@@ -6,7 +6,7 @@ import { Card } from '~/src/common/card/card.component'
 import { SyntaxHighlighter, syntaxStyle } from '~/src/utilities/syntaxHighlighter'
 
 import posts from './markdown'
-import * as styles from './postsContent.module.scss'
+import styles from './postsContent.module.scss'
 
 const PostsContent: FC = () => {
 
