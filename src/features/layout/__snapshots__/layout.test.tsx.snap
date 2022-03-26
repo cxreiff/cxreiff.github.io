@@ -1,7 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`layout should navigate to photos tab 1`] = `
-<Layout>
+<Layout
+  routes={
+    Array [
+      Object {
+        "Component": [Function],
+        "children": Array [
+          Object {
+            "Component": [Function],
+            "path": "pixijs",
+          },
+          Object {
+            "Component": [Function],
+            "path": "babylonjs",
+          },
+        ],
+        "path": "projects",
+      },
+      Object {
+        "Component": [Function],
+        "path": "photos",
+      },
+      Object {
+        "Component": [Function],
+        "children": Array [
+          Object {
+            "Component": [Function],
+            "path": ":id",
+          },
+        ],
+        "path": "posts",
+      },
+      Object {
+        "Component": [Function],
+        "path": "resume",
+      },
+    ]
+  }
+>
   <div>
     <nav
       aria-label="primary"
@@ -17,7 +54,7 @@ exports[`layout should navigate to photos tab 1`] = `
         <li
           className=""
           id="nav-projects"
-          key="/projects"
+          key="projects"
         >
           <a
             onClick={[Function]}
@@ -28,7 +65,7 @@ exports[`layout should navigate to photos tab 1`] = `
         <li
           className="undefined"
           id="nav-photos"
-          key="/photos"
+          key="photos"
         >
           <a
             onClick={[Function]}
@@ -39,7 +76,7 @@ exports[`layout should navigate to photos tab 1`] = `
         <li
           className=""
           id="nav-posts"
-          key="/posts"
+          key="posts"
         >
           <a
             onClick={[Function]}
@@ -50,7 +87,7 @@ exports[`layout should navigate to photos tab 1`] = `
         <li
           className=""
           id="nav-resume"
-          key="/resume"
+          key="resume"
         >
           <a
             onClick={[Function]}
@@ -60,124 +97,50 @@ exports[`layout should navigate to photos tab 1`] = `
         </li>
       </ul>
     </nav>
-    <main>
-      <d
-        fallback={<Loader />}
-      >
-        <Switch>
-          <Consumer>
-            <Route
-              component={[Function]}
-              computedMatch={
-                Object {
-                  "isExact": true,
-                  "params": Object {},
-                  "path": "/photos",
-                  "url": "/photos",
-                }
-              }
-              key="/photos"
-              location={
-                Object {
-                  "hash": "",
-                  "pathname": "/photos",
-                  "search": "",
-                  "state": undefined,
-                }
-              }
-              path="/photos"
-            >
-              <Consumer>
-                <Provider
-                  value={
-                    Object {
-                      "history": Object {
-                        "action": "PUSH",
-                        "block": [Function],
-                        "createHref": [Function],
-                        "go": [Function],
-                        "goBack": [Function],
-                        "goForward": [Function],
-                        "length": 3,
-                        "listen": [Function],
-                        "location": Object {
-                          "hash": "",
-                          "pathname": "/photos",
-                          "search": "",
-                          "state": undefined,
-                        },
-                        "push": [Function],
-                        "replace": [Function],
-                      },
-                      "location": Object {
-                        "hash": "",
-                        "pathname": "/photos",
-                        "search": "",
-                        "state": undefined,
-                      },
-                      "match": Object {
-                        "isExact": true,
-                        "params": Object {},
-                        "path": "/photos",
-                        "url": "/photos",
-                      },
-                      "staticContext": undefined,
-                    }
-                  }
-                >
-                  <Photos
-                    history={
-                      Object {
-                        "action": "PUSH",
-                        "block": [Function],
-                        "createHref": [Function],
-                        "go": [Function],
-                        "goBack": [Function],
-                        "goForward": [Function],
-                        "length": 3,
-                        "listen": [Function],
-                        "location": Object {
-                          "hash": "",
-                          "pathname": "/photos",
-                          "search": "",
-                          "state": undefined,
-                        },
-                        "push": [Function],
-                        "replace": [Function],
-                      }
-                    }
-                    location={
-                      Object {
-                        "hash": "",
-                        "pathname": "/photos",
-                        "search": "",
-                        "state": undefined,
-                      }
-                    }
-                    match={
-                      Object {
-                        "isExact": true,
-                        "params": Object {},
-                        "path": "/photos",
-                        "url": "/photos",
-                      }
-                    }
-                  >
-                    <section />
-                  </Photos>
-                </Provider>
-              </Consumer>
-            </Route>
-          </Consumer>
-        </Switch>
-      </d>
-    </main>
+    <main />
   </div>
 </Layout>
 `;
 
 exports[`layout should navigate to posts tab 1`] = `
-<Layout>
+<Layout
+  routes={
+    Array [
+      Object {
+        "Component": [Function],
+        "children": Array [
+          Object {
+            "Component": [Function],
+            "path": "pixijs",
+          },
+          Object {
+            "Component": [Function],
+            "path": "babylonjs",
+          },
+        ],
+        "path": "projects",
+      },
+      Object {
+        "Component": [Function],
+        "path": "photos",
+      },
+      Object {
+        "Component": [Function],
+        "children": Array [
+          Object {
+            "Component": [Function],
+            "path": ":id",
+          },
+        ],
+        "path": "posts",
+      },
+      Object {
+        "Component": [Function],
+        "path": "resume",
+      },
+    ]
+  }
+>
   <div>
     <nav
       aria-label="primary"
@@ -193,7 +156,7 @@ exports[`layout should navigate to posts tab 1`] = `
         <li
           className=""
           id="nav-projects"
-          key="/projects"
+          key="projects"
         >
           <a
             onClick={[Function]}
@@ -204,7 +167,7 @@ exports[`layout should navigate to posts tab 1`] = `
         <li
           className=""
           id="nav-photos"
-          key="/photos"
+          key="photos"
         >
           <a
             onClick={[Function]}
@@ -215,7 +178,7 @@ exports[`layout should navigate to posts tab 1`] = `
         <li
           className="undefined"
           id="nav-posts"
-          key="/posts"
+          key="posts"
         >
           <a
             onClick={[Function]}
@@ -226,7 +189,7 @@ exports[`layout should navigate to posts tab 1`] = `
         <li
           className=""
           id="nav-resume"
-          key="/resume"
+          key="resume"
         >
           <a
             onClick={[Function]}
@@ -236,36 +199,50 @@ exports[`layout should navigate to posts tab 1`] = `
         </li>
       </ul>
     </nav>
-    <main>
-      <d
-        fallback={<Loader />}
-      >
-        <Loader>
-          <div
-            className="loader"
-          >
-            <span
-              key={1}
-            />
-            <span
-              key={2}
-            />
-            <span
-              key={3}
-            />
-            <span
-              key={4}
-            />
-          </div>
-        </Loader>
-      </d>
-    </main>
+    <main />
   </div>
 </Layout>
 `;
 
 exports[`layout should navigate to projects tab 1`] = `
-<Layout>
+<Layout
+  routes={
+    Array [
+      Object {
+        "Component": [Function],
+        "children": Array [
+          Object {
+            "Component": [Function],
+            "path": "pixijs",
+          },
+          Object {
+            "Component": [Function],
+            "path": "babylonjs",
+          },
+        ],
+        "path": "projects",
+      },
+      Object {
+        "Component": [Function],
+        "path": "photos",
+      },
+      Object {
+        "Component": [Function],
+        "children": Array [
+          Object {
+            "Component": [Function],
+            "path": ":id",
+          },
+        ],
+        "path": "posts",
+      },
+      Object {
+        "Component": [Function],
+        "path": "resume",
+      },
+    ]
+  }
+>
   <div>
     <nav
       aria-label="primary"
@@ -281,7 +258,7 @@ exports[`layout should navigate to projects tab 1`] = `
         <li
           className="undefined"
           id="nav-projects"
-          key="/projects"
+          key="projects"
         >
           <a
             onClick={[Function]}
@@ -292,7 +269,7 @@ exports[`layout should navigate to projects tab 1`] = `
         <li
           className=""
           id="nav-photos"
-          key="/photos"
+          key="photos"
         >
           <a
             onClick={[Function]}
@@ -303,7 +280,7 @@ exports[`layout should navigate to projects tab 1`] = `
         <li
           className=""
           id="nav-posts"
-          key="/posts"
+          key="posts"
         >
           <a
             onClick={[Function]}
@@ -314,7 +291,7 @@ exports[`layout should navigate to projects tab 1`] = `
         <li
           className=""
           id="nav-resume"
-          key="/resume"
+          key="resume"
         >
           <a
             onClick={[Function]}
@@ -324,165 +301,50 @@ exports[`layout should navigate to projects tab 1`] = `
         </li>
       </ul>
     </nav>
-    <main>
-      <d
-        fallback={<Loader />}
-      >
-        <Switch>
-          <Consumer>
-            <Route
-              component={[Function]}
-              computedMatch={
-                Object {
-                  "isExact": true,
-                  "params": Object {},
-                  "path": "/projects",
-                  "url": "/projects",
-                }
-              }
-              key="/projects"
-              location={
-                Object {
-                  "hash": "",
-                  "pathname": "/projects",
-                  "search": "",
-                  "state": undefined,
-                }
-              }
-              path="/projects"
-            >
-              <Consumer>
-                <Provider
-                  value={
-                    Object {
-                      "history": Object {
-                        "action": "PUSH",
-                        "block": [Function],
-                        "createHref": [Function],
-                        "go": [Function],
-                        "goBack": [Function],
-                        "goForward": [Function],
-                        "length": 2,
-                        "listen": [Function],
-                        "location": Object {
-                          "hash": "",
-                          "pathname": "/projects",
-                          "search": "",
-                          "state": undefined,
-                        },
-                        "push": [Function],
-                        "replace": [Function],
-                      },
-                      "location": Object {
-                        "hash": "",
-                        "pathname": "/projects",
-                        "search": "",
-                        "state": undefined,
-                      },
-                      "match": Object {
-                        "isExact": true,
-                        "params": Object {},
-                        "path": "/projects",
-                        "url": "/projects",
-                      },
-                      "staticContext": undefined,
-                    }
-                  }
-                >
-                  <Projects
-                    history={
-                      Object {
-                        "action": "PUSH",
-                        "block": [Function],
-                        "createHref": [Function],
-                        "go": [Function],
-                        "goBack": [Function],
-                        "goForward": [Function],
-                        "length": 2,
-                        "listen": [Function],
-                        "location": Object {
-                          "hash": "",
-                          "pathname": "/projects",
-                          "search": "",
-                          "state": undefined,
-                        },
-                        "push": [Function],
-                        "replace": [Function],
-                      }
-                    }
-                    location={
-                      Object {
-                        "hash": "",
-                        "pathname": "/projects",
-                        "search": "",
-                        "state": undefined,
-                      }
-                    }
-                    match={
-                      Object {
-                        "isExact": true,
-                        "params": Object {},
-                        "path": "/projects",
-                        "url": "/projects",
-                      }
-                    }
-                  >
-                    <section>
-                      <Card
-                        image=""
-                        onClick={[Function]}
-                        primary="pixi.js project"
-                        secondary="pixi.js"
-                      >
-                        <article
-                          className="undefined"
-                          onClick={[Function]}
-                        >
-                          <header>
-                            <h4>
-                              pixi.js project
-                            </h4>
-                          </header>
-                          <footer>
-                            pixi.js
-                          </footer>
-                        </article>
-                      </Card>
-                      <Card
-                        image=""
-                        onClick={[Function]}
-                        primary="babylon.js project"
-                        secondary="babylon.js"
-                      >
-                        <article
-                          className="undefined"
-                          onClick={[Function]}
-                        >
-                          <header>
-                            <h4>
-                              babylon.js project
-                            </h4>
-                          </header>
-                          <footer>
-                            babylon.js
-                          </footer>
-                        </article>
-                      </Card>
-                    </section>
-                  </Projects>
-                </Provider>
-              </Consumer>
-            </Route>
-          </Consumer>
-        </Switch>
-      </d>
-    </main>
+    <main />
   </div>
 </Layout>
 `;
 
 exports[`layout should navigate to resume tab 1`] = `
-<Layout>
+<Layout
+  routes={
+    Array [
+      Object {
+        "Component": [Function],
+        "children": Array [
+          Object {
+            "Component": [Function],
+            "path": "pixijs",
+          },
+          Object {
+            "Component": [Function],
+            "path": "babylonjs",
+          },
+        ],
+        "path": "projects",
+      },
+      Object {
+        "Component": [Function],
+        "path": "photos",
+      },
+      Object {
+        "Component": [Function],
+        "children": Array [
+          Object {
+            "Component": [Function],
+            "path": ":id",
+          },
+        ],
+        "path": "posts",
+      },
+      Object {
+        "Component": [Function],
+        "path": "resume",
+      },
+    ]
+  }
+>
   <div>
     <nav
       aria-label="primary"
@@ -498,7 +360,7 @@ exports[`layout should navigate to resume tab 1`] = `
         <li
           className=""
           id="nav-projects"
-          key="/projects"
+          key="projects"
         >
           <a
             onClick={[Function]}
@@ -509,7 +371,7 @@ exports[`layout should navigate to resume tab 1`] = `
         <li
           className=""
           id="nav-photos"
-          key="/photos"
+          key="photos"
         >
           <a
             onClick={[Function]}
@@ -520,7 +382,7 @@ exports[`layout should navigate to resume tab 1`] = `
         <li
           className=""
           id="nav-posts"
-          key="/posts"
+          key="posts"
         >
           <a
             onClick={[Function]}
@@ -531,7 +393,7 @@ exports[`layout should navigate to resume tab 1`] = `
         <li
           className="undefined"
           id="nav-resume"
-          key="/resume"
+          key="resume"
         >
           <a
             onClick={[Function]}
@@ -541,131 +403,50 @@ exports[`layout should navigate to resume tab 1`] = `
         </li>
       </ul>
     </nav>
-    <main>
-      <d
-        fallback={<Loader />}
-      >
-        <Switch>
-          <Consumer>
-            <Route
-              component={[Function]}
-              computedMatch={
-                Object {
-                  "isExact": true,
-                  "params": Object {},
-                  "path": "/resume",
-                  "url": "/resume",
-                }
-              }
-              key="/resume"
-              location={
-                Object {
-                  "hash": "",
-                  "pathname": "/resume",
-                  "search": "",
-                  "state": undefined,
-                }
-              }
-              path="/resume"
-            >
-              <Consumer>
-                <Provider
-                  value={
-                    Object {
-                      "history": Object {
-                        "action": "PUSH",
-                        "block": [Function],
-                        "createHref": [Function],
-                        "go": [Function],
-                        "goBack": [Function],
-                        "goForward": [Function],
-                        "length": 5,
-                        "listen": [Function],
-                        "location": Object {
-                          "hash": "",
-                          "pathname": "/resume",
-                          "search": "",
-                          "state": undefined,
-                        },
-                        "push": [Function],
-                        "replace": [Function],
-                      },
-                      "location": Object {
-                        "hash": "",
-                        "pathname": "/resume",
-                        "search": "",
-                        "state": undefined,
-                      },
-                      "match": Object {
-                        "isExact": true,
-                        "params": Object {},
-                        "path": "/resume",
-                        "url": "/resume",
-                      },
-                      "staticContext": undefined,
-                    }
-                  }
-                >
-                  <Resume
-                    history={
-                      Object {
-                        "action": "PUSH",
-                        "block": [Function],
-                        "createHref": [Function],
-                        "go": [Function],
-                        "goBack": [Function],
-                        "goForward": [Function],
-                        "length": 5,
-                        "listen": [Function],
-                        "location": Object {
-                          "hash": "",
-                          "pathname": "/resume",
-                          "search": "",
-                          "state": undefined,
-                        },
-                        "push": [Function],
-                        "replace": [Function],
-                      }
-                    }
-                    location={
-                      Object {
-                        "hash": "",
-                        "pathname": "/resume",
-                        "search": "",
-                        "state": undefined,
-                      }
-                    }
-                    match={
-                      Object {
-                        "isExact": true,
-                        "params": Object {},
-                        "path": "/resume",
-                        "url": "/resume",
-                      }
-                    }
-                  >
-                    <section>
-                      <embed
-                        height="100%"
-                        src="https://jaxreiff.com/resume/resume.pdf#toolbar=0"
-                        type="application/pdf"
-                        width="100%"
-                      />
-                    </section>
-                  </Resume>
-                </Provider>
-              </Consumer>
-            </Route>
-          </Consumer>
-        </Switch>
-      </d>
-    </main>
+    <main />
   </div>
 </Layout>
 `;
 
 exports[`layout should render 1`] = `
-<Layout>
+<Layout
+  routes={
+    Array [
+      Object {
+        "Component": [Function],
+        "children": Array [
+          Object {
+            "Component": [Function],
+            "path": "pixijs",
+          },
+          Object {
+            "Component": [Function],
+            "path": "babylonjs",
+          },
+        ],
+        "path": "projects",
+      },
+      Object {
+        "Component": [Function],
+        "path": "photos",
+      },
+      Object {
+        "Component": [Function],
+        "children": Array [
+          Object {
+            "Component": [Function],
+            "path": ":id",
+          },
+        ],
+        "path": "posts",
+      },
+      Object {
+        "Component": [Function],
+        "path": "resume",
+      },
+    ]
+  }
+>
   <div>
     <nav
       aria-label="primary"
@@ -681,7 +462,7 @@ exports[`layout should render 1`] = `
         <li
           className=""
           id="nav-projects"
-          key="/projects"
+          key="projects"
         >
           <a
             onClick={[Function]}
@@ -692,7 +473,7 @@ exports[`layout should render 1`] = `
         <li
           className=""
           id="nav-photos"
-          key="/photos"
+          key="photos"
         >
           <a
             onClick={[Function]}
@@ -703,7 +484,7 @@ exports[`layout should render 1`] = `
         <li
           className=""
           id="nav-posts"
-          key="/posts"
+          key="posts"
         >
           <a
             onClick={[Function]}
@@ -714,7 +495,7 @@ exports[`layout should render 1`] = `
         <li
           className=""
           id="nav-resume"
-          key="/resume"
+          key="resume"
         >
           <a
             onClick={[Function]}
@@ -724,151 +505,7 @@ exports[`layout should render 1`] = `
         </li>
       </ul>
     </nav>
-    <main>
-      <d
-        fallback={<Loader />}
-      >
-        <Switch>
-          <Consumer>
-            <Route
-              component={[Function]}
-              computedMatch={
-                Object {
-                  "isExact": true,
-                  "params": Object {},
-                  "path": "/",
-                  "url": "/",
-                }
-              }
-              exact={true}
-              location={
-                Object {
-                  "hash": "",
-                  "pathname": "/",
-                  "search": "",
-                  "state": undefined,
-                }
-              }
-              path="/"
-            >
-              <Consumer>
-                <Provider
-                  value={
-                    Object {
-                      "history": Object {
-                        "action": "POP",
-                        "block": [Function],
-                        "createHref": [Function],
-                        "go": [Function],
-                        "goBack": [Function],
-                        "goForward": [Function],
-                        "length": 1,
-                        "listen": [Function],
-                        "location": Object {
-                          "hash": "",
-                          "pathname": "/",
-                          "search": "",
-                          "state": undefined,
-                        },
-                        "push": [Function],
-                        "replace": [Function],
-                      },
-                      "location": Object {
-                        "hash": "",
-                        "pathname": "/",
-                        "search": "",
-                        "state": undefined,
-                      },
-                      "match": Object {
-                        "isExact": true,
-                        "params": Object {},
-                        "path": "/",
-                        "url": "/",
-                      },
-                      "staticContext": undefined,
-                    }
-                  }
-                >
-                  <Homepage
-                    history={
-                      Object {
-                        "action": "POP",
-                        "block": [Function],
-                        "createHref": [Function],
-                        "go": [Function],
-                        "goBack": [Function],
-                        "goForward": [Function],
-                        "length": 1,
-                        "listen": [Function],
-                        "location": Object {
-                          "hash": "",
-                          "pathname": "/",
-                          "search": "",
-                          "state": undefined,
-                        },
-                        "push": [Function],
-                        "replace": [Function],
-                      }
-                    }
-                    location={
-                      Object {
-                        "hash": "",
-                        "pathname": "/",
-                        "search": "",
-                        "state": undefined,
-                      }
-                    }
-                    match={
-                      Object {
-                        "isExact": true,
-                        "params": Object {},
-                        "path": "/",
-                        "url": "/",
-                      }
-                    }
-                  >
-                    <section>
-                      <header>
-                        <h2>
-                          Homepage
-                        </h2>
-                      </header>
-                      <div
-                        style={
-                          Object {
-                            "textAlign": "center",
-                          }
-                        }
-                      >
-                        Site under construction
-                      </div>
-                      <Loader>
-                        <div
-                          className="loader"
-                        >
-                          <span
-                            key={1}
-                          />
-                          <span
-                            key={2}
-                          />
-                          <span
-                            key={3}
-                          />
-                          <span
-                            key={4}
-                          />
-                        </div>
-                      </Loader>
-                    </section>
-                  </Homepage>
-                </Provider>
-              </Consumer>
-            </Route>
-          </Consumer>
-        </Switch>
-      </d>
-    </main>
+    <main />
   </div>
 </Layout>
 `;

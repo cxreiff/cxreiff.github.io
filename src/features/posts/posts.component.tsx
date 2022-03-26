@@ -1,16 +1,14 @@
 import { FC } from 'react'
-import { Switch, Route } from 'react-router-dom'
 
-import PostsList from './postsList.component'
-import PostsContent from './postsContent.component'
+import posts from './markdown'
+import PostsTile from './postsTile.component'
 
-const Posts: FC = () => {
-    return (
-        <Switch>
-            <Route exact path={'/posts'} component={PostsList} />
-            <Route path={'/posts/:id'} component={PostsContent} />
-        </Switch>
-    )
-}
+const Posts: FC = () => (
+    <section>
+        {Object.keys(posts).map((id: string) => {
+            return <PostsTile key={id} id={id} post={posts[id]} />
+        })}
+    </section>
+)
 
 export default Posts

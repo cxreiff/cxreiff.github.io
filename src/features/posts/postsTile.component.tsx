@@ -1,20 +1,17 @@
 import { FC } from 'react'
-import { push } from 'connected-react-router'
+import { useNavigate } from 'react-router-dom'
 
-import { useAppDispatch } from '~/src/app/store'
 import { Card } from '~/src/common/card/card.component'
-
 import { Post } from './markdown'
 
-type PostsListTileProps = {
+type PostsTileProps = {
     id: string,
     post: Post,
 }
 
-const PostsListTile: FC<PostsListTileProps> = ({ id, post }) => {
+const PostsTile: FC<PostsTileProps> = ({ id, post }) => {
 
-    const dispatch = useAppDispatch()
-    const navigate = (pathname: string) => dispatch(push(pathname))
+    const navigate = useNavigate()
 
     const { data: { title, description, date }} = post
 
@@ -28,4 +25,4 @@ const PostsListTile: FC<PostsListTileProps> = ({ id, post }) => {
     )
 }
 
-export default PostsListTile
+export default PostsTile
