@@ -1,11 +1,11 @@
-import { Ticker, Graphics, Point, Filter } from 'pixi.js'
+import { Graphics, Point, Filter, DisplayObject } from 'pixi.js'
 
 import vShader from '~/src/assets/shaders/test.vert'
 import fShader from '~/src/assets/shaders/test.frag'
-import { PixijsEntity } from '../abstract/pixijsEntity'
+import { Entity } from '../abstract/entity'
 import { View } from '../static/view'
 
-export class WavyEntity extends PixijsEntity<Graphics> {
+export class WavyEntity extends Entity<Graphics> {
 
     private elapsed: number
     private uniforms: { dimensions: number[] }
@@ -13,8 +13,8 @@ export class WavyEntity extends PixijsEntity<Graphics> {
     
     public points: Point[] = []
 
-    constructor (ticker: Ticker) {
-        super(ticker, new Graphics())
+    constructor () {
+        super(new Graphics())
         this.elapsed = 0.0
         this.uniforms = { dimensions: [View.element.width, View.element.height] }
         this.filters = [
@@ -22,7 +22,7 @@ export class WavyEntity extends PixijsEntity<Graphics> {
         ]
     }
 
-    override update = (delta: number) => {
+    override update (delta: number) {
         this.elapsed += delta
         
         this.uniforms.dimensions = [View.element.width, View.element.height]
@@ -49,4 +49,6 @@ export class WavyEntity extends PixijsEntity<Graphics> {
         this.object.moveTo(View.scale(0.5), View.scale(View.ratio() + 0.3))
         this.points.forEach(point => this.object.lineTo(View.scale(point.x), View.scale(point.y)))
     }
+
+    override handleCollision (otherEntity: Entity<DisplayObject>) {}
 }
