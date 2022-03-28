@@ -33,7 +33,7 @@
   "dependencies": {
     "@babylonjs/core": "^4.2.2",
     "@babylonjs/gui": "^4.2.0",
-    "@reduxjs/toolkit": "^1.5.1",
+    "@reduxjs/toolkit": "^1.8.0",
     "assets": "^3.0.1",
     "babylonjs-hook": "^0.1.0",
     "buffer": "^6.0.3",
