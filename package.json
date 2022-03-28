@@ -68,7 +68,7 @@
     "@types/history": "^4.7.8",
     "@types/jest": "^27.4.1",
     "@types/jsdom": "^16.2.3",
-    "@types/react": "^17.0.42",
+    "@types/react": "^17.0.43",
     "@types/react-router": "^5.1.14",
     "@types/react-router-dom": "^5.1.7",
     "@types/react-syntax-highlighter": "^13.5.2",
