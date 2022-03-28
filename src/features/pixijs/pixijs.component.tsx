@@ -1,7 +1,7 @@
 import { FC, useEffect } from 'react'
 
 import { useMeasuredRef } from '~/src/hooks/useMeasuredRef'
-import { PixijsProject } from './pixijsProject'
+import { Manager } from './static/manager'
 
 import styles from './pixijs.module.scss'
 
@@ -11,9 +11,8 @@ const Pixijs: FC = () => {
 
     useEffect(() => {
         if (pixiRef.current && pixiRect) {
-            const pixiApp = new PixijsProject(pixiRef.current as HTMLCanvasElement, pixiRect)
-            pixiApp.start()
-            return () => pixiApp.stop()
+            Manager.initialize(pixiRef.current as HTMLCanvasElement, pixiRect)
+            return () => Manager.app.destroy()
         }
     }, [pixiRef.current]) /* eslint-disable-line react-hooks/exhaustive-deps */
 
