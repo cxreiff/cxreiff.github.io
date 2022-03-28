@@ -1,21 +1,21 @@
-import { Ticker, Graphics } from 'pixi.js'
+import { Graphics, DisplayObject } from 'pixi.js'
 
-import { PixijsEntity } from '../abstract/pixijsEntity'
+import { Entity } from '../abstract/entity'
 import { View } from '../static/view'
 import { WavyEntity } from './wavyEntity'
 
-export class GliderEntity extends PixijsEntity<Graphics> {
+export class GliderEntity extends Entity<Graphics> {
 
     private wavy: WavyEntity
 
-    constructor (ticker: Ticker, wavy: WavyEntity) {
-        super(ticker, new Graphics())
+    constructor (wavy: WavyEntity) {
+        super(new Graphics())
         this.wavy = wavy
         this.relativePosition.x = 0.5
         this.relativePosition.y = 0.4
     }
 
-    override update = (delta: number) => {
+    override update (delta: number) {
         const linePosAtPlayer = this.wavy.points.slice(-13)[0].x
         if (this.relativePosition.x < linePosAtPlayer - 0.04) {
             this.relativePosition.x += (linePosAtPlayer - 0.04 - this.relativePosition.x) / 10
@@ -31,4 +31,6 @@ export class GliderEntity extends PixijsEntity<Graphics> {
         this.object.lineTo(0, View.scale(-0.07))
         this.object.endFill()
     }
+
+    override handleCollision (otherEntity: Entity<DisplayObject>) {}
 }

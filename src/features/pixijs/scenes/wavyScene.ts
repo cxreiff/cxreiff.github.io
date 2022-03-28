@@ -1,8 +1,8 @@
-import { PixijsScene } from '../abstract/pixijsScene'
+import { Scene } from '../abstract/scene'
 import { WavyEntity } from '../entities/wavyEntity'
 import { GliderEntity } from '../entities/gliderEntity'
 
-export class WavyScene extends PixijsScene {
+export class WavyScene extends Scene {
 
     private wavyEntity: WavyEntity
     private gliderEntity: GliderEntity
@@ -10,10 +10,10 @@ export class WavyScene extends PixijsScene {
     constructor() {
         super()
 
-        this.wavyEntity = new WavyEntity(this.ticker)
-        this.gliderEntity = new GliderEntity(this.ticker, this.wavyEntity)
+        this.wavyEntity = new WavyEntity()
+        this.gliderEntity = new GliderEntity(this.wavyEntity)
 
-        this.addChild(this.wavyEntity)
-        this.addChild(this.gliderEntity)
+        this.addEntity(this.wavyEntity)
+        this.addEntity(this.gliderEntity)
     }
 }

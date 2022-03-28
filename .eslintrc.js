@@ -24,5 +24,10 @@ module.exports = {
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': ['error', { args: 'none' }],
     '@typescript-eslint/triple-slash-reference': ['error', { types: "always" }],
+    'no-useless-constructor': 'off',
+    '@typescript-eslint/no-useless-constructor': 'off',
+    '@typescript-eslint/no-empty-function': ['error', {
+      allow: ['private-constructors', 'methods']
+    }],
   },
-};
+}
