@@ -35,7 +35,7 @@
     "@babylonjs/gui": "^4.2.0",
     "@reduxjs/toolkit": "^1.8.0",
     "assets": "^3.0.1",
-    "babylonjs-hook": "^0.1.0",
+    "babylonjs-hook": "^0.1.1",
     "buffer": "^6.0.3",
     "classnames": "^2.3.1",
     "follow-redirects": "^1.14.9",
