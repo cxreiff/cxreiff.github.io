@@ -21,6 +21,10 @@ export type RouteDefinition = {
 
 export const ROUTES: RouteDefinition[] = [
     {
+        path: '',
+        Component: Homepage,
+    },
+    {
         path: 'projects',
         Component: Projects,
         children: [
@@ -56,7 +60,7 @@ export const ROUTES: RouteDefinition[] = [
 
 export const Routing: FC = () => {
 
-    const pathname = useLocation().pathname
+    const { pathname } = useLocation()
 
     useEffect(() => {
         const baseRoute = pathname.split('/')[1]
@@ -81,7 +85,6 @@ export const Routing: FC = () => {
         <Suspense fallback={<Loader />}>
             <Routes>
                 {renderRoutes(ROUTES)}
-                <Route path={'/'} element={<Homepage />} />
             </Routes>
         </Suspense>
     )

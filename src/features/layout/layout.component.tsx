@@ -27,7 +27,7 @@ export const Layout: FC<LayoutProps> = ({ children, routes }) => {
                             jax reiff
                         </a>
                     </li>
-                    {routes.map(({ path }) => (
+                    {routes.filter(({ path }) => path).map(({ path }) => (
                         <li
                             key={path}
                             id={`nav-${path}`}

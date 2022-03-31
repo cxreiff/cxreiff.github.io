@@ -6,6 +6,10 @@ exports[`layout should navigate to photos tab 1`] = `
     Array [
       Object {
         "Component": [Function],
+        "path": "",
+      },
+      Object {
+        "Component": [Function],
         "children": Array [
           Object {
             "Component": [Function],
@@ -110,6 +114,10 @@ exports[`layout should navigate to posts tab 1`] = `
 <Layout
   routes={
     Array [
+      Object {
+        "Component": [Function],
+        "path": "",
+      },
       Object {
         "Component": [Function],
         "children": Array [
@@ -218,6 +226,10 @@ exports[`layout should navigate to projects tab 1`] = `
     Array [
       Object {
         "Component": [Function],
+        "path": "",
+      },
+      Object {
+        "Component": [Function],
         "children": Array [
           Object {
             "Component": [Function],
@@ -324,6 +336,10 @@ exports[`layout should navigate to resume tab 1`] = `
     Array [
       Object {
         "Component": [Function],
+        "path": "",
+      },
+      Object {
+        "Component": [Function],
         "children": Array [
           Object {
             "Component": [Function],
@@ -428,6 +444,10 @@ exports[`layout should render 1`] = `
 <Layout
   routes={
     Array [
+      Object {
+        "Component": [Function],
+        "path": "",
+      },
       Object {
         "Component": [Function],
         "children": Array [
