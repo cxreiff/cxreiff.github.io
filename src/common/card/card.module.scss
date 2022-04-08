@@ -13,9 +13,6 @@
     header {
         flex: 1 0;
         font-size: 1.2rem;
-        text-decoration: underline;
-        text-decoration-color: $accent-color-secondary;
-        text-underline-offset: 2px;
         
         h4 {
             margin: 0.5rem 0;
@@ -24,12 +21,16 @@
 
     footer {
         flex: 0 0 auto;
-        font-size: 1.1rem;
+        font-size: 0.9rem;
         padding: 0.5rem;
     }
 
     p {
         flex: 0 0 100%;
+        font-size: 0.9rem;
+        border-top: 2px solid #BDBDBD;
+        margin-top: 0;
+        padding-top: 1rem;
     }
 }
 
@@ -38,7 +39,7 @@
         0.4rem,
         $accent-color-darker,
         $accent-color-darkest,
-        $accent-color-secondary,
+        $accent-color-darker,
         $accent-color-darkest
     );
 }

@@ -7,12 +7,11 @@ import { Entity } from './entity'
  */
 export abstract class Scene extends Container {
 
-    private entities: Entity<DisplayObject>[] = []
+    public entities: Entity<DisplayObject>[] = []
 
     public update (delta: number) {
         this.entities.forEach(entity => entity.update(delta))
         this.entities.forEach(entity => entity.resize())
-        this.checkCollisions()
     }
 
     public override destroy () {
@@ -23,6 +22,7 @@ export abstract class Scene extends Container {
     public addEntity (entity: Entity<DisplayObject>) {
         this.entities.push(entity)
         this.addChild(entity)
+        return entity
     }
     
     public removeEntity (entity: Entity<DisplayObject>) {
@@ -31,16 +31,6 @@ export abstract class Scene extends Container {
             this.entities.splice(index, 1)
             this.removeChild(entity)
         }
-    }
-
-    private checkCollisions () {
-        this.entities.forEach((entityA, index) => {
-            this.entities.slice(index).forEach(entityB => {
-                if (entityA.checkCollision(entityB)) {
-                    entityA.handleCollision(entityB)
-                    entityB.handleCollision(entityA)
-                }
-            })
-        })
+        return entity
     }
 }

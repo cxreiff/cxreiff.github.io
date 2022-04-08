@@ -7,7 +7,6 @@ import { DOCUMENT_TITLE_ROOT } from '~/src/utilities/constants'
 import Homepage from '~/src/features/homepage/homepage.component'
 import Projects from '~/src/features/projects/projects.component'
 import Photos from '~/src/features/photos/photos.component'
-import Resume from '~/src/features/resume/resume.component'
 const Pixijs = lazy(() => import('~/src/features/pixijs/pixijs.component'))
 const Posts = lazy(() => import('~/src/features/posts/posts.component'))
 const PostsContent = lazy(() => import('~/src/features/posts/postsContent.component'))
@@ -51,10 +50,6 @@ export const ROUTES: RouteDefinition[] = [
                 Component: PostsContent,
             }
         ]
-    },
-    {
-        path: 'resume',
-        Component: Resume,
     },
 ]
 

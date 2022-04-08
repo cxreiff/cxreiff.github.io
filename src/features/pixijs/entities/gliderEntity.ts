@@ -1,4 +1,4 @@
-import { Graphics, DisplayObject } from 'pixi.js'
+import { Graphics } from 'pixi.js'
 
 import { Entity } from '../abstract/entity'
 import { View } from '../static/view'
@@ -23,14 +23,12 @@ export class GliderEntity extends Entity<Graphics> {
             this.relativePosition.x += (linePosAtPlayer + 0.04 - this.relativePosition.x) / 10
         }
         
-        this.object.clear()
-        this.object.lineStyle(0)
-        this.object.beginFill(0x3D3333, 1)
-        this.object.moveTo(View.scale(-0.07 / 2), 0)
-        this.object.lineTo(View.scale(0.07 / 2), 0)
-        this.object.lineTo(0, View.scale(-0.07))
-        this.object.endFill()
+        this.facade.clear()
+        this.facade.lineStyle(0)
+        this.facade.beginFill(0x3D3333, 1)
+        this.facade.moveTo(View.scale(-0.07 / 2), 0)
+        this.facade.lineTo(View.scale(0.07 / 2), 0)
+        this.facade.lineTo(0, View.scale(-0.07))
+        this.facade.endFill()
     }
-
-    override handleCollision (otherEntity: Entity<DisplayObject>) {}
 }

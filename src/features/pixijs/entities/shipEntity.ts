@@ -1,13 +1,13 @@
-import { Graphics, DisplayObject } from 'pixi.js'
+import { Graphics } from 'pixi.js'
+import { Bodies } from 'matter-js'
 
-import { Entity } from '../abstract/entity'
+import { MatterEntity } from '../abstract/matterEntity'
 import { Manager } from '../static/manager'
 import { View } from '../static/view'
 import { Keyboard } from '../static/keyboard'
 import { LaserEntity } from './laserEntity'
-import { AsteroidEntity } from './asteroidEntity'
 
-export class ShipEntity extends Entity<Graphics> {
+export class ShipEntity extends MatterEntity<Graphics> {
 
     private static CONTROLS = {
         BOOST: 'Space',
@@ -17,13 +17,29 @@ export class ShipEntity extends Entity<Graphics> {
         BACKWARD: 'ArrowDown',
     }
 
-    private speed = 0.008
+    private static VERTICES = [
+        { x: -25, y: 30 },
+        { x: 25, y: 30 },
+        { x: 30, y: 20 },
+        { x: 3, y: -30 },
+        { x: -3, y: -30 },
+        { x: -30, y: 20 },
+    ]
+
+    private static SPEED = 7
+    private static TURNING_SPEED = 0.07
+
     private projectileFired = false
 
     constructor () {
-        super(new Graphics())
-        this.relativePosition.x = 0.5
-        this.relativePosition.y = 0.2
+        super(
+            new Graphics(),
+            Bodies.fromVertices(View.unitWidth() * 0.5, View.unitHeight() * 0.2, [ShipEntity.VERTICES], {
+                friction: 0.9,
+                frictionAir: 0.9,
+                inertia: 0.1,
+            })
+        )
 
         Keyboard.listenFor(...Object.values(ShipEntity.CONTROLS))
     }
@@ -38,54 +54,43 @@ export class ShipEntity extends Entity<Graphics> {
         }
 
         if (Keyboard.isPressed(ShipEntity.CONTROLS.TURN_LEFT)) {
-            this.object.rotation -= 0.06
+            this.body.angle -= ShipEntity.TURNING_SPEED
         }
 
         if (Keyboard.isPressed(ShipEntity.CONTROLS.TURN_RIGHT)) {
-            this.object.rotation += 0.06
+            this.body.angle += ShipEntity.TURNING_SPEED
         }
 
         if (Keyboard.isPressed(ShipEntity.CONTROLS.FORWARD)) {
-            this.relativePosition.x += this.speed * Math.sin(this.object.rotation)
-            this.relativePosition.y -= this.speed * Math.cos(this.object.rotation)
-            this.boundPositionToView(0.01)
+            this.body.position.x += ShipEntity.SPEED * Math.sin(this.facade.rotation)
+            this.body.position.y -= ShipEntity.SPEED * Math.cos(this.facade.rotation)
         }
 
         if (Keyboard.isPressed(ShipEntity.CONTROLS.BACKWARD)) {
-            this.relativePosition.x -= this.speed * Math.sin(this.object.rotation)
-            this.relativePosition.y += this.speed * Math.cos(this.object.rotation)
-            this.boundPositionToView(0.01)
+            this.body.position.x -= ShipEntity.SPEED * Math.sin(this.facade.rotation)
+            this.body.position.y += ShipEntity.SPEED * Math.cos(this.facade.rotation)
         }
 
         this.draw()
     }
 
-    override handleCollision (otherEntity: Entity<DisplayObject>) {
-        switch (otherEntity.constructor) {
-            case AsteroidEntity:
-                //TODO: player died, restart
-        }
-    }
-
     draw () {
-        this.object.clear()
-        this.object.lineStyle(0)
-        this.object.beginFill(0x3D3333, 1)
-        this.object.moveTo(View.scale(-0.06 / 2), View.scale(0.03))
-        this.object.lineTo(View.scale(-0.018 / 2), View.scale(0.027))
-        this.object.lineTo(View.scale(0.0), View.scale(0.03 + this.speed))
-        this.object.lineTo(View.scale(0.018 / 2), View.scale(0.027))
-        this.object.lineTo(View.scale(0.06 / 2), View.scale(0.03))
-        this.object.lineTo(View.scale(0.018), View.scale(0.01))
-        this.object.lineTo(View.scale(0.002), View.scale(-0.03))
-        this.object.lineTo(View.scale(-0.002), View.scale(-0.03))
-        this.object.lineTo(View.scale(-0.018), View.scale(0.01))
-        this.object.endFill()
+        this.facade.clear()
+        this.facade.lineStyle(0)
+        this.facade.beginFill(0x3D3333, 1)
+        ShipEntity.VERTICES.forEach((vertex, index) => {
+            if (index === 0) {
+                this.facade.moveTo(View.scale(vertex.x), View.scale(vertex.y))
+            } else {
+                this.facade.lineTo(View.scale(vertex.x), View.scale(vertex.y))
+            }
+        })
+        this.facade.endFill()
     }
 
     spawnProjectile () {
         Manager.currentScene.addEntity(
-            new LaserEntity(this.relativePosition.x, this.relativePosition.y, this.object.rotation)
+            new LaserEntity(this.body.position.x, this.body.position.y, this.body.angle)
         )
     }
 }

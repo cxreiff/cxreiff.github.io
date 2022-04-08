@@ -1,45 +1,42 @@
-import { Graphics, DisplayObject } from 'pixi.js'
+import { Graphics } from 'pixi.js'
+import { Bodies, Body } from 'matter-js'
 
-import { Entity } from '../abstract/entity'
+import { MatterEntity } from '../abstract/matterEntity'
 import { Manager } from '../static/manager'
 import { View } from '../static/view'
-import { AsteroidEntity } from '../entities/asteroidEntity'
 
-export class LaserEntity extends Entity<Graphics> {
+export class LaserEntity extends MatterEntity<Graphics> {
 
     constructor (x: number, y: number, rotation: number) {
-        super(new Graphics())
-        this.relativePosition.x = x
-        this.relativePosition.y = y
-        this.object.rotation = rotation
-        this.velocity.x = Math.sin(rotation) / 70
-        this.velocity.y = -Math.cos(rotation) / 70
+        super(new Graphics(), Bodies.rectangle(x, y, 5, 20, {
+            isSensor: true,
+            friction: 0,
+            frictionAir: 0,
+        }))
+        Body.set(this.body, {
+            angle: rotation,
+            velocity: { x: Math.sin(rotation) * 15, y: -Math.cos(rotation) * 15 }
+        })
     }
 
     override update (delta: number) {
-        this.updateForVelocity()
-        if (this.boundPositionToView(-0.1)) {
+        if (
+            this.body.position.x < -10
+            || this.body.position.x > View.unitWidth() + 10
+            || this.body.position.y < -10
+            || this.body.position.y > View.unitHeight() + 10
+        ) {
             Manager.currentScene.removeEntity(this)
         }
+
         this.draw()
     }
 
-    override handleCollision (otherEntity: Entity<DisplayObject>) {
-        switch (otherEntity.constructor) {
-            case AsteroidEntity:
-                Manager.currentScene.removeEntity(this)
-                this.destroy()
-        }
-    }
-
     draw () {
-        this.object.clear()
-        this.object.lineStyle(0)
-        this.object.beginFill(0x3D3333, 1)
-        this.object.moveTo(View.scale(-0.005 / 2), View.scale(0.01))
-        this.object.lineTo(View.scale(-0.005 / 2), View.scale(-0.01))
-        this.object.lineTo(View.scale(0.005), View.scale(-0.01))
-        this.object.lineTo(View.scale(0.005), View.scale(0.01))
-        this.object.endFill()
+        this.facade.clear()
+        this.facade.lineStyle(0)
+        this.facade.beginFill(0x3D3333, 1)
+        this.facade.drawRect(0, 0, View.scale(5), View.scale(20))
+        this.facade.endFill()
     }
 }
