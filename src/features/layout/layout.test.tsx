@@ -42,9 +42,4 @@ describe('layout', () => {
         component.find('#nav-posts>a').simulate('click')
         expect(component.find(Layout)).toMatchSnapshot()
     })
-
-    it('should navigate to resume tab', () => {
-        component.find('#nav-resume>a').simulate('click')
-        expect(component.find(Layout)).toMatchSnapshot()
-    })
 })

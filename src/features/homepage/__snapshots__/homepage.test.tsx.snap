@@ -113,38 +113,78 @@ exports[`homepage should render 1`] = `
                 <section
                   className="homepage"
                 >
-                  <header>
-                    <h2>
-                      Homepage
-                    </h2>
-                  </header>
-                  <div
-                    style={
-                      Object {
-                        "textAlign": "center",
-                      }
-                    }
+                  <Image
+                    alt="Image of site author Jax Reiff."
+                    aspect={1.5}
+                    className="image"
+                    source="https://jaxreiff-static.sfo3.cdn.digitaloceanspaces.com/assets/aboutme.png"
                   >
-                    Site under construction
-                  </div>
-                  <Loader>
                     <div
-                      className="loader"
+                      className="image image hidden"
                     >
-                      <span
-                        key={1}
+                      <img
+                        alt="Image of site author Jax Reiff."
+                        onLoad={[Function]}
+                        src="https://jaxreiff-static.sfo3.cdn.digitaloceanspaces.com/assets/aboutme.png"
                       />
-                      <span
-                        key={2}
-                      />
-                      <span
-                        key={3}
-                      />
-                      <span
-                        key={4}
+                      <svg
+                        viewBox="0 0 1.5 1"
                       />
                     </div>
-                  </Loader>
+                  </Image>
+                  <div
+                    className="aboutme"
+                  >
+                    <header>
+                      <h2>
+                        About Me
+                      </h2>
+                    </header>
+                    <p>
+                      Hello! I am a software engineer specializing in front-end, with expertise building clients using TypeScript and React, but with plenty of experience across the full stack.
+                    </p>
+                    <p>
+                      This is my personal site, where I've put photos, writing, and various projects I've been working on.
+                    </p>
+                    <p>
+                      The site itself also serves as an example (and test environment) of some of my preferred front-end technologies, libraries, and approaches. The source code for the site is publically available 
+                      <a
+                        href="https://github.com/jaxreiff/jaxreiff.github.io"
+                      >
+                        here
+                      </a>
+                      , and links to resources and libraries that I have found useful building the site can be found 
+                      <Link
+                        to="/posts/portfolio-site-design"
+                      >
+                        <a
+                          href="#/posts/portfolio-site-design"
+                          onClick={[Function]}
+                        >
+                          here
+                        </a>
+                      </Link>
+                      .
+                    </p>
+                    <p>
+                      My front-end development résumé can be found 
+                      <a
+                        href="https://jaxreiff.com/resume/resume.pdf#toolbar=0"
+                      >
+                        here
+                      </a>
+                      .
+                    </p>
+                    <p>
+                      My GitHub profile can be found 
+                      <a
+                        href="https://github.com/jaxreiff"
+                      >
+                        here
+                      </a>
+                      .
+                    </p>
+                  </div>
                 </section>
               </Homepage>
             </Provider>

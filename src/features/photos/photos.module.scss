@@ -12,6 +12,6 @@
 
 .tile {
   @include box_shadow($accent-color-darker);
-  font-size: 0px;
   line-height: 0;
+  font-size: 0;
 }

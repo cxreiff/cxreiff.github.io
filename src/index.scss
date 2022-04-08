@@ -10,11 +10,7 @@
 body {
     font-family: $font-family;
     font-weight: 300;
-    line-height: 1.5rem;
     padding: 0;
-}
-
-body {
     opacity: 0;
 }
 body.font_loaded,
@@ -24,6 +20,10 @@ body.font_failed {
     animation-timing-function: ease-in;
     animation-iteration-count: 1;
     opacity: 1;
+}
+
+p {
+    line-height: 1.5rem;
 }
 
 @font-face {

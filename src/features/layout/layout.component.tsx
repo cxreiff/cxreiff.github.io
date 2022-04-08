@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import cn from 'classnames'
 
@@ -13,6 +13,7 @@ export const Layout: FC<LayoutProps> = ({ children, routes }) => {
     
     const pathname = useLocation().pathname
     const navigate = useNavigate()
+    const [expanded, setExpanded] = useState(false)
 
     const comparePaths = (path: string, pathname: string) => (
         path === pathname.split('/')[1]
@@ -20,9 +21,16 @@ export const Layout: FC<LayoutProps> = ({ children, routes }) => {
 
     return (
         <div className={styles.layout}>
-            <nav aria-label={'primary'}>
+            <nav aria-label={'primary'} className={cn({ [styles.expanded]: expanded })}>
                 <ul>
                     <li className={styles.logo}>
+                        <button className={styles.expand_button} onClick={() => setExpanded(!expanded)}>
+                            <svg viewBox={'0 0 100 80'} width={'40'} height={'40'}>
+                              <rect width={'100'} height="20" />
+                              <rect y={'30'} width={'100'} height={'20'} />
+                              <rect y={'60'} width={'100'} height={'20'} />
+                            </svg>
+                        </button>
                         <a onClick={() => navigate('/')}>
                             jax reiff
                         </a>

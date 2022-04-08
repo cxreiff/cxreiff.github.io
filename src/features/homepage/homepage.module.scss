@@ -1,5 +1,29 @@
 @use '../../shared.scss' as *;
 
 .homepage {
-    @include wide_card($accent-color-lighter, $accent-color-darker);
+    display: grid;
+    gap: 1rem 1rem;
+    grid-template-columns: 1fr;
+    
+    @media only screen and (min-width: $mobile-breakpoint) {
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+.image {
+    @include box_shadow($accent-color-darker);
+}
+
+.aboutme {
+    padding: 0rem 1rem;
+
+    @media only screen and (min-width: $mobile-breakpoint) {
+        padding: 1rem 2rem;
+        border-right: 3px dashed $accent-color-dark;
+    }
+
+    a {
+        color: $accent-color-dark;
+        text-underline-offset: 2px;
+    }
 }

@@ -1,14 +1,15 @@
 import { mount, ReactWrapper } from 'enzyme'
 
-import { ImageLoader } from './imageLoader.component'
+import { ImageLightbox } from './imageLightbox.component'
 
 describe('imageLoader', () => {
     
-    let component: ReactWrapper<typeof ImageLoader, void>
+    let component: ReactWrapper<typeof ImageLightbox, void>
     
     beforeEach(() => {
-        component = mount<typeof ImageLoader, void>(
-            <ImageLoader
+        component = mount<typeof ImageLightbox, void>(
+            <ImageLightbox
+                aspect={1/1}
                 small={'test'}
                 medium={'test'}
                 large={'test'}
@@ -23,12 +24,12 @@ describe('imageLoader', () => {
     })
 
     it('should render lightbox', () => {
-        component.find('img').simulate('click')
+        component.find('div.test').simulate('click')
         expect(component).toMatchSnapshot()
     })
 
     it('should close lightbox', () => {
-        component.find('img').simulate('click')
+        component.find('div.test').simulate('click')
         component.find('.__react_modal_image__icon_menu').childAt(1).simulate('click')
         expect(component).toMatchSnapshot()
     })

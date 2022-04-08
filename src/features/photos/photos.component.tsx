@@ -2,7 +2,7 @@ import { FC, useState, useEffect } from 'react'
 import useInfiniteScroll from 'react-infinite-scroll-hook'
 
 import { useAppSelector, useAppDispatch } from '~/src/app/store'
-import { ImageLoader } from '~/src/common/imageLoader/imageLoader.component'
+import { ImageLightbox } from '~/src/common/imageLightbox/imageLightbox.component'
 
 import { fetchPhotos } from './photos.slice'
 
@@ -31,7 +31,7 @@ const Photos: FC = () => {
         <section className={styles.photos}>
             {photoSets.slice(0, numberOfPhotosVisible).map((photoSet, index) => (
                 <article key={index} className={styles.tile}>
-                    <ImageLoader {...photoSet} />
+                    <ImageLightbox aspect={1/1} {...photoSet} />
                 </article>
             ))}
             { hasNextPage && <div ref={sentryRef} /> }
