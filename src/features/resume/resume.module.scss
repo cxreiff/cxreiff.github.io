@@ -5,4 +5,5 @@
     @include background_noise($accent-color-lighter);
     width: 100%;
     min-height: calc(min(100vw, $max-width) * (1 / $a4-ratio));
+    overflow-y: scroll;
 }

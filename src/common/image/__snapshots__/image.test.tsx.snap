@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`imageLoader should render 1`] = `
+<Image
+  alt="test"
+  aspect={1}
+  className="test"
+  source="test"
+>
+  <div
+    className="image test hidden"
+  >
+    <img
+      alt="test"
+      onLoad={[Function]}
+      src="test"
+    />
+    <svg
+      viewBox="0 0 1 1"
+    />
+  </div>
+</Image>
+`;

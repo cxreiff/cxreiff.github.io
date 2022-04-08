@@ -3,120 +3,177 @@
 .layout {
     max-width: $max-width;
     margin: auto;
-}
 
-.layout>nav {
-    @include box_shadow($accent-color-darker);
-    @include background_noise($accent-color);
-    margin: 2rem 1rem 2rem;
-
-    ul {
-        display: flex;
-        flex-direction: column;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        min-height: 3rem;
+    &>main {
+        margin: 0 1rem 2rem;
     }
 
-    li {
-        height: 3rem;
-        width: 100%;
-    }
-    li.logo {
-        z-index: 1;
-        flex: 1;
-        margin: 0 0 1.7rem 0;
-    }
-    li.navlink {
-        position: relative;
-        flex: 1;
-    }
+    &>nav {
+        @include box_shadow($accent-color-darker);
+        @include background_noise($accent-color);
+        margin: 2rem 1rem 2rem;
 
-    li a {
-        position: relative;
-        display: inline-block;
-        text-align: center;
-        cursor: pointer;
-        text-decoration: none;
-        color: $accent-color-darkest;
-        font-size: 1.3rem;
-        height: 100%;
-        width: 100%;
-        vertical-align: middle;
-        line-height: 3rem;
-        letter-spacing: -0.02em;
-    }
-
-    li.logo a {
-        white-space: nowrap;
-        font-size: 4.8rem;
-        margin-top: -0.4rem;
-        letter-spacing: -0.05em;
-
-        &:before {
-            content: '{';
-            padding-right: 1rem;
-        }
-        &:after {
-            content: '}';
-            padding-left: 1rem;
-        }
-        &:before, &:after {
-            font-size: 2rem;
-            transform: translateY(-12px);
-            display: inline-block;
-            color: $accent-color-tertiary;
-        }
-    }
-
-    li.current a {
-        color: $accent-color-lightest;
-        background: $accent-color-darker;
-        text-decoration: underline;
-    }
-
-    li.navlink>a {
-        @include interactable(
-            0.3rem,
-            $accent-color-darker,
-            $accent-color-darkest,
-            $accent-color-darkest,
-            $accent-color-lightest
-        );
-    }
-
-    @media only screen and (min-width: $mobile-breakpoint) {
         ul {
-            flex-direction: row;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            min-height: 3rem;
+
+            @media only screen and (min-width: $mobile-breakpoint) {
+                flex-direction: row;
+            }
+        }
+
+        li {
+            height: 3rem;
+            width: 100%;
+
+            a {
+                position: relative;
+                display: inline-block;
+                text-align: center;
+                cursor: pointer;
+                text-decoration: none;
+                color: $accent-color-darkest;
+                font-size: 1.3rem;
+                height: 100%;
+                width: 100%;
+                vertical-align: middle;
+                line-height: 3rem;
+                letter-spacing: -0.02em;
+            }
         }
 
         li.logo {
-            margin: 0;
-        }
+            z-index: 1;
+            flex: 1;
+            margin: 0 0 1.7rem 0;
 
-        li.logo a {
-            width: min-content;
-            padding: 0 1rem;
+            a {
+                width: calc(100% - 1rem);
+                white-space: nowrap;
+                font-size: 4.8rem;
+                margin-top: -0.4rem;
+                letter-spacing: -0.05em;
+                margin-left: 1rem;
+
+                &:before {
+                    @media only screen and (min-width: $small-mobile-breakpoint) {
+                        content: '{';
+                        padding-right: 1rem;
+                    }
+                }
+                &:after {
+                    @media only screen and (min-width: $small-mobile-breakpoint) {
+                        content: '}';
+                        padding-left: 1rem;
+                    }
+                }
+                &:before, &:after {
+                    font-size: 2rem;
+                    transform: translateY(-12px);
+                    display: inline-block;
+                    color: $accent-color-tertiary;
+                }
+
+                @media only screen and (min-width: $mobile-breakpoint) {
+                    width: min-content;
+                    padding: 0 1rem;
+                    margin-left: 0;
+                }
+            }
+
+            @media only screen and (min-width: $mobile-breakpoint) {
+                margin: 0;
+            }
         }
 
         li.navlink {
-            flex: 0 1 140px;
+            position: relative;
+            flex: 1;
+
+            &>a {
+                @include interactable(
+                    0.3rem,
+                    $accent-color-darker,
+                    $accent-color-darkest,
+                    $accent-color-darkest,
+                    $accent-color-lightest
+                );
+            }
+
+            @media only screen and (min-width: $mobile-breakpoint) {
+                flex: 0 1 140px;
+            }
         }
 
+        li.current {
+            a {
+                color: $accent-color-lightest;
+                background: $accent-color-darker;
+                text-decoration: underline;
+            }
+        }
+            
         li:not(.current).navlink:not(:last-child):after {
-            content: '';
-            opacity: 0.2;
-            position: absolute;
-            height: 60%;
-            border-left: 2px solid $accent-color-darker;
-            width: 1px;
-            top: 20%;
-            right: -2px;
+            @media only screen and (min-width: $mobile-breakpoint) {
+                content: '';
+                opacity: 0.2;
+                position: absolute;
+                height: 60%;
+                border-left: 2px solid $accent-color-darker;
+                width: 1px;
+                top: 20%;
+                right: -2px;
+            }
+        }
+
+        /* Hiding and showing navbar at mobile sizes. */
+        ul {
+            max-height: 3rem;
+            @media only screen and (min-width: $mobile-breakpoint) {
+                max-height: inherit;
+            }
+        }
+        li.navlink {
+            display: none;
+            @media only screen and (min-width: $mobile-breakpoint) {
+                display: inherit;
+            }
+        }
+        &.expanded {
+            ul {
+                max-height: inherit;
+            }
+
+            li.navlink {
+                display: inherit;
+            }
         }
     }
 }
 
-.layout>main {
-    margin: 0 1rem 2rem;
+.expand_button {
+    height: 2.5rem;
+    width: 2.5rem;
+    padding: 0.3rem;
+    margin: 0.25rem;
+    position: absolute;
+    border: none;
+    background-color: inherit;
+    z-index: 1;
+    cursor: pointer;
+
+    &>svg {
+        padding: 15%;
+        height: 70%;
+        width: 70%;
+        fill: $accent-color-tertiary;
+    }
+
+    @media only screen and (min-width: $mobile-breakpoint) {
+        display: none;
+    }
 }

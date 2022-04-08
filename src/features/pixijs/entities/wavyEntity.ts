@@ -1,4 +1,4 @@
-import { Graphics, Point, Filter, DisplayObject } from 'pixi.js'
+import { Graphics, Point, Filter } from 'pixi.js'
 
 import vShader from '~/src/assets/shaders/test.vert'
 import fShader from '~/src/assets/shaders/test.frag'
@@ -44,11 +44,9 @@ export class WavyEntity extends Entity<Graphics> {
             }
         })
         
-        this.object.clear()
-        this.object.lineStyle(View.scale(0.2), 0xAA7777)
-        this.object.moveTo(View.scale(0.5), View.scale(View.ratio() + 0.3))
-        this.points.forEach(point => this.object.lineTo(View.scale(point.x), View.scale(point.y)))
+        this.facade.clear()
+        this.facade.lineStyle(View.scale(0.2), 0xAA7777)
+        this.facade.moveTo(View.scale(0.5), View.scale(View.ratio() + 0.3))
+        this.points.forEach(point => this.facade.lineTo(View.scale(point.x), View.scale(point.y)))
     }
-
-    override handleCollision (otherEntity: Entity<DisplayObject>) {}
 }
