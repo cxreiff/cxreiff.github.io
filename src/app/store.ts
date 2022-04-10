@@ -1,7 +1,6 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
 
-import homepage from '~/src/features/homepage/homepage.slice'
 import photos from '~/src/features/photos/photos.slice'
 
 const middleware = getDefaultMiddleware()
@@ -16,7 +15,6 @@ if (process.env.NODE_ENV === 'development') {
 
 const store = configureStore({
     reducer: {
-        homepage,
         photos,
     },
     middleware,

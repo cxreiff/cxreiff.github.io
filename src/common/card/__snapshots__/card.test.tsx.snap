@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`card should render 1`] = `
+<Card
+  image="test"
+  onClick={[MockFunction]}
+  primary="test"
+  secondary="test"
+  tertiary="test"
+>
+  <article
+    className="card card_clickable"
+    onClick={[MockFunction]}
+  >
+    <img
+      src="test"
+    />
+    <header>
+      <h4>
+        test
+      </h4>
+    </header>
+    <footer>
+      test
+    </footer>
+    <p>
+      test
+    </p>
+  </article>
+</Card>
+`;

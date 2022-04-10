@@ -16,8 +16,17 @@ describe('imageLoader', () => {
             />
         )
     })
+
+    afterEach(() => {
+        component.unmount()
+    })
     
     it('should render', () => {
+        expect(component).toMatchSnapshot()
+    })
+
+    it('should reveal image on load', () => {
+        component.find('img').simulate('load')
         expect(component).toMatchSnapshot()
     })
 })
