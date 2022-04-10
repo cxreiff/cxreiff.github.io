@@ -1,25 +1,25 @@
 import { mount, ReactWrapper } from 'enzyme'
 
 import { Wrapper } from '~/src/app/wrapper'
-import Homepage from './homepage.component'
+import Photos from './photos.component'
 
-describe('homepage', () => {
+describe('photos', () => {
 
     let component: ReactWrapper<typeof Wrapper, void>
     
     beforeAll(() => {
         component = mount<typeof Wrapper, void>(
             <Wrapper>
-                <Homepage />
+                <Photos />
             </Wrapper>
         )
     })
-
+    
     afterAll(() => {
         component.unmount()
     })
 
     it('should render', () => {
-        expect(component).toMatchSnapshot()
+        expect(component.find(Photos)).toMatchSnapshot()
     })
 })

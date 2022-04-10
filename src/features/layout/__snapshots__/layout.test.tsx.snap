@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`layout should navigate to photos tab 1`] = `
+exports[`layout should expand menu at mobile widths 1`] = `
 <Layout
   routes={
     Array [
@@ -44,37 +44,39 @@ exports[`layout should navigate to photos tab 1`] = `
   >
     <nav
       aria-label="primary"
-      className=""
+      className="expanded"
     >
+      <button
+        className="expand_button"
+        id="nav-expand"
+        onClick={[Function]}
+      >
+        <svg
+          height="40"
+          viewBox="0 0 100 80"
+          width="40"
+        >
+          <rect
+            height="20"
+            width="100"
+          />
+          <rect
+            height="20"
+            width="100"
+            y="30"
+          />
+          <rect
+            height="20"
+            width="100"
+            y="60"
+          />
+        </svg>
+      </button>
       <ul>
         <li
           className="logo"
+          id="nav-logo"
         >
-          <button
-            className="expand_button"
-            onClick={[Function]}
-          >
-            <svg
-              height="40"
-              viewBox="0 0 100 80"
-              width="40"
-            >
-              <rect
-                height="20"
-                width="100"
-              />
-              <rect
-                height="20"
-                width="100"
-                y="30"
-              />
-              <rect
-                height="20"
-                width="100"
-                y="60"
-              />
-            </svg>
-          </button>
           <a
             onClick={[Function]}
           >
@@ -83,248 +85,6 @@ exports[`layout should navigate to photos tab 1`] = `
         </li>
         <li
           className="navlink"
-          id="nav-projects"
-          key="projects"
-        >
-          <a
-            onClick={[Function]}
-          >
-            projects
-          </a>
-        </li>
-        <li
-          className="navlink current"
-          id="nav-photos"
-          key="photos"
-        >
-          <a
-            onClick={[Function]}
-          >
-            photos
-          </a>
-        </li>
-        <li
-          className="navlink"
-          id="nav-posts"
-          key="posts"
-        >
-          <a
-            onClick={[Function]}
-          >
-            posts
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <main />
-  </div>
-</Layout>
-`;
-
-exports[`layout should navigate to posts tab 1`] = `
-<Layout
-  routes={
-    Array [
-      Object {
-        "Component": [Function],
-        "path": "",
-      },
-      Object {
-        "Component": [Function],
-        "children": Array [
-          Object {
-            "Component": [Function],
-            "path": "pixijs",
-          },
-          Object {
-            "Component": [Function],
-            "path": "babylonjs",
-          },
-        ],
-        "path": "projects",
-      },
-      Object {
-        "Component": [Function],
-        "path": "photos",
-      },
-      Object {
-        "Component": [Function],
-        "children": Array [
-          Object {
-            "Component": [Function],
-            "path": ":id",
-          },
-        ],
-        "path": "posts",
-      },
-    ]
-  }
->
-  <div
-    className="layout"
-  >
-    <nav
-      aria-label="primary"
-      className=""
-    >
-      <ul>
-        <li
-          className="logo"
-        >
-          <button
-            className="expand_button"
-            onClick={[Function]}
-          >
-            <svg
-              height="40"
-              viewBox="0 0 100 80"
-              width="40"
-            >
-              <rect
-                height="20"
-                width="100"
-              />
-              <rect
-                height="20"
-                width="100"
-                y="30"
-              />
-              <rect
-                height="20"
-                width="100"
-                y="60"
-              />
-            </svg>
-          </button>
-          <a
-            onClick={[Function]}
-          >
-            jax reiff
-          </a>
-        </li>
-        <li
-          className="navlink"
-          id="nav-projects"
-          key="projects"
-        >
-          <a
-            onClick={[Function]}
-          >
-            projects
-          </a>
-        </li>
-        <li
-          className="navlink"
-          id="nav-photos"
-          key="photos"
-        >
-          <a
-            onClick={[Function]}
-          >
-            photos
-          </a>
-        </li>
-        <li
-          className="navlink current"
-          id="nav-posts"
-          key="posts"
-        >
-          <a
-            onClick={[Function]}
-          >
-            posts
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <main />
-  </div>
-</Layout>
-`;
-
-exports[`layout should navigate to projects tab 1`] = `
-<Layout
-  routes={
-    Array [
-      Object {
-        "Component": [Function],
-        "path": "",
-      },
-      Object {
-        "Component": [Function],
-        "children": Array [
-          Object {
-            "Component": [Function],
-            "path": "pixijs",
-          },
-          Object {
-            "Component": [Function],
-            "path": "babylonjs",
-          },
-        ],
-        "path": "projects",
-      },
-      Object {
-        "Component": [Function],
-        "path": "photos",
-      },
-      Object {
-        "Component": [Function],
-        "children": Array [
-          Object {
-            "Component": [Function],
-            "path": ":id",
-          },
-        ],
-        "path": "posts",
-      },
-    ]
-  }
->
-  <div
-    className="layout"
-  >
-    <nav
-      aria-label="primary"
-      className=""
-    >
-      <ul>
-        <li
-          className="logo"
-        >
-          <button
-            className="expand_button"
-            onClick={[Function]}
-          >
-            <svg
-              height="40"
-              viewBox="0 0 100 80"
-              width="40"
-            >
-              <rect
-                height="20"
-                width="100"
-              />
-              <rect
-                height="20"
-                width="100"
-                y="30"
-              />
-              <rect
-                height="20"
-                width="100"
-                y="60"
-              />
-            </svg>
-          </button>
-          <a
-            onClick={[Function]}
-          >
-            jax reiff
-          </a>
-        </li>
-        <li
-          className="navlink current"
           id="nav-projects"
           key="projects"
         >
@@ -409,35 +169,37 @@ exports[`layout should render 1`] = `
       aria-label="primary"
       className=""
     >
+      <button
+        className="expand_button"
+        id="nav-expand"
+        onClick={[Function]}
+      >
+        <svg
+          height="40"
+          viewBox="0 0 100 80"
+          width="40"
+        >
+          <rect
+            height="20"
+            width="100"
+          />
+          <rect
+            height="20"
+            width="100"
+            y="30"
+          />
+          <rect
+            height="20"
+            width="100"
+            y="60"
+          />
+        </svg>
+      </button>
       <ul>
         <li
           className="logo"
+          id="nav-logo"
         >
-          <button
-            className="expand_button"
-            onClick={[Function]}
-          >
-            <svg
-              height="40"
-              viewBox="0 0 100 80"
-              width="40"
-            >
-              <rect
-                height="20"
-                width="100"
-              />
-              <rect
-                height="20"
-                width="100"
-                y="30"
-              />
-              <rect
-                height="20"
-                width="100"
-                y="60"
-              />
-            </svg>
-          </button>
           <a
             onClick={[Function]}
           >

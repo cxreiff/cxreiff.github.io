@@ -1,0 +1,1428 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`posts should render 1`] = `
+<PostsContent>
+  <section>
+    <Card
+      primary="Portfolio site approach and design"
+      secondary="Mon May 31 2021"
+    >
+      <article
+        className="card"
+      >
+        <header>
+          <h4>
+            Portfolio site approach and design
+          </h4>
+        </header>
+        <footer>
+          Mon May 31 2021
+        </footer>
+      </article>
+    </Card>
+    <ReactMarkdown
+      className="posts_content"
+      components={
+        Object {
+          "code": [Function],
+        }
+      }
+      transformLinkUri={[Function]}
+    >
+      <div
+        className="posts_content"
+      >
+        <p
+          key="p-2-1-0"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et ornare massa, vitae sagittis eros. Ut luctus risus ante, vel sollicitudin enim suscipit eget. Nam ac ipsum gravida, blandit dolor eget, eleifend ex. Aenean magna nibh, ultricies non erat ut, tempus congue nisi. Nunc felis elit, ornare a dictum in, elementum tincidunt justo. In aliquam vulputate odio, vel vestibulum enim fermentum et. Etiam eu aliquet leo.
+        </p>
+        
+
+        <pre
+          key="pre-4-1-2"
+        >
+          <code
+            className="language-tsx"
+            key="code-4-1-0"
+            node={
+              Object {
+                "children": Array [
+                  Object {
+                    "type": "text",
+                    "value": "const Component: FC = ({children}) => {
+    return <div className={'test'}>
+        {children}
+    </div>
+}
+",
+                  },
+                ],
+                "position": Object {
+                  "end": Object {
+                    "column": 5,
+                    "line": 10,
+                    "offset": 543,
+                  },
+                  "start": Object {
+                    "column": 1,
+                    "line": 4,
+                    "offset": 424,
+                  },
+                },
+                "properties": Object {
+                  "className": Array [
+                    "language-tsx",
+                  ],
+                },
+                "tagName": "code",
+                "type": "element",
+              }
+            }
+          >
+            <SyntaxHighlighter
+              className="posts_content_code"
+              language="tsx"
+              node={
+                Object {
+                  "children": Array [
+                    Object {
+                      "type": "text",
+                      "value": "const Component: FC = ({children}) => {
+    return <div className={'test'}>
+        {children}
+    </div>
+}
+",
+                    },
+                  ],
+                  "position": Object {
+                    "end": Object {
+                      "column": 5,
+                      "line": 10,
+                      "offset": 543,
+                    },
+                    "start": Object {
+                      "column": 1,
+                      "line": 4,
+                      "offset": 424,
+                    },
+                  },
+                  "properties": Object {
+                    "className": Array [
+                      "language-tsx",
+                    ],
+                  },
+                  "tagName": "code",
+                  "type": "element",
+                }
+              }
+              style={
+                Object {
+                  ".language-css .token.string": Object {
+                    "background": "hsla(0, 0%, 100%, .5)",
+                    "color": "#9a6e3a",
+                  },
+                  ".style .token.string": Object {
+                    "background": "hsla(0, 0%, 100%, .5)",
+                    "color": "#9a6e3a",
+                  },
+                  ":not(pre) > code[class*=\\"language-\\"]": Object {
+                    "background": "#f5f2f0",
+                    "borderRadius": ".3em",
+                    "padding": ".1em",
+                    "whiteSpace": "normal",
+                  },
+                  "atrule": Object {
+                    "color": "#07a",
+                  },
+                  "attr-name": Object {
+                    "color": "#690",
+                  },
+                  "attr-value": Object {
+                    "color": "#07a",
+                  },
+                  "bold": Object {
+                    "fontWeight": "bold",
+                  },
+                  "boolean": Object {
+                    "color": "#905",
+                  },
+                  "builtin": Object {
+                    "color": "#690",
+                  },
+                  "cdata": Object {
+                    "color": "slategray",
+                  },
+                  "char": Object {
+                    "color": "#690",
+                  },
+                  "class-name": Object {
+                    "color": "#DD4A68",
+                  },
+                  "code[class*=\\"language-\\"]": Object {
+                    "MozHyphens": "none",
+                    "MozTabSize": "4",
+                    "OTabSize": "4",
+                    "WebkitHyphens": "none",
+                    "background": "none",
+                    "color": "black",
+                    "fontFamily": "Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace",
+                    "fontSize": "1em",
+                    "hyphens": "none",
+                    "lineHeight": "1.5",
+                    "msHyphens": "none",
+                    "tabSize": "4",
+                    "textAlign": "left",
+                    "textShadow": "0 1px white",
+                    "whiteSpace": "pre",
+                    "wordBreak": "normal",
+                    "wordSpacing": "normal",
+                    "wordWrap": "normal",
+                  },
+                  "code[class*=\\"language-\\"] ::-moz-selection": Object {
+                    "background": "#b3d4fc",
+                    "textShadow": "none",
+                  },
+                  "code[class*=\\"language-\\"] ::selection": Object {
+                    "background": "#b3d4fc",
+                    "textShadow": "none",
+                  },
+                  "code[class*=\\"language-\\"]::-moz-selection": Object {
+                    "background": "#b3d4fc",
+                    "textShadow": "none",
+                  },
+                  "code[class*=\\"language-\\"]::selection": Object {
+                    "background": "#b3d4fc",
+                    "textShadow": "none",
+                  },
+                  "comment": Object {
+                    "color": "slategray",
+                  },
+                  "constant": Object {
+                    "color": "#905",
+                  },
+                  "deleted": Object {
+                    "color": "#905",
+                  },
+                  "doctype": Object {
+                    "color": "slategray",
+                  },
+                  "entity": Object {
+                    "background": "hsla(0, 0%, 100%, .5)",
+                    "color": "#9a6e3a",
+                    "cursor": "help",
+                  },
+                  "function": Object {
+                    "color": "#DD4A68",
+                  },
+                  "important": Object {
+                    "color": "#e90",
+                    "fontWeight": "bold",
+                  },
+                  "inserted": Object {
+                    "color": "#690",
+                  },
+                  "italic": Object {
+                    "fontStyle": "italic",
+                  },
+                  "keyword": Object {
+                    "color": "#07a",
+                  },
+                  "namespace": Object {
+                    "Opacity": ".7",
+                  },
+                  "number": Object {
+                    "color": "#905",
+                  },
+                  "operator": Object {
+                    "background": "hsla(0, 0%, 100%, .5)",
+                    "color": "#9a6e3a",
+                  },
+                  "pre[class*=\\"language-\\"]": Object {
+                    "MozHyphens": "none",
+                    "MozTabSize": "4",
+                    "OTabSize": "4",
+                    "WebkitHyphens": "none",
+                    "background": "#f5f2f0",
+                    "color": "black",
+                    "fontFamily": "Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace",
+                    "fontSize": "1em",
+                    "hyphens": "none",
+                    "lineHeight": "1.5",
+                    "margin": ".5em 0",
+                    "msHyphens": "none",
+                    "overflow": "auto",
+                    "padding": "1em",
+                    "tabSize": "4",
+                    "textAlign": "left",
+                    "textShadow": "0 1px white",
+                    "whiteSpace": "pre",
+                    "wordBreak": "normal",
+                    "wordSpacing": "normal",
+                    "wordWrap": "normal",
+                  },
+                  "pre[class*=\\"language-\\"] ::-moz-selection": Object {
+                    "background": "#b3d4fc",
+                    "textShadow": "none",
+                  },
+                  "pre[class*=\\"language-\\"] ::selection": Object {
+                    "background": "#b3d4fc",
+                    "textShadow": "none",
+                  },
+                  "pre[class*=\\"language-\\"]::-moz-selection": Object {
+                    "background": "#b3d4fc",
+                    "textShadow": "none",
+                  },
+                  "pre[class*=\\"language-\\"]::selection": Object {
+                    "background": "#b3d4fc",
+                    "textShadow": "none",
+                  },
+                  "prolog": Object {
+                    "color": "slategray",
+                  },
+                  "property": Object {
+                    "color": "#905",
+                  },
+                  "punctuation": Object {
+                    "color": "#999",
+                  },
+                  "regex": Object {
+                    "color": "#e90",
+                  },
+                  "selector": Object {
+                    "color": "#690",
+                  },
+                  "string": Object {
+                    "color": "#690",
+                  },
+                  "symbol": Object {
+                    "color": "#905",
+                  },
+                  "tag": Object {
+                    "color": "#905",
+                  },
+                  "url": Object {
+                    "background": "hsla(0, 0%, 100%, .5)",
+                    "color": "#9a6e3a",
+                  },
+                  "variable": Object {
+                    "color": "#e90",
+                  },
+                }
+              }
+            >
+              <pre
+                className="posts_content_code"
+                node={
+                  Object {
+                    "children": Array [
+                      Object {
+                        "type": "text",
+                        "value": "const Component: FC = ({children}) => {
+    return <div className={'test'}>
+        {children}
+    </div>
+}
+",
+                      },
+                    ],
+                    "position": Object {
+                      "end": Object {
+                        "column": 5,
+                        "line": 10,
+                        "offset": 543,
+                      },
+                      "start": Object {
+                        "column": 1,
+                        "line": 4,
+                        "offset": 424,
+                      },
+                    },
+                    "properties": Object {
+                      "className": Array [
+                        "language-tsx",
+                      ],
+                    },
+                    "tagName": "code",
+                    "type": "element",
+                  }
+                }
+                style={
+                  Object {
+                    "MozHyphens": "none",
+                    "MozTabSize": "4",
+                    "OTabSize": "4",
+                    "WebkitHyphens": "none",
+                    "background": "#f5f2f0",
+                    "color": "black",
+                    "fontFamily": "Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace",
+                    "fontSize": "1em",
+                    "hyphens": "none",
+                    "lineHeight": "1.5",
+                    "margin": ".5em 0",
+                    "msHyphens": "none",
+                    "overflow": "auto",
+                    "padding": "1em",
+                    "tabSize": "4",
+                    "textAlign": "left",
+                    "textShadow": "0 1px white",
+                    "whiteSpace": "pre",
+                    "wordBreak": "normal",
+                    "wordSpacing": "normal",
+                    "wordWrap": "normal",
+                  }
+                }
+              >
+                <code
+                  className="language-tsx"
+                  style={
+                    Object {
+                      "MozHyphens": "none",
+                      "MozTabSize": "4",
+                      "OTabSize": "4",
+                      "WebkitHyphens": "none",
+                      "background": "none",
+                      "color": "black",
+                      "fontFamily": "Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace",
+                      "fontSize": "1em",
+                      "hyphens": "none",
+                      "lineHeight": "1.5",
+                      "msHyphens": "none",
+                      "tabSize": "4",
+                      "textAlign": "left",
+                      "textShadow": "0 1px white",
+                      "whiteSpace": "pre",
+                      "wordBreak": "normal",
+                      "wordSpacing": "normal",
+                      "wordWrap": "normal",
+                    }
+                  }
+                >
+                  <span
+                    className="token"
+                    key="code-segement0"
+                    style={
+                      Object {
+                        "color": "#07a",
+                      }
+                    }
+                  >
+                    const
+                  </span>
+                  <span
+                    key="code-segement1"
+                    style={Object {}}
+                  >
+                     
+                  </span>
+                  <span
+                    className="token maybe-class-name"
+                    key="code-segement2"
+                    style={Object {}}
+                  >
+                    Component
+                  </span>
+                  <span
+                    className="token"
+                    key="code-segement3"
+                    style={
+                      Object {
+                        "background": "hsla(0, 0%, 100%, .5)",
+                        "color": "#9a6e3a",
+                      }
+                    }
+                  >
+                    :
+                  </span>
+                  <span
+                    key="code-segement4"
+                    style={Object {}}
+                  >
+                     
+                  </span>
+                  <span
+                    className="token function-variable maybe-class-name"
+                    key="code-segement5"
+                    style={
+                      Object {
+                        "color": "#DD4A68",
+                      }
+                    }
+                  >
+                    FC
+                  </span>
+                  <span
+                    key="code-segement6"
+                    style={Object {}}
+                  >
+                     
+                  </span>
+                  <span
+                    className="token"
+                    key="code-segement7"
+                    style={
+                      Object {
+                        "background": "hsla(0, 0%, 100%, .5)",
+                        "color": "#9a6e3a",
+                      }
+                    }
+                  >
+                    =
+                  </span>
+                  <span
+                    key="code-segement8"
+                    style={Object {}}
+                  >
+                     
+                  </span>
+                  <span
+                    className="token"
+                    key="code-segement9"
+                    style={
+                      Object {
+                        "color": "#999",
+                      }
+                    }
+                  >
+                    (
+                  </span>
+                  <span
+                    className="token"
+                    key="code-segement10"
+                    style={
+                      Object {
+                        "color": "#999",
+                      }
+                    }
+                  >
+                    {
+                  </span>
+                  <span
+                    key="code-segement11"
+                    style={Object {}}
+                  >
+                    children
+                  </span>
+                  <span
+                    className="token"
+                    key="code-segement12"
+                    style={
+                      Object {
+                        "color": "#999",
+                      }
+                    }
+                  >
+                    }
+                  </span>
+                  <span
+                    className="token"
+                    key="code-segement13"
+                    style={
+                      Object {
+                        "color": "#999",
+                      }
+                    }
+                  >
+                    )
+                  </span>
+                  <span
+                    key="code-segement14"
+                    style={Object {}}
+                  >
+                     
+                  </span>
+                  <span
+                    className="token arrow"
+                    key="code-segement15"
+                    style={
+                      Object {
+                        "background": "hsla(0, 0%, 100%, .5)",
+                        "color": "#9a6e3a",
+                      }
+                    }
+                  >
+                    =&gt;
+                  </span>
+                  <span
+                    key="code-segement16"
+                    style={Object {}}
+                  >
+                     
+                  </span>
+                  <span
+                    className="token"
+                    key="code-segement17"
+                    style={
+                      Object {
+                        "color": "#999",
+                      }
+                    }
+                  >
+                    {
+                  </span>
+                  <span
+                    key="code-segement18"
+                    style={Object {}}
+                  >
+                    
+
+                  </span>
+                  <span
+                    key="code-segement19"
+                    style={Object {}}
+                  >
+                        
+                  </span>
+                  <span
+                    className="token control-flow"
+                    key="code-segement20"
+                    style={
+                      Object {
+                        "color": "#07a",
+                      }
+                    }
+                  >
+                    return
+                  </span>
+                  <span
+                    key="code-segement21"
+                    style={Object {}}
+                  >
+                     
+                  </span>
+                  <span
+                    className="token"
+                    key="code-segement22"
+                    style={
+                      Object {
+                        "color": "#999",
+                      }
+                    }
+                  >
+                    &lt;
+                  </span>
+                  <span
+                    className="token"
+                    key="code-segement23"
+                    style={
+                      Object {
+                        "color": "#905",
+                      }
+                    }
+                  >
+                    div
+                  </span>
+                  <span
+                    className="token"
+                    key="code-segement24"
+                    style={
+                      Object {
+                        "color": "#905",
+                      }
+                    }
+                  >
+                     
+                  </span>
+                  <span
+                    className="token"
+                    key="code-segement25"
+                    style={
+                      Object {
+                        "color": "#690",
+                      }
+                    }
+                  >
+                    className
+                  </span>
+                  <span
+                    className="token script language-javascript script-punctuation"
+                    key="code-segement26"
+                    style={
+                      Object {
+                        "color": "#905",
+                      }
+                    }
+                  >
+                    =
+                  </span>
+                  <span
+                    className="token script language-javascript"
+                    key="code-segement27"
+                    style={
+                      Object {
+                        "color": "#999",
+                      }
+                    }
+                  >
+                    {
+                  </span>
+                  <span
+                    className="token script language-javascript"
+                    key="code-segement28"
+                    style={
+                      Object {
+                        "color": "#690",
+                      }
+                    }
+                  >
+                    'test'
+                  </span>
+                  <span
+                    className="token script language-javascript"
+                    key="code-segement29"
+                    style={
+                      Object {
+                        "color": "#999",
+                      }
+                    }
+                  >
+                    }
+                  </span>
+                  <span
+                    className="token"
+                    key="code-segement30"
+                    style={
+                      Object {
+                        "color": "#999",
+                      }
+                    }
+                  >
+                    &gt;
+                  </span>
+                  <span
+                    className="token plain-text"
+                    key="code-segement31"
+                    style={Object {}}
+                  >
+                    
+
+                  </span>
+                  <span
+                    className="token plain-text"
+                    key="code-segement32"
+                    style={Object {}}
+                  >
+                            
+                  </span>
+                  <span
+                    className="token"
+                    key="code-segement33"
+                    style={
+                      Object {
+                        "color": "#999",
+                      }
+                    }
+                  >
+                    {
+                  </span>
+                  <span
+                    key="code-segement34"
+                    style={Object {}}
+                  >
+                    children
+                  </span>
+                  <span
+                    className="token"
+                    key="code-segement35"
+                    style={
+                      Object {
+                        "color": "#999",
+                      }
+                    }
+                  >
+                    }
+                  </span>
+                  <span
+                    className="token plain-text"
+                    key="code-segement36"
+                    style={Object {}}
+                  >
+                    
+
+                  </span>
+                  <span
+                    className="token plain-text"
+                    key="code-segement37"
+                    style={Object {}}
+                  >
+                        
+                  </span>
+                  <span
+                    className="token"
+                    key="code-segement38"
+                    style={
+                      Object {
+                        "color": "#999",
+                      }
+                    }
+                  >
+                    &lt;/
+                  </span>
+                  <span
+                    className="token"
+                    key="code-segement39"
+                    style={
+                      Object {
+                        "color": "#905",
+                      }
+                    }
+                  >
+                    div
+                  </span>
+                  <span
+                    className="token"
+                    key="code-segement40"
+                    style={
+                      Object {
+                        "color": "#999",
+                      }
+                    }
+                  >
+                    &gt;
+                  </span>
+                  <span
+                    key="code-segement41"
+                    style={Object {}}
+                  >
+                    
+
+                  </span>
+                  <span
+                    key="code-segement42"
+                    style={Object {}}
+                  />
+                  <span
+                    className="token"
+                    key="code-segement43"
+                    style={
+                      Object {
+                        "color": "#999",
+                      }
+                    }
+                  >
+                    }
+                  </span>
+                </code>
+              </pre>
+            </SyntaxHighlighter>
+          </code>
+        </pre>
+        
+
+        <p
+          key="p-12-1-4"
+        >
+          Maecenas sagittis erat ut risus porttitor condimentum. Proin ut arcu nisl. Suspendisse maximus sodales luctus. Quisque accumsan pharetra purus id scelerisque. Nunc nunc nisi, suscipit quis fringilla in, hendrerit dignissim arcu. Sed turpis diam, malesuada ac metus ac, aliquam vulputate ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas sed ante fermentum, volutpat tellus eu, fringilla metus. Ut in mi ut leo aliquet dignissim in vitae mauris. Nam elementum lacus eu elit suscipit, eget blandit orci semper. Sed pretium dolor non varius placerat. Vestibulum non faucibus arcu, in consectetur ante. Nulla facilisi.
+        </p>
+        
+
+        <pre
+          key="pre-14-1-6"
+        >
+          <code
+            className="language-json"
+            key="code-14-1-0"
+            node={
+              Object {
+                "children": Array [
+                  Object {
+                    "type": "text",
+                    "value": "{
+    'attribute1': ['a', 'b', 'c'],
+    'attribute2': true,
+    'attribute3': 12345
+}
+",
+                  },
+                ],
+                "position": Object {
+                  "end": Object {
+                    "column": 4,
+                    "line": 20,
+                    "offset": 1312,
+                  },
+                  "start": Object {
+                    "column": 1,
+                    "line": 14,
+                    "offset": 1214,
+                  },
+                },
+                "properties": Object {
+                  "className": Array [
+                    "language-json",
+                  ],
+                },
+                "tagName": "code",
+                "type": "element",
+              }
+            }
+          >
+            <SyntaxHighlighter
+              className="posts_content_code"
+              language="json"
+              node={
+                Object {
+                  "children": Array [
+                    Object {
+                      "type": "text",
+                      "value": "{
+    'attribute1': ['a', 'b', 'c'],
+    'attribute2': true,
+    'attribute3': 12345
+}
+",
+                    },
+                  ],
+                  "position": Object {
+                    "end": Object {
+                      "column": 4,
+                      "line": 20,
+                      "offset": 1312,
+                    },
+                    "start": Object {
+                      "column": 1,
+                      "line": 14,
+                      "offset": 1214,
+                    },
+                  },
+                  "properties": Object {
+                    "className": Array [
+                      "language-json",
+                    ],
+                  },
+                  "tagName": "code",
+                  "type": "element",
+                }
+              }
+              style={
+                Object {
+                  ".language-css .token.string": Object {
+                    "background": "hsla(0, 0%, 100%, .5)",
+                    "color": "#9a6e3a",
+                  },
+                  ".style .token.string": Object {
+                    "background": "hsla(0, 0%, 100%, .5)",
+                    "color": "#9a6e3a",
+                  },
+                  ":not(pre) > code[class*=\\"language-\\"]": Object {
+                    "background": "#f5f2f0",
+                    "borderRadius": ".3em",
+                    "padding": ".1em",
+                    "whiteSpace": "normal",
+                  },
+                  "atrule": Object {
+                    "color": "#07a",
+                  },
+                  "attr-name": Object {
+                    "color": "#690",
+                  },
+                  "attr-value": Object {
+                    "color": "#07a",
+                  },
+                  "bold": Object {
+                    "fontWeight": "bold",
+                  },
+                  "boolean": Object {
+                    "color": "#905",
+                  },
+                  "builtin": Object {
+                    "color": "#690",
+                  },
+                  "cdata": Object {
+                    "color": "slategray",
+                  },
+                  "char": Object {
+                    "color": "#690",
+                  },
+                  "class-name": Object {
+                    "color": "#DD4A68",
+                  },
+                  "code[class*=\\"language-\\"]": Object {
+                    "MozHyphens": "none",
+                    "MozTabSize": "4",
+                    "OTabSize": "4",
+                    "WebkitHyphens": "none",
+                    "background": "none",
+                    "color": "black",
+                    "fontFamily": "Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace",
+                    "fontSize": "1em",
+                    "hyphens": "none",
+                    "lineHeight": "1.5",
+                    "msHyphens": "none",
+                    "tabSize": "4",
+                    "textAlign": "left",
+                    "textShadow": "0 1px white",
+                    "whiteSpace": "pre",
+                    "wordBreak": "normal",
+                    "wordSpacing": "normal",
+                    "wordWrap": "normal",
+                  },
+                  "code[class*=\\"language-\\"] ::-moz-selection": Object {
+                    "background": "#b3d4fc",
+                    "textShadow": "none",
+                  },
+                  "code[class*=\\"language-\\"] ::selection": Object {
+                    "background": "#b3d4fc",
+                    "textShadow": "none",
+                  },
+                  "code[class*=\\"language-\\"]::-moz-selection": Object {
+                    "background": "#b3d4fc",
+                    "textShadow": "none",
+                  },
+                  "code[class*=\\"language-\\"]::selection": Object {
+                    "background": "#b3d4fc",
+                    "textShadow": "none",
+                  },
+                  "comment": Object {
+                    "color": "slategray",
+                  },
+                  "constant": Object {
+                    "color": "#905",
+                  },
+                  "deleted": Object {
+                    "color": "#905",
+                  },
+                  "doctype": Object {
+                    "color": "slategray",
+                  },
+                  "entity": Object {
+                    "background": "hsla(0, 0%, 100%, .5)",
+                    "color": "#9a6e3a",
+                    "cursor": "help",
+                  },
+                  "function": Object {
+                    "color": "#DD4A68",
+                  },
+                  "important": Object {
+                    "color": "#e90",
+                    "fontWeight": "bold",
+                  },
+                  "inserted": Object {
+                    "color": "#690",
+                  },
+                  "italic": Object {
+                    "fontStyle": "italic",
+                  },
+                  "keyword": Object {
+                    "color": "#07a",
+                  },
+                  "namespace": Object {
+                    "Opacity": ".7",
+                  },
+                  "number": Object {
+                    "color": "#905",
+                  },
+                  "operator": Object {
+                    "background": "hsla(0, 0%, 100%, .5)",
+                    "color": "#9a6e3a",
+                  },
+                  "pre[class*=\\"language-\\"]": Object {
+                    "MozHyphens": "none",
+                    "MozTabSize": "4",
+                    "OTabSize": "4",
+                    "WebkitHyphens": "none",
+                    "background": "#f5f2f0",
+                    "color": "black",
+                    "fontFamily": "Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace",
+                    "fontSize": "1em",
+                    "hyphens": "none",
+                    "lineHeight": "1.5",
+                    "margin": ".5em 0",
+                    "msHyphens": "none",
+                    "overflow": "auto",
+                    "padding": "1em",
+                    "tabSize": "4",
+                    "textAlign": "left",
+                    "textShadow": "0 1px white",
+                    "whiteSpace": "pre",
+                    "wordBreak": "normal",
+                    "wordSpacing": "normal",
+                    "wordWrap": "normal",
+                  },
+                  "pre[class*=\\"language-\\"] ::-moz-selection": Object {
+                    "background": "#b3d4fc",
+                    "textShadow": "none",
+                  },
+                  "pre[class*=\\"language-\\"] ::selection": Object {
+                    "background": "#b3d4fc",
+                    "textShadow": "none",
+                  },
+                  "pre[class*=\\"language-\\"]::-moz-selection": Object {
+                    "background": "#b3d4fc",
+                    "textShadow": "none",
+                  },
+                  "pre[class*=\\"language-\\"]::selection": Object {
+                    "background": "#b3d4fc",
+                    "textShadow": "none",
+                  },
+                  "prolog": Object {
+                    "color": "slategray",
+                  },
+                  "property": Object {
+                    "color": "#905",
+                  },
+                  "punctuation": Object {
+                    "color": "#999",
+                  },
+                  "regex": Object {
+                    "color": "#e90",
+                  },
+                  "selector": Object {
+                    "color": "#690",
+                  },
+                  "string": Object {
+                    "color": "#690",
+                  },
+                  "symbol": Object {
+                    "color": "#905",
+                  },
+                  "tag": Object {
+                    "color": "#905",
+                  },
+                  "url": Object {
+                    "background": "hsla(0, 0%, 100%, .5)",
+                    "color": "#9a6e3a",
+                  },
+                  "variable": Object {
+                    "color": "#e90",
+                  },
+                }
+              }
+            >
+              <pre
+                className="posts_content_code"
+                node={
+                  Object {
+                    "children": Array [
+                      Object {
+                        "type": "text",
+                        "value": "{
+    'attribute1': ['a', 'b', 'c'],
+    'attribute2': true,
+    'attribute3': 12345
+}
+",
+                      },
+                    ],
+                    "position": Object {
+                      "end": Object {
+                        "column": 4,
+                        "line": 20,
+                        "offset": 1312,
+                      },
+                      "start": Object {
+                        "column": 1,
+                        "line": 14,
+                        "offset": 1214,
+                      },
+                    },
+                    "properties": Object {
+                      "className": Array [
+                        "language-json",
+                      ],
+                    },
+                    "tagName": "code",
+                    "type": "element",
+                  }
+                }
+                style={
+                  Object {
+                    "MozHyphens": "none",
+                    "MozTabSize": "4",
+                    "OTabSize": "4",
+                    "WebkitHyphens": "none",
+                    "background": "#f5f2f0",
+                    "color": "black",
+                    "fontFamily": "Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace",
+                    "fontSize": "1em",
+                    "hyphens": "none",
+                    "lineHeight": "1.5",
+                    "margin": ".5em 0",
+                    "msHyphens": "none",
+                    "overflow": "auto",
+                    "padding": "1em",
+                    "tabSize": "4",
+                    "textAlign": "left",
+                    "textShadow": "0 1px white",
+                    "whiteSpace": "pre",
+                    "wordBreak": "normal",
+                    "wordSpacing": "normal",
+                    "wordWrap": "normal",
+                  }
+                }
+              >
+                <code
+                  className="language-json"
+                  style={
+                    Object {
+                      "MozHyphens": "none",
+                      "MozTabSize": "4",
+                      "OTabSize": "4",
+                      "WebkitHyphens": "none",
+                      "background": "none",
+                      "color": "black",
+                      "fontFamily": "Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace",
+                      "fontSize": "1em",
+                      "hyphens": "none",
+                      "lineHeight": "1.5",
+                      "msHyphens": "none",
+                      "tabSize": "4",
+                      "textAlign": "left",
+                      "textShadow": "0 1px white",
+                      "whiteSpace": "pre",
+                      "wordBreak": "normal",
+                      "wordSpacing": "normal",
+                      "wordWrap": "normal",
+                    }
+                  }
+                >
+                  <span
+                    className="token"
+                    key="code-segement0"
+                    style={
+                      Object {
+                        "color": "#999",
+                      }
+                    }
+                  >
+                    {
+                  </span>
+                  <span
+                    key="code-segement1"
+                    style={Object {}}
+                  >
+                    
+
+                  </span>
+                  <span
+                    key="code-segement2"
+                    style={Object {}}
+                  >
+                        'attribute1'
+                  </span>
+                  <span
+                    className="token"
+                    key="code-segement3"
+                    style={
+                      Object {
+                        "background": "hsla(0, 0%, 100%, .5)",
+                        "color": "#9a6e3a",
+                      }
+                    }
+                  >
+                    :
+                  </span>
+                  <span
+                    key="code-segement4"
+                    style={Object {}}
+                  >
+                     
+                  </span>
+                  <span
+                    className="token"
+                    key="code-segement5"
+                    style={
+                      Object {
+                        "color": "#999",
+                      }
+                    }
+                  >
+                    [
+                  </span>
+                  <span
+                    key="code-segement6"
+                    style={Object {}}
+                  >
+                    'a'
+                  </span>
+                  <span
+                    className="token"
+                    key="code-segement7"
+                    style={
+                      Object {
+                        "color": "#999",
+                      }
+                    }
+                  >
+                    ,
+                  </span>
+                  <span
+                    key="code-segement8"
+                    style={Object {}}
+                  >
+                     'b'
+                  </span>
+                  <span
+                    className="token"
+                    key="code-segement9"
+                    style={
+                      Object {
+                        "color": "#999",
+                      }
+                    }
+                  >
+                    ,
+                  </span>
+                  <span
+                    key="code-segement10"
+                    style={Object {}}
+                  >
+                     'c'
+                  </span>
+                  <span
+                    className="token"
+                    key="code-segement11"
+                    style={
+                      Object {
+                        "color": "#999",
+                      }
+                    }
+                  >
+                    ]
+                  </span>
+                  <span
+                    className="token"
+                    key="code-segement12"
+                    style={
+                      Object {
+                        "color": "#999",
+                      }
+                    }
+                  >
+                    ,
+                  </span>
+                  <span
+                    key="code-segement13"
+                    style={Object {}}
+                  >
+                    
+
+                  </span>
+                  <span
+                    key="code-segement14"
+                    style={Object {}}
+                  >
+                        'attribute2'
+                  </span>
+                  <span
+                    className="token"
+                    key="code-segement15"
+                    style={
+                      Object {
+                        "background": "hsla(0, 0%, 100%, .5)",
+                        "color": "#9a6e3a",
+                      }
+                    }
+                  >
+                    :
+                  </span>
+                  <span
+                    key="code-segement16"
+                    style={Object {}}
+                  >
+                     
+                  </span>
+                  <span
+                    className="token"
+                    key="code-segement17"
+                    style={
+                      Object {
+                        "color": "#905",
+                      }
+                    }
+                  >
+                    true
+                  </span>
+                  <span
+                    className="token"
+                    key="code-segement18"
+                    style={
+                      Object {
+                        "color": "#999",
+                      }
+                    }
+                  >
+                    ,
+                  </span>
+                  <span
+                    key="code-segement19"
+                    style={Object {}}
+                  >
+                    
+
+                  </span>
+                  <span
+                    key="code-segement20"
+                    style={Object {}}
+                  >
+                        'attribute3'
+                  </span>
+                  <span
+                    className="token"
+                    key="code-segement21"
+                    style={
+                      Object {
+                        "background": "hsla(0, 0%, 100%, .5)",
+                        "color": "#9a6e3a",
+                      }
+                    }
+                  >
+                    :
+                  </span>
+                  <span
+                    key="code-segement22"
+                    style={Object {}}
+                  >
+                     
+                  </span>
+                  <span
+                    className="token"
+                    key="code-segement23"
+                    style={
+                      Object {
+                        "color": "#905",
+                      }
+                    }
+                  >
+                    12345
+                  </span>
+                  <span
+                    key="code-segement24"
+                    style={Object {}}
+                  >
+                    
+
+                  </span>
+                  <span
+                    key="code-segement25"
+                    style={Object {}}
+                  />
+                  <span
+                    className="token"
+                    key="code-segement26"
+                    style={
+                      Object {
+                        "color": "#999",
+                      }
+                    }
+                  >
+                    }
+                  </span>
+                </code>
+              </pre>
+            </SyntaxHighlighter>
+          </code>
+        </pre>
+        
+
+        <p
+          key="p-22-1-8"
+        >
+          Integer eget venenatis dui. Ut tellus orci, consequat vel aliquam vitae, condimentum in orci. Etiam volutpat bibendum lacinia. Aenean suscipit auctor magna ut pharetra. Duis nec lacus vel dui scelerisque finibus. Nam et fringilla ipsum, eget tempor dolor. Suspendisse et tristique lectus, sed blandit leo. Phasellus lacus ligula, tristique scelerisque augue id, finibus egestas enim. Aenean suscipit augue at ultricies venenatis. Vivamus imperdiet orci a dui rutrum hendrerit. Cras eget fringilla magna. In pellentesque erat nisl, non ullamcorper massa commodo sit amet. Etiam placerat id risus eget mollis. Curabitur commodo, urna eget fermentum aliquet, neque est blandit purus, eu gravida mi neque non augue.
+        </p>
+      </div>
+    </ReactMarkdown>
+  </section>
+</PostsContent>
+`;
