@@ -18,6 +18,10 @@ describe('imageLoader', () => {
             />
         )
     })
+
+    afterEach(() => {
+        component.unmount()
+    })
     
     it('should render', () => {
         expect(component).toMatchSnapshot()
