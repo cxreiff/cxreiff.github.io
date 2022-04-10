@@ -66,52 +66,6 @@ Integer eget venenatis dui. Ut tellus orci, consequat vel aliquam vitae, condime
         </article>
       </Card>
     </PostsTile>
-    <PostsTile
-      id="test-markdown"
-      key="test-markdown"
-      post={
-        Object {
-          "content": "
-Second Test Markdown
-===
-
-Second test markdown.
-",
-          "data": Object {
-            "date": 2022-01-11T00:00:00.000Z,
-            "description": "Test markdown file.",
-            "key": "test-markdown",
-            "title": "Test Markdown File",
-          },
-          "excerpt": "",
-          "isEmpty": false,
-        }
-      }
-    >
-      <Card
-        onClick={[Function]}
-        primary="Test Markdown File"
-        secondary="Tue Jan 11 2022"
-        tertiary="Test markdown file."
-      >
-        <article
-          className="card card_clickable"
-          onClick={[Function]}
-        >
-          <header>
-            <h4>
-              Test Markdown File
-            </h4>
-          </header>
-          <footer>
-            Tue Jan 11 2022
-          </footer>
-          <p>
-            Test markdown file.
-          </p>
-        </article>
-      </Card>
-    </PostsTile>
   </section>
 </Posts>
 `;
@@ -178,52 +132,6 @@ Integer eget venenatis dui. Ut tellus orci, consequat vel aliquam vitae, condime
           </footer>
           <p>
             Frameworks, structure, tradeoffs, and my development, testing, build, and deploy process.
-          </p>
-        </article>
-      </Card>
-    </PostsTile>
-    <PostsTile
-      id="test-markdown"
-      key="test-markdown"
-      post={
-        Object {
-          "content": "
-Second Test Markdown
-===
-
-Second test markdown.
-",
-          "data": Object {
-            "date": 2022-01-11T00:00:00.000Z,
-            "description": "Test markdown file.",
-            "key": "test-markdown",
-            "title": "Test Markdown File",
-          },
-          "excerpt": "",
-          "isEmpty": false,
-        }
-      }
-    >
-      <Card
-        onClick={[Function]}
-        primary="Test Markdown File"
-        secondary="Tue Jan 11 2022"
-        tertiary="Test markdown file."
-      >
-        <article
-          className="card card_clickable"
-          onClick={[Function]}
-        >
-          <header>
-            <h4>
-              Test Markdown File
-            </h4>
-          </header>
-          <footer>
-            Tue Jan 11 2022
-          </footer>
-          <p>
-            Test markdown file.
           </p>
         </article>
       </Card>
