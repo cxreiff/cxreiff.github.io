@@ -22,7 +22,12 @@ export const Layout: FC<LayoutProps> = ({ children, routes }) => {
     return (
         <div className={styles.layout}>
             <nav aria-label={'primary'} className={cn({ [styles.expanded]: expanded })}>
-                <button id={'nav-expand'} className={styles.expand_button} onClick={() => setExpanded(!expanded)}>
+                <button
+                    aria-label={'expand navigation'}
+                    id={'nav-expand'}
+                    className={styles.expand_button}
+                    onClick={() => setExpanded(!expanded)}
+                >
                     <svg viewBox={'0 0 100 80'} width={'40'} height={'40'}>
                       <rect width={'100'} height="20" />
                       <rect y={'30'} width={'100'} height={'20'} />
