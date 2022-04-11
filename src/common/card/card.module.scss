@@ -35,7 +35,7 @@
 }
 
 .card_clickable {
-    @include interactable(
+    @include interactive(
         0.4rem,
         $accent-color-darker,
         $accent-color-darkest,
