@@ -47,6 +47,7 @@ exports[`layout should expand menu at mobile widths 1`] = `
       className="expanded"
     >
       <button
+        aria-label="expand navigation"
         className="expand_button"
         id="nav-expand"
         onClick={[Function]}
@@ -170,6 +171,7 @@ exports[`layout should render 1`] = `
       className=""
     >
       <button
+        aria-label="expand navigation"
         className="expand_button"
         id="nav-expand"
         onClick={[Function]}
