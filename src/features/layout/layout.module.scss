@@ -97,7 +97,7 @@
             flex: 1;
 
             &>a {
-                @include interactable(
+                @include interactive(
                     0.3rem,
                     $accent-color-darker,
                     $accent-color-darkest,
