@@ -36,7 +36,7 @@ $accent-color-darkest: #221111;
     padding: 0.5rem 1rem 0.5rem;
 }
 
-@mixin interactable($gutter, $hover-bg, $hover-color, $active-bg, $active-color) {
+@mixin interactive($gutter, $hover-bg, $hover-color, $active-bg, $active-color) {
     cursor: pointer;
     
     @media (hover: hover) {

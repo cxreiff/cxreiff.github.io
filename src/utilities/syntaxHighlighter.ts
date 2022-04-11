@@ -10,8 +10,8 @@ import { prism } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import tsx from 'react-syntax-highlighter/dist/esm/languages/prism/tsx'
 PrismLight.registerLanguage('tsx', tsx)
 
-import json from 'react-syntax-highlighter/dist/esm/languages/prism/json'
-PrismLight.registerLanguage('json', json)
+import scss from 'react-syntax-highlighter/dist/esm/languages/prism/scss'
+PrismLight.registerLanguage('json', scss)
 
 export const SyntaxHighlighter = PrismLight
 export const syntaxStyle = prism as CSSProperties
