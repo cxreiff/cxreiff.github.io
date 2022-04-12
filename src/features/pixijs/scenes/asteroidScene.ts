@@ -22,7 +22,7 @@ export class AsteroidScene extends MatterScene {
     override update (delta: number) {
         super.update(delta)
 
-        if (this.asteroidList.filter(entity => entity != undefined).length < AsteroidScene.ASTEROID_LIMIT) {
+        if (this.asteroidList.length < AsteroidScene.ASTEROID_LIMIT) {
             if (this.asteroidCountdown >= 0) {
                 this.asteroidCountdown -= delta
             } else if (this.asteroidCountdown < 0) {
@@ -44,7 +44,7 @@ export class AsteroidScene extends MatterScene {
 
     override removeEntity (entity: MatterEntity<DisplayObject>) {
         const entityId = entity.body.id
-        if (entity.constructor === AsteroidEntity) {
+        if (entity instanceof AsteroidEntity) {
             this.asteroidList = this.asteroidList.filter(asteroid => asteroid.body.id !== entityId)
         }
 
