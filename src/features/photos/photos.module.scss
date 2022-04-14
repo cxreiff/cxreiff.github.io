@@ -10,6 +10,10 @@
   }
 }
 
+.photo {
+  background-color: $accent-color-darkest;
+}
+
 .tile {
   @include box_shadow($accent-color-darker);
   line-height: 0;
