@@ -20,13 +20,15 @@ export const ImageLightbox: FC<ImageLightboxProps> = ({ aspect, small, medium, l
   const [opened, setOpened] = useState(false)
 
   return (
-    <div className={cn(styles.image_lightbox, className)} onClick={() => setOpened(true)}>
-      <Image
-        className={styles.interactive}
-        aspect={aspect}
-        source={small}
-        alt={alt}
-      />
+    <div className={cn(styles.image_lightbox, className)}>
+      <div onClick={() => setOpened(true)}>
+        <Image
+          className={styles.interactive}
+          aspect={aspect}
+          source={small}
+          alt={alt}
+        />
+      </div>
       { opened && (
         <Lightbox
           medium={medium}
@@ -34,7 +36,7 @@ export const ImageLightbox: FC<ImageLightboxProps> = ({ aspect, small, medium, l
           alt={alt}
           hideDownload={true}
           hideClose={true}
-          onClose={() => setOpened(false)}
+          onClose={() => {setOpened(false)}}
         />
       )}
     </div>

@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import cn from 'classnames'
 
+import { Image } from '~/src/common/image/image.component'
 import styles from './card.module.scss'
 
 type CardProps = {
@@ -17,7 +18,9 @@ export const Card: FC<CardProps> = ({ image, primary, secondary, tertiary, onCli
         onClick={onClick}
     >
         {image && (
-            <img src={image} />
+            <div>
+                <Image source={image} aspect={800/500} />
+            </div>
         )}
         {primary && (
             <header>

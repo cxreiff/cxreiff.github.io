@@ -12,6 +12,7 @@
 
 .image {
     @include box_shadow($accent-color-darker);
+    background-color: $accent-color-darkest;
 }
 
 .aboutme {
