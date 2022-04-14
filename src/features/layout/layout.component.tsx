@@ -24,7 +24,6 @@ export const Layout: FC<LayoutProps> = ({ children, routes }) => {
             <nav aria-label={'primary'} className={cn({ [styles.expanded]: expanded })}>
                 <button
                     aria-label={'expand navigation'}
-                    id={'nav-expand'}
                     className={styles.expand_button}
                     onClick={() => setExpanded(!expanded)}
                 >

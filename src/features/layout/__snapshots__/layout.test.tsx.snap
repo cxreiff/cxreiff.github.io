@@ -12,7 +12,6 @@ exports[`should expand menu 1`] = `
       <button
         aria-label="expand navigation"
         class="expand_button"
-        id="nav-expand"
       >
         <svg
           height="40"
@@ -87,7 +86,6 @@ exports[`should render 1`] = `
       <button
         aria-label="expand navigation"
         class="expand_button"
-        id="nav-expand"
       >
         <svg
           height="40"
