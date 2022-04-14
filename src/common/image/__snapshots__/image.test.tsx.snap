@@ -1,45 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`imageLoader should render 1`] = `
-<Image
-  alt="test"
-  aspect={1}
-  className="test"
-  source="test"
->
+exports[`should render 1`] = `
+<div>
   <div
-    className="image test hidden"
+    class="image hidden"
   >
     <img
-      alt="test"
-      onLoad={[Function]}
+      alt="test image"
       src="test"
     />
     <svg
-      viewBox="0 0 1 1"
+      viewBox="0 0 1.3333333333333333 1"
     />
   </div>
-</Image>
+</div>
 `;
 
-exports[`imageLoader should reveal image on load 1`] = `
-<Image
-  alt="test"
-  aspect={1}
-  className="test"
-  source="test"
->
+exports[`should unhide on image load 1`] = `
+<div>
   <div
-    className="image test"
+    class="image"
   >
     <img
-      alt="test"
-      onLoad={[Function]}
+      alt="test image"
       src="test"
     />
     <svg
-      viewBox="0 0 1 1"
+      viewBox="0 0 1.3333333333333333 1"
     />
   </div>
-</Image>
+</div>
 `;

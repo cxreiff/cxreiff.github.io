@@ -1,32 +1,32 @@
-import { mount, ReactWrapper } from 'enzyme'
+import { render, fireEvent } from '@testing-library/preact'
 
 import { Image } from './image.component'
 
-describe('imageLoader', () => {
-    
-    let component: ReactWrapper<typeof Image, void>
-    
-    beforeEach(() => {
-        component = mount<typeof Image, void>(
-            <Image
-                aspect={1/1}
-                source={'test'}
-                alt={'test'}
-                className={'test'}
-            />
-        )
-    })
+test('should render', () => {
+    const { container, getByAltText } = render(
+        <Image
+            aspect={800/600}
+            alt={'test image'}
+            source={'test'}
+        />
+    )
 
-    afterEach(() => {
-        component.unmount()
-    })
-    
-    it('should render', () => {
-        expect(component).toMatchSnapshot()
-    })
+    expect(getByAltText('test image')).toBeInTheDocument()
+    expect(container.firstElementChild?.className).toContain('hidden')
+    expect(container).toMatchSnapshot()
+})
 
-    it('should reveal image on load', () => {
-        component.find('img').simulate('load')
-        expect(component).toMatchSnapshot()
-    })
+test('should unhide on image load', () => {
+    const { container, getByAltText } = render(
+        <Image
+            aspect={800/600}
+            source={'test'}
+            alt={'test image'}
+        />
+    )
+
+    fireEvent.load(getByAltText('test image'))
+
+    expect(container.firstElementChild?.className).not.toContain('hidden')
+    expect(container).toMatchSnapshot()
 })

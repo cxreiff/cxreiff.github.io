@@ -1,9 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`photos should render 1`] = `
-<Photos>
+exports[`should render 1`] = `
+<div>
   <section
-    className="photos"
-  />
-</Photos>
+    class="photos"
+  >
+    <article
+      class="tile"
+    >
+      <div
+        class="image_lightbox"
+      >
+        <div
+          class="image interactive hidden"
+        >
+          <img
+            src="https://jaxreiff-static.sfo3.cdn.digitaloceanspaces.com/photos/sm_photo_00.png"
+          />
+          <svg
+            viewBox="0 0 1 1"
+          />
+        </div>
+      </div>
+    </article>
+  </section>
+</div>
 `;

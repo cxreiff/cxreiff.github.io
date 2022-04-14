@@ -1,25 +1,10 @@
-import { mount, ReactWrapper } from 'enzyme'
+import { render } from '@testing-library/preact'
 
 import { Wrapper } from '~/src/app/wrapper'
 import Homepage from './homepage.component'
 
-describe('homepage', () => {
+test('should render', () => {
+    const { container } = render(<Homepage />, { wrapper: Wrapper })
 
-    let component: ReactWrapper<typeof Wrapper, void>
-    
-    beforeAll(() => {
-        component = mount<typeof Wrapper, void>(
-            <Wrapper>
-                <Homepage />
-            </Wrapper>
-        )
-    })
-
-    afterAll(() => {
-        component.unmount()
-    })
-
-    it('should render', () => {
-        expect(component).toMatchSnapshot()
-    })
+    expect(container).toMatchSnapshot()
 })

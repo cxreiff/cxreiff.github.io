@@ -1,197 +1,69 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`homepage should render 1`] = `
-<Wrapper>
-  <Provider
-    store={
-      Object {
-        "@@observable": [Function],
-        "dispatch": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-      }
-    }
+exports[`should render 1`] = `
+<div>
+  <section
+    class="homepage"
   >
-    <Provider
-      value={
-        Object {
-          "store": Object {
-            "@@observable": [Function],
-            "dispatch": [Function],
-            "getState": [Function],
-            "replaceReducer": [Function],
-            "subscribe": [Function],
-          },
-          "subscription": Object {
-            "addNestedSub": [Function],
-            "getListeners": [Function],
-            "handleChangeWrapper": [Function],
-            "isSubscribed": [Function],
-            "notifyNestedSubs": [Function],
-            "onStateChange": [Function],
-            "trySubscribe": [Function],
-            "tryUnsubscribe": [Function],
-          },
-        }
-      }
+    <div
+      class="image image hidden"
     >
-      <HashRouter>
-        <Router
-          location={
-            Object {
-              "hash": "",
-              "key": "default",
-              "pathname": "/",
-              "search": "",
-              "state": null,
-            }
-          }
-          navigationType="POP"
-          navigator={
-            Object {
-              "action": "POP",
-              "back": [Function],
-              "block": [Function],
-              "createHref": [Function],
-              "forward": [Function],
-              "go": [Function],
-              "listen": [Function],
-              "location": Object {
-                "hash": "",
-                "key": "default",
-                "pathname": "/",
-                "search": "",
-                "state": null,
-              },
-              "push": [Function],
-              "replace": [Function],
-            }
-          }
+      <img
+        alt="Image of site author Jax Reiff."
+        src="https://jaxreiff-static.sfo3.cdn.digitaloceanspaces.com/assets/aboutme.png"
+      />
+      <svg
+        viewBox="0 0 1.5 1"
+      />
+    </div>
+    <div
+      class="aboutme"
+    >
+      <header>
+        <h2>
+          About Me
+        </h2>
+      </header>
+      <p>
+        Hello! I am a software engineer specializing in front-end, with expertise building clients using TypeScript and React, but with plenty of experience across the full stack.
+      </p>
+      <p>
+        This is my personal site, where I've put photos, writing, and various projects I've been working on.
+      </p>
+      <p>
+        The site itself also serves as an example (and test environment) of some of my preferred front-end technologies, libraries, and approaches. The source code for the site is publically available 
+        <a
+          href="https://github.com/jaxreiff/jaxreiff.github.io"
         >
-          <Provider
-            value={
-              Object {
-                "basename": "/",
-                "navigator": Object {
-                  "action": "POP",
-                  "back": [Function],
-                  "block": [Function],
-                  "createHref": [Function],
-                  "forward": [Function],
-                  "go": [Function],
-                  "listen": [Function],
-                  "location": Object {
-                    "hash": "",
-                    "key": "default",
-                    "pathname": "/",
-                    "search": "",
-                    "state": null,
-                  },
-                  "push": [Function],
-                  "replace": [Function],
-                },
-                "static": false,
-              }
-            }
-          >
-            <Provider
-              value={
-                Object {
-                  "location": Object {
-                    "hash": "",
-                    "key": "default",
-                    "pathname": "/",
-                    "search": "",
-                    "state": null,
-                  },
-                  "navigationType": "POP",
-                }
-              }
-            >
-              <Homepage>
-                <section
-                  className="homepage"
-                >
-                  <Image
-                    alt="Image of site author Jax Reiff."
-                    aspect={1.5}
-                    className="image"
-                    source="https://jaxreiff-static.sfo3.cdn.digitaloceanspaces.com/assets/aboutme.png"
-                  >
-                    <div
-                      className="image image hidden"
-                    >
-                      <img
-                        alt="Image of site author Jax Reiff."
-                        onLoad={[Function]}
-                        src="https://jaxreiff-static.sfo3.cdn.digitaloceanspaces.com/assets/aboutme.png"
-                      />
-                      <svg
-                        viewBox="0 0 1.5 1"
-                      />
-                    </div>
-                  </Image>
-                  <div
-                    className="aboutme"
-                  >
-                    <header>
-                      <h2>
-                        About Me
-                      </h2>
-                    </header>
-                    <p>
-                      Hello! I am a software engineer specializing in front-end, with expertise building clients using TypeScript and React, but with plenty of experience across the full stack.
-                    </p>
-                    <p>
-                      This is my personal site, where I've put photos, writing, and various projects I've been working on.
-                    </p>
-                    <p>
-                      The site itself also serves as an example (and test environment) of some of my preferred front-end technologies, libraries, and approaches. The source code for the site is publically available 
-                      <a
-                        href="https://github.com/jaxreiff/jaxreiff.github.io"
-                      >
-                        here
-                      </a>
-                      , and links to resources and libraries that I have found useful building the site can be found 
-                      <Link
-                        to="/posts/portfolio-site-design"
-                      >
-                        <a
-                          href="#/posts/portfolio-site-design"
-                          onClick={[Function]}
-                        >
-                          here
-                        </a>
-                      </Link>
-                      .
-                    </p>
-                    <p>
-                      My front-end development résumé can be found 
-                      <a
-                        href="https://jaxreiff.com/resume/resume.pdf#toolbar=0"
-                      >
-                        here
-                      </a>
-                      .
-                    </p>
-                    <p>
-                      My GitHub profile can be found 
-                      <a
-                        href="https://github.com/jaxreiff"
-                      >
-                        here
-                      </a>
-                      .
-                    </p>
-                  </div>
-                </section>
-              </Homepage>
-            </Provider>
-          </Provider>
-        </Router>
-      </HashRouter>
-    </Provider>
-  </Provider>
-</Wrapper>
+          here
+        </a>
+        , and links to resources and libraries that I have found useful building the site can be found 
+        <a
+          href="#/posts/portfolio-site-design"
+        >
+          here
+        </a>
+        .
+      </p>
+      <p>
+        My front-end development résumé can be found 
+        <a
+          href="https://jaxreiff.com/resume/resume.pdf#toolbar=0"
+        >
+          here
+        </a>
+        .
+      </p>
+      <p>
+        My GitHub profile can be found 
+        <a
+          href="https://github.com/jaxreiff"
+        >
+          here
+        </a>
+        .
+      </p>
+    </div>
+  </section>
+</div>
 `;
