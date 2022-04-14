@@ -51,15 +51,20 @@
         li.logo {
             z-index: 1;
             flex: 1;
-            margin: 0 0 1.7rem 0;
+            width: calc(100% - 6rem);
+            margin: 0 3rem 1.7rem 3rem;
+
+            @media only screen and (min-width: $mobile-breakpoint) {
+                width: 100%;
+                margin: 0;
+            }
 
             a {
-                width: calc(100% - 1rem);
+                width: 100%;
+                margin-top: -0.4rem;
                 white-space: nowrap;
                 font-size: 4.8rem;
-                margin-top: -0.4rem;
                 letter-spacing: -0.05em;
-                margin-left: 1rem;
 
                 &:before {
                     @media only screen and (min-width: $small-mobile-breakpoint) {
@@ -74,22 +79,21 @@
                     }
                 }
                 &:before, &:after {
-                    font-size: 2rem;
-                    transform: translateY(-12px);
-                    display: inline-block;
-                    color: $accent-color-tertiary;
+                    @media only screen and (min-width: $small-mobile-breakpoint) {
+                        font-size: 2rem;
+                        transform: translateY(-12px);
+                        display: inline-block;
+                        color: $accent-color-tertiary;
+                    }
                 }
 
                 @media only screen and (min-width: $mobile-breakpoint) {
                     width: min-content;
                     padding: 0 1rem;
-                    margin-left: 0;
                 }
             }
 
-            @media only screen and (min-width: $mobile-breakpoint) {
-                margin: 0;
-            }
+            
         }
 
         li.navlink {
@@ -158,15 +162,22 @@
 }
 
 .expand_button {
-    height: 2.5rem;
-    width: 2.5rem;
-    padding: 0.3rem;
-    margin: 0.25rem;
+    height: 3rem;
+    width: 3rem;
+    padding: 0.5rem;
     position: absolute;
     border: none;
     background-color: initial;
     z-index: 1;
     cursor: pointer;
+
+    @include interactive(
+        0.2rem,
+        $accent-color-darker,
+        $accent-color-darkest,
+        $accent-color-darker,
+        $accent-color-darkest
+    );
 
     &>svg {
         padding: 15%;
