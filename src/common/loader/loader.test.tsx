@@ -1,22 +1,9 @@
-import { mount, ReactWrapper } from 'enzyme'
+import { render } from '@testing-library/preact'
 
 import { Loader } from './loader.component'
 
-describe('loader', () => {
+test('should render', () => {
+    const { container } = render(<Loader />)
 
-  let component: ReactWrapper<typeof Loader, void>
-
-  beforeEach(() => {
-    component = mount<typeof Loader, void>(
-      <Loader />
-    )
-  })
-
-  afterEach(() => {
-    component.unmount()
-  })
-
-  it('should render', () => {
-    expect(component).toMatchSnapshot()
-  })
+    expect(container).toMatchSnapshot()
 })

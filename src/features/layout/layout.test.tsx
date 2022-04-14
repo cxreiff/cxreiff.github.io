@@ -1,4 +1,4 @@
-import { mount, ReactWrapper } from 'enzyme'
+import { render, fireEvent } from '@testing-library/preact'
 
 import { Wrapper } from '~/src/app/wrapper'
 import { ROUTES } from '~/src/app/routing'
@@ -10,52 +10,32 @@ jest.mock('react-router-dom', () => ({
     useNavigate: () => mockNavigate,
 }))
 
-describe('layout', () => {
-    
-    let component: ReactWrapper<typeof Wrapper, void>
-    
-    beforeAll(() => {
-        component = mount<typeof Wrapper, void>(
-            <Wrapper>
-                <Layout routes={ROUTES} />
-            </Wrapper>
-        )
-    })
-    
-    afterAll(() => {
-        component.unmount()
-    })
+test('should render', () => {
+    const { container } = render(<Layout routes={ROUTES} />, { wrapper: Wrapper })
 
-    afterEach(() => {
-        jest.clearAllMocks()
-    })
+    expect(container).toMatchSnapshot()
+})
 
-    it('should render', () => {
-        expect(component.find(Layout)).toMatchSnapshot()
-    })
+test('should expand menu', () => {
+    const { container, getByRole } = render(<Layout routes={ROUTES} />, { wrapper: Wrapper })
 
-    it('should expand menu at mobile widths', () => {
-        component.find('#nav-expand').simulate('click')
-        expect(component.find(Layout)).toMatchSnapshot()
-    })
+    fireEvent.click(getByRole('button', { name: 'expand navigation' }))
 
-    it('should navigate to homepage', () => {
-        component.find('#nav-logo>a').simulate('click')
-        expect(mockNavigate).toHaveBeenCalledWith('')
-    })
-    
-    it('should navigate to projects tab', () => {
-        component.find('#nav-projects>a').simulate('click')
-        expect(mockNavigate).toHaveBeenCalledWith('projects')
-    })
-    
-    it('should navigate to photos tab', () => {
-        component.find('#nav-photos>a').simulate('click')
-        expect(mockNavigate).toHaveBeenCalledWith('photos')
-    })
+    expect(container).toMatchSnapshot()
+})
 
-    it('should navigate to posts tab', () => {
-        component.find('#nav-posts>a').simulate('click')
-        expect(mockNavigate).toHaveBeenCalledWith('posts')
-    })
+test('should navigate via navigation menu links', () => {
+    const { getByRole } = render(<Layout routes={ROUTES} />, { wrapper: Wrapper })
+
+    fireEvent.click(getByRole('listitem', { name: 'navigate to home' }).firstElementChild!)
+    expect(mockNavigate).toHaveBeenCalledWith('')
+
+    fireEvent.click(getByRole('listitem', { name: 'navigate to projects' }).firstElementChild!)
+    expect(mockNavigate).toHaveBeenCalledWith('projects')
+
+    fireEvent.click(getByRole('listitem', { name: 'navigate to photos' }).firstElementChild!)
+    expect(mockNavigate).toHaveBeenCalledWith('photos')
+
+    fireEvent.click(getByRole('listitem', { name: 'navigate to posts' }).firstElementChild!)
+    expect(mockNavigate).toHaveBeenCalledWith('posts')
 })

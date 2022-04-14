@@ -33,6 +33,7 @@ export const ImageLightbox: FC<ImageLightboxProps> = ({ aspect, small, medium, l
           large={large}
           alt={alt}
           hideDownload={true}
+          hideClose={true}
           onClose={() => setOpened(false)}
         />
       )}

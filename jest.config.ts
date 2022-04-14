@@ -2,10 +2,14 @@ import type { Config } from '@jest/types';
 
 const config: Config.InitialOptions = {
   preset: 'ts-jest',
-  testEnvironment: 'node',
+  testEnvironment: 'jsdom',
   clearMocks: true,
+  automock: false,
   roots: [
     '<rootDir>/src'
+  ],
+  setupFilesAfterEnv: [
+    './jest.setup.ts'
   ],
   coverageDirectory: 'coverage',
   moduleNameMapper: {
@@ -17,12 +21,6 @@ const config: Config.InitialOptions = {
     '^/(.*)$': '<rootDir>/src/$1',
     '^~/(.*)$': '<rootDir>/$1'
   },
-  setupFiles: [
-    './jest.setup.ts'
-  ],
-  snapshotSerializers: [
-    'enzyme-to-json/serializer'
-  ],
   transform: {
     '^.+\\.[t|j]sx?$': 'babel-jest',
     '^.+\\.(css|scss|png|jpg|svg)$': 'jest-transform-stub'

@@ -1,4 +1,5 @@
-import { mount, ReactWrapper } from 'enzyme'
+import { render } from '@testing-library/preact'
+
 import * as ReactRouterDOM from 'react-router-dom'
 
 import { Wrapper } from '~/src/app/wrapper'
@@ -10,23 +11,8 @@ jest.mock('react-router-dom', () => ({
     useParams: jest.fn().mockReturnValue({ id: 'portfolio-site-design' }),
 }))
 
-describe('posts', () => {
+test('should render', () => {
+    const { getByText } = render(<PostsContent />, { wrapper: Wrapper })
 
-    let component: ReactWrapper<typeof Wrapper, void>
-
-    beforeAll(() => {
-        component = mount<typeof Wrapper, void>(
-            <Wrapper>
-                <PostsContent />
-            </Wrapper>
-        )
-    })
-
-    afterAll(() => {
-        component.unmount()
-    })
-
-    it('should render', () => {
-        expect(component.find(PostsContent)).toMatchSnapshot()
-    })
+    expect(getByText('Portfolio site approach and design')).toBeInTheDocument()
 })
