@@ -35,7 +35,7 @@ export const Layout: FC<LayoutProps> = ({ children, routes }) => {
                     </svg>
                 </button>
                 <ul>
-                    <li id={'nav-logo'} className={styles.logo}>
+                    <li aria-label={'navigate to home'} className={styles.logo}>
                         <a onClick={() => navigate('')}>
                             jax reiff
                         </a>
@@ -43,7 +43,7 @@ export const Layout: FC<LayoutProps> = ({ children, routes }) => {
                     {routes.filter(({ path }) => path).map(({ path }) => (
                         <li
                             key={path}
-                            id={`nav-${path}`}
+                            aria-label={`navigate to ${path}`}
                             className={cn(styles.navlink, {
                                 [styles.current]: comparePaths(path, pathname)
                             })}

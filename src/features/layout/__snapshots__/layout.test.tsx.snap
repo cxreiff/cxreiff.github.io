@@ -1,56 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`layout should expand menu at mobile widths 1`] = `
-<Layout
-  routes={
-    Array [
-      Object {
-        "Component": [Function],
-        "path": "",
-      },
-      Object {
-        "Component": [Function],
-        "children": Array [
-          Object {
-            "Component": [Function],
-            "path": "pixijs",
-          },
-          Object {
-            "Component": [Function],
-            "path": "babylonjs",
-          },
-        ],
-        "path": "projects",
-      },
-      Object {
-        "Component": [Function],
-        "path": "photos",
-      },
-      Object {
-        "Component": [Function],
-        "children": Array [
-          Object {
-            "Component": [Function],
-            "path": ":id",
-          },
-        ],
-        "path": "posts",
-      },
-    ]
-  }
->
+exports[`should expand menu 1`] = `
+<div>
   <div
-    className="layout"
+    class="layout"
   >
     <nav
       aria-label="primary"
-      className="expanded"
+      class="expanded"
     >
       <button
         aria-label="expand navigation"
-        className="expand_button"
+        class="expand_button"
         id="nav-expand"
-        onClick={[Function]}
       >
         <svg
           height="40"
@@ -75,45 +37,34 @@ exports[`layout should expand menu at mobile widths 1`] = `
       </button>
       <ul>
         <li
-          className="logo"
-          id="nav-logo"
+          aria-label="navigate to home"
+          class="logo"
         >
-          <a
-            onClick={[Function]}
-          >
+          <a>
             jax reiff
           </a>
         </li>
         <li
-          className="navlink"
-          id="nav-projects"
-          key="projects"
+          aria-label="navigate to projects"
+          class="navlink"
         >
-          <a
-            onClick={[Function]}
-          >
+          <a>
             projects
           </a>
         </li>
         <li
-          className="navlink"
-          id="nav-photos"
-          key="photos"
+          aria-label="navigate to photos"
+          class="navlink"
         >
-          <a
-            onClick={[Function]}
-          >
+          <a>
             photos
           </a>
         </li>
         <li
-          className="navlink"
-          id="nav-posts"
-          key="posts"
+          aria-label="navigate to posts"
+          class="navlink"
         >
-          <a
-            onClick={[Function]}
-          >
+          <a>
             posts
           </a>
         </li>
@@ -121,60 +72,22 @@ exports[`layout should expand menu at mobile widths 1`] = `
     </nav>
     <main />
   </div>
-</Layout>
+</div>
 `;
 
-exports[`layout should render 1`] = `
-<Layout
-  routes={
-    Array [
-      Object {
-        "Component": [Function],
-        "path": "",
-      },
-      Object {
-        "Component": [Function],
-        "children": Array [
-          Object {
-            "Component": [Function],
-            "path": "pixijs",
-          },
-          Object {
-            "Component": [Function],
-            "path": "babylonjs",
-          },
-        ],
-        "path": "projects",
-      },
-      Object {
-        "Component": [Function],
-        "path": "photos",
-      },
-      Object {
-        "Component": [Function],
-        "children": Array [
-          Object {
-            "Component": [Function],
-            "path": ":id",
-          },
-        ],
-        "path": "posts",
-      },
-    ]
-  }
->
+exports[`should render 1`] = `
+<div>
   <div
-    className="layout"
+    class="layout"
   >
     <nav
       aria-label="primary"
-      className=""
+      class=""
     >
       <button
         aria-label="expand navigation"
-        className="expand_button"
+        class="expand_button"
         id="nav-expand"
-        onClick={[Function]}
       >
         <svg
           height="40"
@@ -199,45 +112,34 @@ exports[`layout should render 1`] = `
       </button>
       <ul>
         <li
-          className="logo"
-          id="nav-logo"
+          aria-label="navigate to home"
+          class="logo"
         >
-          <a
-            onClick={[Function]}
-          >
+          <a>
             jax reiff
           </a>
         </li>
         <li
-          className="navlink"
-          id="nav-projects"
-          key="projects"
+          aria-label="navigate to projects"
+          class="navlink"
         >
-          <a
-            onClick={[Function]}
-          >
+          <a>
             projects
           </a>
         </li>
         <li
-          className="navlink"
-          id="nav-photos"
-          key="photos"
+          aria-label="navigate to photos"
+          class="navlink"
         >
-          <a
-            onClick={[Function]}
-          >
+          <a>
             photos
           </a>
         </li>
         <li
-          className="navlink"
-          id="nav-posts"
-          key="posts"
+          aria-label="navigate to posts"
+          class="navlink"
         >
-          <a
-            onClick={[Function]}
-          >
+          <a>
             posts
           </a>
         </li>
@@ -245,5 +147,5 @@ exports[`layout should render 1`] = `
     </nav>
     <main />
   </div>
-</Layout>
+</div>
 `;

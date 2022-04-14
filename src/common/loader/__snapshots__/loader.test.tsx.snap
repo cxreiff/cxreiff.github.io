@@ -1,22 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`loader should render 1`] = `
-<Loader>
+exports[`should render 1`] = `
+<div>
   <div
-    className="loader"
+    class="loader"
   >
-    <span
-      key={1}
-    />
-    <span
-      key={2}
-    />
-    <span
-      key={3}
-    />
-    <span
-      key={4}
-    />
+    <span />
+    <span />
+    <span />
+    <span />
   </div>
-</Loader>
+</div>
 `;

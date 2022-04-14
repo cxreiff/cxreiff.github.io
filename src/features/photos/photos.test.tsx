@@ -1,25 +1,27 @@
-import { mount, ReactWrapper } from 'enzyme'
+import { render } from '@testing-library/preact'
+import fetch from 'jest-mock-fetch'
 
 import { Wrapper } from '~/src/app/wrapper'
 import Photos from './photos.component'
 
-describe('photos', () => {
+afterEach(() => fetch.reset())
 
-    let component: ReactWrapper<typeof Wrapper, void>
-    
-    beforeAll(() => {
-        component = mount<typeof Wrapper, void>(
-            <Wrapper>
-                <Photos />
-            </Wrapper>
-        )
-    })
-    
-    afterAll(() => {
-        component.unmount()
+test('should render', async () => {
+
+    const { container, findByRole } = render(<Photos />, { wrapper: Wrapper })
+
+    fetch.mockResponse({
+        text: () => `
+            <?xml version="1.0" encoding="UTF-8"?>
+            <ListBucketResult>
+            <Contents>
+            <Key>photos/sm_photo_00.png</Key>
+            </Contents>
+            </ListBucketResult>
+        `
     })
 
-    it('should render', () => {
-        expect(component.find(Photos)).toMatchSnapshot()
-    })
+    expect(await findByRole('article')).toBeInTheDocument()
+
+    expect(container).toMatchSnapshot()
 })

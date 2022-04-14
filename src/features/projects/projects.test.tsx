@@ -1,7 +1,5 @@
-import { mount, ReactWrapper } from 'enzyme'
+import { render, fireEvent } from '@testing-library/preact'
 
-import { Wrapper } from '~/src/app/wrapper'
-import { Card } from '~/src/common/card/card.component'
 import Projects from './projects.component'
 
 const mockNavigate = jest.fn()
@@ -10,35 +8,18 @@ jest.mock('react-router-dom', () => ({
     useNavigate: () => mockNavigate,
 }))
 
-describe('projects', () => {
+test('should render', () => {
+    const { container } = render(<Projects />)
 
-    let component: ReactWrapper<typeof Wrapper, void>
+    expect(container).toMatchSnapshot()
+})
 
-    beforeAll(() => {
-        component = mount<typeof Wrapper, void>(
-            <Wrapper>
-                <Projects />
-            </Wrapper>
-        )
-    })
+test('should navigate to each project', () => {
+    const { getByText } = render(<Projects />)
 
-    afterAll(() => {
-        component.unmount()
-    })
+    fireEvent.click(getByText('pixi.js'))
+    expect(mockNavigate).toHaveBeenCalledWith('/projects/pixijs')
 
-    afterEach(() => {
-        jest.restoreAllMocks()
-    })
-
-    it('should render', () => {
-        expect(component).toMatchSnapshot()
-    })
-
-    it('should navigate to each project', () => {
-        const cards = component.find(Card)
-        cards.at(0).children().first().simulate('click')
-        expect(mockNavigate).toHaveBeenCalledWith('/projects/pixijs')
-        cards.at(1).children().first().simulate('click')
-        expect(mockNavigate).toHaveBeenCalledWith('/projects/babylonjs')
-    })
+    fireEvent.click(getByText('babylon.js'))
+    expect(mockNavigate).toHaveBeenCalledWith('/projects/babylonjs')
 })

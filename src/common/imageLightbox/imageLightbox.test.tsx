@@ -1,40 +1,33 @@
-import { mount, ReactWrapper } from 'enzyme'
+import { render, fireEvent } from '@testing-library/preact'
 
 import { ImageLightbox } from './imageLightbox.component'
 
-describe('imageLoader', () => {
-    
-    let component: ReactWrapper<typeof ImageLightbox, void>
-    
-    beforeEach(() => {
-        component = mount<typeof ImageLightbox, void>(
-            <ImageLightbox
-                aspect={1/1}
-                small={'test'}
-                medium={'test'}
-                large={'test'}
-                alt={'test'}
-                className={'test'}
-            />
-        )
-    })
+test('should render', () => {
+    const { container } = render(
+        <ImageLightbox
+            aspect={800/600}
+            small={'test'}
+            medium={'test'}
+            large={'test'}
+            alt={'test image'}
+        />
+    )
 
-    afterEach(() => {
-        component.unmount()
-    })
-    
-    it('should render', () => {
-        expect(component).toMatchSnapshot()
-    })
+    expect(container).toMatchSnapshot()
+})
 
-    it('should render lightbox', () => {
-        component.find('div.test').simulate('click')
-        expect(component).toMatchSnapshot()
-    })
+test('should open lightbox', () => {
+    const { container, getByAltText } = render(
+        <ImageLightbox
+            aspect={800/600}
+            small={'test'}
+            medium={'test'}
+            large={'test'}
+            alt={'test image'}
+        />
+    )
 
-    it('should close lightbox', () => {
-        component.find('div.test').simulate('click')
-        component.find('.__react_modal_image__icon_menu').childAt(1).simulate('click')
-        expect(component).toMatchSnapshot()
-    })
+    fireEvent.click(getByAltText('test image'))
+
+    expect(container).toMatchSnapshot()
 })

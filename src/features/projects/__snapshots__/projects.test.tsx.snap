@@ -1,165 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`projects should render 1`] = `
-<Wrapper>
-  <Provider
-    store={
-      Object {
-        "@@observable": [Function],
-        "dispatch": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-      }
-    }
+exports[`should render 1`] = `
+<div>
+  <section
+    class="projects"
   >
-    <Provider
-      value={
-        Object {
-          "store": Object {
-            "@@observable": [Function],
-            "dispatch": [Function],
-            "getState": [Function],
-            "replaceReducer": [Function],
-            "subscribe": [Function],
-          },
-          "subscription": Object {
-            "addNestedSub": [Function],
-            "getListeners": [Function],
-            "handleChangeWrapper": [Function],
-            "isSubscribed": [Function],
-            "notifyNestedSubs": [Function],
-            "onStateChange": [Function],
-            "trySubscribe": [Function],
-            "tryUnsubscribe": [Function],
-          },
-        }
-      }
+    <article
+      class="card card_clickable"
     >
-      <HashRouter>
-        <Router
-          location={
-            Object {
-              "hash": "",
-              "key": "default",
-              "pathname": "/",
-              "search": "",
-              "state": null,
-            }
-          }
-          navigationType="POP"
-          navigator={
-            Object {
-              "action": "POP",
-              "back": [Function],
-              "block": [Function],
-              "createHref": [Function],
-              "forward": [Function],
-              "go": [Function],
-              "listen": [Function],
-              "location": Object {
-                "hash": "",
-                "key": "default",
-                "pathname": "/",
-                "search": "",
-                "state": null,
-              },
-              "push": [Function],
-              "replace": [Function],
-            }
-          }
-        >
-          <Provider
-            value={
-              Object {
-                "basename": "/",
-                "navigator": Object {
-                  "action": "POP",
-                  "back": [Function],
-                  "block": [Function],
-                  "createHref": [Function],
-                  "forward": [Function],
-                  "go": [Function],
-                  "listen": [Function],
-                  "location": Object {
-                    "hash": "",
-                    "key": "default",
-                    "pathname": "/",
-                    "search": "",
-                    "state": null,
-                  },
-                  "push": [Function],
-                  "replace": [Function],
-                },
-                "static": false,
-              }
-            }
-          >
-            <Provider
-              value={
-                Object {
-                  "location": Object {
-                    "hash": "",
-                    "key": "default",
-                    "pathname": "/",
-                    "search": "",
-                    "state": null,
-                  },
-                  "navigationType": "POP",
-                }
-              }
-            >
-              <Projects>
-                <section
-                  className="projects"
-                >
-                  <Card
-                    image=""
-                    onClick={[Function]}
-                    primary="pixi.js project"
-                    secondary="pixi.js"
-                  >
-                    <article
-                      className="card card_clickable"
-                      onClick={[Function]}
-                    >
-                      <header>
-                        <h4>
-                          pixi.js project
-                        </h4>
-                      </header>
-                      <footer>
-                        pixi.js
-                      </footer>
-                    </article>
-                  </Card>
-                  <Card
-                    image=""
-                    onClick={[Function]}
-                    primary="babylon.js project"
-                    secondary="babylon.js"
-                  >
-                    <article
-                      className="card card_clickable"
-                      onClick={[Function]}
-                    >
-                      <header>
-                        <h4>
-                          babylon.js project
-                        </h4>
-                      </header>
-                      <footer>
-                        babylon.js
-                      </footer>
-                    </article>
-                  </Card>
-                </section>
-              </Projects>
-            </Provider>
-          </Provider>
-        </Router>
-      </HashRouter>
-    </Provider>
-  </Provider>
-</Wrapper>
+      
+      <header>
+        <h4>
+          pixi.js project
+        </h4>
+      </header>
+      <footer>
+        pixi.js
+      </footer>
+    </article>
+    <article
+      class="card card_clickable"
+    >
+      
+      <header>
+        <h4>
+          babylon.js project
+        </h4>
+      </header>
+      <footer>
+        babylon.js
+      </footer>
+    </article>
+  </section>
+</div>
 `;

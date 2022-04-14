@@ -1,553 +1,121 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`imageLoader should close lightbox 1`] = `
-<ImageLightbox
-  alt="test"
-  aspect={1}
-  className="test"
-  large="test"
-  medium="test"
-  small="test"
->
+exports[`should open lightbox 1`] = `
+<div>
   <div
-    className="image_lightbox test"
-    onClick={[Function]}
+    class="image_lightbox"
   >
-    <Image
-      alt="test"
-      aspect={1}
-      className="interactive"
-      source="test"
+    <div
+      class="image interactive hidden"
     >
+      <img
+        alt="test image"
+        src="test"
+      />
+      <svg
+        viewBox="0 0 1.3333333333333333 1"
+      />
+    </div>
+    <div>
       <div
-        className="image interactive hidden"
+        class="__react_modal_image__modal_container"
       >
-        <img
-          alt="test"
-          onLoad={[Function]}
-          src="test"
-        />
-        <svg
-          viewBox="0 0 1 1"
-        />
-      </div>
-    </Image>
-    <Lightbox
-      alt="test"
-      hideDownload={true}
-      large="test"
-      medium="test"
-      onClose={[Function]}
-    >
-      <div>
-        <StyleInjector
-          css="
-  body {
-    overflow: hidden;
-  }
-
-  .__react_modal_image__modal_container {
-    position: fixed;
-    z-index: 5000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    touch-action: none;
-    overflow: hidden;
-  }
-
-  .__react_modal_image__modal_content {
-    position: relative;
-    height: 100%;
-    width: 100%;
-  }
-
-  .__react_modal_image__modal_content img, 
-  .__react_modal_image__modal_content svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%, -50%, 0);
-    -webkit-transform: translate3d(-50%, -50%, 0);
-    -ms-transform: translate3d(-50%, -50%, 0);
-    overflow: hidden;
-  }
-
-  .__react_modal_image__medium_img {
-    max-width: 98%;
-    max-height: 98%;
-    background-color: black;
-  }
-
-  .__react_modal_image__large_img {
-    cursor: move;
-    background-color: black
-  }
-
-  .__react_modal_image__icon_menu a {
-    display: inline-block;
-    font-size: 40px;
-    cursor: pointer;
-    line-height: 40px;
-    box-sizing: border-box;
-    border: none;
-    padding: 0px 5px 0px 5px;
-    margin-left: 10px;
-    color: white;
-    background-color: rgba(0, 0, 0, 0);
-  }
-
-  .__react_modal_image__icon_menu {
-    display: inline-block;
-    float: right;
-  }
-
-  .__react_modal_image__caption {
-    display: inline-block;
-    color: white;
-    font-size: 120%;
-    padding: 10px;
-    margin: 0;
-  }
-
-  .__react_modal_image__header {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    overflow: hidden;
-  }
-"
-          name="__react_modal_image__lightbox"
-        />
         <div
-          className="__react_modal_image__modal_container"
+          class="__react_modal_image__modal_content"
         >
-          <div
-            className="__react_modal_image__modal_content"
-            onMouseDown={[Function]}
-            onMouseMove={[Function]}
-            onMouseUp={[Function]}
-            ontouchend={[Function]}
-            ontouchmove={[Function]}
-            ontouchstart={[Function]}
-          >
-            <Image
-              className="__react_modal_image__medium_img"
-              contextMenu={false}
-              handleDoubleClick={[Function]}
+          <div>
+            <svg
+              fill="#ffffff"
+              height="48"
+              viewBox="0 0 24 24"
+              width="48"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6 2v6h.01L6 8.01 10 12l-4 4 .01.01H6V22h12v-5.99h-.01L18 16l-4-4 4-3.99-.01-.01H18V2H6zm10 14.5V20H8v-3.5l4-4 4 4zm-4-5l-4-4V4h8v3.5l-4 4z"
+              />
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+            </svg>
+            <img
+              class="__react_modal_image__medium_img"
               id="react-modal-image-img"
               src="test"
-              style={
-                Object {
-                  "MsTransform": "translate3d(-50%, -50%, 0) rotate(0deg)",
-                  "WebkitTransform": "translate3d(-50%, -50%, 0) rotate(0deg)",
-                  "transform": "translate3d(-50%, -50%, 0) rotate(0deg)",
-                }
-              }
-            >
-              <div>
-                <SpinnerIcon>
-                  <svg
-                    fill="#ffffff"
-                    height="48"
-                    viewBox="0 0 24 24"
-                    width="48"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M6 2v6h.01L6 8.01 10 12l-4 4 .01.01H6V22h12v-5.99h-.01L18 16l-4-4 4-3.99-.01-.01H18V2H6zm10 14.5V20H8v-3.5l4-4 4 4zm-4-5l-4-4V4h8v3.5l-4 4z"
-                    />
-                    <path
-                      d="M0 0h24v24H0V0z"
-                      fill="none"
-                    />
-                  </svg>
-                </SpinnerIcon>
-                <img
-                  className="__react_modal_image__medium_img"
-                  id="react-modal-image-img"
-                  onContextMenu={[Function]}
-                  onLoad={[Function]}
-                  ondblclick={[Function]}
-                  src="test"
-                  style={
-                    Object {
-                      "MsTransform": "translate3d(-50%, -50%, 0) rotate(0deg)",
-                      "WebkitTransform": "translate3d(-50%, -50%, 0) rotate(0deg)",
-                      "transform": "translate3d(-50%, -50%, 0) rotate(0deg)",
-                    }
-                  }
-                />
-              </div>
-            </Image>
+              style="transform: translate3d(-50%, -50%, 0) rotate(0deg);"
+            />
           </div>
-          <Header
-            alt="test"
-            enableDownload={false}
-            enableRotate={false}
-            enableZoom={true}
-            image="test"
-            onClose={[Function]}
-            toggleRotate={[Function]}
-            toggleZoom={[Function]}
-            zoomed={false}
-          >
-            <div
-              className="__react_modal_image__header"
-            >
-              <span
-                className="__react_modal_image__icon_menu"
-              >
-                <a
-                  onClick={[Function]}
-                >
-                  <ZoomInIcon>
-                    <svg
-                      fill="#ffffff"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M0 0h24v24H0z"
-                        fill="none"
-                      />
-                      <path
-                        d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"
-                      />
-                    </svg>
-                  </ZoomInIcon>
-                </a>
-                <a
-                  onClick={[Function]}
-                >
-                  <CloseIcon>
-                    <svg
-                      fill="#ffffff"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-                      />
-                      <path
-                        d="M0 0h24v24H0z"
-                        fill="none"
-                      />
-                    </svg>
-                  </CloseIcon>
-                </a>
-              </span>
-              <span
-                className="__react_modal_image__caption"
-              >
-                test
-              </span>
-            </div>
-          </Header>
         </div>
-      </div>
-    </Lightbox>
-  </div>
-</ImageLightbox>
-`;
-
-exports[`imageLoader should render 1`] = `
-<ImageLightbox
-  alt="test"
-  aspect={1}
-  className="test"
-  large="test"
-  medium="test"
-  small="test"
->
-  <div
-    className="image_lightbox test"
-    onClick={[Function]}
-  >
-    <Image
-      alt="test"
-      aspect={1}
-      className="interactive"
-      source="test"
-    >
-      <div
-        className="image interactive hidden"
-      >
-        <img
-          alt="test"
-          onLoad={[Function]}
-          src="test"
-        />
-        <svg
-          viewBox="0 0 1 1"
-        />
-      </div>
-    </Image>
-  </div>
-</ImageLightbox>
-`;
-
-exports[`imageLoader should render lightbox 1`] = `
-<ImageLightbox
-  alt="test"
-  aspect={1}
-  className="test"
-  large="test"
-  medium="test"
-  small="test"
->
-  <div
-    className="image_lightbox test"
-    onClick={[Function]}
-  >
-    <Image
-      alt="test"
-      aspect={1}
-      className="interactive"
-      source="test"
-    >
-      <div
-        className="image interactive hidden"
-      >
-        <img
-          alt="test"
-          onLoad={[Function]}
-          src="test"
-        />
-        <svg
-          viewBox="0 0 1 1"
-        />
-      </div>
-    </Image>
-    <Lightbox
-      alt="test"
-      hideDownload={true}
-      large="test"
-      medium="test"
-      onClose={[Function]}
-    >
-      <div>
-        <StyleInjector
-          css="
-  body {
-    overflow: hidden;
-  }
-
-  .__react_modal_image__modal_container {
-    position: fixed;
-    z-index: 5000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    touch-action: none;
-    overflow: hidden;
-  }
-
-  .__react_modal_image__modal_content {
-    position: relative;
-    height: 100%;
-    width: 100%;
-  }
-
-  .__react_modal_image__modal_content img, 
-  .__react_modal_image__modal_content svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%, -50%, 0);
-    -webkit-transform: translate3d(-50%, -50%, 0);
-    -ms-transform: translate3d(-50%, -50%, 0);
-    overflow: hidden;
-  }
-
-  .__react_modal_image__medium_img {
-    max-width: 98%;
-    max-height: 98%;
-    background-color: black;
-  }
-
-  .__react_modal_image__large_img {
-    cursor: move;
-    background-color: black
-  }
-
-  .__react_modal_image__icon_menu a {
-    display: inline-block;
-    font-size: 40px;
-    cursor: pointer;
-    line-height: 40px;
-    box-sizing: border-box;
-    border: none;
-    padding: 0px 5px 0px 5px;
-    margin-left: 10px;
-    color: white;
-    background-color: rgba(0, 0, 0, 0);
-  }
-
-  .__react_modal_image__icon_menu {
-    display: inline-block;
-    float: right;
-  }
-
-  .__react_modal_image__caption {
-    display: inline-block;
-    color: white;
-    font-size: 120%;
-    padding: 10px;
-    margin: 0;
-  }
-
-  .__react_modal_image__header {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    overflow: hidden;
-  }
-"
-          name="__react_modal_image__lightbox"
-        />
         <div
-          className="__react_modal_image__modal_container"
+          class="__react_modal_image__header"
         >
-          <div
-            className="__react_modal_image__modal_content"
-            onMouseDown={[Function]}
-            onMouseMove={[Function]}
-            onMouseUp={[Function]}
-            ontouchend={[Function]}
-            ontouchmove={[Function]}
-            ontouchstart={[Function]}
+          <span
+            class="__react_modal_image__icon_menu"
           >
-            <Image
-              className="__react_modal_image__medium_img"
-              contextMenu={false}
-              handleDoubleClick={[Function]}
-              id="react-modal-image-img"
-              src="test"
-              style={
-                Object {
-                  "MsTransform": "translate3d(-50%, -50%, 0) rotate(0deg)",
-                  "WebkitTransform": "translate3d(-50%, -50%, 0) rotate(0deg)",
-                  "transform": "translate3d(-50%, -50%, 0) rotate(0deg)",
-                }
-              }
-            >
-              <div>
-                <SpinnerIcon>
-                  <svg
-                    fill="#ffffff"
-                    height="48"
-                    viewBox="0 0 24 24"
-                    width="48"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M6 2v6h.01L6 8.01 10 12l-4 4 .01.01H6V22h12v-5.99h-.01L18 16l-4-4 4-3.99-.01-.01H18V2H6zm10 14.5V20H8v-3.5l4-4 4 4zm-4-5l-4-4V4h8v3.5l-4 4z"
-                    />
-                    <path
-                      d="M0 0h24v24H0V0z"
-                      fill="none"
-                    />
-                  </svg>
-                </SpinnerIcon>
-                <img
-                  className="__react_modal_image__medium_img"
-                  id="react-modal-image-img"
-                  onContextMenu={[Function]}
-                  onLoad={[Function]}
-                  ondblclick={[Function]}
-                  src="test"
-                  style={
-                    Object {
-                      "MsTransform": "translate3d(-50%, -50%, 0) rotate(0deg)",
-                      "WebkitTransform": "translate3d(-50%, -50%, 0) rotate(0deg)",
-                      "transform": "translate3d(-50%, -50%, 0) rotate(0deg)",
-                    }
-                  }
+            <a>
+              <svg
+                fill="#ffffff"
+                height="24"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 0h24v24H0z"
+                  fill="none"
                 />
-              </div>
-            </Image>
-          </div>
-          <Header
-            alt="test"
-            enableDownload={false}
-            enableRotate={false}
-            enableZoom={true}
-            image="test"
-            onClose={[Function]}
-            toggleRotate={[Function]}
-            toggleZoom={[Function]}
-            zoomed={false}
+                <path
+                  d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"
+                />
+              </svg>
+            </a>
+            <a>
+              <svg
+                fill="#ffffff"
+                height="24"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                />
+                <path
+                  d="M0 0h24v24H0z"
+                  fill="none"
+                />
+              </svg>
+            </a>
+          </span>
+          <span
+            class="__react_modal_image__caption"
           >
-            <div
-              className="__react_modal_image__header"
-            >
-              <span
-                className="__react_modal_image__icon_menu"
-              >
-                <a
-                  onClick={[Function]}
-                >
-                  <ZoomInIcon>
-                    <svg
-                      fill="#ffffff"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M0 0h24v24H0z"
-                        fill="none"
-                      />
-                      <path
-                        d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"
-                      />
-                    </svg>
-                  </ZoomInIcon>
-                </a>
-                <a
-                  onClick={[Function]}
-                >
-                  <CloseIcon>
-                    <svg
-                      fill="#ffffff"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-                      />
-                      <path
-                        d="M0 0h24v24H0z"
-                        fill="none"
-                      />
-                    </svg>
-                  </CloseIcon>
-                </a>
-              </span>
-              <span
-                className="__react_modal_image__caption"
-              >
-                test
-              </span>
-            </div>
-          </Header>
+            test image
+          </span>
         </div>
       </div>
-    </Lightbox>
+    </div>
   </div>
-</ImageLightbox>
+</div>
+`;
+
+exports[`should render 1`] = `
+<div>
+  <div
+    class="image_lightbox"
+  >
+    <div
+      class="image interactive hidden"
+    >
+      <img
+        alt="test image"
+        src="test"
+      />
+      <svg
+        viewBox="0 0 1.3333333333333333 1"
+      />
+    </div>
+  </div>
+</div>
 `;

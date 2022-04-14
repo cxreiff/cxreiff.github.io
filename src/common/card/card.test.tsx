@@ -1,35 +1,35 @@
-import { mount, ReactWrapper } from 'enzyme'
+import { render, fireEvent } from '@testing-library/preact'
 
 import { Card } from './card.component'
 
-describe('card', () => {
+test('should render', () => {
+    const { container, getAllByText } = render(
+        <Card
+            image={'test'}
+            primary={'test'}
+            secondary={'test'}
+            tertiary={'test'}
+        />
+    )
+
+    expect(getAllByText('test')).toHaveLength(3)
+    expect(container).toMatchSnapshot()
+})
+
+test('should call provided callback', () => {
+
+    const mockOnClickHandler = jest.fn()
+    const { getAllByText } = render(
+        <Card
+            image={'test'}
+            primary={'test'}
+            secondary={'test'}
+            tertiary={'test'}
+            onClick={mockOnClickHandler}
+        />
+    )
+
+    fireEvent.click(getAllByText('test')[0])
     
-    let component: ReactWrapper<typeof Card, void>
-    let mockFunction: jest.Mock
-
-    beforeEach(() => {
-        mockFunction = jest.fn()
-        component = mount<typeof Card, void>(
-            <Card
-                image={'test'}
-                primary={'test'}
-                secondary={'test'}
-                tertiary={'test'}
-                onClick={mockFunction}
-            />
-        )
-    })
-
-    afterEach(() => {
-        component.unmount()
-    })
-    
-    it('should render', () => {
-        expect(component).toMatchSnapshot()
-    })
-
-    it('should call provided callback', () => {
-        component.find('article').simulate('click')
-        expect(mockFunction.mock.calls.length).toBe(1)
-    })
+    expect(mockOnClickHandler).toHaveBeenCalled()
 })
