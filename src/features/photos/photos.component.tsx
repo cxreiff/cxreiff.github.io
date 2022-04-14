@@ -31,7 +31,7 @@ const Photos: FC = () => {
         <section className={styles.photos}>
             {photoSets.slice(0, numberOfPhotosVisible).map((photoSet, index) => (
                 <article key={index} className={styles.tile}>
-                    <ImageLightbox aspect={1/1} {...photoSet} />
+                    <ImageLightbox aspect={1/1} {...photoSet} className={styles.photo} />
                 </article>
             ))}
             { hasNextPage && <div ref={sentryRef} /> }
