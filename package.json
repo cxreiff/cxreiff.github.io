@@ -85,7 +85,7 @@
     "jest-mock-fetch": "^2.0.5",
     "jest-transform-stub": "^2.0.0",
     "json-schema": ">=0.4.0",
-    "lint-staged": "^12.3.7",
+    "lint-staged": "^12.4.0",
     "marked": "^4.0.14",
     "minimist": ">=1.2.6",
     "nanoid": "^3.3.2",
