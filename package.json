@@ -31,7 +31,7 @@
     "react/jsx-runtime": "preact/jsx-runtime"
   },
   "dependencies": {
-    "@babylonjs/core": "^5.1.0",
+    "@babylonjs/core": "^5.4.0",
     "@babylonjs/gui": "^5.1.0",
     "@reduxjs/toolkit": "^1.8.1",
     "assets": "^3.0.1",
