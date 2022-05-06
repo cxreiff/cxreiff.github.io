@@ -1,7 +1,8 @@
 import { Graphics } from 'pixi.js'
-import { Bodies } from 'matter-js'
+import { Bodies, Body } from 'matter-js'
 
 import { MatterEntity } from '../abstract/matterEntity'
+import { AsteroidScene } from '../scenes/asteroidScene'
 import { Manager } from '../static/manager'
 import { View } from '../static/view'
 import { Keyboard } from '../static/keyboard'
@@ -10,7 +11,7 @@ import { LaserEntity } from './laserEntity'
 export class ShipEntity extends MatterEntity<Graphics> {
 
     private static CONTROLS = {
-        BOOST: 'Space',
+        FIRE: 'Space',
         TURN_LEFT: 'ArrowLeft',
         TURN_RIGHT: 'ArrowRight',
         FORWARD: 'ArrowUp',
@@ -29,8 +30,6 @@ export class ShipEntity extends MatterEntity<Graphics> {
     private static SPEED = 7
     private static TURNING_SPEED = 0.07
 
-    private projectileFired = false
-
     constructor () {
         super(
             new Graphics(),
@@ -38,6 +37,10 @@ export class ShipEntity extends MatterEntity<Graphics> {
                 friction: 0.9,
                 frictionAir: 0.9,
                 inertia: 0.1,
+                collisionFilter: {
+                    category: AsteroidScene.COLLISION_CATEGORIES.SHIP,
+                    mask: AsteroidScene.COLLISION_CATEGORIES.ASTEROID,
+                },
             })
         )
 
@@ -46,30 +49,33 @@ export class ShipEntity extends MatterEntity<Graphics> {
 
     override update (delta: number) {
 
-        if (Keyboard.isPressed(ShipEntity.CONTROLS.BOOST) && this.projectileFired === false) {
-            this.projectileFired = true
+        if (Keyboard.wasPressed(ShipEntity.CONTROLS.FIRE)) {
             this.spawnProjectile()
-        } else if (!Keyboard.isPressed(ShipEntity.CONTROLS.BOOST) && this.projectileFired === true) {
-            this.projectileFired = false
         }
 
         if (Keyboard.isPressed(ShipEntity.CONTROLS.TURN_LEFT)) {
-            this.body.angle -= ShipEntity.TURNING_SPEED
+            Body.setAngle(this.body, this.body.angle - ShipEntity.TURNING_SPEED)
         }
 
         if (Keyboard.isPressed(ShipEntity.CONTROLS.TURN_RIGHT)) {
-            this.body.angle += ShipEntity.TURNING_SPEED
+            Body.setAngle(this.body, this.body.angle + ShipEntity.TURNING_SPEED)
         }
 
         if (Keyboard.isPressed(ShipEntity.CONTROLS.FORWARD)) {
-            this.body.position.x += ShipEntity.SPEED * Math.sin(this.facade.rotation)
-            this.body.position.y -= ShipEntity.SPEED * Math.cos(this.facade.rotation)
+            Body.setPosition(this.body, {
+                x: this.body.position.x + ShipEntity.SPEED * Math.sin(this.facade.rotation),
+                y: this.body.position.y - ShipEntity.SPEED * Math.cos(this.facade.rotation),
+            })
         }
 
         if (Keyboard.isPressed(ShipEntity.CONTROLS.BACKWARD)) {
-            this.body.position.x -= ShipEntity.SPEED * Math.sin(this.facade.rotation)
-            this.body.position.y += ShipEntity.SPEED * Math.cos(this.facade.rotation)
+            Body.setPosition(this.body, {
+                x: this.body.position.x - ShipEntity.SPEED * Math.sin(this.facade.rotation),
+                y: this.body.position.y + ShipEntity.SPEED * Math.cos(this.facade.rotation),
+            })
         }
+
+        this.boundPositionToView(0.017 * View.unitWidth())
 
         this.draw()
     }
