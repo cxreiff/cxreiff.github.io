@@ -2,6 +2,7 @@ export class Keyboard {
 
     private static readonly listenedKeys: Map<string, boolean> = new Map()
     private static readonly pressedKeys: Map<string, boolean> = new Map()
+    private static readonly unreadPresses: Map<string, boolean> = new Map()
 
     private constructor () {}
 
@@ -13,7 +14,10 @@ export class Keyboard {
 
     private static onKeyDown = (e: KeyboardEvent): void => {
         if (Keyboard.listenedKeys.get(e.code)) {
-            Keyboard.pressedKeys.set(e.code, true)
+            if (!e.repeat) {
+                Keyboard.pressedKeys.set(e.code, true)
+                Keyboard.unreadPresses.set(e.code, true)
+            }
             e.preventDefault()
         }
     }
@@ -21,6 +25,7 @@ export class Keyboard {
     private static onKeyUp = (e: KeyboardEvent): void => {
         if (Keyboard.listenedKeys.get(e.code)) {
             Keyboard.pressedKeys.set(e.code, false)
+            Keyboard.unreadPresses.set(e.code, false)
             e.preventDefault()
         }
     }
@@ -35,5 +40,13 @@ export class Keyboard {
 
     public static isPressed (code: string): boolean {
         return Keyboard.pressedKeys.get(code) || false
+    }
+
+    public static wasPressed (code: string): boolean {
+        if (Keyboard.unreadPresses.get(code)) {
+            Keyboard.unreadPresses.set(code, false)
+            return true
+        }
+        return false
     }
 }

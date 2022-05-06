@@ -2,6 +2,7 @@ import { Graphics } from 'pixi.js'
 import { Bodies, Body } from 'matter-js'
 
 import { MatterEntity } from '../abstract/matterEntity'
+import { AsteroidScene } from '../scenes/asteroidScene'
 import { Manager } from '../static/manager'
 import { View } from '../static/view'
 
@@ -12,6 +13,10 @@ export class LaserEntity extends MatterEntity<Graphics> {
             isSensor: true,
             friction: 0,
             frictionAir: 0,
+            collisionFilter: {
+                category: AsteroidScene.COLLISION_CATEGORIES.LASER,
+                mask: AsteroidScene.COLLISION_CATEGORIES.ASTEROID,
+            },
         }))
         Body.set(this.body, {
             angle: rotation,
