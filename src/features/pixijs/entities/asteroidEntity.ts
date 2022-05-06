@@ -2,8 +2,8 @@ import { Graphics } from 'pixi.js'
 import { Bodies, Body } from 'matter-js'
 
 import { MatterEntity } from '../abstract/matterEntity'
+import { AsteroidScene } from '../scenes/asteroidScene'
 import { View } from '../static/view'
-import { Manager } from '../static/manager'
 
 export class AsteroidEntity extends MatterEntity<Graphics> {
     
@@ -15,41 +15,37 @@ export class AsteroidEntity extends MatterEntity<Graphics> {
             friction: 0,
             frictionAir: 0,
             restitution: 1,
+            collisionFilter: {
+                category: AsteroidScene.COLLISION_CATEGORIES.ASTEROID,
+            },
         }))
         this.size = size
         Body.setVelocity(this.body, {
             x: (Math.random() - 0.5) * View.unitWidth() / 300,
             y: (Math.random() - 0.5) * View.unitWidth() / 300,
         })
-        this.facade.interactive = true
-        this.facade.on('mousedown', () => { Manager.currentScene.removeEntity(this) })
     }
 
     override update (delta: number) {
-
-        if (this.body.position.x < this.size) {
-            this.body.position.x = this.size
+        if (this.boundPositionToLeft(this.size)) {
             Body.setVelocity(this.body, {
                 x: -this.body.velocity.x,
                 y: this.body.velocity.y,
             })
         }
-        if (this.body.position.x > View.unitWidth() - this.size) {
-            this.body.position.x = View.unitWidth() - this.size
+        if (this.boundPositionToRight(this.size)) {
             Body.setVelocity(this.body, {
                 x: -this.body.velocity.x,
                 y: this.body.velocity.y,
             })
         }
-        if (this.body.position.y < this.size) {
-            this.body.position.y = this.size
+        if (this.boundPositionToTop(this.size)) {
             Body.setVelocity(this.body, {
                 x: this.body.velocity.x,
                 y: -this.body.velocity.y,
             })
         }
-        if (this.body.position.y > (View.unitHeight() - this.size)) {
-            this.body.position.y = View.unitHeight() - this.size
+        if (this.boundPositionToBottom(this.size)) {
             Body.setVelocity(this.body, {
                 x: this.body.velocity.x,
                 y: -this.body.velocity.y,

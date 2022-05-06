@@ -25,7 +25,7 @@ exports[`should render 1`] = `
         </h2>
       </header>
       <p>
-        Hello! I am a software engineer specializing in front-end, with expertise building clients using TypeScript and React, but with plenty of experience across the full stack.
+        Hello! I am a software engineer specializing in front-end development. I have experience building clients with tools like TypeScript and React, and have expertise across the full stack as well.
       </p>
       <p>
         This is my personal site, where I've put photos, writing, and various projects I've been working on.

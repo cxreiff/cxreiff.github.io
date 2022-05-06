@@ -24,7 +24,7 @@ For this reason I've gone with Preact, and while compatibility with Jest require
 - <https://redux.js.org/>
 - <https://redux-toolkit.js.org/>
 
-I have used Redux for a number of professional projects, and have always been preferential to Redux's functional programming style, transparency, and debuggability. In the past, there has been a downside of a large amount of boilerplate code, and logic for a single feature or concern being spread across a number of files. However, these issues can be well addressed by the ["Ducks" pattern](https://github.com/erikras/ducks-modular-redux) and the Redux team's [Redux Toolkit](https://redux-toolkit.js.org/) package.
+I have used Redux for a number of professional projects, and have always been preferential to Redux's functional programming style, transparency, and debuggability. In the past, there has been a downside of a large amount of boilerplate code, and logic for a single feature or concern being spread across a number of files. However, these issues can be well addressed by the ["Ducks" pattern](https://github.com/erikras/ducks-modular-redux), which organizes Redux code by feature rather than by actions/reducers, and the Redux team's [Redux Toolkit](https://redux-toolkit.js.org/) package, which abstracts away much of the boilerplate.
 
 ------
 ## jest
