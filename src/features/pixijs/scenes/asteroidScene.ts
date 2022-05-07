@@ -23,7 +23,6 @@ export class AsteroidScene extends MatterScene {
 
     public static readonly ASTEROID_INTERVAL = 200
     public static readonly ASTEROID_LIMIT = 8
-    public static readonly LASER_SPEED = 14
     public static readonly COLLISION_CATEGORIES = {
         DEFAULT: 0x0001,
         ASTEROID: 0x0002,
