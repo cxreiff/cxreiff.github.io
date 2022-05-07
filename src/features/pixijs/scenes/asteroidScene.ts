@@ -16,28 +16,43 @@ import { MatterEntity } from '../abstract/matterEntity'
 import { AsteroidEntity } from '../entities/asteroidEntity'
 import { ShipEntity } from '../entities/shipEntity'
 import { LaserEntity } from '../entities/laserEntity'
+import { ScoreEntity } from '../entities/scoreEntity'
 import { View } from '../static/view'
 
 export class AsteroidScene extends MatterScene {
 
     public static readonly ASTEROID_INTERVAL = 200
-    public static readonly ASTEROID_LIMIT = 3
+    public static readonly ASTEROID_LIMIT = 8
+    public static readonly LASER_SPEED = 14
     public static readonly COLLISION_CATEGORIES = {
         DEFAULT: 0x0001,
         ASTEROID: 0x0002,
         SHIP: 0x0004,
         LASER: 0x0008,
     }
+    public static readonly Z_LAYERS = {
+        GUI: 2,
+        OBJECTS: 1,
+        BACKGROUND: 0,
+    }
 
     private asteroidCountdown = 0
     private asteroidList: AsteroidEntity[] = []
+
+    private scoreEntity: ScoreEntity = new ScoreEntity(View.unitWidth() - 20, 20, 'right')
+    private shipEntity: ShipEntity = new ShipEntity()
 
     public laserAsteroidCollisionDetector = Detector.create()
 
     constructor () {
         super()
 
-        this.addEntity(new ShipEntity())
+        this.sortableChildren = true
+
+        this.scoreEntity.zIndex = AsteroidScene.Z_LAYERS.GUI
+
+        this.addEntity(this.shipEntity)
+        this.addEntity(this.scoreEntity)
     }
 
     override update (delta: number) {
@@ -57,6 +72,8 @@ export class AsteroidScene extends MatterScene {
                 (collision.bodyA.collisionFilter.category | collision.bodyB.collisionFilter.category)
                 === (AsteroidScene.COLLISION_CATEGORIES.ASTEROID | AsteroidScene.COLLISION_CATEGORIES.LASER)
             ) {
+                this.scoreEntity.setScore(this.scoreEntity.score + 100)
+
                 let asteroidId: number, laserId: number
                 if (collision.bodyA.collisionFilter.category === AsteroidScene.COLLISION_CATEGORIES.ASTEROID) {
                     asteroidId = collision.bodyA.id
