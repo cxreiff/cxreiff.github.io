@@ -8,21 +8,34 @@ import { View } from '../static/view'
 
 export class LaserEntity extends MatterEntity<Graphics> {
 
+    private static readonly LASER_WIDTH = 6
+    private static readonly LASER_HEIGHT = 20
+    private static readonly LASER_SPEED = 14
+
     constructor (x: number, y: number, rotation: number) {
-        super(new Graphics(), Bodies.rectangle(x, y, 5, 20, {
-            isSensor: true,
-            friction: 0,
-            frictionAir: 0,
-            collisionFilter: {
-                category: AsteroidScene.COLLISION_CATEGORIES.LASER,
-                mask: AsteroidScene.COLLISION_CATEGORIES.ASTEROID,
-            },
-        }))
+        super(
+            new Graphics(),
+            Bodies.rectangle(
+                x - (LaserEntity.LASER_WIDTH / 2),
+                y,
+                LaserEntity.LASER_WIDTH,
+                LaserEntity.LASER_HEIGHT,
+                {
+                    isSensor: true,
+                    friction: 0,
+                    frictionAir: 0,
+                    collisionFilter: {
+                        category: AsteroidScene.COLLISION_CATEGORIES.LASER,
+                        mask: AsteroidScene.COLLISION_CATEGORIES.ASTEROID,
+                    },
+                },
+            )
+        )
         Body.set(this.body, {
             angle: rotation,
             velocity: {
-                x: Math.sin(rotation) * AsteroidScene.LASER_SPEED,
-                y: -Math.cos(rotation) * AsteroidScene.LASER_SPEED,
+                x: Math.sin(rotation) * LaserEntity.LASER_SPEED,
+                y: -Math.cos(rotation) * LaserEntity.LASER_SPEED,
             }
         })
     }
@@ -44,7 +57,12 @@ export class LaserEntity extends MatterEntity<Graphics> {
         this.facade.clear()
         this.facade.lineStyle(0)
         this.facade.beginFill(0x3D3333, 1)
-        this.facade.drawRect(-View.scale(3), 0, View.scale(6), View.scale(20))
+        this.facade.drawRect(
+            -View.scale(LaserEntity.LASER_WIDTH / 2),
+            0,
+            View.scale(LaserEntity.LASER_WIDTH),
+            View.scale(LaserEntity.LASER_HEIGHT),
+        )
         this.facade.endFill()
     }
 }
