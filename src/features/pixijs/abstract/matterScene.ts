@@ -2,6 +2,7 @@ import { DisplayObject } from 'pixi.js'
 import { Engine, Composite } from 'matter-js'
 
 import { Scene } from './scene'
+import { Entity } from './entity'
 import { MatterEntity } from './matterEntity'
 
 export abstract class MatterScene extends Scene {
@@ -15,15 +16,19 @@ export abstract class MatterScene extends Scene {
         super.update(delta)
     }
 
-    override addEntity (entity: MatterEntity<DisplayObject>) {
+    override addEntity (entity: Entity<DisplayObject>) {
+        if(entity instanceof MatterEntity) {
+            Composite.add(this.engine.world, entity.body)
+        }
         super.addEntity(entity)
-        Composite.add(this.engine.world, entity.body)
         return entity
     }
 
-    override removeEntity (entity: MatterEntity<DisplayObject>) {
+    override removeEntity (entity: Entity<DisplayObject>) {
+        if (entity instanceof MatterEntity) {
+            Composite.remove(this.engine.world, entity.body)
+        }
         super.removeEntity(entity)
-        Composite.remove(this.engine.world, entity.body)
         return entity
     }
 }

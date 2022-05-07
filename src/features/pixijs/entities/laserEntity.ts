@@ -20,7 +20,10 @@ export class LaserEntity extends MatterEntity<Graphics> {
         }))
         Body.set(this.body, {
             angle: rotation,
-            velocity: { x: Math.sin(rotation) * 15, y: -Math.cos(rotation) * 15 }
+            velocity: {
+                x: Math.sin(rotation) * AsteroidScene.LASER_SPEED,
+                y: -Math.cos(rotation) * AsteroidScene.LASER_SPEED,
+            }
         })
     }
 
@@ -41,7 +44,7 @@ export class LaserEntity extends MatterEntity<Graphics> {
         this.facade.clear()
         this.facade.lineStyle(0)
         this.facade.beginFill(0x3D3333, 1)
-        this.facade.drawRect(0, 0, View.scale(5), View.scale(20))
+        this.facade.drawRect(-View.scale(3), 0, View.scale(6), View.scale(20))
         this.facade.endFill()
     }
 }
