@@ -1,51 +1,64 @@
-import { Graphics } from 'pixi.js'
+import { Sprite } from 'pixi.js'
 import { Bodies, Body } from 'matter-js'
 
 import { MatterEntity } from '../abstract/matterEntity'
 import { AsteroidScene } from '../scenes/asteroidScene'
 import { View } from '../static/view'
 
-export class AsteroidEntity extends MatterEntity<Graphics> {
+export class AsteroidEntity extends MatterEntity<Sprite> {
     
-    private size: number
+    private radius: number
 
-    constructor (x: number, y: number, size: number) {
-        super(new Graphics(), Bodies.circle(x, y, size, {
-            inertia: Infinity,
-            friction: 0,
-            frictionAir: 0,
-            restitution: 1,
-            collisionFilter: {
-                category: AsteroidScene.COLLISION_CATEGORIES.ASTEROID,
-            },
-        }))
-        this.size = size
+    constructor (x: number, y: number, radius: number) {
+        super(
+            Sprite.from('asteroid'),
+            Bodies.circle(x, y, radius, {
+                inertia: Infinity,
+                friction: 0,
+                frictionAir: 0,
+                restitution: 1,
+                collisionFilter: {
+                    category: AsteroidScene.COLLISION_CATEGORIES.ASTEROID,
+                },
+            }),
+        )
+
+        this.radius = radius
+        this.facade.width = View.scale(this.radius * 2)
+        this.facade.height = View.scale(this.radius * 2)
+        this.facade.anchor.x = 0.5
+        this.facade.anchor.y = 0.5
+
+        Body.setAngle(this.body, Math.random() * Math.PI * 2)
+
         Body.setVelocity(this.body, {
             x: (Math.random() - 0.5) * View.unitWidth() / 300,
             y: (Math.random() - 0.5) * View.unitWidth() / 300,
         })
+
+        super.resize()
     }
 
     override update (delta: number) {
-        if (this.boundPositionToLeft(this.size)) {
+        if (this.boundPositionToLeft(this.radius)) {
             Body.setVelocity(this.body, {
                 x: -this.body.velocity.x,
                 y: this.body.velocity.y,
             })
         }
-        if (this.boundPositionToRight(this.size)) {
+        if (this.boundPositionToRight(this.radius)) {
             Body.setVelocity(this.body, {
                 x: -this.body.velocity.x,
                 y: this.body.velocity.y,
             })
         }
-        if (this.boundPositionToTop(this.size)) {
+        if (this.boundPositionToTop(this.radius)) {
             Body.setVelocity(this.body, {
                 x: this.body.velocity.x,
                 y: -this.body.velocity.y,
             })
         }
-        if (this.boundPositionToBottom(this.size)) {
+        if (this.boundPositionToBottom(this.radius)) {
             Body.setVelocity(this.body, {
                 x: this.body.velocity.x,
                 y: -this.body.velocity.y,
@@ -56,10 +69,7 @@ export class AsteroidEntity extends MatterEntity<Graphics> {
     }
 
     draw () {
-        this.facade.clear()
-        this.facade.lineStyle(0)
-        this.facade.beginFill(0x3D3333, 1)
-        this.facade.drawCircle(0, 0, View.scale(this.size))
-        this.facade.endFill()
+        this.facade.width = View.scale(this.radius * 2)
+        this.facade.height = View.scale(this.radius * 2)
     }
 }

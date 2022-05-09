@@ -10,7 +10,7 @@ export class ScoreEntity extends Entity<Text> {
         super(
             new Text(initialScore.toString(), {
                 fontFamily : 'monospace',
-                fontSize: 28,
+                fontSize: 32,
                 fill : 0x3d3333,
                 align: alignment,
                 dropShadow: true,
