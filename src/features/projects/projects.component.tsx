@@ -15,8 +15,8 @@ const Projects: FC = () => {
         <section className={styles.projects}>
             <Card
                 image={pixijs}
-                primary={'pixi.js project'}
-                secondary={'pixi.js'}
+                primary={'asteroids game'}
+                secondary={'pixi.js, matter.js'}
                 onClick={() => navigate('/projects/pixijs')}
             />
             <Card

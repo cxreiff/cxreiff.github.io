@@ -17,9 +17,9 @@ test('should render', () => {
 test('should navigate to each project', () => {
     const { getByText } = render(<Projects />)
 
-    fireEvent.click(getByText('pixi.js'))
+    fireEvent.click(getByText('asteroids game'))
     expect(mockNavigate).toHaveBeenCalledWith('/projects/pixijs')
 
-    fireEvent.click(getByText('babylon.js'))
+    fireEvent.click(getByText('babylon.js project'))
     expect(mockNavigate).toHaveBeenCalledWith('/projects/babylonjs')
 })

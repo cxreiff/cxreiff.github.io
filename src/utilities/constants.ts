@@ -12,3 +12,5 @@ export const GITHUB_SITE_PROJECT_URL = 'https://github.com/jaxreiff/jaxreiff.git
 
 export const OBJECT_STORE_ASSETS_URL = 'https://jaxreiff-static.sfo3.cdn.digitaloceanspaces.com/'
 export const ABOUT_ME_IMAGE_URL = `${OBJECT_STORE_ASSETS_URL}assets/aboutme.png`
+export const ASTEROID_IMAGE_URL = `${OBJECT_STORE_ASSETS_URL}assets/asteroid.png`
+export const SHIP_IMAGE_URL = `${OBJECT_STORE_ASSETS_URL}assets/ship.png`
