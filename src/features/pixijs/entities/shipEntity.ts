@@ -1,4 +1,4 @@
-import { Graphics } from 'pixi.js'
+import { Sprite } from 'pixi.js'
 import { Bodies, Body } from 'matter-js'
 
 import { MatterEntity } from '../abstract/matterEntity'
@@ -8,7 +8,7 @@ import { View } from '../static/view'
 import { Keyboard } from '../static/keyboard'
 import { LaserEntity } from './laserEntity'
 
-export class ShipEntity extends MatterEntity<Graphics> {
+export class ShipEntity extends MatterEntity<Sprite> {
 
     private static CONTROLS = {
         FIRE: 'Space',
@@ -22,29 +22,41 @@ export class ShipEntity extends MatterEntity<Graphics> {
         { x: -25, y: 30 },
         { x: 25, y: 30 },
         { x: 30, y: 20 },
-        { x: 3, y: -30 },
-        { x: -3, y: -30 },
+        { x: 3, y: -18 },
+        { x: -3, y: -18 },
         { x: -30, y: 20 },
     ]
 
     private static SPEED = 7
-    private static TURNING_SPEED = 0.07
+    private static TURNING_SPEED = 0.08
 
     constructor () {
         super(
-            new Graphics(),
-            Bodies.fromVertices(View.unitWidth() * 0.5, View.unitHeight() * 0.2, [ShipEntity.VERTICES], {
-                friction: 0.9,
-                frictionAir: 0.9,
-                inertia: 0.1,
-                collisionFilter: {
-                    category: AsteroidScene.COLLISION_CATEGORIES.SHIP,
-                    mask: AsteroidScene.COLLISION_CATEGORIES.ASTEROID,
-                },
-            })
+            Sprite.from('ship'),
+            Bodies.fromVertices(
+                View.unitWidth() * 0.5,
+                View.unitHeight() * 0.2,
+                [ShipEntity.VERTICES],
+                {
+                    friction: 0.9,
+                    frictionAir: 0.9,
+                    inertia: 0.1,
+                    collisionFilter: {
+                        category: AsteroidScene.COLLISION_CATEGORIES.SHIP,
+                        mask: AsteroidScene.COLLISION_CATEGORIES.ASTEROID,
+                    },
+                }
+            )
         )
 
+        this.facade.width = View.scale(60)
+        this.facade.height = View.scale(60)
+        this.facade.anchor.x = 0.5
+        this.facade.anchor.y = 0.5
+
         Keyboard.listenFor(...Object.values(ShipEntity.CONTROLS))
+
+        super.resize()
     }
 
     override update (delta: number) {
@@ -76,22 +88,6 @@ export class ShipEntity extends MatterEntity<Graphics> {
         }
 
         this.boundPositionToView(0.017 * View.unitWidth())
-
-        this.draw()
-    }
-
-    draw () {
-        this.facade.clear()
-        this.facade.lineStyle(0)
-        this.facade.beginFill(0x3D3333, 1)
-        ShipEntity.VERTICES.forEach((vertex, index) => {
-            if (index === 0) {
-                this.facade.moveTo(View.scale(vertex.x), View.scale(vertex.y))
-            } else {
-                this.facade.lineTo(View.scale(vertex.x), View.scale(vertex.y))
-            }
-        })
-        this.facade.endFill()
     }
 
     spawnProjectile () {

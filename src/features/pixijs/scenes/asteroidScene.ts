@@ -21,8 +21,11 @@ import { View } from '../static/view'
 
 export class AsteroidScene extends MatterScene {
 
-    public static readonly ASTEROID_INTERVAL = 200
+    public static readonly ASTEROID_INTERVAL = 100
     public static readonly ASTEROID_LIMIT = 8
+    public static readonly ASTEROID_MIN_SIZE = 0.03
+    public static readonly ASTEROID_MAX_SIZE = 0.07
+    public static readonly ASTEROID_VARIATION = 0.03
     public static readonly COLLISION_CATEGORIES = {
         DEFAULT: 0x0001,
         ASTEROID: 0x0002,
@@ -61,8 +64,13 @@ export class AsteroidScene extends MatterScene {
             if (this.asteroidCountdown >= 0) {
                 this.asteroidCountdown -= delta
             } else if (this.asteroidCountdown < 0) {
-                this.addEntity(this.generateAsteroid(0.03 * View.unitWidth()))
-                this.asteroidCountdown = AsteroidScene.ASTEROID_INTERVAL
+                this.spawnAsteroid(
+                    Math.random() * View.unitWidth(),
+                    Math.random() * View.unitHeight(),
+                    AsteroidScene.ASTEROID_MAX_SIZE * View.unitWidth() - ~~(
+                        Math.random() * AsteroidScene.ASTEROID_VARIATION * View.unitWidth()
+                    ),
+                )
             }
         }
 
@@ -71,8 +79,6 @@ export class AsteroidScene extends MatterScene {
                 (collision.bodyA.collisionFilter.category | collision.bodyB.collisionFilter.category)
                 === (AsteroidScene.COLLISION_CATEGORIES.ASTEROID | AsteroidScene.COLLISION_CATEGORIES.LASER)
             ) {
-                this.scoreEntity.setScore(this.scoreEntity.score + 100)
-
                 let asteroidId: number, laserId: number
                 if (collision.bodyA.collisionFilter.category === AsteroidScene.COLLISION_CATEGORIES.ASTEROID) {
                     asteroidId = collision.bodyA.id
@@ -83,22 +89,38 @@ export class AsteroidScene extends MatterScene {
                 }
                 const asteroid = this.asteroidList.find(asteroid => asteroid.body.id === asteroidId)
                 if (asteroid) {
-                    setTimeout(() => this.removeEntity(asteroid), 10)
+                    this.scoreEntity.setScore(this.scoreEntity.score + ~~(100 / asteroid.radius))
+                    if (asteroid.radius > AsteroidScene.ASTEROID_MIN_SIZE * View.unitWidth()) {
+                        const halfSize = ~~(asteroid.radius / 2)
+                        const angle = Math.random() * Math.PI * 2
+                        const x = Math.sin(angle) * (halfSize + 1)
+                        const y = -Math.cos(angle) * (halfSize + 1)
+                        this.spawnAsteroid(
+                            Math.max(0, asteroid.body.position.x + x),
+                            Math.max(0, asteroid.body.position.y + y),
+                            halfSize,
+                        )
+                        this.spawnAsteroid(
+                            Math.max(0, asteroid.body.position.x - x),
+                            Math.max(0, asteroid.body.position.y - y),
+                            halfSize,
+                        )
+                    }
+                    this.removeEntity(asteroid)
                 }
-                const laser = this.entities.find(entity => entity instanceof MatterEntity && entity.body.id === laserId) as MatterEntity<DisplayObject>
+                const laser = this.entities.find(
+                    entity => entity instanceof MatterEntity && entity.body.id === laserId
+                ) as MatterEntity<DisplayObject>
                 if (laser) {
-                    setTimeout(() => this.removeEntity(laser), 13)
+                    this.removeEntity(laser)
                 }
             }
         })
     }
 
-    private generateAsteroid (size: number) {
-        return new AsteroidEntity(
-            Math.random() * View.unitWidth(),
-            Math.random() * View.unitHeight(),
-            size,
-        )
+    private spawnAsteroid (x: number, y: number, size: number) {
+        this.asteroidCountdown = AsteroidScene.ASTEROID_INTERVAL + this.asteroidList.length * 10
+        this.addEntity(new AsteroidEntity(x, y, size))
     }
 
     override addEntity (entity: MatterEntity<DisplayObject>) {

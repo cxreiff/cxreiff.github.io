@@ -11,11 +11,11 @@ exports[`should render 1`] = `
       
       <header>
         <h4>
-          pixi.js project
+          asteroids game
         </h4>
       </header>
       <footer>
-        pixi.js
+        pixi.js, matter.js
       </footer>
     </article>
     <article
