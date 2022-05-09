@@ -12,7 +12,7 @@ const Pixijs: FC = () => {
     useEffect(() => {
         if (pixiRef.current && pixiRect) {
             Manager.initialize(pixiRef.current as HTMLCanvasElement, pixiRect)
-            return () => Manager.app.destroy()
+            return () => Manager.destroy()
         }
     }, [pixiRef.current]) /* eslint-disable-line react-hooks/exhaustive-deps */
 
