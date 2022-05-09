@@ -1,4 +1,4 @@
-import { Sprite } from 'pixi.js'
+import { Sprite, Loader } from 'pixi.js'
 import { Bodies, Body } from 'matter-js'
 
 import { MatterEntity } from '../abstract/matterEntity'
@@ -11,7 +11,7 @@ export class AsteroidEntity extends MatterEntity<Sprite> {
 
     constructor (x: number, y: number, radius: number) {
         super(
-            Sprite.from('asteroid'),
+            new Sprite(Loader.shared.resources['asteroid'].texture),
             Bodies.circle(x, y, radius, {
                 inertia: Infinity,
                 friction: 0,

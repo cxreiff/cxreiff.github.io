@@ -1,4 +1,4 @@
-import { Sprite } from 'pixi.js'
+import { Sprite, Loader } from 'pixi.js'
 import { Bodies, Body } from 'matter-js'
 
 import { MatterEntity } from '../abstract/matterEntity'
@@ -19,12 +19,12 @@ export class ShipEntity extends MatterEntity<Sprite> {
     }
 
     private static VERTICES = [
-        { x: -25, y: 30 },
-        { x: 25, y: 30 },
-        { x: 30, y: 20 },
-        { x: 3, y: -18 },
-        { x: -3, y: -18 },
-        { x: -30, y: 20 },
+        { x: -25, y: 40 },
+        { x: 25, y: 40 },
+        { x: 30, y: 30 },
+        { x: 3, y: -15 },
+        { x: -3, y: -15 },
+        { x: -30, y: 30 },
     ]
 
     private static SPEED = 7
@@ -32,7 +32,7 @@ export class ShipEntity extends MatterEntity<Sprite> {
 
     constructor () {
         super(
-            Sprite.from('ship'),
+            new Sprite(Loader.shared.resources['ship'].texture),
             Bodies.fromVertices(
                 View.unitWidth() * 0.5,
                 View.unitHeight() * 0.2,
@@ -49,8 +49,8 @@ export class ShipEntity extends MatterEntity<Sprite> {
             )
         )
 
-        this.facade.width = View.scale(60)
-        this.facade.height = View.scale(60)
+        this.facade.width = View.scale(64)
+        this.facade.height = View.scale(64)
         this.facade.anchor.x = 0.5
         this.facade.anchor.y = 0.5
 

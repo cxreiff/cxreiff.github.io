@@ -1,4 +1,4 @@
-import { Application } from 'pixi.js'
+import { Application, Loader, Texture, BaseTexture } from 'pixi.js'
 
 import { View } from './view'
 import { Keyboard } from './keyboard'
@@ -54,6 +54,17 @@ export class Manager {
 
         Manager.currentScene = newScene
         Manager.app.stage.addChild(newScene)
+    }
+
+    public static destroy () {
+        Manager.ASSETS.forEach(asset => {
+            Texture.removeFromCache(asset.name)
+            BaseTexture.removeFromCache(asset.name)
+            Texture.removeFromCache(asset.url)
+            BaseTexture.removeFromCache(asset.url)
+        })
+        Loader.shared.reset()
+        Manager.app.destroy()
     }
 
     private static update = (delta: number) => {
