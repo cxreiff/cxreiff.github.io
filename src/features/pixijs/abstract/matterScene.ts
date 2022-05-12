@@ -1,9 +1,22 @@
 import { DisplayObject } from 'pixi.js'
-import { Engine, Composite } from 'matter-js'
+import { Engine, Composite, Body } from 'matter-js'
 
-import { Scene } from './scene'
-import { Entity } from './entity'
-import { MatterEntity } from './matterEntity'
+/**
+* Types for Detector currently missing in @types/matter-js
+* https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/59663
+* TODO: Remove ignores when correct types are added in DefinitelyTyped
+* TODO: Replace "ICollision as Collision" with "Collision" (in other files)
+*/
+/* eslint-disable no-duplicate-imports */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+// @ts-ignore
+import { Detector } from 'matter-js'
+
+import { Entity } from '../abstract/entity'
+import { MatterEntity } from '../abstract/matterEntity'
+import { Scene } from '../abstract/scene'
 
 export abstract class MatterScene extends Scene {
 
@@ -11,13 +24,29 @@ export abstract class MatterScene extends Scene {
         gravity: { x: 0, y: 0, scale: 0 },
     })
 
+    protected detector = Detector.create() as { bodies: Body[] }
+
+    private bodies = new Map<number, MatterEntity<DisplayObject>>()
+
     override update (delta: number) {
         Engine.update(this.engine, delta)
+        // @ts-ignore
+        Detector.collisions(this.detector).forEach((collision) => {
+            const entityA = this.bodies.get(collision.bodyA.id)
+            const entityB = this.bodies.get(collision.bodyB.id)
+            if(entityA && entityB) {
+                entityA.collide(entityB, collision)
+                entityB.collide(entityA, collision)
+            }
+        })
         super.update(delta)
     }
 
     override addEntity (entity: Entity<DisplayObject>) {
-        if(entity instanceof MatterEntity) {
+        if(MatterEntity.isInstance(entity)) {
+            this.bodies.set(entity.body.id, entity)
+            // @ts-ignore
+            Detector.setBodies(this.detector, [ ...this.detector.bodies, entity.body ])
             Composite.add(this.engine.world, entity.body)
         }
         super.addEntity(entity)
@@ -26,6 +55,12 @@ export abstract class MatterScene extends Scene {
 
     override removeEntity (entity: Entity<DisplayObject>) {
         if (entity instanceof MatterEntity) {
+            this.bodies.delete(entity.body.id)
+            // @ts-ignore
+            Detector.setBodies(
+                this.detector,
+                this.detector.bodies.filter((body: Body) => body.id !== entity.body.id)
+            )
             Composite.remove(this.engine.world, entity.body)
         }
         super.removeEntity(entity)

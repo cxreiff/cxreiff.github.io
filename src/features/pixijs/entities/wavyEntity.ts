@@ -2,16 +2,17 @@ import { Graphics, Point, Filter } from 'pixi.js'
 
 import vShader from '~/src/assets/shaders/test.vert'
 import fShader from '~/src/assets/shaders/test.frag'
+
 import { Entity } from '../abstract/entity'
 import { View } from '../static/view'
 
 export class WavyEntity extends Entity<Graphics> {
 
+    public points: Point[] = []
+
     private elapsed: number
     private uniforms: { dimensions: number[] }
     private pointQuota = 0.0
-    
-    public points: Point[] = []
 
     constructor () {
         super(new Graphics())

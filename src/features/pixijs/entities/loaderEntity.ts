@@ -15,10 +15,6 @@ export class LoaderEntity extends Entity<Graphics> {
     }
 
     override update (delta: number) {
-        this.draw()
-    }
-
-    draw () {
         const loaderBarWidth = View.unitWidth() * 0.6
 
         this.facade.lineStyle(3, 0x3D3333, 1)
