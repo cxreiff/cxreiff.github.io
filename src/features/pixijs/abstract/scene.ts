@@ -1,6 +1,6 @@
 import { Container, DisplayObject } from 'pixi.js'
 
-import { Entity } from './entity'
+import { Entity } from '../abstract/entity'
 
 /**
  * Abstract class representing a scene containing child entities and scene-specific logic.
@@ -8,6 +8,7 @@ import { Entity } from './entity'
 export abstract class Scene extends Container {
 
     public entities: Entity<DisplayObject>[] = []
+    public gameState = new Map<string, number>()
 
     public update (delta: number) {
         this.entities.forEach(entity => entity.update(delta))

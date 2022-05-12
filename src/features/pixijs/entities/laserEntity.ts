@@ -1,5 +1,5 @@
-import { Graphics } from 'pixi.js'
-import { Bodies, Body } from 'matter-js'
+import { DisplayObject, Graphics } from 'pixi.js'
+import { Bodies, Body, ICollision as Collision } from 'matter-js'
 
 import { MatterEntity } from '../abstract/matterEntity'
 import { AsteroidScene } from '../scenes/asteroidScene'
@@ -8,8 +8,8 @@ import { View } from '../static/view'
 
 export class LaserEntity extends MatterEntity<Graphics> {
 
-    private static readonly LASER_WIDTH = 6
-    private static readonly LASER_HEIGHT = 20
+    private static readonly LASER_WIDTH = 3
+    private static readonly LASER_HEIGHT = 10
     private static readonly LASER_SPEED = 14
 
     constructor (x: number, y: number, rotation: number) {
@@ -50,19 +50,17 @@ export class LaserEntity extends MatterEntity<Graphics> {
             Manager.currentScene.removeEntity(this)
         }
 
-        this.draw()
-    }
-
-    draw () {
         this.facade.clear()
         this.facade.lineStyle(0)
         this.facade.beginFill(0x3D3333, 1)
         this.facade.drawRect(
-            -View.scale(LaserEntity.LASER_WIDTH / 2),
+            -View.scale(LaserEntity.LASER_WIDTH),
             0,
-            View.scale(LaserEntity.LASER_WIDTH),
-            View.scale(LaserEntity.LASER_HEIGHT),
+            View.scale(LaserEntity.LASER_WIDTH * 2),
+            View.scale(LaserEntity.LASER_HEIGHT * 2),
         )
         this.facade.endFill()
     }
+
+    override collide (entity: MatterEntity<DisplayObject>, collision: Collision) {}
 }

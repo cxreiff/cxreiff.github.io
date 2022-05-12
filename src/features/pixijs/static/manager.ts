@@ -1,10 +1,10 @@
 import { Application, Loader, Texture, BaseTexture } from 'pixi.js'
 
-import { View } from './view'
-import { Keyboard } from './keyboard'
 import { Scene } from '../abstract/scene'
 import { AsteroidScene } from '../scenes/asteroidScene'
 import { LoaderScene } from '../scenes/loaderScene'
+import { View } from '../static/view'
+import { Keyboard } from '../static/keyboard'
 
 import { ASTEROID_IMAGE_URL, SHIP_IMAGE_URL } from '~/src/utilities/constants'
 

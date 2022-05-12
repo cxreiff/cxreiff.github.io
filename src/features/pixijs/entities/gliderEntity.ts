@@ -1,8 +1,8 @@
 import { Graphics } from 'pixi.js'
 
 import { Entity } from '../abstract/entity'
+import { WavyEntity } from '../entities/wavyEntity'
 import { View } from '../static/view'
-import { WavyEntity } from './wavyEntity'
 
 export class GliderEntity extends Entity<Graphics> {
 
