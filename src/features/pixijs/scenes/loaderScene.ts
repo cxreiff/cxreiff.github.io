@@ -1,7 +1,7 @@
 import { Loader } from 'pixi.js'
 
-import { LoaderEntity } from '../entities/loaderEntity'
 import { Scene } from '../abstract/scene'
+import { LoaderEntity } from '../entities/loaderEntity'
 
 export class LoaderScene extends Scene {
 

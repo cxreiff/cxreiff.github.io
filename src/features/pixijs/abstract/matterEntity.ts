@@ -1,8 +1,8 @@
 import { DisplayObject } from 'pixi.js'
-import { Body } from 'matter-js'
+import { Body, ICollision as Collision } from 'matter-js'
 
+import { Entity } from '../abstract/entity'
 import { View } from '../static/view'
-import { Entity } from './entity'
 
 export abstract class MatterEntity<T extends DisplayObject> extends Entity<T> {
 
@@ -12,6 +12,12 @@ export abstract class MatterEntity<T extends DisplayObject> extends Entity<T> {
         super(object)
 
         this.body = body
+    }
+
+    public abstract collide (entity: MatterEntity<DisplayObject>, collision: Collision): void
+
+    public static isInstance (entity: Entity<DisplayObject>): entity is MatterEntity<DisplayObject> {
+        return entity instanceof MatterEntity
     }
     
     override boundPositionToTop (buffer = 0.0): boolean {

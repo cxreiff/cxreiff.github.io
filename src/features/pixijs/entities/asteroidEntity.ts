@@ -1,8 +1,11 @@
-import { Sprite, Loader } from 'pixi.js'
-import { Bodies, Body } from 'matter-js'
+import { Sprite, Loader, DisplayObject } from 'pixi.js'
+import { Bodies, Body, ICollision as Collision } from 'matter-js'
 
 import { MatterEntity } from '../abstract/matterEntity'
+import { LaserEntity } from '../entities/laserEntity'
+import { ShipEntity } from '../entities/shipEntity'
 import { AsteroidScene } from '../scenes/asteroidScene'
+import { Manager } from '../static/manager'
 import { View } from '../static/view'
 
 export class AsteroidEntity extends MatterEntity<Sprite> {
@@ -65,11 +68,40 @@ export class AsteroidEntity extends MatterEntity<Sprite> {
             })
         }
 
-        this.draw()
-    }
-
-    draw () {
         this.facade.width = View.scale(this.radius * 2)
         this.facade.height = View.scale(this.radius * 2)
+    }
+
+    override collide (entity: MatterEntity<DisplayObject>, collision: Collision) {
+        const scene = (Manager.currentScene as AsteroidScene)
+        if (entity instanceof LaserEntity && collision.depth > 3) {
+            scene.scoreEntity.setScore(scene.scoreEntity.score + ~~(100 / this.radius))
+            scene.removeEntity(entity)
+            this.perish()
+        }
+        if (entity instanceof ShipEntity) {
+            this.perish()
+        }
+    }
+
+    private perish () {
+        const scene = (Manager.currentScene as AsteroidScene)
+        if (this.radius > AsteroidScene.ASTEROID_MIN_SIZE * View.unitWidth()) {
+            const halfSize = ~~(this.radius / 2)
+            const angle = Math.random() * Math.PI * 2
+            const x = Math.sin(angle) * (halfSize + 1)
+            const y = -Math.cos(angle) * (halfSize + 1)
+            scene.spawnAsteroid(
+                Math.max(0, this.body.position.x + x),
+                Math.max(0, this.body.position.y + y),
+                halfSize,
+            )
+            scene.spawnAsteroid(
+                Math.max(0, this.body.position.x - x),
+                Math.max(0, this.body.position.y - y),
+                halfSize,
+            )
+        }
+        scene.removeEntity(this)
     }
 }

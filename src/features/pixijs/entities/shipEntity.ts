@@ -1,12 +1,13 @@
-import { Sprite, Loader } from 'pixi.js'
-import { Bodies, Body } from 'matter-js'
+import { DisplayObject, Sprite, Loader } from 'pixi.js'
+import { Bodies, Body, ICollision as Collision } from 'matter-js'
 
 import { MatterEntity } from '../abstract/matterEntity'
+import { AsteroidEntity } from '../entities/asteroidEntity'
+import { LaserEntity } from '../entities/laserEntity'
 import { AsteroidScene } from '../scenes/asteroidScene'
 import { Manager } from '../static/manager'
 import { View } from '../static/view'
 import { Keyboard } from '../static/keyboard'
-import { LaserEntity } from './laserEntity'
 
 export class ShipEntity extends MatterEntity<Sprite> {
 
@@ -27,8 +28,13 @@ export class ShipEntity extends MatterEntity<Sprite> {
         { x: -30, y: 30 },
     ]
 
-    private static SPEED = 7
-    private static TURNING_SPEED = 0.08
+    public static readonly FULL_HEALTH = 5
+    private static readonly SPEED = 7
+    private static readonly TURNING_SPEED = 0.08
+    private static readonly INVULNERABLE_DURATION = 100
+
+    public health = ShipEntity.FULL_HEALTH
+    private invulnerable = 0
 
     constructor () {
         super(
@@ -61,6 +67,13 @@ export class ShipEntity extends MatterEntity<Sprite> {
 
     override update (delta: number) {
 
+        if (this.invulnerable > 0) {
+            this.invulnerable -= delta
+            this.facade.alpha = 0.5
+        } else {
+            this.facade.alpha = 1.0
+        }
+
         if (Keyboard.wasPressed(ShipEntity.CONTROLS.FIRE)) {
             this.spawnProjectile()
         }
@@ -88,6 +101,16 @@ export class ShipEntity extends MatterEntity<Sprite> {
         }
 
         this.boundPositionToView(0.017 * View.unitWidth())
+    }
+
+    override collide (entity: MatterEntity<DisplayObject>, collision: Collision) {
+        if (entity instanceof AsteroidEntity && this.invulnerable <= 0) {
+            this.invulnerable = ShipEntity.INVULNERABLE_DURATION
+            this.health -= 1
+            if (this.health === 0) {
+                Manager.changeScene(new AsteroidScene())
+            }
+        }
     }
 
     spawnProjectile () {
