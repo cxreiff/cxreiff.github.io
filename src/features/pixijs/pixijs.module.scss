@@ -2,8 +2,14 @@
 
 .pixijs {
     @include box_shadow($accent-color-darker);
-    width: 100% !important;
     line-height: 0;
     background: #EEDDDD;
-    overflow: hidden;
+
+    &:fullscreen {
+        background: #3D3333;
+    }
+
+    &>canvas {
+        width: 100% !important;
+    }
 }

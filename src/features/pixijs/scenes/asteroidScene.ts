@@ -5,6 +5,7 @@ import { MatterScene } from '../abstract/matterScene'
 import { Entity } from '../abstract/entity'
 import { AsteroidEntity } from '../entities/asteroidEntity'
 import { HealthEntity } from '../entities/healthEntity'
+import { OptionsEntity } from '../entities/optionsEntity'
 import { ShipEntity } from '../entities/shipEntity'
 import { ScoreEntity } from '../entities/scoreEntity'
 import { View } from '../static/view'
@@ -27,6 +28,16 @@ export class AsteroidScene extends MatterScene {
         OBJECTS: 1,
         BACKGROUND: 0,
     }
+    public static readonly TEXT_OPTIONS = {
+        fontFamily : 'monospace',
+        fill : 0x3D3333,
+        fontSize: 32,
+        align: 'left',
+        dropShadow: true,
+        dropShadowDistance: 0,
+        dropShadowBlur: 3,
+        dropShadowColor: 0xEEDDDD,
+    }
 
     private asteroidCountdown = AsteroidScene.ASTEROID_INTERVAL
     private asteroidList: AsteroidEntity[] = []
@@ -34,6 +45,7 @@ export class AsteroidScene extends MatterScene {
     public scoreEntity = new ScoreEntity(View.unitWidth() - 20, 20, 'right')
     public shipEntity = new ShipEntity()
     public healthEntity = new HealthEntity(20, 20)
+    public optionsEntity = new OptionsEntity(20, View.unitHeight() - 10)
 
     constructor () {
         super()
@@ -42,10 +54,12 @@ export class AsteroidScene extends MatterScene {
 
         this.scoreEntity.zIndex = AsteroidScene.Z_LAYERS.GUI
         this.healthEntity.zIndex = AsteroidScene.Z_LAYERS.GUI
+        this.optionsEntity.zIndex = AsteroidScene.Z_LAYERS.GUI
 
         this.addEntity(this.shipEntity)
         this.addEntity(this.scoreEntity)
         this.addEntity(this.healthEntity)
+        this.addEntity(this.optionsEntity)
     }
 
     override update (delta: number) {
@@ -55,12 +69,14 @@ export class AsteroidScene extends MatterScene {
             if (this.asteroidCountdown >= 0) {
                 this.asteroidCountdown -= delta
             } else if (this.asteroidCountdown < 0) {
+                let x: number, y: number
                 const radius = AsteroidScene.ASTEROID_MAX_SIZE * View.unitWidth() - ~~(
                     Math.random() * AsteroidScene.ASTEROID_VARIATION * View.unitWidth()
                 )
-                let x = Math.random() * View.unitWidth()
-                let y = Math.random() * View.unitHeight()
-                while (
+                do {
+                    x = radius + Math.random() * (View.unitWidth() - 2 * radius)
+                    y = radius + Math.random() * (View.unitHeight() - 2 * radius)
+                } while (
                     Query.region(
                         this.detector.bodies,
                         Bounds.create([
@@ -70,10 +86,7 @@ export class AsteroidScene extends MatterScene {
                             { x: x - radius * 2, y: y + radius * 2 },
                         ])
                     ).length > 0
-                ) {
-                    x = Math.random() * View.unitWidth()
-                    y = Math.random() * View.unitHeight()
-                }
+                ) 
                 this.spawnAsteroid(x, y, AsteroidScene.ASTEROID_MAX_SIZE * View.unitWidth() - ~~(
                     Math.random() * AsteroidScene.ASTEROID_VARIATION * View.unitWidth()
                 ))

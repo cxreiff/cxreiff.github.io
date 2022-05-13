@@ -14,7 +14,12 @@ export abstract class MatterEntity<T extends DisplayObject> extends Entity<T> {
         this.body = body
     }
 
-    public abstract collide (entity: MatterEntity<DisplayObject>, collision: Collision): void
+    /**
+     * @param {MatterEntity<DisplayObject>} entity - The other entity collided with.
+     * @param {Collision} collision - Contains information about the collision.
+     * @returns {boolean | void} If a collision function returns true, we ignore the rest of the collisions.
+     */
+    public abstract collide (entity: MatterEntity<DisplayObject>, collision: Collision): boolean | void
 
     public static isInstance (entity: Entity<DisplayObject>): entity is MatterEntity<DisplayObject> {
         return entity instanceof MatterEntity
