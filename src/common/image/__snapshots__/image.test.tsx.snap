@@ -3,10 +3,11 @@
 exports[`should render 1`] = `
 <div>
   <div
-    class="image hidden"
+    class="frame hidden"
   >
     <img
       alt="test image"
+      class="content"
       src="test"
     />
     <svg
@@ -19,10 +20,11 @@ exports[`should render 1`] = `
 exports[`should unhide on image load 1`] = `
 <div>
   <div
-    class="image"
+    class="frame"
   >
     <img
       alt="test image"
+      class="content"
       src="test"
     />
     <svg

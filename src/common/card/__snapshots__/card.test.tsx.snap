@@ -7,9 +7,10 @@ exports[`should render 1`] = `
   >
     <div>
       <div
-        class="image hidden"
+        class="frame hidden"
       >
         <img
+          class="content"
           src="test"
         />
         <svg

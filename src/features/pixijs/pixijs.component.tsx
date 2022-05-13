@@ -1,29 +1,31 @@
-import { FC, useEffect } from 'react'
+import { FC, useEffect, useRef } from 'react'
+import useResizeObserver from 'use-resize-observer'
+import fscreen from 'fscreen'
 
-import { useMeasuredRef } from '~/src/hooks/useMeasuredRef'
+import { Frame } from '~/src/common/frame/frame.component'
 import { Manager } from './static/manager'
 
 import styles from './pixijs.module.scss'
 
 const Pixijs: FC = () => {
 
-    const [pixiRef, setPixiRef, pixiRect] = useMeasuredRef()
+    const ref = useRef<HTMLCanvasElement>(null)
+    const { width = 0, height = 0 } = useResizeObserver<HTMLCanvasElement>({ ref })
 
     useEffect(() => {
-        if (pixiRef.current && pixiRect) {
-            Manager.initialize(pixiRef.current as HTMLCanvasElement, pixiRect)
-            return () => Manager.destroy()
+        if (!Manager.app && ref.current && width && height) {
+            Manager.initialize(ref.current, width, height)
         }
-    }, [pixiRef.current]) /* eslint-disable-line react-hooks/exhaustive-deps */
+    }, [ref.current, width, height])
+    useEffect(() => () => Manager.destroy(), [])
 
     return (
-        <canvas
-            className={styles.pixijs}
-            ref={setPixiRef}
-            style={pixiRect && {
-                height: pixiRect.width * 9.0 / 16.0,
-            }}
-        />
+        <Frame aspect={Manager.ASPECT_RATIO} loaded={true} className={styles.pixijs}>
+            <canvas ref={ref} style={{
+                height: width / Manager.ASPECT_RATIO,
+                maxWidth: fscreen.fullscreenElement ? `${100 * Manager.ASPECT_RATIO}vh` : undefined,
+            }} />
+        </Frame>
     )
 }
 

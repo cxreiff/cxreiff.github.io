@@ -1,24 +1,18 @@
 import { Text } from 'pixi.js'
 
 import { Entity } from '../abstract/entity'
+import { AsteroidScene } from '../scenes/asteroidScene'
 
 export class ScoreEntity extends Entity<Text> {
 
     public score: number
 
     constructor (x: number, y: number, alignment: 'left'|'center'|'right', initialScore = 0) {
-        super(
-            new Text(initialScore.toString(), {
-                fontFamily : 'monospace',
-                fontSize: 32,
-                fill : 0x3d3333,
-                align: alignment,
-                dropShadow: true,
-                dropShadowDistance: 0,
-                dropShadowBlur: 3,
-                dropShadowColor: '#EEDDDD',
-            })
-        )
+        super(new Text(initialScore.toString(), {
+            ...AsteroidScene.TEXT_OPTIONS,
+            fontSize: 32,
+            align: alignment,
+        }))
         this.facade.anchor.x = { left: 0, center: 0.5, right: 1 }[alignment]
         this.relativePosition.x = x
         this.relativePosition.y = y
