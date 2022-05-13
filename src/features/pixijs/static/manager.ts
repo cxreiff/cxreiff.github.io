@@ -10,25 +10,28 @@ import { ASTEROID_IMAGE_URL, SHIP_IMAGE_URL } from '~/src/utilities/constants'
 
 export class Manager {
 
-    public static app: Application
+    public static app: Application | undefined
     public static currentScene: Scene
 
     public static readonly ASSETS = [
         { name: 'asteroid', url: ASTEROID_IMAGE_URL },
         { name: 'ship', url: SHIP_IMAGE_URL },
     ]
+    public static readonly ASPECT_RATIO = 16/9
+    public static readonly MIN_RESOLUTION_WIDTH = 800
 
     private constructor () {}
 
-    public static initialize (viewElement: HTMLCanvasElement, viewRect: DOMRect) {
+    public static initialize (viewElement: HTMLCanvasElement, width: number, height: number) {
+        if (Manager.app) { return }
+        
         Manager.app = new Application({
             view: viewElement,
-            resizeTo: viewElement,
             backgroundColor: 0xEEDDDD,
             autoDensity: true,
             antialias: true,
-            width: viewRect.width,
-            height: viewRect.height,
+            width: Math.max(width, Manager.MIN_RESOLUTION_WIDTH),
+            height: Math.max(width, Manager.MIN_RESOLUTION_WIDTH) / Manager.ASPECT_RATIO,
         })
 
         View.initialize(viewElement)
@@ -48,12 +51,12 @@ export class Manager {
 
     public static changeScene (newScene: Scene) {
         if (Manager.currentScene) {
-            Manager.app.stage.removeChild(Manager.currentScene)
+            Manager.app?.stage.removeChild(Manager.currentScene)
             Manager.currentScene.destroy()
         }
 
         Manager.currentScene = newScene
-        Manager.app.stage.addChild(newScene)
+        Manager.app?.stage.addChild(newScene)
     }
 
     public static destroy () {
@@ -63,8 +66,10 @@ export class Manager {
             Texture.removeFromCache(asset.url)
             BaseTexture.removeFromCache(asset.url)
         })
+
         Loader.shared.reset()
-        Manager.app.destroy()
+        Manager.app?.destroy()
+        Manager.app = undefined
     }
 
     private static update = (delta: number) => {

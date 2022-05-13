@@ -101,6 +101,7 @@ export class ShipEntity extends MatterEntity<Sprite> {
         }
 
         this.boundPositionToView(0.017 * View.unitWidth())
+        this.resize()
     }
 
     override collide (entity: MatterEntity<DisplayObject>, collision: Collision) {
@@ -109,6 +110,7 @@ export class ShipEntity extends MatterEntity<Sprite> {
             this.health -= 1
             if (this.health === 0) {
                 Manager.changeScene(new AsteroidScene())
+                return true
             }
         }
     }
@@ -117,5 +119,11 @@ export class ShipEntity extends MatterEntity<Sprite> {
         Manager.currentScene.addEntity(
             new LaserEntity(this.body.position.x, this.body.position.y, this.body.angle)
         )
+    }
+
+    override resize () {
+        this.facade.width = View.scale(64)
+        this.facade.height = View.scale(64)
+        super.resize()
     }
 }

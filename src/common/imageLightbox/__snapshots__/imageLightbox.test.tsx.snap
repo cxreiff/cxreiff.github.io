@@ -7,10 +7,11 @@ exports[`should open lightbox 1`] = `
   >
     <div>
       <div
-        class="image interactive hidden"
+        class="frame interactive hidden"
       >
         <img
           alt="test image"
+          class="content"
           src="test"
         />
         <svg
@@ -109,10 +110,11 @@ exports[`should render 1`] = `
   >
     <div>
       <div
-        class="image interactive hidden"
+        class="frame interactive hidden"
       >
         <img
           alt="test image"
+          class="content"
           src="test"
         />
         <svg

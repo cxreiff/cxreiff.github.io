@@ -31,14 +31,15 @@ export abstract class MatterScene extends Scene {
     override update (delta: number) {
         Engine.update(this.engine, delta)
         // @ts-ignore
-        Detector.collisions(this.detector).forEach((collision) => {
+        for (const collision of Detector.collisions(this.detector)) {
             const entityA = this.bodies.get(collision.bodyA.id)
             const entityB = this.bodies.get(collision.bodyB.id)
             if(entityA && entityB) {
-                entityA.collide(entityB, collision)
-                entityB.collide(entityA, collision)
+                if (entityA.collide(entityB, collision) || entityB.collide(entityA, collision)) {
+                    break
+                }
             }
-        })
+        }
         super.update(delta)
     }
 

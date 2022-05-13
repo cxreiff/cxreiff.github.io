@@ -6,10 +6,11 @@ exports[`should render 1`] = `
     class="homepage"
   >
     <div
-      class="image image hidden"
+      class="frame image hidden"
     >
       <img
         alt="Image of site author Jax Reiff."
+        class="content"
         src="https://jaxreiff-static.sfo3.cdn.digitaloceanspaces.com/assets/aboutme.png"
       />
       <svg

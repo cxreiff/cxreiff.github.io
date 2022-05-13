@@ -1,15 +1,16 @@
 @use '../../shared.scss' as *;
 
-.image {
+.frame {
   position: relative;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 
   &>svg {
     position: relative;
   }
 
-  &>img {
+  &>.content {
     max-width: 100%;
     max-height: 100%;
     position: absolute;
@@ -21,11 +22,11 @@
     margin: auto;
   }
 
-  &.hidden>img {
+  &.hidden>.content {
     display: none;
   }
 
-  &:not(.hidden)>img {
+  &:not(.hidden)>.content {
     animation: fadeIn ease-in 0.4s;
   }
 }
