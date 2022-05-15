@@ -1,4 +1,4 @@
-import { Sprite, Loader, DisplayObject } from 'pixi.js'
+import { DisplayObject, Loader, AnimatedSprite } from 'pixi.js'
 import { Bodies, Body, ICollision as Collision } from 'matter-js'
 
 import { MatterEntity } from '../abstract/matterEntity'
@@ -8,13 +8,13 @@ import { AsteroidScene } from '../scenes/asteroidScene'
 import { Manager } from '../static/manager'
 import { View } from '../static/view'
 
-export class AsteroidEntity extends MatterEntity<Sprite> {
+export class AsteroidEntity extends MatterEntity<AnimatedSprite> {
     
     private radius: number
 
     constructor (x: number, y: number, radius: number) {
         super(
-            new Sprite(Loader.shared.resources['asteroid'].texture),
+            new AnimatedSprite(Loader.shared.resources['asteroids'].spritesheet!.animations['asteroid']),
             Bodies.circle(x, y, radius, {
                 inertia: Infinity,
                 friction: 0,
@@ -86,6 +86,8 @@ export class AsteroidEntity extends MatterEntity<Sprite> {
 
     private perish () {
         const scene = (Manager.currentScene as AsteroidScene)
+        this.body.collisionFilter.group = -1
+        this.body.collisionFilter.mask = 0
         if (this.radius > AsteroidScene.ASTEROID_MIN_SIZE * View.unitWidth()) {
             const halfSize = ~~(this.radius / 2)
             const angle = Math.random() * Math.PI * 2
@@ -102,6 +104,9 @@ export class AsteroidEntity extends MatterEntity<Sprite> {
                 halfSize,
             )
         }
-        scene.removeEntity(this)
+        this.facade.onComplete = () => scene.removeEntity(this)
+        this.facade.animationSpeed = 0.7
+        this.facade.loop = false
+        this.facade.play()
     }
 }

@@ -17,7 +17,7 @@ export class LoaderScene extends Scene {
         Loader.shared.onProgress.add(this.onProgress, this)
         Loader.shared.onComplete.once(onComplete, this)
 
-        Loader.shared.load();
+        Loader.shared.load()
     }
 
     private onProgress = (loader: Loader) => {

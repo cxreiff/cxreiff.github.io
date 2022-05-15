@@ -14,9 +14,7 @@ export const useMeasuredRef = () => {
     useEffect(() => {
         const resizeObserver = new ResizeObserver(entries => {
             entries.map(entry => {
-                console.log('observer', entry, entry.target.getBoundingClientRect(), rect)
                 setRect(entry.target.getBoundingClientRect())
-                console.log('observer', entry, entry.target.getBoundingClientRect(), rect)
             })
         })
 

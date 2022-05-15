@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { Link } from 'react-router-dom'
 
 import { Image } from '~/src/common/image/image.component'
-import { ABOUT_ME_IMAGE_URL, RESUME_URL, GITHUB_URL, GITHUB_SITE_PROJECT_URL } from '~/src/utilities/constants'
+import { IMAGE_URLS, RESUME_URL, GITHUB_URL, GITHUB_SITE_PROJECT_URL } from '~/src/utilities/constants'
 
 import styles from './homepage.module.scss'
 
@@ -12,7 +12,7 @@ const Homepage: FC = () => {
             <Image
                 className={styles.image}
                 aspect={900/600}
-                source={ABOUT_ME_IMAGE_URL}
+                source={IMAGE_URLS.ABOUT_ME}
                 alt={'Image of site author Jax Reiff.'}
             />
             <div className={styles.aboutme}>
