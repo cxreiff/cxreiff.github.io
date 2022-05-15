@@ -13,3 +13,14 @@
         width: 100% !important;
     }
 }
+
+.controls {
+    @include box_shadow($accent-color-darker);
+    background: #EEDDDD;
+    margin-top: 2rem;
+    text-align: center;
+
+    &>button {
+        margin: 1rem;
+    }
+}
