@@ -19,7 +19,8 @@ export class OptionsEntity extends Entity<Container> {
             } as Partial<ITextStyle>)
             this.fullscreenButton.anchor.y = 1.0
             this.fullscreenButton.interactive = true
-            this.fullscreenButton.on('mousedown', () => {
+            this.fullscreenButton.cursor = 'pointer'
+            this.fullscreenButton.on('pointerdown', () => {
                 if (fscreen.fullscreenElement) {
                     fscreen.exitFullscreen()
                 } else {

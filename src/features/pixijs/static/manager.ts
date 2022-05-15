@@ -1,12 +1,13 @@
-import { Application, Loader, Texture, BaseTexture } from 'pixi.js'
+import { Application, Texture, Loader, BaseTexture, Ticker } from 'pixi.js'
 
 import { Scene } from '../abstract/scene'
 import { AsteroidScene } from '../scenes/asteroidScene'
+import { StartScene } from '../scenes/startScene'
 import { LoaderScene } from '../scenes/loaderScene'
 import { View } from '../static/view'
 import { Keyboard } from '../static/keyboard'
 
-import { ASTEROID_IMAGE_URL, SHIP_IMAGE_URL } from '~/src/utilities/constants'
+import { SPRITESHEET_URLS, SOUND_URLS } from '~/src/utilities/constants'
 
 export class Manager {
 
@@ -14,8 +15,10 @@ export class Manager {
     public static currentScene: Scene
 
     public static readonly ASSETS = [
-        { name: 'asteroid', url: ASTEROID_IMAGE_URL },
-        { name: 'ship', url: SHIP_IMAGE_URL },
+        { name: 'asteroids', url: SPRITESHEET_URLS.ASTEROIDS },
+        { name: 'blip', url: SOUND_URLS.BLIP },
+        { name: 'blep', url: SOUND_URLS.BLEP },
+        { name: 'blup', url: SOUND_URLS.BLUP },
     ]
     public static readonly ASPECT_RATIO = 16/9
     public static readonly MIN_RESOLUTION_WIDTH = 800
@@ -28,8 +31,8 @@ export class Manager {
         Manager.app = new Application({
             view: viewElement,
             backgroundColor: 0xEEDDDD,
-            autoDensity: true,
             antialias: true,
+            autoDensity: true,
             width: Math.max(width, Manager.MIN_RESOLUTION_WIDTH),
             height: Math.max(width, Manager.MIN_RESOLUTION_WIDTH) / Manager.ASPECT_RATIO,
         })
@@ -37,12 +40,16 @@ export class Manager {
         View.initialize(viewElement)
         Keyboard.initialize(viewElement)
 
-        Manager.app.ticker.add(Manager.update)
-        
+        Ticker.shared.add(Manager.update)
+
         Manager.changeScene(
             new LoaderScene(
                 Manager.ASSETS,
-                () => setTimeout(() => Manager.changeScene(new AsteroidScene()), 500),
+                () => setTimeout(() => Manager.changeScene(
+                    new StartScene(() => Manager.changeScene(
+                        new AsteroidScene()
+                    ))
+                ), 400),
             )
         )
 

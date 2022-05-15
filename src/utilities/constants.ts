@@ -11,6 +11,15 @@ export const GITHUB_URL = 'https://github.com/jaxreiff'
 export const GITHUB_SITE_PROJECT_URL = 'https://github.com/jaxreiff/jaxreiff.github.io'
 
 export const OBJECT_STORE_ASSETS_URL = 'https://jaxreiff-static.sfo3.cdn.digitaloceanspaces.com/'
-export const ABOUT_ME_IMAGE_URL = `${OBJECT_STORE_ASSETS_URL}assets/aboutme.png`
-export const ASTEROID_IMAGE_URL = `${OBJECT_STORE_ASSETS_URL}assets/asteroid.png`
-export const SHIP_IMAGE_URL = `${OBJECT_STORE_ASSETS_URL}assets/ship.png`
+
+export const IMAGE_URLS = {
+    ABOUT_ME: `${OBJECT_STORE_ASSETS_URL}assets/aboutme.png`,
+}
+export const SPRITESHEET_URLS = {
+    ASTEROIDS: `${OBJECT_STORE_ASSETS_URL}assets/asteroids.json`,
+}
+export const SOUND_URLS = {
+    BLIP: `${OBJECT_STORE_ASSETS_URL}sounds/blip.wav`,
+    BLEP: `${OBJECT_STORE_ASSETS_URL}sounds/blep.wav`,
+    BLUP: `${OBJECT_STORE_ASSETS_URL}sounds/blup.wav`,
+}

@@ -30,6 +30,14 @@ export class Keyboard {
         }
     }
 
+    public static virtualKeyDown = (code: string): void => {
+        this.onKeyDown(new KeyboardEvent('keydown', { code }))
+    }
+
+    public static virtualKeyUp = (code: string): void => {
+        this.onKeyUp(new KeyboardEvent('keyup', { code }))
+    }
+
     public static listenFor (...codes: string[]) {
         codes.forEach(code => Keyboard.listenedKeys.set(code, true))
     }

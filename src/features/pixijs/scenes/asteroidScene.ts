@@ -12,8 +12,8 @@ import { View } from '../static/view'
 
 export class AsteroidScene extends MatterScene {
 
-    public static readonly ASTEROID_INTERVAL = 100
-    public static readonly ASTEROID_LIMIT = 8
+    public static readonly ASTEROID_INTERVAL = 80
+    public static readonly ASTEROID_LIMIT = 12
     public static readonly ASTEROID_MIN_SIZE = 0.03
     public static readonly ASTEROID_MAX_SIZE = 0.07
     public static readonly ASTEROID_VARIATION = 0.03
@@ -21,7 +21,8 @@ export class AsteroidScene extends MatterScene {
         DEFAULT: 0x0001,
         ASTEROID: 0x0002,
         SHIP: 0x0004,
-        LASER: 0x0008,
+        LASER: 0x008,
+        EMPTY: 0x016,
     }
     public static readonly Z_LAYERS = {
         GUI: 2,

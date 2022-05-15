@@ -5,13 +5,14 @@ import { MatterEntity } from '../abstract/matterEntity'
 import { AsteroidEntity } from '../entities/asteroidEntity'
 import { LaserEntity } from '../entities/laserEntity'
 import { AsteroidScene } from '../scenes/asteroidScene'
+import { StartScene } from '../scenes/startScene'
 import { Manager } from '../static/manager'
 import { View } from '../static/view'
 import { Keyboard } from '../static/keyboard'
 
 export class ShipEntity extends MatterEntity<Sprite> {
 
-    private static CONTROLS = {
+    public static readonly CONTROLS = {
         FIRE: 'Space',
         TURN_LEFT: 'ArrowLeft',
         TURN_RIGHT: 'ArrowRight',
@@ -19,7 +20,7 @@ export class ShipEntity extends MatterEntity<Sprite> {
         BACKWARD: 'ArrowDown',
     }
 
-    private static VERTICES = [
+    private static readonly VERTICES = [
         { x: -25, y: 40 },
         { x: 25, y: 40 },
         { x: 30, y: 30 },
@@ -38,10 +39,10 @@ export class ShipEntity extends MatterEntity<Sprite> {
 
     constructor () {
         super(
-            new Sprite(Loader.shared.resources['ship'].texture),
+            new Sprite(Loader.shared.resources['asteroids'].spritesheet!.textures['ship.png']),
             Bodies.fromVertices(
                 View.unitWidth() * 0.5,
-                View.unitHeight() * 0.2,
+                View.unitHeight() * 0.6,
                 [ShipEntity.VERTICES],
                 {
                     friction: 0.9,
@@ -109,7 +110,11 @@ export class ShipEntity extends MatterEntity<Sprite> {
             this.invulnerable = ShipEntity.INVULNERABLE_DURATION
             this.health -= 1
             if (this.health === 0) {
-                Manager.changeScene(new AsteroidScene())
+                Manager.changeScene(
+                    new StartScene(() => Manager.changeScene(
+                        new AsteroidScene()
+                    ))
+                )
                 return true
             }
         }
