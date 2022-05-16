@@ -1,4 +1,4 @@
-import { DisplayObject, Loader, AnimatedSprite } from 'pixi.js'
+import { DisplayObject, Loader, AnimatedSprite } from '../pixijs'
 import { Bodies, Body, ICollision as Collision } from 'matter-js'
 
 import { MatterEntity } from '../abstract/matterEntity'

@@ -1,4 +1,4 @@
-import { Application, Texture, Loader, BaseTexture, Ticker } from 'pixi.js'
+import { Application, Texture, Loader, BaseTexture, Ticker } from '../pixijs'
 
 import { Scene } from '../abstract/scene'
 import { AsteroidScene } from '../scenes/asteroidScene'

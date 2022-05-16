@@ -1,4 +1,4 @@
-import { Loader } from 'pixi.js'
+import { Loader } from '../pixijs'
 
 import { Scene } from '../abstract/scene'
 import { LoaderEntity } from '../entities/loaderEntity'

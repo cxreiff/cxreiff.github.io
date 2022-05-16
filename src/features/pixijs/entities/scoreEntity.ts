@@ -1,4 +1,4 @@
-import { Text } from 'pixi.js'
+import { Text } from '../pixijs'
 
 import { Entity } from '../abstract/entity'
 import { AsteroidScene } from '../scenes/asteroidScene'
