@@ -1,4 +1,4 @@
-import { Graphics } from 'pixi.js'
+import { Graphics } from '../pixijs'
 
 import { Entity } from '../abstract/entity'
 import { View } from '../static/view'

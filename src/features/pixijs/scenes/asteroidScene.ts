@@ -1,4 +1,4 @@
-import { DisplayObject } from 'pixi.js'
+import { DisplayObject } from '../pixijs'
 import { Query, Bounds } from 'matter-js'
 
 import { MatterScene } from '../abstract/matterScene'
