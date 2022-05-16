@@ -1,15 +1,8 @@
-import { useRef, useState, useCallback, useEffect } from 'react'
+import { useRef, useState, useEffect } from 'react'
 
-export const useMeasuredRef = () => {
-    const ref = useRef<HTMLElement | null>(null)
+export function useMeasuredRef<T extends HTMLElement>() {
+    const ref = useRef<T | null>(null)
     const [rect, setRect] = useState<DOMRect>(new DOMRect())
-
-    const setRef = useCallback((node: HTMLElement | null) => {
-        if (node) {
-            ref.current = node
-            setRect(node.getBoundingClientRect())
-        }
-    }, [])
 
     useEffect(() => {
         const resizeObserver = new ResizeObserver(entries => {
@@ -22,7 +15,7 @@ export const useMeasuredRef = () => {
             resizeObserver.observe(ref.current)
         }
         return () => resizeObserver.disconnect()
-    }, [])
+    }, [ref.current])
 
-    return [ref, setRef, rect] as const
+    return [ref, rect] as const
 }

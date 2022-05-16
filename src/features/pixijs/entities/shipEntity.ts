@@ -9,6 +9,7 @@ import { StartScene } from '../scenes/startScene'
 import { Manager } from '../static/manager'
 import { View } from '../static/view'
 import { Keyboard } from '../static/keyboard'
+import { Sound } from '../static/sound'
 
 export class ShipEntity extends MatterEntity<Sprite> {
 
@@ -110,7 +111,7 @@ export class ShipEntity extends MatterEntity<Sprite> {
             this.invulnerable = ShipEntity.INVULNERABLE_DURATION
             this.health -= 1
             if (this.health === 0) {
-                Loader.shared.resources['blup'].sound?.play()
+                Sound.play('blup')
                 Manager.changeScene(
                     new StartScene(() => Manager.changeScene(
                         new AsteroidScene()
@@ -122,8 +123,7 @@ export class ShipEntity extends MatterEntity<Sprite> {
     }
 
     spawnProjectile () {
-        Loader.shared.resources['blip'].sound?.play()
-        console.log(View.element.width)
+        Sound.play('blip')
         Manager.currentScene.addEntity(
             new LaserEntity(this.body.position.x, this.body.position.y, this.body.angle)
         )

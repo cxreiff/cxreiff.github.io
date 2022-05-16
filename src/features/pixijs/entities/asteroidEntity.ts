@@ -7,6 +7,7 @@ import { ShipEntity } from '../entities/shipEntity'
 import { AsteroidScene } from '../scenes/asteroidScene'
 import { Manager } from '../static/manager'
 import { View } from '../static/view'
+import { Sound } from '../static/sound'
 
 export class AsteroidEntity extends MatterEntity<AnimatedSprite> {
     
@@ -92,7 +93,7 @@ export class AsteroidEntity extends MatterEntity<AnimatedSprite> {
         this.facade.animationSpeed = 0.7
         this.facade.loop = false
         this.facade.play()
-        Loader.shared.resources['blep'].sound?.play()
+        Sound.play('blep')
         if (this.radius > AsteroidScene.ASTEROID_MIN_SIZE * View.unitWidth()) {
             const halfSize = ~~(this.radius / 2)
             const angle = Math.random() * Math.PI * 2
