@@ -38,6 +38,7 @@ const Pixijs: FC = () => {
                             key={code}
                             onPointerDown={() => Keyboard.virtualKeyDown(code)}
                             onPointerUp={() => Keyboard.virtualKeyUp(code)}
+                            onClick={e => e.preventDefault()}
                         >
                             {action}
                         </button>
