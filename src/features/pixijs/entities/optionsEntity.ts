@@ -40,7 +40,11 @@ export class OptionsEntity extends Entity<Container> {
         })
         this.facade.addChild(this.fullscreenButton)
 
-        this.soundButton = new Text(OptionsEntity.MUTED_CHARACTER, {
+        this.soundButton = new Text((
+            Sound.muted
+            ? OptionsEntity.MUTED_CHARACTER
+            : OptionsEntity.UNMUTED_CHARACTER
+        ), {
             ...AsteroidScene.TEXT_OPTIONS,
             fontSize: 24,
         } as Partial<ITextStyle>)
