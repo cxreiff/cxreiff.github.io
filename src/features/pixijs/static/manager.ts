@@ -33,6 +33,7 @@ export class Manager {
             backgroundColor: 0xEEDDDD,
             antialias: true,
             autoDensity: true,
+            resolution: window.devicePixelRatio,
             width: Math.max(width, Manager.MIN_RESOLUTION_WIDTH),
             height: Math.max(width, Manager.MIN_RESOLUTION_WIDTH) / Manager.ASPECT_RATIO,
         })

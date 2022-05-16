@@ -27,6 +27,7 @@ module.exports = {
     '@typescript-eslint/triple-slash-reference': ['error', { types: "always" }],
     'no-useless-constructor': 'off',
     '@typescript-eslint/no-useless-constructor': 'off',
+    '@typescript-eslint/no-floating-promises': 'off',
     '@typescript-eslint/no-empty-function': ['error', {
       allow: ['private-constructors', 'methods']
     }],
