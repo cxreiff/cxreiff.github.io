@@ -4,17 +4,23 @@ import fscreen from 'fscreen'
 import { Entity } from '../abstract/entity'
 import { AsteroidScene } from '../scenes/asteroidScene'
 import { View } from '../static/view'
+import { Sound } from '../static/sound'
 
 import styles from '../pixijs.module.scss'
 
 export class OptionsEntity extends Entity<Container> {
 
-    private fullscreenButton?: Text
+    private static readonly FULLSCREEN_CHARACTER = '\u2725'
+    private static readonly UNMUTED_CHARACTER = 'SOUND ON'
+    private static readonly MUTED_CHARACTER = 'SOUND OFF'
+    
+    private fullscreenButton: Text
+    private soundButton: Text
 
     constructor (x: number, y: number) {
         super(new Container())
 
-        this.fullscreenButton = new Text('\u2725', {
+        this.fullscreenButton = new Text(OptionsEntity.FULLSCREEN_CHARACTER, {
             ...AsteroidScene.TEXT_OPTIONS,
             fontSize: 48,
         } as Partial<ITextStyle>)
@@ -32,8 +38,27 @@ export class OptionsEntity extends Entity<Container> {
                 View.element.parentElement?.classList.add(styles.fullscreen_fallback)
             }
         })
-        
         this.facade.addChild(this.fullscreenButton)
+
+        this.soundButton = new Text(OptionsEntity.MUTED_CHARACTER, {
+            ...AsteroidScene.TEXT_OPTIONS,
+            fontSize: 24,
+        } as Partial<ITextStyle>)
+        this.soundButton.anchor.y = 1.0
+        this.soundButton.interactive = true
+        this.soundButton.cursor = 'pointer'
+        this.soundButton.position.x = 50
+        this.soundButton.position.y = -10
+        this.soundButton.on('pointerdown', () => {
+            Sound.muted = !Sound.muted
+            this.soundButton.text = (
+                Sound.muted
+                ? OptionsEntity.MUTED_CHARACTER
+                : OptionsEntity.UNMUTED_CHARACTER
+            )
+        })
+        this.facade.addChild(this.soundButton)
+
         
         this.relativePosition.x = x
         this.relativePosition.y = y

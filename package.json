@@ -68,7 +68,6 @@
     "react-router-dom": "^6.3.0",
     "react-syntax-highlighter": "^15.5.0",
     "redux": "^4.1.2",
-    "use-resize-observer": "^8.0.0",
     "xml2js": "^0.4.23"
   },
   "devDependencies": {

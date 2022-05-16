@@ -1,8 +1,8 @@
-import { FC, useEffect, useRef } from 'react'
-import useResizeObserver from 'use-resize-observer'
+import { FC, useLayoutEffect } from 'react'
 import fscreen from 'fscreen'
 
 import { Frame } from '~/src/common/frame/frame.component'
+import { useMeasuredRef } from '~/src/hooks/useMeasuredRef'
 import { isMobile } from '~/src/utilities/common'
 
 import { ShipEntity } from './entities/shipEntity'
@@ -13,15 +13,14 @@ import styles from './pixijs.module.scss'
 
 const Pixijs: FC = () => {
 
-    const ref = useRef<HTMLCanvasElement>(null)
-    const { width = 0, height = 0 } = useResizeObserver<HTMLCanvasElement>({ ref })
+    const [ ref, { width = 0, height = 0 } ] = useMeasuredRef<HTMLCanvasElement>()
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         if (!Manager.app && ref.current && width && height) {
             Manager.initialize(ref.current, width, height)
         }
     }, [ref.current, width, height])
-    useEffect(() => () => Manager.destroy(), [])
+    useLayoutEffect(() => () => Manager.destroy(), [])
 
     return (
         <>
