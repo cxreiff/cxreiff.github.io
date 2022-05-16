@@ -88,6 +88,11 @@ export class AsteroidEntity extends MatterEntity<AnimatedSprite> {
         const scene = (Manager.currentScene as AsteroidScene)
         this.body.collisionFilter.group = -1
         this.body.collisionFilter.mask = 0
+        this.facade.onComplete = () => scene.removeEntity(this)
+        this.facade.animationSpeed = 0.7
+        this.facade.loop = false
+        this.facade.play()
+        Loader.shared.resources['blep'].sound?.play()
         if (this.radius > AsteroidScene.ASTEROID_MIN_SIZE * View.unitWidth()) {
             const halfSize = ~~(this.radius / 2)
             const angle = Math.random() * Math.PI * 2
@@ -104,9 +109,5 @@ export class AsteroidEntity extends MatterEntity<AnimatedSprite> {
                 halfSize,
             )
         }
-        this.facade.onComplete = () => scene.removeEntity(this)
-        this.facade.animationSpeed = 0.7
-        this.facade.loop = false
-        this.facade.play()
     }
 }

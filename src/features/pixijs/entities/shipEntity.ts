@@ -31,7 +31,7 @@ export class ShipEntity extends MatterEntity<Sprite> {
 
     public static readonly FULL_HEALTH = 5
     private static readonly SPEED = 7
-    private static readonly TURNING_SPEED = 0.08
+    private static readonly TURNING_SPEED = 0.09
     private static readonly INVULNERABLE_DURATION = 100
 
     public health = ShipEntity.FULL_HEALTH
@@ -110,6 +110,7 @@ export class ShipEntity extends MatterEntity<Sprite> {
             this.invulnerable = ShipEntity.INVULNERABLE_DURATION
             this.health -= 1
             if (this.health === 0) {
+                Loader.shared.resources['blup'].sound?.play()
                 Manager.changeScene(
                     new StartScene(() => Manager.changeScene(
                         new AsteroidScene()
@@ -121,6 +122,8 @@ export class ShipEntity extends MatterEntity<Sprite> {
     }
 
     spawnProjectile () {
+        Loader.shared.resources['blip'].sound?.play()
+        console.log(View.element.width)
         Manager.currentScene.addEntity(
             new LaserEntity(this.body.position.x, this.body.position.y, this.body.angle)
         )
