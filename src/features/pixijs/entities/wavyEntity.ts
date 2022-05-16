@@ -1,4 +1,4 @@
-import { Graphics, Point, Filter } from 'pixi.js'
+import { Graphics, Point, Filter } from '../pixijs'
 
 import vShader from '~/src/assets/shaders/test.vert'
 import fShader from '~/src/assets/shaders/test.frag'

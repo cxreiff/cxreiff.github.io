@@ -1,4 +1,4 @@
-import { DisplayObject } from 'pixi.js'
+import { DisplayObject } from '../pixijs'
 import { Engine, Composite, Body } from 'matter-js'
 
 /**

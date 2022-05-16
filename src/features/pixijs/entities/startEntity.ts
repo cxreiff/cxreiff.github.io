@@ -1,4 +1,4 @@
-import { Loader, Sprite } from 'pixi.js'
+import { Loader, Sprite } from '../pixijs'
 
 import { Entity } from '../abstract/entity'
 import { Keyboard } from '../static/keyboard'

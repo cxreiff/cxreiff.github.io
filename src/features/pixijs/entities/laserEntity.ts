@@ -1,4 +1,4 @@
-import { DisplayObject, Graphics } from 'pixi.js'
+import { DisplayObject, Graphics } from '../pixijs'
 import { Bodies, Body, ICollision as Collision } from 'matter-js'
 
 import { MatterEntity } from '../abstract/matterEntity'

@@ -1,4 +1,4 @@
-import { Container, Text, ITextStyle } from 'pixi.js'
+import { Container, Text, ITextStyle } from '../pixijs'
 import fscreen from 'fscreen'
 
 import { Entity } from '../abstract/entity'

@@ -1,4 +1,4 @@
-import { Container, DisplayObject, Point } from 'pixi.js'
+import { Container, DisplayObject, Point } from '../pixijs'
 
 import { View } from '../static/view'
 
