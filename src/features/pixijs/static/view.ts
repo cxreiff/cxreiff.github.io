@@ -1,7 +1,7 @@
 export class View {
 
     public static element: HTMLCanvasElement
-    private static units = 800
+    private static units = 1000
 
     private constructor () {}
 
