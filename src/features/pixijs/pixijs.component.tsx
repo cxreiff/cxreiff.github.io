@@ -1,5 +1,4 @@
 import { FC, useLayoutEffect } from 'react'
-import fscreen from 'fscreen'
 
 import { Frame } from '~/src/common/frame/frame.component'
 import { useMeasuredRef } from '~/src/hooks/useMeasuredRef'
@@ -8,6 +7,7 @@ import { isMobile } from '~/src/utilities/common'
 import { ShipEntity } from './entities/shipEntity'
 import { Keyboard } from './static/keyboard'
 import { Manager } from './static/manager'
+import { View } from './static/view'
 
 import styles from './pixijs.module.scss'
 
@@ -24,10 +24,14 @@ const Pixijs: FC = () => {
 
     return (
         <>
-            <Frame aspect={Manager.ASPECT_RATIO} loaded={true} className={styles.pixijs}>
+            <Frame aspect={Manager.ASPECT_RATIO} className={styles.pixijs}>
                 <canvas ref={ref} style={{
                     height: width / Manager.ASPECT_RATIO,
-                    maxWidth: fscreen.fullscreenElement ? `${100 * Manager.ASPECT_RATIO}vh` : undefined,
+                    maxWidth: (
+                        View.isFullscreen() || View.isMobileFullscreen()
+                        ? `${100 * Manager.ASPECT_RATIO}vh`
+                        : undefined
+                    ),
                 }} />
             </Frame>
             { isMobile() &&
