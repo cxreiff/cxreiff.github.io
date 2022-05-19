@@ -1,16 +1,13 @@
 import { Container, Texture, Sprite, Loader } from '../pixijs'
-import fscreen from 'fscreen'
 
 import { Entity } from '../abstract/entity'
 import { View } from '../static/view'
 import { Sound } from '../static/sound'
 
-import styles from '../pixijs.module.scss'
-
 export class OptionsEntity extends Entity<Container> {
 
-    private static readonly OPTION_BUTTON_SIZE = 32
-    private static readonly OPTION_BUTTON_HOVER_SIZE = 38
+    private static readonly OPTION_BUTTON_SIZE = 42
+    private static readonly OPTION_BUTTON_HOVER_SIZE = 48
     
     private fullscreenTexture: Texture
     private mutedTexture: Texture
@@ -41,17 +38,7 @@ export class OptionsEntity extends Entity<Container> {
             this.fullscreenButton.width = View.scale(OptionsEntity.OPTION_BUTTON_SIZE)
             this.fullscreenButton.height = View.scale(OptionsEntity.OPTION_BUTTON_SIZE)
         })
-        this.fullscreenButton.on('pointerdown', () => {
-            if (fscreen.fullscreenElement) {
-                fscreen.exitFullscreen()
-            } else if (View.element.parentElement?.classList.contains(styles.fullscreen_fallback)) {
-                View.element.parentElement?.classList.remove(styles.fullscreen_fallback)
-            } else if (fscreen.fullscreenEnabled) {
-                fscreen.requestFullscreen(View.element.parentElement!)
-            } else {
-                View.element.parentElement?.classList.add(styles.fullscreen_fallback)
-            }
-        })
+        this.fullscreenButton.on('pointerdown', () => View.toggleFullscreen())
         this.facade.addChild(this.fullscreenButton)
 
         this.soundButton = new Sprite(Sound.muted ? this.mutedTexture : this.unmutedTexture)
