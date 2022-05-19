@@ -20,8 +20,8 @@ export class StartScene extends Scene {
             View.unitHeight() * 0.2,
         ))
         this.addEntity(new OptionsEntity(
-            20,
-            View.unitHeight() - 10,
+            40,
+            View.unitHeight() - 15,
         ))
     }
 }

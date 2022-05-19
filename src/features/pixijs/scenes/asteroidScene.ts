@@ -46,7 +46,7 @@ export class AsteroidScene extends MatterScene {
     public scoreEntity = new ScoreEntity(View.unitWidth() - 20, 20, 'right')
     public shipEntity = new ShipEntity()
     public healthEntity = new HealthEntity(20, 20)
-    public optionsEntity = new OptionsEntity(20, View.unitHeight() - 10)
+    public optionsEntity = new OptionsEntity(40, View.unitHeight() - 15)
 
     constructor () {
         super()
