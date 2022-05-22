@@ -17,7 +17,7 @@ const Projects: FC = () => {
                 image={pixijs}
                 primary={'asteroids game'}
                 secondary={'pixi.js, matter.js'}
-                onClick={() => navigate('/projects/pixijs')}
+                onClick={() => navigate('/projects/pixijs/asteroids')}
             />
             <Card
                 image={babylonjs}

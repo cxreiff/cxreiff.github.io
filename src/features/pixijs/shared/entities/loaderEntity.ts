@@ -1,4 +1,4 @@
-import { Graphics } from '../pixijs'
+import { Graphics } from '../../pixijs'
 
 import { Entity } from '../abstract/entity'
 import { View } from '../static/view'

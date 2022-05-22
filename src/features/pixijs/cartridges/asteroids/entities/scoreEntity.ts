@@ -1,6 +1,7 @@
-import { Text } from '../pixijs'
+import { Text } from '../../../pixijs'
 
-import { Entity } from '../abstract/entity'
+import { Entity } from '../../../shared/abstract/entity'
+
 import { AsteroidScene } from '../scenes/asteroidScene'
 
 export class ScoreEntity extends Entity<Text> {

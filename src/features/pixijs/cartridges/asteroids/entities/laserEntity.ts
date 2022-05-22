@@ -1,10 +1,12 @@
-import { DisplayObject, Graphics } from '../pixijs'
 import { Bodies, Body, ICollision as Collision } from 'matter-js'
 
-import { MatterEntity } from '../abstract/matterEntity'
+import { DisplayObject, Graphics } from '../../../pixijs'
+
+import { MatterEntity } from '../../../shared/abstract/matterEntity'
+import { Manager } from '../../../shared/static/manager'
+import { View } from '../../../shared/static/view'
+
 import { AsteroidScene } from '../scenes/asteroidScene'
-import { Manager } from '../static/manager'
-import { View } from '../static/view'
 
 export class LaserEntity extends MatterEntity<Graphics> {
 

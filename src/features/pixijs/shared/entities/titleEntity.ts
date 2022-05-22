@@ -1,13 +1,13 @@
-import { Text } from '../pixijs'
+import { Text } from '../../pixijs'
 
 import { Entity } from '../abstract/entity'
-import { AsteroidScene } from '../scenes/asteroidScene'
+import { Constants } from '../static/constants'
 
 export class TitleEntity extends Entity<Text> {
 
     constructor (text: string, x: number, y: number) {
         super(new Text(text, {
-            ...AsteroidScene.TEXT_OPTIONS,
+            ...Constants.TEXT_OPTIONS,
             fontSize: 48,
             align: 'center',
         }))

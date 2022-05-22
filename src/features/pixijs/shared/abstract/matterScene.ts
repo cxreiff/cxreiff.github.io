@@ -1,5 +1,6 @@
-import { DisplayObject } from '../pixijs'
 import { Engine, Composite, Body } from 'matter-js'
+
+import { DisplayObject } from '../../pixijs'
 
 /**
 * Types for Detector currently missing in @types/matter-js

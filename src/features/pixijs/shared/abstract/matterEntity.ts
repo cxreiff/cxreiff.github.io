@@ -1,5 +1,6 @@
-import { DisplayObject } from '../pixijs'
 import { Body, ICollision as Collision } from 'matter-js'
+
+import { DisplayObject } from '../../pixijs'
 
 import { Entity } from '../abstract/entity'
 import { View } from '../static/view'

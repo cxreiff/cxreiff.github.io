@@ -1,4 +1,5 @@
-import { Scene } from '../abstract/scene'
+import { Scene } from '../../../shared/abstract/scene'
+
 import { WavyEntity } from '../entities/wavyEntity'
 import { GliderEntity } from '../entities/gliderEntity'
 

@@ -1,15 +1,16 @@
-import { DisplayObject, Sprite, Loader } from '../pixijs'
 import { Bodies, Body, ICollision as Collision } from 'matter-js'
 
-import { MatterEntity } from '../abstract/matterEntity'
+import { DisplayObject, Sprite, Loader } from '../../../pixijs'
+
+import { MatterEntity } from '../../../shared/abstract/matterEntity'
+import { Keyboard } from '../../../shared/static/keyboard'
+import { Manager } from '../../../shared/static/manager'
+import { Sound } from '../../../shared/static/sound'
+import { View } from '../../../shared/static/view'
+
 import { AsteroidEntity } from '../entities/asteroidEntity'
 import { LaserEntity } from '../entities/laserEntity'
 import { AsteroidScene } from '../scenes/asteroidScene'
-import { StartScene } from '../scenes/startScene'
-import { Manager } from '../static/manager'
-import { View } from '../static/view'
-import { Keyboard } from '../static/keyboard'
-import { Sound } from '../static/sound'
 
 export class ShipEntity extends MatterEntity<Sprite> {
 
@@ -31,8 +32,8 @@ export class ShipEntity extends MatterEntity<Sprite> {
     ]
 
     public static readonly FULL_HEALTH = 5
-    private static readonly SPEED = 7
-    private static readonly TURNING_SPEED = 0.09
+    private static readonly SPEED = 9
+    private static readonly TURNING_SPEED = 0.1
     private static readonly INVULNERABLE_DURATION = 100
 
     public health = ShipEntity.FULL_HEALTH
@@ -77,28 +78,29 @@ export class ShipEntity extends MatterEntity<Sprite> {
         }
 
         if (Keyboard.wasPressed(ShipEntity.CONTROLS.FIRE)) {
+            console.log(View.scale(50))
             this.spawnProjectile()
         }
 
         if (Keyboard.isPressed(ShipEntity.CONTROLS.TURN_LEFT)) {
-            Body.setAngle(this.body, this.body.angle - ShipEntity.TURNING_SPEED)
+            Body.setAngle(this.body, this.body.angle - ShipEntity.TURNING_SPEED * delta)
         }
 
         if (Keyboard.isPressed(ShipEntity.CONTROLS.TURN_RIGHT)) {
-            Body.setAngle(this.body, this.body.angle + ShipEntity.TURNING_SPEED)
+            Body.setAngle(this.body, this.body.angle + ShipEntity.TURNING_SPEED * delta)
         }
 
         if (Keyboard.isPressed(ShipEntity.CONTROLS.FORWARD)) {
             Body.setPosition(this.body, {
-                x: this.body.position.x + ShipEntity.SPEED * Math.sin(this.facade.rotation),
-                y: this.body.position.y - ShipEntity.SPEED * Math.cos(this.facade.rotation),
+                x: this.body.position.x + ShipEntity.SPEED * Math.sin(this.facade.rotation) * delta,
+                y: this.body.position.y - ShipEntity.SPEED * Math.cos(this.facade.rotation) * delta,
             })
         }
 
         if (Keyboard.isPressed(ShipEntity.CONTROLS.BACKWARD)) {
             Body.setPosition(this.body, {
-                x: this.body.position.x - ShipEntity.SPEED * Math.sin(this.facade.rotation),
-                y: this.body.position.y + ShipEntity.SPEED * Math.cos(this.facade.rotation),
+                x: this.body.position.x - ShipEntity.SPEED * Math.sin(this.facade.rotation) * delta,
+                y: this.body.position.y + ShipEntity.SPEED * Math.cos(this.facade.rotation) * delta,
             })
         }
 
@@ -112,11 +114,7 @@ export class ShipEntity extends MatterEntity<Sprite> {
             this.health -= 1
             if (this.health === 0) {
                 Sound.play('blup')
-                Manager.changeScene(
-                    new StartScene(() => Manager.changeScene(
-                        new AsteroidScene()
-                    ))
-                )
+                Manager.reloadStart('YOU DIED')
                 return true
             }
         }

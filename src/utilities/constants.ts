@@ -16,7 +16,8 @@ export const IMAGE_URLS = {
     ABOUT_ME: `${OBJECT_STORE_ASSETS_URL}assets/aboutme.png`,
 }
 export const SPRITESHEET_URLS = {
-    ASTEROIDS: `${OBJECT_STORE_ASSETS_URL}assets/asteroids.json`,
+    SHARED: `${OBJECT_STORE_ASSETS_URL}spritesheets/shared.json`,
+    ASTEROIDS: `${OBJECT_STORE_ASSETS_URL}spritesheets/asteroids.json`,
 }
 export const SOUND_URLS = {
     BLIP: `${OBJECT_STORE_ASSETS_URL}sounds/blip.wav`,
