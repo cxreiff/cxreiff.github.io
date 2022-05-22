@@ -15,7 +15,6 @@ export * from '@pixi/text'
 export * from '@pixi/interaction'
 export * as utils from '@pixi/utils'
 
-export * from '@pixi/sound'
 export { Filter } from '@pixi/core'
 
 /* eslint-disable no-duplicate-imports */
@@ -38,3 +37,5 @@ Application.registerPlugin(TickerPlugin)
 import { Loader } from '@pixi/loaders'
 import { SpritesheetLoader } from '@pixi/spritesheet'
 Loader.registerPlugin(SpritesheetLoader)
+
+export * from '@pixi/sound'

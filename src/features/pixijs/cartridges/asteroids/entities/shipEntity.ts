@@ -1,6 +1,6 @@
 import { Bodies, Body, ICollision as Collision } from 'matter-js'
 
-import { DisplayObject, Sprite, Loader } from '../../../pixijs'
+import { DisplayObject, Sprite } from '../../../pixijs'
 
 import { MatterEntity } from '../../../shared/abstract/matterEntity'
 import { Keyboard } from '../../../shared/static/keyboard'
@@ -41,7 +41,7 @@ export class ShipEntity extends MatterEntity<Sprite> {
 
     constructor () {
         super(
-            new Sprite(Loader.shared.resources['asteroids'].spritesheet!.textures['ship.png']),
+            new Sprite(Manager.sprite('asteroids', 'ship.png')),
             Bodies.fromVertices(
                 View.unitWidth() * 0.5,
                 View.unitHeight() * 0.6,
@@ -78,7 +78,6 @@ export class ShipEntity extends MatterEntity<Sprite> {
         }
 
         if (Keyboard.wasPressed(ShipEntity.CONTROLS.FIRE)) {
-            console.log(View.scale(50))
             this.spawnProjectile()
         }
 

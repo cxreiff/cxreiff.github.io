@@ -1,4 +1,4 @@
-import { Loader } from '../../pixijs'
+import { Manager } from '../static/manager'
 
 export class Sound {
 
@@ -8,7 +8,7 @@ export class Sound {
 
     public static play (sound: string) {
         if (!Sound.muted) {
-            Loader.shared.resources[sound]?.sound?.play()
+            Manager.sound(sound)?.play()
         }
     }
 }
