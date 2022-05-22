@@ -1,4 +1,4 @@
-import { Application, Texture, Loader, BaseTexture, Ticker } from '../../pixijs'
+import { Application, Texture, BaseTexture } from '../../pixijs'
 
 import { SPRITESHEET_URLS } from '~/src/utilities/constants'
 
@@ -51,7 +51,7 @@ export class Manager {
         View.initialize(viewElement, aspectRatio)
         Keyboard.initialize(viewElement)
 
-        Ticker.shared.add(Manager.update)
+        Manager.app.ticker.add(Manager.update)
 
         Manager.changeScene(
             new LoaderScene([ ...Manager.SHARED_ASSETS, ...assets], () => {
@@ -97,9 +97,21 @@ export class Manager {
             BaseTexture.removeFromCache(asset.url)
         })
 
-        Loader.shared.reset()
+        Manager.app?.loader.reset()
         Manager.app?.destroy()
         Manager.app = undefined
+    }
+
+    public static sprite (spritesheetName: string, spriteName: string) {
+        return Manager.app!.loader.resources[spritesheetName].spritesheet!.textures[spriteName]
+    }
+    
+    public static animatedSprite (spritesheetName: string, animationName: string) {
+        return Manager.app!.loader.resources[spritesheetName].spritesheet!.animations[animationName]
+    }
+
+    public static sound (soundName: string) {
+        return Manager.app!.loader.resources[soundName]?.sound
     }
 
     private static update = (delta: number) => {

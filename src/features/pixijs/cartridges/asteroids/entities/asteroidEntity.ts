@@ -1,6 +1,6 @@
 import { Bodies, Body, ICollision as Collision } from 'matter-js'
 
-import { DisplayObject, Loader, AnimatedSprite } from '../../../pixijs'
+import { DisplayObject, AnimatedSprite } from '../../../pixijs'
 
 import { MatterEntity } from '../../../shared/abstract/matterEntity'
 import { Manager } from '../../../shared/static/manager'
@@ -17,7 +17,7 @@ export class AsteroidEntity extends MatterEntity<AnimatedSprite> {
 
     constructor (x: number, y: number, radius: number) {
         super(
-            new AnimatedSprite(Loader.shared.resources['asteroids'].spritesheet!.animations['asteroid']),
+            new AnimatedSprite(Manager.animatedSprite('asteroids', 'asteroid')),
             Bodies.circle(x, y, radius, {
                 inertia: Infinity,
                 friction: 0,
