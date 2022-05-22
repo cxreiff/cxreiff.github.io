@@ -1,12 +1,12 @@
 import { Scene } from '../abstract/scene'
 import { StartEntity } from '../entities/startEntity'
 import { TitleEntity } from '../entities/titleEntity'
-import { OptionsEntity } from '../entities/optionsEntity'
 import { View } from '../static/view'
+
 
 export class StartScene extends Scene {
     
-    constructor (onStart: () => void) {
+    constructor (title: string, onStart: () => void) {
         super()
 
         this.addEntity(new StartEntity(
@@ -15,13 +15,9 @@ export class StartScene extends Scene {
             View.unitHeight() * 0.5,
         ))
         this.addEntity(new TitleEntity(
-            'ASTEROIDS',
+            title,
             View.unitWidth() * 0.5,
             View.unitHeight() * 0.2,
-        ))
-        this.addEntity(new OptionsEntity(
-            40,
-            View.unitHeight() - 15,
         ))
     }
 }

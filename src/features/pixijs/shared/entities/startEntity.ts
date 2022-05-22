@@ -1,4 +1,4 @@
-import { Loader, Sprite } from '../pixijs'
+import { Loader, Sprite } from '../../pixijs'
 
 import { Entity } from '../abstract/entity'
 import { Keyboard } from '../static/keyboard'
@@ -16,7 +16,7 @@ export class StartEntity extends Entity<Sprite> {
     private onStart: () => void
 
     constructor (onStart: () => void, x: number, y: number) {
-        super(new Sprite(Loader.shared.resources['asteroids'].spritesheet!.textures['start.png']))
+        super(new Sprite(Loader.shared.resources['shared'].spritesheet!.textures['start.png']))
 
         this.onStart = onStart
 

@@ -1,14 +1,15 @@
-import { DisplayObject } from '../pixijs'
 import { Query, Bounds } from 'matter-js'
 
-import { MatterScene } from '../abstract/matterScene'
-import { Entity } from '../abstract/entity'
+import { DisplayObject } from '../../../pixijs'
+
+import { MatterScene } from '../../../shared/abstract/matterScene'
+import { Entity } from '../../../shared/abstract/entity'
+import { View } from '../../../shared/static/view'
+
 import { AsteroidEntity } from '../entities/asteroidEntity'
 import { HealthEntity } from '../entities/healthEntity'
-import { OptionsEntity } from '../entities/optionsEntity'
 import { ShipEntity } from '../entities/shipEntity'
 import { ScoreEntity } from '../entities/scoreEntity'
-import { View } from '../static/view'
 
 export class AsteroidScene extends MatterScene {
 
@@ -46,7 +47,6 @@ export class AsteroidScene extends MatterScene {
     public scoreEntity = new ScoreEntity(View.unitWidth() - 20, 20, 'right')
     public shipEntity = new ShipEntity()
     public healthEntity = new HealthEntity(20, 20)
-    public optionsEntity = new OptionsEntity(40, View.unitHeight() - 15)
 
     constructor () {
         super()
@@ -55,12 +55,10 @@ export class AsteroidScene extends MatterScene {
 
         this.scoreEntity.zIndex = AsteroidScene.Z_LAYERS.GUI
         this.healthEntity.zIndex = AsteroidScene.Z_LAYERS.GUI
-        this.optionsEntity.zIndex = AsteroidScene.Z_LAYERS.GUI
 
         this.addEntity(this.shipEntity)
         this.addEntity(this.scoreEntity)
         this.addEntity(this.healthEntity)
-        this.addEntity(this.optionsEntity)
     }
 
     override update (delta: number) {

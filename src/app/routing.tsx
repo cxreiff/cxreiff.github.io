@@ -30,6 +30,12 @@ export const ROUTES: RouteDefinition[] = [
             {
                 path: 'pixijs',
                 Component: Pixijs,
+                children: [
+                    {
+                        path: ':id',
+                        Component: Pixijs,
+                    },
+                ],
             },
             {
                 path: 'babylonjs',
@@ -48,8 +54,8 @@ export const ROUTES: RouteDefinition[] = [
             {
                 path: ':id',
                 Component: PostsContent,
-            }
-        ]
+            },
+        ],
     },
 ]
 

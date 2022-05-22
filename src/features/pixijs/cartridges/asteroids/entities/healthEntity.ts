@@ -1,9 +1,10 @@
-import { Text } from '../pixijs'
+import { Text } from '../../../pixijs'
 
-import { Entity } from '../abstract/entity'
-import { ShipEntity } from '../entities/shipEntity'
+import { Entity } from '../../../shared/abstract/entity'
+import { Manager } from '../../../shared/static/manager'
+
 import { AsteroidScene } from '../scenes/asteroidScene'
-import { Manager } from '../static/manager'
+import { ShipEntity } from '../entities/shipEntity'
 
 export class HealthEntity extends Entity<Text> {
 

@@ -1,4 +1,4 @@
-import { Container, DisplayObject } from '../pixijs'
+import { Container, DisplayObject } from '../../pixijs'
 
 import { Entity } from '../abstract/entity'
 

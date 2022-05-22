@@ -1,13 +1,15 @@
-import { DisplayObject, Loader, AnimatedSprite } from '../pixijs'
 import { Bodies, Body, ICollision as Collision } from 'matter-js'
 
-import { MatterEntity } from '../abstract/matterEntity'
+import { DisplayObject, Loader, AnimatedSprite } from '../../../pixijs'
+
+import { MatterEntity } from '../../../shared/abstract/matterEntity'
+import { Manager } from '../../../shared/static/manager'
+import { View } from '../../../shared/static/view'
+import { Sound } from '../../../shared/static/sound'
+
 import { LaserEntity } from '../entities/laserEntity'
 import { ShipEntity } from '../entities/shipEntity'
 import { AsteroidScene } from '../scenes/asteroidScene'
-import { Manager } from '../static/manager'
-import { View } from '../static/view'
-import { Sound } from '../static/sound'
 
 export class AsteroidEntity extends MatterEntity<AnimatedSprite> {
     
