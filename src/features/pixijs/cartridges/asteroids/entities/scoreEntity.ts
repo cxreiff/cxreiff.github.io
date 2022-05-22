@@ -1,8 +1,7 @@
 import { Text } from '../../../pixijs'
 
 import { Entity } from '../../../shared/abstract/entity'
-
-import { AsteroidScene } from '../scenes/asteroidScene'
+import { Constants } from '../../../shared/static/constants'
 
 export class ScoreEntity extends Entity<Text> {
 
@@ -10,7 +9,7 @@ export class ScoreEntity extends Entity<Text> {
 
     constructor (x: number, y: number, alignment: 'left'|'center'|'right', initialScore = 0) {
         super(new Text(initialScore.toString(), {
-            ...AsteroidScene.TEXT_OPTIONS,
+            ...Constants.TEXT_OPTIONS,
             fontSize: 32,
             align: alignment,
         }))

@@ -2,6 +2,8 @@ import { Loader } from '../../pixijs'
 
 import { Scene } from '../abstract/scene'
 import { LoaderEntity } from '../entities/loaderEntity'
+import { Manager } from '../static/manager'
+
 import { Asset } from '../../cartridges'
 
 export class LoaderScene extends Scene {
@@ -13,12 +15,12 @@ export class LoaderScene extends Scene {
 
         this.addEntity(this.loaderEntity)
 
-        Loader.shared.add(assets)
+        Manager.app?.loader.add(assets)
 
-        Loader.shared.onProgress.add(this.onProgress, this)
-        Loader.shared.onComplete.once(onComplete, this)
+        Manager.app?.loader.onProgress.add(this.onProgress, this)
+        Manager.app?.loader.onComplete.once(onComplete, this)
 
-        Loader.shared.load()
+        Manager.app?.loader.load()
     }
 
     private onProgress = (loader: Loader) => {

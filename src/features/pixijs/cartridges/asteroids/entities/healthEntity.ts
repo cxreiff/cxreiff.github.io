@@ -2,6 +2,7 @@ import { Text } from '../../../pixijs'
 
 import { Entity } from '../../../shared/abstract/entity'
 import { Manager } from '../../../shared/static/manager'
+import { Constants } from '../../../shared/static/constants'
 
 import { AsteroidScene } from '../scenes/asteroidScene'
 import { ShipEntity } from '../entities/shipEntity'
@@ -13,7 +14,7 @@ export class HealthEntity extends Entity<Text> {
 
     constructor (x: number, y: number) {
         super(new Text(HealthEntity.FULL_HEART.repeat(ShipEntity.FULL_HEALTH), {
-            ...AsteroidScene.TEXT_OPTIONS,
+            ...Constants.TEXT_OPTIONS,
             fontSize: 48,
             align: 'left',
         }))

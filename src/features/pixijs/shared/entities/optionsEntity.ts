@@ -1,6 +1,7 @@
-import { Container, Texture, Sprite, Loader } from '../../pixijs'
+import { Container, Texture, Sprite } from '../../pixijs'
 
 import { Entity } from '../abstract/entity'
+import { Manager } from '../static/manager'
 import { View } from '../static/view'
 import { Sound } from '../static/sound'
 
@@ -20,10 +21,10 @@ export class OptionsEntity extends Entity<Container> {
     constructor (x: number, y: number) {
         super(new Container())
 
-        this.fullscreenTexture = Loader.shared.resources['shared'].spritesheet!.textures['fullscreen.png']
-        this.infullscreenTexture = Loader.shared.resources['shared'].spritesheet!.textures['infullscreen.png']
-        this.mutedTexture = Loader.shared.resources['shared'].spritesheet!.textures['muted.png']
-        this.unmutedTexture = Loader.shared.resources['shared'].spritesheet!.textures['unmuted.png']
+        this.fullscreenTexture = Manager.sprite('shared', 'fullscreen.png')
+        this.infullscreenTexture = Manager.sprite('shared', 'infullscreen.png')
+        this.mutedTexture = Manager.sprite('shared', 'muted.png')
+        this.unmutedTexture = Manager.sprite('shared', 'unmuted.png')
 
         this.fullscreenButton = new Sprite(View.isFullscreen() ? this.infullscreenTexture : this.fullscreenTexture);
         this.soundButton = new Sprite(Sound.muted ? this.mutedTexture : this.unmutedTexture)
