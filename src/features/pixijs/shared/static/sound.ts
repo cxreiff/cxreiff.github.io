@@ -1,4 +1,4 @@
-import { Loader } from '../pixijs'
+import { Loader } from '../../pixijs'
 
 export class Sound {
 

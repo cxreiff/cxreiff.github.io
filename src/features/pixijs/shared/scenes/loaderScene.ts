@@ -1,13 +1,14 @@
-import { Loader } from '../pixijs'
+import { Loader } from '../../pixijs'
 
 import { Scene } from '../abstract/scene'
 import { LoaderEntity } from '../entities/loaderEntity'
+import { Asset } from '../../cartridges'
 
 export class LoaderScene extends Scene {
 
     private loaderEntity = new LoaderEntity()
     
-    constructor (assets: { name: string, url: string }[], onComplete: () => void) {
+    constructor (assets: Asset[], onComplete: () => void) {
         super()
 
         this.addEntity(this.loaderEntity)

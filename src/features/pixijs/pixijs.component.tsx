@@ -1,36 +1,45 @@
 import { FC, useLayoutEffect } from 'react'
+import { useParams } from 'react-router-dom'
 
+import { Cartridges } from './cartridges'
 import { Frame } from '~/src/common/frame/frame.component'
 import { useMeasuredRef } from '~/src/hooks/useMeasuredRef'
 import { isMobile } from '~/src/utilities/common'
 
-import { ShipEntity } from './entities/shipEntity'
-import { Keyboard } from './static/keyboard'
-import { Manager } from './static/manager'
-import { View } from './static/view'
+import { ShipEntity } from './cartridges/asteroids/entities/shipEntity'
+import { Keyboard } from './shared/static/keyboard'
+import { Manager } from './shared/static/manager'
+import { View } from './shared/static/view'
 
 import styles from './pixijs.module.scss'
 
 const Pixijs: FC = () => {
 
-    const [ ref, { width = 0, height = 0 } ] = useMeasuredRef<HTMLCanvasElement>()
+    const { id = 'asteroids' } = useParams<{id: string}>()
+    const [ ref, { width = 0 } ] = useMeasuredRef<HTMLCanvasElement>()
+    
+    const { aspectRatio } = Cartridges[id]
 
     useLayoutEffect(() => {
-        if (!Manager.app && ref.current && width && height) {
-            Manager.initialize(ref.current, width, height)
+        if (!Manager.app && ref.current && width) {
+            Manager.initialize(ref.current, width, Cartridges[id])
         }
-    }, [ref.current, width, height])
-    useLayoutEffect(() => () => Manager.destroy(), [])
+    }, [ref.current, width, id])
+    useLayoutEffect(() => () => Manager.destroy(), [id])
 
     return (
         <>
-            <Frame aspect={Manager.ASPECT_RATIO} className={styles.pixijs}>
+            <Frame aspect={aspectRatio} className={styles.pixijs}>
                 <canvas ref={ref} style={{
-                    height: width / Manager.ASPECT_RATIO,
+                    height: width / aspectRatio,
                     maxWidth: (
-                        View.isFullscreen() || View.isMobileFullscreen()
-                        ? `${100 * Manager.ASPECT_RATIO}vh`
-                        : undefined
+                        View.isHTML5FullscreenEnabled()
+                        ? View.isHTML5Fullscreen() ? `${100 * aspectRatio}vh` : undefined
+                        : (
+                            View.isCSSFullscreen()
+                            ? `${window.screen.availHeight * aspectRatio}px`
+                            : undefined
+                        )
                     ),
                 }} />
             </Frame>

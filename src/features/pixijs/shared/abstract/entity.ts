@@ -1,4 +1,4 @@
-import { Container, DisplayObject, Point } from '../pixijs'
+import { Container, DisplayObject, Point } from '../../pixijs'
 
 import { View } from '../static/view'
 
