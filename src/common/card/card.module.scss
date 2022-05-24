@@ -1,9 +1,11 @@
 @use '../../shared.scss' as *;
 
 .card {
-    @include wide_card($accent-color-lighter, $accent-color-darker);
+    @include card($accent-color-lighter, true, true);
+    @include text_spacing();
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 1rem;
 
     div {
         width: 100%;

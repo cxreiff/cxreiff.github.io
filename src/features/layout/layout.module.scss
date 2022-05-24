@@ -10,7 +10,8 @@
 
     &>nav {
         @include box_shadow($accent-color-darker);
-        @include background_noise($accent-color);
+        @include background_noise();
+        background-color: $accent-color;
         margin: 2rem 1rem 2rem;
 
         ul {
