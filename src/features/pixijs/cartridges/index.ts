@@ -4,6 +4,7 @@ import { Scene } from '../shared/abstract/scene'
 
 import { AsteroidScene } from './asteroids/scenes/asteroidScene'
 import { WavyScene } from './wavy/scenes/wavyScene'
+import { PachinkoScene } from './pachinko/scenes/pachinkoScene'
 
 export interface Asset {
     name: string,
@@ -44,6 +45,12 @@ export const Cartridges: { [key: string]: Cartridge } = {
         title: 'Wavy',
         FirstScene: WavyScene,
         aspectRatio: 16/9,
+        assets: [],
+    },
+    pachinko: {
+        title: 'Pachinko',
+        FirstScene: PachinkoScene,
+        aspectRatio: 9/16,
         assets: [],
     }
 }

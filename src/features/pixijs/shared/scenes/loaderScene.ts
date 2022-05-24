@@ -18,7 +18,7 @@ export class LoaderScene extends Scene {
         Manager.app?.loader.add(assets)
 
         Manager.app?.loader.onProgress.add(this.onProgress, this)
-        Manager.app?.loader.onComplete.once(onComplete, this)
+        Manager.app?.loader.onComplete.once(() => setTimeout(onComplete, 200), this)
 
         Manager.app?.loader.load()
     }

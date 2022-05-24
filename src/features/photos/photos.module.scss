@@ -15,7 +15,7 @@
 }
 
 .tile {
-  @include box_shadow($accent-color-darker);
+  @include card($accent-color-darker, true, true);
   line-height: 0;
   font-size: 0;
 }

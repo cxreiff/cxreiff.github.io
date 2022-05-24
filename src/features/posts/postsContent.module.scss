@@ -1,9 +1,10 @@
 @use '../../shared.scss' as *;
 
 .posts_content {
-    @include text_page_padding();
+    @include text_spacing();
 }
 
 .posts_content_code {
-    @include wide_card(null, $accent-color-dark);
+    @include card(null, false, true);
+    @include text_spacing();
 }
