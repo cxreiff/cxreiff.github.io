@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { FC, useState, useLayoutEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import cn from 'classnames'
 
@@ -14,6 +14,8 @@ export const Layout: FC<LayoutProps> = ({ children, routes }) => {
     const pathname = useLocation().pathname
     const navigate = useNavigate()
     const [expanded, setExpanded] = useState(false)
+
+    useLayoutEffect(() => setExpanded(false), [pathname])
 
     const comparePaths = (path: string, pathname: string) => (
         path === pathname.split('/')[1]

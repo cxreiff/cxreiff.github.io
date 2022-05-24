@@ -1,6 +1,5 @@
 @use '../../shared.scss' as *;
 
 .babylonjs {
-    @include box_shadow($accent-color-darker);
-    background: #EEDDDD;
+    @include card($accent-color-lightish, false, true);
 }

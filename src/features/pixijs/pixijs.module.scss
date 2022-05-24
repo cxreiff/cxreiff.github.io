@@ -1,16 +1,20 @@
 @use '../../shared.scss' as *;
 
 .pixijs {
-    @include box_shadow($accent-color-darker);
+    @include card($accent-color-lightish, false, true);
     line-height: 0;
-    background: #EEDDDD;
+    min-width: 0;
 
-    &:fullscreen {
-        background: #3D3333;
+    &:fullscreen,
+    &.fullscreen_fallback {
+        @include card($accent-color-darker, true, true);
+        border-radius: 0;
+        &>canvas {
+            border-radius: 0;
+        }
     }
     
     &.fullscreen_fallback {
-        background: #3D3333;
         position: fixed;
         inset: 0;
         z-index: 1;
@@ -18,12 +22,12 @@
 
     &>canvas {
         width: 100% !important;
+        border-radius: $roundness;
     }
 }
 
 .controls {
-    @include box_shadow($accent-color-darker);
-    background: #EEDDDD;
+    @include card($accent-color-lightish, false, true);
     margin-top: 2rem;
     text-align: center;
     -webkit-touch-callout: none;
