@@ -5,25 +5,25 @@
     gap: 1rem 1rem;
     grid-template-columns: 1fr;
     
-    @media only screen and (min-width: $mobile-breakpoint) {
+    @include isLargerThan($sm-breakpoint) {
         grid-template-columns: 1fr 2fr;
     }
 }
 
 .image {
-    @include card($accent-color-darkest, true, true);
+    @include card($color-darker, false, true);
 }
 
 .aboutme {
     padding: 0rem 1rem;
 
-    @media only screen and (min-width: $mobile-breakpoint) {
+    @include isLargerThan($sm-breakpoint) {
         padding: 1rem 2rem;
-        border-right: 3px dashed $accent-color-dark;
+        border-right: 3px dashed $color-secondary;
     }
 
     a {
-        color: $accent-color-dark;
+        color: $color-secondary;
         text-underline-offset: 2px;
     }
 }

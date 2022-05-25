@@ -1,7 +1,7 @@
 @use '../../shared.scss' as *;
 
 .card {
-    @include card($accent-color-lighter, true, true);
+    @include card($color-lighter, true, true);
     @include text_spacing();
     display: flex;
     flex-wrap: wrap;
@@ -38,9 +38,9 @@
 .card_clickable {
     @include interactive(
         0.4rem,
-        $accent-color-darker,
-        $accent-color-darkest,
-        $accent-color-darker,
-        $accent-color-darkest
+        $color-dark,
+        $color-darker,
+        $color-dark,
+        $color-darker
     );
 }

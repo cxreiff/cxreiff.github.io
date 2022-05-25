@@ -17,7 +17,7 @@ $num-colors: 4;
 
     @for $i from 0 to $num-colors {
         span:nth-child(#{$num-colors}n + #{$i + 1}) {
-            background: $accent-color-dark;
+            background: $color-secondary;
             animation: fade-pulse ease-in-out 1.5s infinite;
             animation-delay: $i * 250ms;
         }
@@ -27,16 +27,16 @@ $num-colors: 4;
 @keyframes fade-pulse {
     0% {
         opacity: 0.3;
-    background: $accent-color-dark;
+    background: $color-secondary;
     }
 
     40% {
         opacity: 1;
-    background: $accent-color-tertiary;
+    background: $color-tertiary;
     }
 
     80% {
         opacity: 0.3;
-    background: $accent-color-dark;
+    background: $color-secondary;
     }
 }

@@ -1,7 +1,7 @@
 @use './shared.scss' as *;
 
-@media screen and (min-width: $max-width) {
-    html {
+html {
+    @include isLargerThan($md-breakpoint) {
         margin-left: calc(100vw - 100%);
         margin-right: 0;
     }

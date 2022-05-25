@@ -1,6 +1,7 @@
 import { FC, useState, useLayoutEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import cn from 'classnames'
+import { Menu } from 'lucide-preact'
 
 import { RouteDefinition } from '~/src/app/routing'
 import styles from './layout.module.scss'
@@ -29,11 +30,7 @@ export const Layout: FC<LayoutProps> = ({ children, routes }) => {
                     className={styles.expand_button}
                     onClick={() => setExpanded(!expanded)}
                 >
-                    <svg viewBox={'0 0 100 80'} width={'40'} height={'40'}>
-                      <rect width={'100'} height="20" />
-                      <rect y={'30'} width={'100'} height={'20'} />
-                      <rect y={'60'} width={'100'} height={'20'} />
-                    </svg>
+                    <Menu />
                 </button>
                 <ul>
                     <li aria-label={'navigate to home'} className={styles.logo}>
