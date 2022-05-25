@@ -5,17 +5,17 @@
   gap: 1rem 1rem;
   grid-template-columns: 1fr;
   
-  @media only screen and (min-width: $mobile-breakpoint) {
+  @include isLargerThan($sm-breakpoint) {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 .photo {
-  background-color: $accent-color-darkest;
+  background-color: $color-darker;
 }
 
 .tile {
-  @include card($accent-color-darker, true, true);
+  @include card($color-dark, true, true);
   line-height: 0;
   font-size: 0;
 }

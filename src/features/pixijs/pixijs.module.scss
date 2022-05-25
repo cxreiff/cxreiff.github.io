@@ -1,13 +1,13 @@
 @use '../../shared.scss' as *;
 
 .pixijs {
-    @include card($accent-color-lightish, false, true);
+    @include card($color-light, false, true);
     line-height: 0;
     min-width: 0;
 
     &:fullscreen,
     &.fullscreen_fallback {
-        @include card($accent-color-darker, true, true);
+        @include card($color-dark, true, true);
         border-radius: 0;
         &>canvas {
             border-radius: 0;
@@ -27,7 +27,7 @@
 }
 
 .controls {
-    @include card($accent-color-lightish, false, true);
+    @include card($color-light, false, true);
     margin-top: 2rem;
     text-align: center;
     -webkit-touch-callout: none;

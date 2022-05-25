@@ -1,5 +1,5 @@
 @use '../../shared.scss' as *;
 
 .babylonjs {
-    @include card($accent-color-lightish, false, true);
+    @include card($color-light, false, true);
 }

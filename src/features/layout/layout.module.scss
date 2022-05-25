@@ -1,7 +1,7 @@
 @use '../../shared.scss' as *;
 
 .layout {
-    max-width: $max-width;
+    max-width: $md-breakpoint;
     margin: auto;
 
     &>main {
@@ -9,9 +9,10 @@
     }
 
     &>nav {
-        @include box_shadow($accent-color-darker);
+        @include box_shadow($color-dark);
         @include background_noise();
-        background-color: $accent-color;
+
+        background-color: $color-primary;
         margin: 2rem 1rem 2rem;
 
         ul {
@@ -24,7 +25,7 @@
             list-style: none;
             min-height: 3rem;
 
-            @media only screen and (min-width: $mobile-breakpoint) {
+            @include isLargerThan($sm-breakpoint) {
                 flex-direction: row;
             }
         }
@@ -39,7 +40,7 @@
                 text-align: center;
                 cursor: pointer;
                 text-decoration: none;
-                color: $accent-color-darkest;
+                color: $color-darker;
                 font-size: 1.3rem;
                 height: 100%;
                 width: 100%;
@@ -55,7 +56,7 @@
             width: calc(100% - 6rem);
             margin: 0 3rem 1.7rem 3rem;
 
-            @media only screen and (min-width: $mobile-breakpoint) {
+            @include isLargerThan($sm-breakpoint) {
                 width: 100%;
                 margin: 0;
             }
@@ -67,86 +68,98 @@
                 font-size: 4.8rem;
                 letter-spacing: -0.05em;
 
+                @include isLargerThan($sm-breakpoint) {
+                    width: min-content;
+                    padding: 0 1rem;
+                }
+
                 &:before {
-                    @media only screen and (min-width: $small-mobile-breakpoint) {
+                    @include isLargerThan($xs-breakpoint) {
                         content: '{';
                         padding-right: 1rem;
                     }
                 }
                 &:after {
-                    @media only screen and (min-width: $small-mobile-breakpoint) {
+                    @include isLargerThan($xs-breakpoint) {
                         content: '}';
                         padding-left: 1rem;
                     }
                 }
                 &:before, &:after {
-                    @media only screen and (min-width: $small-mobile-breakpoint) {
+                    @include isLargerThan($xs-breakpoint) {
                         font-size: 2rem;
                         transform: translateY(-12px);
                         display: inline-block;
-                        color: $accent-color-tertiary;
+                        color: $color-tertiary;
                     }
                 }
-
-                @media only screen and (min-width: $mobile-breakpoint) {
-                    width: min-content;
-                    padding: 0 1rem;
-                }
             }
-
-            
         }
 
         li.navlink {
             position: relative;
             flex: 1;
 
+            @include isLargerThan($sm-breakpoint) {
+                flex: 0 1 140px;
+            }
+
             &>a {
                 @include interactive(
                     0.3rem,
-                    $accent-color-darker,
-                    $accent-color-darkest,
-                    $accent-color-darkest,
-                    $accent-color-lightest
+                    $color-dark,
+                    $color-darker,
+                    $color-darker,
+                    $color-lighter
                 );
-            }
-
-            @media only screen and (min-width: $mobile-breakpoint) {
-                flex: 0 1 140px;
             }
         }
 
         li.current {
             a {
-                color: $accent-color-lightest;
-                background: $accent-color-darker;
+                color: $color-lighter;
+                background: $color-dark;
                 text-decoration: underline;
             }
         }
             
         li:not(.current).navlink:not(:last-child):after {
-            @media only screen and (min-width: $mobile-breakpoint) {
+            @include isLargerThan($sm-breakpoint) {
                 content: '';
                 opacity: 0.2;
                 position: absolute;
                 height: 60%;
-                border-left: 2px solid $accent-color-darker;
+                border-left: 2px solid $color-dark;
                 width: 1px;
                 top: 20%;
                 right: -2px;
+            }
+        }
+        li:not(.current).navlink:not(:first-child):after {
+            @include isSmallerThan($sm-breakpoint) {
+                content: '';
+                opacity: 0.2;
+                position: absolute;
+                width: 50%;
+                border-bottom: 2px solid $color-dark;
+                height: 1px;
+                left: 25%;
+                top: -2px;
             }
         }
 
         /* Hiding and showing navbar at mobile sizes. */
         ul {
             max-height: 3rem;
-            @media only screen and (min-width: $mobile-breakpoint) {
+
+            @include isLargerThan($sm-breakpoint) {
                 max-height: inherit;
             }
         }
         li.navlink {
             display: none;
-            @media only screen and (min-width: $mobile-breakpoint) {
+
+            @include isLargerThan($sm-breakpoint) {
                 display: inherit;
             }
         }
@@ -174,20 +187,21 @@
 
     @include interactive(
         0.3rem,
-        $accent-color-darker,
-        $accent-color-darkest,
-        $accent-color-darker,
-        $accent-color-darkest
+        $color-dark,
+        $color-darker,
+        $color-dark,
+        $color-darker
     );
 
-    &>svg {
-        padding: 15%;
-        height: 70%;
-        width: 70%;
-        fill: $accent-color-tertiary;
+    @include isLargerThan($sm-breakpoint) {
+        display: none;
     }
 
-    @media only screen and (min-width: $mobile-breakpoint) {
-        display: none;
+    &>svg {
+        width: 90%;
+        height: 90%;
+        padding: 5%;
+        stroke: $color-tertiary;
+        stroke-width: 3px;
     }
 }
