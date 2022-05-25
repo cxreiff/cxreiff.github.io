@@ -1,27 +1,26 @@
-@use "sass:math";
 
-$max-width: 1200px;
 $font-family: montserrat, Trebuchet MS, Verdana, Geneva, sans-serif;
-$mobile-breakpoint: 768px;
-$small-mobile-breakpoint: 380px;
-$a4-ratio: math.div(70, 99);
-
 $roundness: 0.3rem;
 
-$primary-color: #3D4D60;
-$secondary-color: #2D3D50;
-$tertiary-color: #98BEC8;
+$color-lighter: #EEEEEE;
+$color-light: #EEDDDD;
+$color-primary: #DDCCCC;
+$color-secondary: #AA9999;
+$color-tertiary: #AA7777;
+$color-dark: #3D3333;
+$color-darker: #221111;
 
-$accent-color-lightest: #FFFFFF;
-$accent-color-lighter: #EEEEEE;
-$accent-color-lightish: #EEDDDD;
-$accent-color-light: #DDDDDD;
-$accent-color: #DDCCCC;
-$accent-color-secondary: #AAAAAA;
-$accent-color-tertiary: #AA7777;
-$accent-color-dark: #AA9999;
-$accent-color-darker: #3D3333;
-$accent-color-darkest: #221111;
+$md-breakpoint: 1200px;
+$sm-breakpoint: 768px;
+$xs-breakpoint: 380px;
+
+@mixin isLargerThan($breakpoint) {
+    @media only screen and (min-width: $breakpoint) { @content; }
+}
+
+@mixin isSmallerThan($breakpoint) {
+    @media only screen and (max-width: $breakpoint) { @content; }
+}
 
 @mixin text_spacing() {
     padding: 0.5rem 1rem;
@@ -34,7 +33,7 @@ $accent-color-darkest: #221111;
 }
 
 @mixin drop_shadow() {
-    box-shadow: rgba($accent-color-darker, 0.5) 4px 4px 5px;
+    box-shadow: rgba($color-dark, 0.5) 4px 4px 5px;
 }
 
 @mixin card($background, $noise, $shadow) {
@@ -74,7 +73,7 @@ $accent-color-darkest: #221111;
             bottom: 0;
             left: 0;
             opacity: 0.6;
-            border-radius: $roundness;
+            border-radius: 0;
             background: $active-bg;
             color: $active-color;
         }
