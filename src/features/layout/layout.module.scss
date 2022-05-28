@@ -13,7 +13,7 @@
         @include background_noise();
 
         background-color: $color-primary;
-        margin: 2rem 1rem 2rem;
+        margin: 2rem 1rem;
 
         ul {
             position: relative;
@@ -73,24 +73,32 @@
                     padding: 0 1rem;
                 }
 
-                &:before {
-                    @include isLargerThan($xs-breakpoint) {
+                @include isLargerThan($xs-breakpoint) {
+                    &:before {
                         content: '{';
                         padding-right: 1rem;
                     }
-                }
-                &:after {
-                    @include isLargerThan($xs-breakpoint) {
+                    &:after {
                         content: '}';
                         padding-left: 1rem;
                     }
-                }
-                &:before, &:after {
-                    @include isLargerThan($xs-breakpoint) {
+                    &:before, &:after {
                         font-size: 2rem;
                         transform: translateY(-12px);
                         display: inline-block;
                         color: $color-tertiary;
+                        transition: transform 0.1s ease-in, text-shadow 0.1s ease-in;
+                    }
+                    @media (hover: hover) {
+                        &:hover:before, &:hover:after {
+                            transform: translateY(-12px) scale(1.1);
+                        }
+                        &:hover:before {
+                            text-shadow: -1px 0px 0 $color-tertiary;
+                        }
+                        &:hover:after {
+                            text-shadow: 1px 0px 0 $color-tertiary;
+                        }
                     }
                 }
             }

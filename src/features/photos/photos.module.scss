@@ -15,7 +15,11 @@
 }
 
 .tile {
-  @include card($color-dark, true, true);
+  @include card($color-dark, false, true);
   line-height: 0;
   font-size: 0;
+  
+  img {
+    @include hover_scale(1.04);
+  }
 }

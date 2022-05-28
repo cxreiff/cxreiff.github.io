@@ -6,7 +6,7 @@
     grid-template-columns: 1fr;
     
     @include isLargerThan($sm-breakpoint) {
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 5fr 8fr;
     }
 }
 
@@ -21,9 +21,20 @@
         padding: 1rem 2rem;
         border-right: 3px dashed $color-secondary;
     }
+    
+    br ~ p {
+        @include fadeup();
+
+        &:last-child {
+            animation-delay: 250ms;
+        }
+    }
+
+    h2 {
+        color: $color-dark;
+    }
 
     a {
-        color: $color-secondary;
-        text-underline-offset: 2px;
+        @include interactive_secondary($color-tertiary, $color-light);
     }
 }
