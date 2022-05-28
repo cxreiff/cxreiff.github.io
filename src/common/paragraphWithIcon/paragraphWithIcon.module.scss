@@ -1,0 +1,15 @@
+@use '../../shared.scss' as *;
+
+.paragraph {
+    display: flex;
+
+    .icon {
+        color: $color-secondary;
+        margin: 0 0.6rem 0 0;
+        align-self: center;
+    }
+
+    .content {
+        flex: 1;
+    }
+}
