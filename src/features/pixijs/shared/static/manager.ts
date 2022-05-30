@@ -36,7 +36,7 @@ export class Manager {
 
         Manager.app = new Application({
             view: viewElement,
-            backgroundColor: 0xEEDDDD,
+            transparent: true,
             antialias: true,
             autoDensity: true,
             resolution: window.devicePixelRatio,

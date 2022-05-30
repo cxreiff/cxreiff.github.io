@@ -1,26 +1,17 @@
-@use './themes.scss' as *;
 
 $font-family: montserrat, Trebuchet MS, Verdana, Geneva, sans-serif;
 $roundness: 0.3rem;
 $cubic-curve: cubic-bezier(0.45, 0.05, 0.55, 0.95);
 
-$color-lighter: #EEEEEE;
-$color-light: #EEDDDD;
-$color-primary: #DDCCCC;
-$color-secondary: #AA9999;
-$color-tertiary: #AA7777;
-$color-dark: #3D3333;
-$color-darker: #221111;
-
 $md-breakpoint: 1200px;
 $sm-breakpoint: 768px;
 $xs-breakpoint: 380px;
 
-@mixin isLargerThan($breakpoint) {
+@mixin is_larger_than($breakpoint) {
     @media only screen and (min-width: $breakpoint) { @content; }
 }
 
-@mixin isSmallerThan($breakpoint) {
+@mixin is_smaller_than($breakpoint) {
     @media only screen and (max-width: $breakpoint) { @content; }
 }
 
@@ -34,13 +25,13 @@ $xs-breakpoint: 380px;
     box-shadow: $color 3px 3px, rgba($color, 0.5) 4px 4px 5px;
 }
 
-@mixin drop_shadow() {
-    box-shadow: rgba($color-dark, 0.5) 4px 4px 5px;
+@mixin drop_shadow($color) {
+    box-shadow: rgba($color, 0.5) 4px 4px 5px;
 }
 
-@mixin card($background, $noise, $shadow) {
+@mixin card($background, $shadow, $noise: false) {
     @if ($noise) { @include background_noise(); }
-    @if ($shadow) { @include drop_shadow(); }
+    @if ($shadow) { @include drop_shadow($shadow); }
     background-color: $background;
     border-radius: $roundness;
     overflow: hidden;
@@ -56,7 +47,7 @@ $xs-breakpoint: 380px;
     }
 }
 
-@mixin interactive($gutter, $hover-bg, $hover-color, $active-bg, $active-color) {
+@mixin interactive($gutter, $hover-radius, $hover-bg, $hover-color, $active-bg, $active-color) {
     cursor: pointer;
     
     @media (hover: hover) {
@@ -70,10 +61,11 @@ $xs-breakpoint: 380px;
             right: $gutter;
             bottom: $gutter;
             left: $gutter;
-            border-radius: max(0.2rem, $roundness);
+            border-radius: max(0.2rem, $hover-radius);
             background: $hover-bg;
             color: $hover-color;
             transition: opacity 0.15s $cubic-curve;
+            overflow: hidden;
         }
 
         &:hover::after {
@@ -81,11 +73,12 @@ $xs-breakpoint: 380px;
         }
 
         &:active::after {
+            transition: none;
             width: 100%;
             height: 100%;
             inset: 0;
             opacity: 0.6;
-            border-radius: 0;
+            border-radius: inherit;
             background: $active-bg;
             color: $active-color;
         }
