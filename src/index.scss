@@ -1,7 +1,7 @@
 @use './shared.scss' as *;
 
 html {
-    @include isLargerThan($md-breakpoint) {
+    @include is_larger_than($md-breakpoint) {
         margin-left: calc(100vw - 100%);
         margin-right: 0;
     }
@@ -24,6 +24,10 @@ body.font_failed {
 
 p {
     line-height: 1.5rem;
+
+    @include is_larger_than($sm-breakpoint) {
+        text-align: justify;
+    }
 }
 
 @font-face {

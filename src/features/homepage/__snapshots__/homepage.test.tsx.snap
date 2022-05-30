@@ -24,6 +24,19 @@ exports[`should render 1`] = `
         <h2>
           About Me
         </h2>
+        <span
+          class="theme_buttons"
+        >
+          <span
+            class="reddish_button current_theme"
+          />
+          <span
+            class="greenish_button"
+          />
+          <span
+            class="bluish_button"
+          />
+        </span>
       </header>
       <p>
         Hello! I am a software engineer specializing in front-end development. I have experience building clients with tools like TypeScript and React, and have expertise across the full stack as well.

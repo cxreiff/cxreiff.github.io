@@ -1,4 +1,5 @@
 @use '../../shared.scss' as *;
+@use '../../themed.scss' as *;
 
 .layout {
     max-width: $md-breakpoint;
@@ -9,11 +10,14 @@
     }
 
     &>nav {
-        @include box_shadow($color-dark);
-        @include background_noise();
-
-        background-color: $color-primary;
         margin: 2rem 1rem;
+        
+        @include themed(0.2s) {
+            @include box_shadow(t($color-dark));
+            background-color: t($color-primary);
+        }
+        
+        @include background_noise();
 
         ul {
             position: relative;
@@ -25,7 +29,7 @@
             list-style: none;
             min-height: 3rem;
 
-            @include isLargerThan($sm-breakpoint) {
+            @include is_larger_than($sm-breakpoint) {
                 flex-direction: row;
             }
         }
@@ -40,13 +44,16 @@
                 text-align: center;
                 cursor: pointer;
                 text-decoration: none;
-                color: $color-darker;
                 font-size: 1.3rem;
                 height: 100%;
                 width: 100%;
                 vertical-align: middle;
                 line-height: 3rem;
                 letter-spacing: -0.02em;
+                
+                @include themed(0.2s) {
+                    color: t($color-darker);
+                }
             }
         }
 
@@ -56,7 +63,7 @@
             width: calc(100% - 6rem);
             margin: 0 3rem 1.7rem 3rem;
 
-            @include isLargerThan($sm-breakpoint) {
+            @include is_larger_than($sm-breakpoint) {
                 width: 100%;
                 margin: 0;
             }
@@ -68,12 +75,12 @@
                 font-size: 4.8rem;
                 letter-spacing: -0.05em;
 
-                @include isLargerThan($sm-breakpoint) {
+                @include is_larger_than($sm-breakpoint) {
                     width: min-content;
                     padding: 0 1rem;
                 }
 
-                @include isLargerThan($xs-breakpoint) {
+                @include is_larger_than($xs-breakpoint) {
                     &:before {
                         content: '{';
                         padding-right: 1rem;
@@ -86,18 +93,25 @@
                         font-size: 2rem;
                         transform: translateY(-12px);
                         display: inline-block;
-                        color: $color-tertiary;
-                        transition: transform 0.1s ease-in, text-shadow 0.1s ease-in;
+                        transition: transform 0.1s ease-out, text-shadow 0.1s ease-out;
+                        
+                        @include themed(0.2s) {
+                            color: t($color-tertiary);
+                        }
                     }
                     @media (hover: hover) {
                         &:hover:before, &:hover:after {
                             transform: translateY(-12px) scale(1.1);
                         }
                         &:hover:before {
-                            text-shadow: -1px 0px 0 $color-tertiary;
+                            @include themed(0.2s) {
+                                text-shadow: -1px 0px 0 t($color-tertiary);
+                            }
                         }
                         &:hover:after {
-                            text-shadow: 1px 0px 0 $color-tertiary;
+                            @include themed(0.2s) {
+                                text-shadow: 1px 0px 0 t($color-tertiary);
+                            }
                         }
                     }
                 }
@@ -108,51 +122,63 @@
             position: relative;
             flex: 1;
 
-            @include isLargerThan($sm-breakpoint) {
+            @include is_larger_than($sm-breakpoint) {
                 flex: 0 1 140px;
             }
 
             &>a {
-                @include interactive(
-                    0.3rem,
-                    $color-dark,
-                    $color-darker,
-                    $color-darker,
-                    $color-lighter
-                );
+                @include themed() {
+                    @include interactive(
+                        0.3rem,
+                        $roundness,
+                        t($color-dark),
+                        t($color-darker),
+                        t($color-darker),
+                        t($color-lighter)
+                    );
+                }
             }
         }
 
         li.current {
             a {
-                color: $color-lighter;
-                background: $color-dark;
                 text-decoration: underline;
+                
+                @include themed(0.2s) {
+                    color: t($color-lighter);
+                    background: t($color-dark);
+                }
             }
         }
             
         li:not(.current).navlink:not(:last-child):after {
-            @include isLargerThan($sm-breakpoint) {
+            @include is_larger_than($sm-breakpoint) {
                 content: '';
                 opacity: 0.2;
                 position: absolute;
                 height: 60%;
-                border-left: 2px solid $color-dark;
                 width: 1px;
                 top: 20%;
                 right: -2px;
+                
+                @include themed(0.2s) {
+                    border-left: 2px solid t($color-dark);
+                }
             }
         }
         li:not(.current).navlink:not(:first-child):after {
-            @include isSmallerThan($sm-breakpoint) {
+            @include is_smaller_than($sm-breakpoint) {
                 content: '';
                 opacity: 0.2;
                 position: absolute;
                 width: 50%;
-                border-bottom: 2px solid $color-dark;
                 height: 1px;
                 left: 25%;
                 top: -2px;
+                
+                @include themed(0.2s) {
+                    border-bottom: 2px solid t($color-dark);
+                }
             }
         }
 
@@ -160,14 +186,14 @@
         ul {
             max-height: 3rem;
 
-            @include isLargerThan($sm-breakpoint) {
+            @include is_larger_than($sm-breakpoint) {
                 max-height: inherit;
             }
         }
         li.navlink {
             display: none;
 
-            @include isLargerThan($sm-breakpoint) {
+            @include is_larger_than($sm-breakpoint) {
                 display: inherit;
             }
         }
@@ -193,23 +219,28 @@
     z-index: 1;
     cursor: pointer;
 
-    @include interactive(
-        0.3rem,
-        $color-dark,
-        $color-darker,
-        $color-dark,
-        $color-darker
-    );
+    @include themed() {
+        @include interactive(
+            0.3rem,
+            $roundness,
+            t($color-dark),
+            t($color-darker),
+            t($color-dark),
+            t($color-darker)
+        );
+    }
 
-    @include isLargerThan($sm-breakpoint) {
+    @include is_larger_than($sm-breakpoint) {
         display: none;
     }
 
     &>svg {
+        @include themed(0.2s) {
+            stroke: t($color-tertiary);
+        }
         width: 90%;
         height: 90%;
         padding: 5%;
-        stroke: $color-tertiary;
         stroke-width: 3px;
     }
 }

@@ -11,6 +11,7 @@ import styles from './photos.module.scss'
 const Photos: FC = () => {
 
     const dispatch = useAppDispatch()
+    const dispatchFetchPhotos = () => { void dispatch(fetchPhotos()) }
     const photoSets = useAppSelector((state) => state.photos.photoSets)
 
     const [numberOfPhotosVisible, setNumberOfPhotosVisible] = useState(9)
@@ -25,7 +26,7 @@ const Photos: FC = () => {
         onLoadMore: () => setNumberOfPhotosVisible(numberOfPhotosVisible + 3),
     })
 
-    useEffect(() => { void dispatch(fetchPhotos()) }, [dispatch])
+    useEffect(() => dispatchFetchPhotos(), [dispatch])
 
     return (
         <section className={styles.photos}>

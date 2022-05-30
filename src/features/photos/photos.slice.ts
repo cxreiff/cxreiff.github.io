@@ -50,7 +50,7 @@ export const fetchPhotos = createAsyncThunk<PhotoSet[]>(
                 PHOTO_SIZE_PREFIXES.LARGE
             ),
         }))
-    }
+    },
 )
 
 const photosSlice = createSlice({

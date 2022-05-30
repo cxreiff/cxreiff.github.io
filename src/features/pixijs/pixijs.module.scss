@@ -1,21 +1,29 @@
 @use '../../shared.scss' as *;
+@use '../../themed.scss' as *;
 
 .pixijs {
-    @include card($color-light, false, true);
     line-height: 0;
     min-width: 0;
+    
+    @include themed(0.2) {
+        @include card(t($color-light), t($color-dark), true);
+    }
 
     &:fullscreen,
     &.fullscreen_fallback {
-        @include card($color-dark, true, true);
-        border-radius: 0;
+        @include themed(0.2) {
+            @include card(t($color-dark), t($color-dark), true);
+        }
+        
+        border-radius: 0 !important;
+        
         &>canvas {
-            border-radius: 0;
+            border-radius: 0 !important;
         }
     }
     
     &.fullscreen_fallback {
-        position: fixed;
+        position: fixed !important;
         inset: 0;
         z-index: 1;
     }
@@ -23,11 +31,14 @@
     &>canvas {
         width: 100% !important;
         border-radius: $roundness;
+
+        @include themed(0.2s) {
+            background: t($color-light);
+        }
     }
 }
 
 .controls {
-    @include card($color-light, false, true);
     margin-top: 2rem;
     text-align: center;
     -webkit-touch-callout: none;
@@ -36,6 +47,10 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    
+    @include themed(0.2s) {
+        @include card(t($color-light), t($color-dark));
+    }
 
     &>button {
         margin: 1rem;

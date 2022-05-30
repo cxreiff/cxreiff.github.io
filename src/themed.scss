@@ -1,0 +1,97 @@
+
+$color-lighter: 'color-lighter';
+$color-light: 'color-light';
+$color-primary: 'color-primary';
+$color-secondary: 'color-secondary';
+$color-tertiary: 'color-tertiary';
+$color-dark: 'color-dark';
+$color-darker: 'color-darker';
+
+$themes: (
+   reddish: (
+        color-lighter: #EEEEEE,
+        color-light: #EEDDDD,
+        color-primary: #DDCCCC,
+        color-secondary: #AA9999,
+        color-tertiary: #AA7777,
+        color-dark: #3D3333,
+        color-darker: #221111,
+        animation-fade-pulse: animation-fade-pulse_reddish,
+    ),
+    bluish: (
+        color-lighter: #EEEEEE,
+        color-light: #DDDDEE,
+        color-primary: #CCCCDD,
+        color-secondary: #9999AA,
+        color-tertiary: #7777AA,
+        color-dark: #33333D,
+        color-darker: #111122,
+        animation-fade-pulse: animation-fade-pulse_bluish,
+    ),
+    greenish: (
+        color-lighter: #EEEEEE,
+        color-light: #DDEEDD,
+        color-primary: #CCDDCC,
+        color-secondary: #99AA99,
+        color-tertiary: #77AA77,
+        color-dark: #333D33,
+        color-darker: #112211,
+        animation-fade-pulse: animation-fade-pulse_greenish,
+    ),
+);
+
+@mixin themed($duration: null) {
+    @each $theme, $map in $themes {
+        :global(.theme--#{$theme}) & {
+            $theme-map: () !global;
+            @each $key, $submap in $map {
+                $value: map-get(map-get($themes, $theme), '#{$key}');
+                $theme-map: map-merge($theme-map, ($key: $value)) !global;
+            }
+            @content;
+            $theme-map: null !global;
+        }
+        @if ($duration) {
+            :global(.theme--transition) & {
+                @include color_transitions($duration);
+            }
+        }
+    }
+}
+
+@function t($key) {
+    @return map-get($theme-map, $key);
+}
+
+@function value_by_theme($theme, $key) {
+    @return map-get(map-get($themes, $theme), '#{$key}');
+}
+
+@each $theme, $map in $themes {
+    @keyframes animation-fade-pulse_#{$theme} {
+        0% {
+            opacity: 0.3;
+            background: map-get($map, $color-secondary);
+        }
+
+        40% {
+            opacity: 1;
+            background: map-get($map, $color-tertiary);
+        }
+
+        80% {
+            opacity: 0.3;
+            background: map-get($map, $color-secondary);
+        }
+    }
+}
+
+@mixin color_transitions($duration: 0) {
+    transition: color 0.2s ease-out,
+        background 0.2s ease-out,
+        background-color 0.2s ease-out,
+        border-color 0.2s ease-out,
+        box-shadow 0.2s ease-out,
+        text-shadow 0.2s ease-out,
+        stroke 0.2s ease-out;
+}
