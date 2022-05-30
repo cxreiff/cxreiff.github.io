@@ -5,7 +5,7 @@
   gap: 1rem 1rem;
   grid-template-columns: 1fr;
   
-  @include isLargerThan($sm-breakpoint) {
+  @include is_larger_than($sm-breakpoint) {
     grid-template-columns: 1fr 1fr;
   }
 }

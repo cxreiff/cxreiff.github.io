@@ -1,25 +1,31 @@
 @use '../../shared.scss' as *;
+@use '../../themed.scss' as *;
 
 .photos {
-  display: grid;
-  gap: 1rem 1rem;
-  grid-template-columns: 1fr;
-  
-  @include isLargerThan($sm-breakpoint) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+    display: grid;
+    gap: 1rem 1rem;
+    grid-template-columns: 1fr;
+    
+    @include is_larger_than($sm-breakpoint) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
 
 .photo {
-  background-color: $color-darker;
+    @include themed(0.2s) {
+        background-color: t($color-darker);
+    }
 }
 
 .tile {
-  @include card($color-dark, false, true);
-  line-height: 0;
-  font-size: 0;
-  
-  img {
-    @include hover_scale(1.04);
-  }
+    line-height: 0;
+    font-size: 0;
+    
+    @include themed(0.2s) {
+        @include card(t($color-dark), t($color-dark));
+    }
+    
+    img {
+        @include hover_scale(1.04);
+    }
 }

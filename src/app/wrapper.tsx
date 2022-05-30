@@ -4,7 +4,7 @@ import { HashRouter } from 'react-router-dom'
 
 import store from './store'
 
-export const Wrapper: FC = ({children}) => {
+export const Wrapper: FC = ({ children }) => {
   return (
     <Provider store={store}>
       <HashRouter>

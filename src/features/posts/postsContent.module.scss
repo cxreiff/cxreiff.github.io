@@ -1,10 +1,14 @@
 @use '../../shared.scss' as *;
+@use '../../themed.scss' as *;
 
 .posts_content {
     @include text_spacing();
 }
 
 .posts_content_code {
-    @include card(null, false, true);
+    @include themed() {
+        @include card(null, t($color-dark));
+    }
+    
     @include text_spacing();
 }

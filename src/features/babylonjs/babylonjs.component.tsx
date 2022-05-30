@@ -12,7 +12,7 @@ const Babylonjs: FC = () => {
     const onSceneReady = (scene: Scene) => {
 
         // Set background color
-        scene.clearColor = Color4.FromHexString('#EEDDDDFF')
+        scene.clearColor = Color4.FromHexString('#00000000')
 
         // This creates and positions a free camera (non-mesh)
         const camera = new FreeCamera('camera1', new Vector3(0, 5, -8), scene);

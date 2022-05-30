@@ -1,12 +1,16 @@
 @use '../../shared.scss' as *;
+@use '../../themed.scss' as *;
 
 .paragraph {
     display: flex;
 
     .icon {
-        color: $color-secondary;
         margin: 0 0.6rem 0 0;
         align-self: center;
+        
+        @include themed(0.2s) {
+            color: t($color-secondary);
+        }
     }
 
     .content {
