@@ -6,10 +6,7 @@
     flex-wrap: wrap;
     margin-bottom: 1rem;
     
-    @include themed() {
-        @include card(t($color-lighter), t($color-dark), true);
-    }
-    
+    @include card($color-lighter, true, true);
     @include text_spacing();
 
     div {
@@ -37,21 +34,19 @@
         margin-top: 0;
         padding-top: 1rem;
         
-        @include themed(0.2s) {
+        @include themed(true) {
             border-top: 2px solid t($color-secondary);
         }
     }
 }
 
 .card_clickable {
-    @include themed() {
-        @include interactive(
-            0.4rem,
-            $roundness,
-            t($color-dark),
-            t($color-darker),
-            t($color-dark),
-            t($color-darker)
-        );
-    }
+    @include interactive(
+        0.4rem,
+        $roundness,
+        $color-dark,
+        $color-darker,
+        $color-dark,
+        $color-darker,
+    );
 }

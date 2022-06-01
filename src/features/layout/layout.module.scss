@@ -12,12 +12,12 @@
     &>nav {
         margin: 2rem 1rem;
         
-        @include themed(0.2s) {
-            @include box_shadow(t($color-dark));
+        @include box_shadow();
+        @include background_noise();
+
+        @include themed(true) {
             background-color: t($color-primary);
         }
-        
-        @include background_noise();
 
         ul {
             position: relative;
@@ -31,6 +31,7 @@
 
             @include is_larger_than($sm-breakpoint) {
                 flex-direction: row;
+                margin-right: 3.1rem;
             }
         }
 
@@ -51,7 +52,7 @@
                 line-height: 3rem;
                 letter-spacing: -0.02em;
                 
-                @include themed(0.2s) {
+                @include themed(true) {
                     color: t($color-darker);
                 }
             }
@@ -78,9 +79,7 @@
                 @include is_larger_than($sm-breakpoint) {
                     width: min-content;
                     padding: 0 1rem;
-                }
-
-                @include is_larger_than($xs-breakpoint) {
+                
                     &:before {
                         content: '{';
                         padding-right: 1rem;
@@ -95,7 +94,7 @@
                         display: inline-block;
                         transition: transform 0.1s ease-out, text-shadow 0.1s ease-out;
                         
-                        @include themed(0.2s) {
+                        @include themed(true) {
                             color: t($color-tertiary);
                         }
                     }
@@ -104,12 +103,12 @@
                             transform: translateY(-12px) scale(1.1);
                         }
                         &:hover:before {
-                            @include themed(0.2s) {
+                            @include themed(true) {
                                 text-shadow: -1px 0px 0 t($color-tertiary);
                             }
                         }
                         &:hover:after {
-                            @include themed(0.2s) {
+                            @include themed(true) {
                                 text-shadow: 1px 0px 0 t($color-tertiary);
                             }
                         }
@@ -127,16 +126,14 @@
             }
 
             &>a {
-                @include themed() {
-                    @include interactive(
-                        0.3rem,
-                        $roundness,
-                        t($color-dark),
-                        t($color-darker),
-                        t($color-darker),
-                        t($color-lighter)
-                    );
-                }
+                @include interactive(
+                    0.3rem,
+                    $roundness,
+                    $color-dark,
+                    $color-darker,
+                    $color-darker,
+                    $color-lighter,
+                );
             }
         }
 
@@ -144,15 +141,15 @@
             a {
                 text-decoration: underline;
                 
-                @include themed(0.2s) {
+                @include themed(true) {
                     color: t($color-lighter);
                     background: t($color-dark);
                 }
             }
         }
             
-        li:not(.current).navlink:not(:last-child):after {
-            @include is_larger_than($sm-breakpoint) {
+        @include is_larger_than($sm-breakpoint) {
+            li:not(.current).navlink:after {
                 content: '';
                 opacity: 0.2;
                 position: absolute;
@@ -161,13 +158,13 @@
                 top: 20%;
                 right: -2px;
                 
-                @include themed(0.2s) {
+                @include themed(true) {
                     border-left: 2px solid t($color-dark);
                 }
             }
         }
-        li:not(.current).navlink:not(:first-child):after {
-            @include is_smaller_than($sm-breakpoint) {
+        @include is_smaller_than($sm-breakpoint) {
+            li:not(.current).navlink:not(:first-child):after {
                 content: '';
                 opacity: 0.2;
                 position: absolute;
@@ -176,7 +173,7 @@
                 left: 25%;
                 top: -2px;
                 
-                @include themed(0.2s) {
+                @include themed(true) {
                     border-bottom: 2px solid t($color-dark);
                 }
             }
@@ -210,32 +207,29 @@
 }
 
 .expand_button {
+    position: absolute;
     height: 3rem;
     width: 3rem;
     padding: 0.5rem;
-    position: absolute;
     border: none;
     background-color: initial;
     z-index: 1;
-    cursor: pointer;
 
-    @include themed() {
-        @include interactive(
-            0.3rem,
-            $roundness,
-            t($color-dark),
-            t($color-darker),
-            t($color-dark),
-            t($color-darker)
-        );
-    }
+    @include interactive(
+        0.3rem,
+        $roundness,
+        $color-dark,
+        $color-darker,
+        $color-dark,
+        $color-darker,
+    );
 
     @include is_larger_than($sm-breakpoint) {
         display: none;
     }
 
     &>svg {
-        @include themed(0.2s) {
+        @include themed(true) {
             stroke: t($color-tertiary);
         }
         width: 90%;

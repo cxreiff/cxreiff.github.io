@@ -12,8 +12,8 @@
 }
 
 .photo {
-    @include themed(0.2s) {
-        background-color: t($color-darker);
+    @include themed(true) {
+        background-color: t($color-background-container);
     }
 }
 
@@ -21,9 +21,7 @@
     line-height: 0;
     font-size: 0;
     
-    @include themed(0.2s) {
-        @include card(t($color-dark), t($color-dark));
-    }
+    @include card($color-background-container, true);
     
     img {
         @include hover_scale(1.04);

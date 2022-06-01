@@ -1,12 +1,10 @@
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
 import { Github, FileText } from 'lucide-preact'
-import cn from 'classnames'
 
-import { useAppSelector, useAppDispatch } from '~/src/app/store'
-import { setTheme, Theme } from '~/src/features/theme/theme.slice'
 import { Image } from '~/src/common/image/image.component'
 import { ParagraphWithIcon } from '~/src/common/paragraphWithIcon/paragraphWithIcon.component'
+import { ThemeControl } from '~/src/features/theme/themeControl.component'
 import {
     IMAGE_URLS,
     RESUME_URL,
@@ -17,10 +15,6 @@ import {
 import styles from './homepage.module.scss'
 
 const Homepage: FC = () => {
-
-    const dispatch = useAppDispatch()
-    const dispatchSetTheme = (theme: Theme) => void dispatch(setTheme(theme))
-    const theme = useAppSelector((state) => state.theme.theme)
 
     return (
         <section className={styles.homepage}>
@@ -35,26 +29,7 @@ const Homepage: FC = () => {
                     <h2>
                         About Me
                     </h2>
-                    <span className={styles.theme_buttons}>
-                        <span
-                            className={cn(styles.reddish_button, {
-                                [styles.current_theme]: theme === Theme.REDDISH,
-                            })}
-                            onClick={() => dispatchSetTheme(Theme.REDDISH)}
-                        />
-                        <span
-                            className={cn(styles.greenish_button, {
-                                [styles.current_theme]: theme === Theme.GREENISH,
-                            })}
-                            onClick={() => dispatchSetTheme(Theme.GREENISH)}
-                        />
-                        <span
-                            className={cn(styles.bluish_button, {
-                                [styles.current_theme]: theme === Theme.BLUISH,
-                            })}
-                            onClick={() => dispatchSetTheme(Theme.BLUISH)}
-                        />
-                    </span>
+                    <ThemeControl className={styles.theme_buttons} />
                 </header>
                 <p>
                     Hello! I am a software engineer specializing in front-end development. I have experience

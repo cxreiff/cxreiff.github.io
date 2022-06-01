@@ -1,11 +1,18 @@
 @use '../../shared.scss' as *;
+@use '../../themed.scss' as *;
 
 .projects {
-  display: grid;
-  gap: 1rem 1rem;
-  grid-template-columns: 1fr;
-  
-  @include is_larger_than($sm-breakpoint) {
-    grid-template-columns: 1fr 1fr;
-  }
+    display: grid;
+    gap: 1rem 1rem;
+    grid-template-columns: 1fr;
+
+    @include is_larger_than($sm-breakpoint) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    img {
+        @include themed(true) {
+            filter: brightness(t($svg-brightness));
+        }
+    }
 }

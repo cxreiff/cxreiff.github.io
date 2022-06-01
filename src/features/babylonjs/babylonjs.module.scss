@@ -2,7 +2,5 @@
 @use '../../themed.scss' as *;
 
 .babylonjs {
-    @include themed(0.2s) {
-        @include card(t($color-light), t($color-dark));
-    }
+    @include card($color-light, true);
 }
