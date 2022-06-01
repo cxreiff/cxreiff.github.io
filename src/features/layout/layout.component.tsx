@@ -4,6 +4,7 @@ import cn from 'classnames'
 import { Menu } from 'lucide-preact'
 
 import { RouteDefinition } from '~/src/app/routing'
+import { ThemeToggle } from '~/src/features/theme/themeToggle.component'
 import styles from './layout.module.scss'
 
 type LayoutProps = {
@@ -52,6 +53,7 @@ export const Layout: FC<LayoutProps> = ({ children, routes }) => {
                         </li>
                     ))}
                 </ul>
+                <ThemeToggle />
             </nav>
             <main>
                 {children}

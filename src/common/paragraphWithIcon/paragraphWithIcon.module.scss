@@ -8,7 +8,7 @@
         margin: 0 0.6rem 0 0;
         align-self: center;
         
-        @include themed(0.2s) {
+        @include themed(true) {
             color: t($color-secondary);
         }
     }

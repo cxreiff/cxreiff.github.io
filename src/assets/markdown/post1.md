@@ -31,7 +31,7 @@ I have used Redux for a number of professional projects, and have always been pr
 
 - <https://jestjs.io/>
 
-I chose to use Jest due to my own existing familiarity with Jest, as well as the robust amount of documentation. However, due to repeated headaches getting Jest to play well with other tools, and [complications around ES Modules](https://github.com/facebook/jest/issues/9430) the future of which is unclear, it is on my list to look into alternatives to migrate to such as [Vitest](https://vitest.dev/). Currently Jest is working for my site, but it requires using Babel (which I'm using purely for Jest, not during the build process) and keeping an awkward list of excluded modules in Jest's 'transformIgnorePatterns' setting.
+I chose to use Jest due to my own existing familiarity with Jest, as well as the robust amount of documentation. However, due to repeated headaches getting Jest to play well with other tools, and [complications](https://github.com/facebook/jest/issues/9430) around ES Modules the future of which is unclear, it is on my list to look into alternatives to migrate to such as [Vitest](https://vitest.dev/). Currently Jest is working for my site, but it requires using Babel (which I'm using purely for Jest, not during the build process) and keeping an awkward list of excluded modules in Jest's 'transformIgnorePatterns' setting.
 
 ------
 ## husky & lint-staged

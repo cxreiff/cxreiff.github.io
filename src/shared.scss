@@ -1,18 +1,19 @@
+@use './themed.scss' as *;
 
 $font-family: montserrat, Trebuchet MS, Verdana, Geneva, sans-serif;
-$roundness: 0.3rem;
+$roundness: 0.25rem;
 $cubic-curve: cubic-bezier(0.45, 0.05, 0.55, 0.95);
 
 $md-breakpoint: 1200px;
 $sm-breakpoint: 768px;
-$xs-breakpoint: 380px;
+$xs-breakpoint: 365px;
 
 @mixin is_larger_than($breakpoint) {
     @media only screen and (min-width: $breakpoint) { @content; }
 }
 
 @mixin is_smaller_than($breakpoint) {
-    @media only screen and (max-width: $breakpoint) { @content; }
+    @media only screen and (max-width: calc($breakpoint - 1px)) { @content; }
 }
 
 @mixin text_spacing() {
@@ -20,21 +21,28 @@ $xs-breakpoint: 380px;
     margin-bottom: 1rem;
 }
 
-@mixin box_shadow($color) {
-    border: 1px solid $color;
-    box-shadow: $color 3px 3px, rgba($color, 0.5) 4px 4px 5px;
+@mixin box_shadow() {
+    @include themed(true) {
+        box-shadow: t($default-box-shadow);
+    }
 }
 
-@mixin drop_shadow($color) {
-    box-shadow: rgba($color, 0.5) 4px 4px 5px;
+@mixin drop_shadow() {
+    @include themed(true) {
+        box-shadow: t($default-drop-shadow);
+    }
 }
 
-@mixin card($background, $shadow, $noise: false) {
-    @if ($noise) { @include background_noise(); }
-    @if ($shadow) { @include drop_shadow($shadow); }
-    background-color: $background;
+@mixin card($background, $shadow: false, $noise: false) {
     border-radius: $roundness;
     overflow: hidden;
+
+    @if ($noise) { @include background_noise(); }
+    @if ($shadow) { @include drop_shadow(); }
+
+    @include themed(true) {
+        background-color: t($background);
+    }
 }
 
 @mixin hover_scale($ratio) {
@@ -62,10 +70,13 @@ $xs-breakpoint: 380px;
             bottom: $gutter;
             left: $gutter;
             border-radius: max(0.2rem, $hover-radius);
-            background: $hover-bg;
-            color: $hover-color;
             transition: opacity 0.15s $cubic-curve;
             overflow: hidden;
+            
+            @include themed(true) {
+                background: t($hover-bg);
+                color: t($hover-color);
+            }
         }
 
         &:hover::after {
@@ -79,27 +90,37 @@ $xs-breakpoint: 380px;
             inset: 0;
             opacity: 0.6;
             border-radius: inherit;
-            background: $active-bg;
-            color: $active-color;
+            
+            @include themed(true) {
+                background: t($active-bg);
+                color: t($active-color);
+            }
         }
     }
 }
 
 @mixin interactive_secondary($text-color, $highlight-color) {
     position: relative;
-    color: $text-color;
     text-underline-offset: 3px;
+    white-space: nowrap;
+    
+    @include themed(true) {
+        color: t($text-color);
+    }
 
     &:after{
         content: "";
         z-index: -1;
-        background: $highlight-color;
         height: 0;
         position: absolute;
         bottom: -3px;
         left: -2px;
         right: -2px;
-        transition: all .2s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+        transition: height .2s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+        
+        @include themed(true) {
+            background: t($highlight-color);
+        }
     }
 
     &:hover:after {
@@ -119,43 +140,22 @@ $xs-breakpoint: 380px;
         left: 0px;
         opacity: 0.75;
         background-size: 60px 60px;
-        background-image: url(
-            "data:image/png;base64,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"
-        );
+
+        @include themed() {
+            background-image: t($background-image-noise)
+        }
     }
 }
 
 @mixin fadeup () {
-    animation: slideup 1s cubic-bezier(0.2, 0.75, 0, 1), fadein 1s ease-out;
+    animation: fadein 1s ease-out, slideup 1s cubic-bezier(0.2, 0.75, 0, 1);
     animation-fill-mode: both;
 }
-
-@keyframes fadein {
+@keyframes :global(fadein) {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
-
-@keyframes slideup {
+@keyframes :global(slideup) {
     0% { transform: translateY(3rem); }
     100% { transform: translateY(0); }
 }

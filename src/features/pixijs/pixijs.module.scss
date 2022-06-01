@@ -5,14 +5,15 @@
     line-height: 0;
     min-width: 0;
     
-    @include themed(0.2) {
-        @include card(t($color-light), t($color-dark), true);
-    }
+    @include card($color-light, true, false);
+    background-color: #EEDDDD !important;
 
     &:fullscreen,
     &.fullscreen_fallback {
-        @include themed(0.2) {
-            @include card(t($color-dark), t($color-dark), true);
+        @include card($color-background-container, true, true);
+
+        @include themed(true) {
+            background-color: t($color-background-container) !important;
         }
         
         border-radius: 0 !important;
@@ -31,10 +32,6 @@
     &>canvas {
         width: 100% !important;
         border-radius: $roundness;
-
-        @include themed(0.2s) {
-            background: t($color-light);
-        }
     }
 }
 
@@ -48,9 +45,7 @@
     -ms-user-select: none;
     user-select: none;
     
-    @include themed(0.2s) {
-        @include card(t($color-light), t($color-dark));
-    }
+    @include card($color-light, true);
 
     &>button {
         margin: 1rem;

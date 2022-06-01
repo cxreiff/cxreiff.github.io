@@ -28,7 +28,7 @@ exports[`should render 1`] = `
           class="theme_buttons"
         >
           <span
-            class="reddish_button current_theme"
+            class="lightmode_button current_theme"
           />
           <span
             class="greenish_button"
