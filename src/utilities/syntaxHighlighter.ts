@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react'
 import { PrismLight } from 'react-syntax-highlighter'
-import { prism } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { prism, vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 /**
 * Import and register languages for highlighting as-needed.
@@ -14,4 +14,5 @@ import scss from 'react-syntax-highlighter/dist/esm/languages/prism/scss'
 PrismLight.registerLanguage('json', scss)
 
 export const SyntaxHighlighter = PrismLight
-export const syntaxStyle = prism as CSSProperties
+export const styleLight = prism as CSSProperties
+export const styleDark = vscDarkPlus as CSSProperties

@@ -15,7 +15,7 @@ $num-colors: 4;
         margin: 0.25rem;
         opacity: 0.3;
         
-        @include themed(0.2s) {
+        @include themed(true) {
             animation: t(animation-fade-pulse) ease-in-out 1.5s infinite;
             background: t($color-secondary);
         }

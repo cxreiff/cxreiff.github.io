@@ -3,12 +3,14 @@
 
 .posts_content {
     @include text_spacing();
+
+    a {
+        @include interactive_secondary($color-text-link, $color-light);
+        line-height: 1.5rem;
+    }
 }
 
 .posts_content_code {
-    @include themed() {
-        @include card(null, t($color-dark));
-    }
-    
+    @include card($color-light, true);
     @include text_spacing();
 }
