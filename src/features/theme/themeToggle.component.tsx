@@ -3,6 +3,7 @@ import { Moon, Sun } from 'lucide-preact'
 
 import { useAppSelector, useAppDispatch } from '~/src/app/store'
 import { setTheme, Theme } from '~/src/features/theme/theme.slice'
+import { IconButton } from '~/src/common/iconButton/iconButton.component'
 
 import styles from './themeToggle.module.scss'
 
@@ -17,7 +18,7 @@ export const ThemeToggle: FC<ThemeToggleProps> = ({ className }) => {
     const theme = useAppSelector((state) => state.theme.theme)
 
     return (
-        <button
+        <IconButton
             aria-label={'toggle dark mode'}
             className={styles.theme_toggle}
             onClick={() => dispatchSetTheme(
@@ -25,6 +26,6 @@ export const ThemeToggle: FC<ThemeToggleProps> = ({ className }) => {
             )}
         >
             { theme === Theme.DARKMODE ? <Sun /> : <Moon /> }
-        </button>
+        </IconButton>
     )
 }

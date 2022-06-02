@@ -1,12 +1,12 @@
 @use '../../shared.scss' as *;
 
-.theme_toggle {
+.menu_button {
     position: absolute;
-    top: 0;
-    right: 0;
     z-index: 1;
-    
-    @include is_smaller_than($xs-breakpoint) {
+    top: 0;
+    left: 0;
+
+    @include is_larger_than($sm-breakpoint) {
         display: none;
     }
 }
