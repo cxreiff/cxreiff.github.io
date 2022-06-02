@@ -1,0 +1,30 @@
+@use '../../shared.scss' as *;
+@use '../../themed.scss' as *;
+
+.icon_button {
+    height: 3rem;
+    width: 3rem;
+    border: none;
+    background-color: initial;
+    padding: 0;
+
+    @include interactive(
+        0.3rem,
+        $roundness,
+        $color-dark,
+        $color-darker,
+        $color-dark,
+        $color-darker,
+    );
+
+    &>svg {
+        width: 60%;
+        height: 60%;
+        padding: 20%;
+        stroke-width: 3px;
+        
+        @include themed(true) {
+            stroke: t($color-tertiary);
+        }
+    }
+}

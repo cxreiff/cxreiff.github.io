@@ -149,7 +149,7 @@
         }
             
         @include is_larger_than($sm-breakpoint) {
-            li:not(.current).navlink:after {
+            li.navlink:not(.current):after {
                 content: '';
                 opacity: 0.2;
                 position: absolute;
@@ -164,17 +164,17 @@
             }
         }
         @include is_smaller_than($sm-breakpoint) {
-            li:not(.current).navlink:not(:first-child):after {
+            li.navlink:not(.current):not(:first-child):not(:last-child):after {
                 content: '';
                 opacity: 0.2;
                 position: absolute;
                 width: 50%;
                 height: 1px;
                 left: 25%;
-                top: -2px;
+                bottom: -2px;
                 
                 @include themed(true) {
-                    border-bottom: 2px solid t($color-dark);
+                    border-top: 2px solid t($color-dark);
                 }
             }
         }
@@ -203,38 +203,5 @@
                 display: inherit;
             }
         }
-    }
-}
-
-.expand_button {
-    position: absolute;
-    height: 3rem;
-    width: 3rem;
-    padding: 0.5rem;
-    border: none;
-    background-color: initial;
-    z-index: 1;
-
-    @include interactive(
-        0.3rem,
-        $roundness,
-        $color-dark,
-        $color-darker,
-        $color-dark,
-        $color-darker,
-    );
-
-    @include is_larger_than($sm-breakpoint) {
-        display: none;
-    }
-
-    &>svg {
-        @include themed(true) {
-            stroke: t($color-tertiary);
-        }
-        width: 90%;
-        height: 90%;
-        padding: 5%;
-        stroke-width: 3px;
     }
 }
