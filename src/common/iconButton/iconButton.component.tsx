@@ -1,4 +1,4 @@
-import { FC, ReactElement, HTMLAttributes } from 'react'
+import { FC, ReactElement, ComponentProps } from 'react'
 import { LucideProps } from 'lucide-preact'
 import cn from 'classnames'
 
@@ -8,7 +8,7 @@ type IconButtonProps = {
     children: ReactElement<LucideProps>,
 }
 
-export const IconButton: FC<IconButtonProps & HTMLAttributes<HTMLButtonElement>> = ({
+export const IconButton: FC<IconButtonProps & ComponentProps<'button'>> = ({
     children,
     className,
     ...buttonProps

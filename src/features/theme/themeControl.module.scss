@@ -18,6 +18,11 @@
         $color-darker,
         $color-lighter,
     );
+
+    @include turbulence_static();
+    &:hover {
+        @include turbulence_animated();
+    }
         
     &.current_theme {
         @include themed() {

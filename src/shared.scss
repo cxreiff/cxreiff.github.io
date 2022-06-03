@@ -151,11 +151,31 @@ $xs-breakpoint: 365px;
     animation: fadein 1s ease-out, slideup 1s cubic-bezier(0.2, 0.75, 0, 1);
     animation-fill-mode: both;
 }
-@keyframes :global(fadein) {
+@keyframes fadein {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
-@keyframes :global(slideup) {
+@keyframes slideup {
     0% { transform: translateY(3rem); }
     100% { transform: translateY(0); }
+}
+
+@mixin turbulence_preload() {
+    filter: url(~/src/assets/svg/filters/turbulence.svg#turbulence_preload);
+}
+@mixin turbulence_static() {
+    filter: url(~/src/assets/svg/filters/turbulence.svg#turbulence_0);
+}
+@mixin turbulence_animated() {
+    animation: turbulence 1s linear infinite;
+}
+@keyframes turbulence {
+    0% { filter: url(~/src/assets/svg/filters/turbulence.svg#turbulence_0); }
+    12.5% { filter: url(~/src/assets/svg/filters/turbulence.svg#turbulence_1); }
+    25% { filter: url(~/src/assets/svg/filters/turbulence.svg#turbulence_2); }
+    37.5% { filter: url(~/src/assets/svg/filters/turbulence.svg#turbulence_3); }
+    50% { filter: url(~/src/assets/svg/filters/turbulence.svg#turbulence_4); }
+    62.5% { filter: url(~/src/assets/svg/filters/turbulence.svg#turbulence_5); }
+    75% { filter: url(~/src/assets/svg/filters/turbulence.svg#turbulence_6); }
+    100% { filter: url(~/src/assets/svg/filters/turbulence.svg#turbulence_7); }
 }
