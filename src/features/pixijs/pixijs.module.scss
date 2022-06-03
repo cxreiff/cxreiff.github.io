@@ -10,6 +10,7 @@
 
     &:fullscreen,
     &.fullscreen_fallback {
+        
         @include card($color-background-container, true, true);
 
         @include themed(true) {
@@ -17,7 +18,7 @@
         }
         
         border-radius: 0 !important;
-        
+
         &>canvas {
             border-radius: 0 !important;
         }
