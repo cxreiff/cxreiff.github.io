@@ -80,7 +80,7 @@ exports[`should expand menu 1`] = `
         </li>
       </ul>
       <button
-        aria-label="toggle dark mode"
+        aria-label="toggle dark mode on"
         class="icon_button theme_toggle"
       >
         <svg
@@ -186,7 +186,7 @@ exports[`should render 1`] = `
         </li>
       </ul>
       <button
-        aria-label="toggle dark mode"
+        aria-label="toggle dark mode on"
         class="icon_button theme_toggle"
       >
         <svg

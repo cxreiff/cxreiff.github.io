@@ -17,19 +17,18 @@ test('should render', () => {
 })
 
 test('should call provided callback', () => {
-
-    const mockOnClickHandler = jest.fn()
+    const mockHandler = jest.fn()
     const { getAllByText } = render(
         <Card
             image={'test'}
             primary={'test'}
             secondary={'test'}
             tertiary={'test'}
-            onClick={mockOnClickHandler}
+            onClick={mockHandler}
         />
     )
 
     fireEvent.click(getAllByText('test')[0])
     
-    expect(mockOnClickHandler).toHaveBeenCalled()
+    expect(mockHandler).toHaveBeenCalled()
 })

@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render 1`] = `
+<div>
+  <div
+    class="frame pixijs"
+  >
+    <canvas
+      class="content"
+      style="height: 0px;"
+    />
+    <svg
+      viewBox="0 0 1.7777777777777777 1"
+    />
+  </div>
+  <div
+    class="controls"
+  >
+    <button>
+      FIRE
+    </button>
+    <button>
+      TURN_LEFT
+    </button>
+    <button>
+      TURN_RIGHT
+    </button>
+    <button>
+      FORWARD
+    </button>
+    <button>
+      BACKWARD
+    </button>
+  </div>
+</div>
+`;

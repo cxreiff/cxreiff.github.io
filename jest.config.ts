@@ -23,7 +23,7 @@ const config: Config.InitialOptions = {
   },
   transform: {
     '^.+\\.[t|j]sx?$': 'babel-jest',
-    '^.+\\.(css|scss|png|jpg|svg)$': 'jest-transform-stub'
+    '^.+\\.(css|scss|png|jpg|svg|vert|frag)$': 'jest-transform-stub'
   },
   transformIgnorePatterns: [
     '<rootDir>/node_modules/(?!('
@@ -46,6 +46,7 @@ const config: Config.InitialOptions = {
     + '|hast-util-whitespace'
     + '|react-syntax-highlighter'
     + '|is-plain-obj'
+    + '|tslib'
     + ')/)'
   ]
 };

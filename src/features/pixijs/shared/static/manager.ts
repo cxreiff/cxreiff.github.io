@@ -1,4 +1,4 @@
-import { Application, Texture, BaseTexture } from '../../pixijs'
+import { Application, utils } from '../../pixijs'
 
 import { SPRITESHEET_URLS } from '~/src/utilities/constants'
 
@@ -90,13 +90,7 @@ export class Manager {
     }
 
     public static destroy () {
-        [...Manager.SHARED_ASSETS, ...Manager.cartridge.assets].forEach(asset => {
-            Texture.removeFromCache(asset.name)
-            BaseTexture.removeFromCache(asset.name)
-            Texture.removeFromCache(asset.url)
-            BaseTexture.removeFromCache(asset.url)
-        })
-
+        utils.clearTextureCache()
         Manager.app?.loader.reset()
         Manager.app?.destroy()
         Manager.app = undefined

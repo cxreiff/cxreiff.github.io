@@ -4,6 +4,8 @@ import { Wrapper } from '~/src/app/wrapper'
 import { ROUTES } from '~/src/app/routing'
 import { Layout } from './layout.component'
 
+import styles from './layout.module.scss'
+
 const mockNavigate = jest.fn()
 jest.mock('react-router-dom', () => ({
     ...jest.requireActual('react-router-dom'),
@@ -21,6 +23,7 @@ test('should expand menu', () => {
 
     fireEvent.click(getByRole('button', { name: 'expand navigation' }))
 
+    expect(getByRole('navigation')).toHaveClass(styles.expanded)
     expect(container).toMatchSnapshot()
 })
 

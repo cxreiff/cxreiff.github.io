@@ -2,6 +2,7 @@ import { FC } from 'react'
 
 import { Layout } from '~/src/features/layout/layout.component'
 import { Wrapper } from './wrapper'
+import { Filters } from './filters'
 import { Routing, ROUTES } from './routing'
 
 const App: FC = () => {
@@ -10,6 +11,7 @@ const App: FC = () => {
             <Layout routes={ROUTES}>
                 <Routing />
             </Layout>
+            <Filters />
         </Wrapper>
     )
 }

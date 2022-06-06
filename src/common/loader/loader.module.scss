@@ -16,7 +16,9 @@ $num-colors: 4;
         opacity: 0.3;
         
         @include themed(true) {
-            animation: t(animation-fade-pulse) ease-in-out 1.5s infinite;
+            :global {
+                animation: t($animation-fade-pulse) ease-in-out 1.5s infinite;
+            }
             background: t($color-secondary);
         }
     }

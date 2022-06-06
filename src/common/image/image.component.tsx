@@ -11,11 +11,11 @@ import { Frame } from '~/src/common/frame/frame.component'
 
 export const Image: FC<ImageProps> = ({ aspect, source, alt, className }) => {
 
-    const [loaded, setLoaded] = useState(false)
+    const [loading, setLoading] = useState(true)
 
     return (
-        <Frame aspect={aspect} loaded={loaded} className={className}>
-            <img src={source} onLoad={() => setLoaded(true)} alt={alt} />
+        <Frame aspect={aspect} loading={loading} className={className}>
+            <img src={source} onLoad={() => setLoading(false)} alt={alt} />
         </Frame>
     )
 }
