@@ -22,8 +22,10 @@
     );
 
     @include turbulence_static();
-    &:hover {
-        @include turbulence_animated();
+    @media (hover: hover) {
+        &:hover {
+            @include turbulence_animated();
+        }
     }
         
     &.current_theme {
