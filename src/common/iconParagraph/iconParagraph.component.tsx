@@ -1,12 +1,12 @@
 import { FC, ReactElement } from 'react'
 
-import styles from './paragraphWithIcon.module.scss'
+import styles from './iconParagraph.module.scss'
 
-type ParagraphWithIconProps = {
+type IconParagraphProps = {
     icon: ReactElement,
 }
 
-export const ParagraphWithIcon: FC<ParagraphWithIconProps> = ({ icon, children }) => (
+export const IconParagraph: FC<IconParagraphProps> = ({ icon, children }) => (
     <p className={styles.paragraph}>
         <span className={styles.icon}>
             {icon}

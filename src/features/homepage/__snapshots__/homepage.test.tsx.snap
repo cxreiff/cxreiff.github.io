@@ -9,7 +9,7 @@ exports[`should render 1`] = `
       class="frame image hidden"
     >
       <img
-        alt="Image of site author Jax Reiff."
+        alt="image of site author Jax Reiff"
         class="content"
         src="https://jaxreiff-static.sfo3.cdn.digitaloceanspaces.com/assets/aboutme.png"
       />
@@ -27,13 +27,16 @@ exports[`should render 1`] = `
         <span
           class="theme_buttons"
         >
-          <span
+          <button
+            aria-label="change theme to red color scheme"
             class="lightmode_button current_theme"
           />
-          <span
+          <button
+            aria-label="change theme to green color scheme"
             class="greenish_button"
           />
-          <span
+          <button
+            aria-label="change theme to blue color scheme"
             class="bluish_button"
           />
         </span>

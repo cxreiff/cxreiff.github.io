@@ -19,7 +19,7 @@ export const ThemeToggle: FC<ThemeToggleProps> = ({ className }) => {
 
     return (
         <IconButton
-            aria-label={'toggle dark mode'}
+            aria-label={theme === Theme.DARKMODE ? 'toggle dark mode off' : 'toggle dark mode on'}
             className={styles.theme_toggle}
             onClick={() => dispatchSetTheme(
                 theme === Theme.DARKMODE ? Theme.LIGHTMODE : Theme.DARKMODE

@@ -3,7 +3,7 @@ import cn from 'classnames'
 
 type FrameProps = {
     aspect: number,
-    loaded?: boolean,
+    loading?: boolean,
     className?: string,
     style?: CSSProperties,
     children: ReactElement,
@@ -11,8 +11,8 @@ type FrameProps = {
 
 import styles from './frame.module.scss'
 
-export const Frame: FC<FrameProps> = ({ aspect, loaded = true, className, style, children: child }) => (
-    <div className={cn(styles.frame, className, { [styles.hidden]: !loaded })} style={style}>
+export const Frame: FC<FrameProps> = ({ aspect, loading = false, className, style, children: child }) => (
+    <div className={cn(styles.frame, className, { [styles.hidden]: loading })} style={style}>
         {cloneElement(child, {
             className: cn((child.props as { className?: string }).className, styles.content),
         })}
