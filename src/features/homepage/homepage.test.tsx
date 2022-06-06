@@ -4,7 +4,8 @@ import { Wrapper } from '~/src/app/wrapper'
 import Homepage from './homepage.component'
 
 test('should render', () => {
-    const { container } = render(<Homepage />, { wrapper: Wrapper })
+    const { container, getByAltText } = render(<Homepage />, { wrapper: Wrapper })
 
+    expect(getByAltText('image of site author Jax Reiff')).toBeInTheDocument()
     expect(container).toMatchSnapshot()
 })

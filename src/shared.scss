@@ -148,34 +148,47 @@ $xs-breakpoint: 365px;
 }
 
 @mixin fadeup () {
-    animation: fadein 1s ease-out, slideup 1s cubic-bezier(0.2, 0.75, 0, 1);
-    animation-fill-mode: both;
+    :global {
+        animation: fadein 1s ease-out, slideup 1s cubic-bezier(0.2, 0.75, 0, 1);
+        animation-fill-mode: both;
+    }
 }
-@keyframes fadein {
+@keyframes :global(fadein) {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
-@keyframes slideup {
+@keyframes :global(slideup) {
     0% { transform: translateY(3rem); }
     100% { transform: translateY(0); }
 }
 
-@mixin turbulence_preload() {
-    filter: url(~/src/assets/svg/filters/turbulence.svg#turbulence_preload);
+@function turbulence_inline($id: 0) {
+    @return map-get((
+        0: url('#turbulence_0'),
+        1: url('#turbulence_1'),
+        2: url('#turbulence_2'),
+        3: url('#turbulence_3'),
+        4: url('#turbulence_4'),
+        5: url('#turbulence_5'),
+        6: url('#turbulence_6'),
+        7: url('#turbulence_7'),
+    ), $id);
 }
 @mixin turbulence_static() {
-    filter: url(~/src/assets/svg/filters/turbulence.svg#turbulence_0);
+    filter: turbulence_inline(0);
 }
 @mixin turbulence_animated() {
-    animation: turbulence 1s linear infinite;
+    :global {
+        animation: turbulence 1s linear infinite;
+    }
 }
-@keyframes turbulence {
-    0% { filter: url(~/src/assets/svg/filters/turbulence.svg#turbulence_0); }
-    12.5% { filter: url(~/src/assets/svg/filters/turbulence.svg#turbulence_1); }
-    25% { filter: url(~/src/assets/svg/filters/turbulence.svg#turbulence_2); }
-    37.5% { filter: url(~/src/assets/svg/filters/turbulence.svg#turbulence_3); }
-    50% { filter: url(~/src/assets/svg/filters/turbulence.svg#turbulence_4); }
-    62.5% { filter: url(~/src/assets/svg/filters/turbulence.svg#turbulence_5); }
-    75% { filter: url(~/src/assets/svg/filters/turbulence.svg#turbulence_6); }
-    100% { filter: url(~/src/assets/svg/filters/turbulence.svg#turbulence_7); }
+@keyframes :global(turbulence) {
+    0% { filter: turbulence_inline(0); }
+    12.5% { filter: turbulence_inline(1); }
+    25% { filter: turbulence_inline(2); }
+    37.5% { filter: turbulence_inline(3); }
+    50% { filter: turbulence_inline(4); }
+    62.5% { filter: turbulence_inline(5); }
+    75% { filter: turbulence_inline(6); }
+    100% { filter: turbulence_inline(7); }
 }

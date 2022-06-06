@@ -21,10 +21,12 @@ body {
 }
 body.font_loaded,
 body.font_failed {
-    animation-name: fadein;
-    animation-duration: 250ms;
-    animation-timing-function: ease-in;
-    animation-iteration-count: 1;
+    :global {
+        animation-name: fadein;
+        animation-duration: 250ms;
+        animation-timing-function: ease-in;
+        animation-iteration-count: 1;
+    }
     opacity: 1;
 }
 

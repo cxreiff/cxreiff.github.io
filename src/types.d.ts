@@ -15,6 +15,12 @@ declare module '*.svg' {
     export default value;
 }
 
+declare module "jsx:*.svg" {
+  import { ComponentType, SVGProps } from 'react'
+  const SVGComponent: ComponentType<SVGProps<SVGSVGElement>>
+  export default SVGComponent
+}
+
 declare module '*.glsl' {
     const value: string
     export default value

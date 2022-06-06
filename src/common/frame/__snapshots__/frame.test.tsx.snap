@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should hide when loading prop is true 1`] = `
+<div>
+  <div
+    class="frame hidden"
+  >
+    <img
+      alt="test"
+      class="content"
+      src="test"
+    />
+    <svg
+      viewBox="0 0 0.5625 1"
+    />
+  </div>
+</div>
+`;
+
+exports[`should render 1`] = `
+<div>
+  <div
+    class="frame test"
+    style="background: red;"
+  >
+    <img
+      alt="test"
+      class="content"
+      src="test"
+    />
+    <svg
+      viewBox="0 0 1.7777777777777777 1"
+    />
+  </div>
+</div>
+`;

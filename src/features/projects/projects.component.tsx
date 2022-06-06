@@ -2,8 +2,8 @@ import { FC } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { Card } from '~/src/common/card/card.component'
-import pixijs from '~/src/assets/svg/graphics/pixijs.svg'
-import babylonjs from '~/src/assets/svg/graphics/babylonjs.svg'
+import pixijs from '~/src/assets/svg/pixijs.svg'
+import babylonjs from '~/src/assets/svg/babylonjs.svg'
 
 import styles from './projects.module.scss'
 

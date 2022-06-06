@@ -1,10 +1,11 @@
 import { FC, useState, useLayoutEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
+import { Menu } from 'lucide-preact'
 import cn from 'classnames'
 
 import { RouteDefinition } from '~/src/app/routing'
+import { IconButton } from '~/src/common/iconButton/iconButton.component'
 import { ThemeToggle } from '~/src/features/theme/themeToggle.component'
-import { LayoutMenuButton } from './layoutMenuButton.component'
 
 import styles from './layout.module.scss'
 
@@ -27,7 +28,13 @@ export const Layout: FC<LayoutProps> = ({ children, routes }) => {
     return (
         <div className={styles.layout}>
             <nav aria-label={'primary'} className={cn({ [styles.expanded]: expanded })}>
-                <LayoutMenuButton toggleMenu={() => setExpanded(!expanded)} />
+                <IconButton
+                    aria-label={'expand navigation'}
+                    className={styles.menu_button}
+                    onClick={() => setExpanded(!expanded)}
+                >
+                    <Menu />
+                </IconButton>
                 <ul>
                     <li aria-label={'navigate to home'} className={styles.logo}>
                         <a onClick={() => navigate('')}>

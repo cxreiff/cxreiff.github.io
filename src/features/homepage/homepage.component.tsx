@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Github, FileText } from 'lucide-preact'
 
 import { Image } from '~/src/common/image/image.component'
-import { ParagraphWithIcon } from '~/src/common/paragraphWithIcon/paragraphWithIcon.component'
+import { IconParagraph } from '~/src/common/iconParagraph/iconParagraph.component'
 import { ThemeControl } from '~/src/features/theme/themeControl.component'
 import {
     IMAGE_URLS,
@@ -22,7 +22,7 @@ const Homepage: FC = () => {
                 className={styles.image}
                 aspect={900/600}
                 source={IMAGE_URLS.ABOUT_ME}
-                alt={'Image of site author Jax Reiff.'}
+                alt={'image of site author Jax Reiff'}
             />
             <div className={styles.aboutme}>
                 <header>
@@ -48,12 +48,12 @@ const Homepage: FC = () => {
                     found <Link to={'/posts/portfolio-site-design'}>here</Link>.
                 </p>
                 <br />
-                <ParagraphWithIcon icon={<FileText />}>
+                <IconParagraph icon={<FileText />}>
                     My front-end development résumé can be found <a href={RESUME_URL}>here</a>.
-                </ParagraphWithIcon>
-                <ParagraphWithIcon icon={<Github />}>
+                </IconParagraph>
+                <IconParagraph icon={<Github />}>
                     My GitHub profile can be found <a href={GITHUB_URL}>here</a>.
-                </ParagraphWithIcon>
+                </IconParagraph>
             </div>
         </section>
     )
