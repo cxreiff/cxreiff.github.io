@@ -21,8 +21,9 @@
         $color-lighter,
     );
 
-    @include turbulence_static();
     @media (hover: hover) {
+        @include turbulence_static();
+        
         &:hover {
             @include turbulence_animated();
         }
