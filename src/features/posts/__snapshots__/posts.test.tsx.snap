@@ -12,7 +12,9 @@ exports[`should render 1`] = `
         </h4>
       </header>
       <footer>
-        Mon May 31 2021
+        <time>
+          Mon May 31 2021
+        </time>
       </footer>
       <p>
         Frameworks, structure, tradeoffs, and my development, testing, build, and deploy process.

@@ -17,7 +17,7 @@ const renderComponent = () => render(
                 key: 'test',
                 title: 'test',
                 description: 'test',
-                date: 'test',
+                date: '2020-01-01',
             }
         }}
     />
