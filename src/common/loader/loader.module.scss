@@ -21,11 +21,12 @@ $num-colors: 4;
             }
             background: t($color-secondary);
         }
-    }
-
-    @for $i from 0 to $num-colors {
-        span:nth-child(#{$num-colors}n + #{$i + 1}) {
-            animation-delay: $i * 250ms;
+        
+        @for $i from 0 to $num-colors {
+            &:nth-child(#{$num-colors}n + #{$i + 1}) {
+                animation-delay: $i * 250ms;
+            }
         }
     }
+
 }

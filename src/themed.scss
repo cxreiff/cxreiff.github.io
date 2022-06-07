@@ -156,7 +156,7 @@ $themes: (
 }
 
 @each $theme, $map in $themes {
-    @keyframes animation-fade-pulse_#{$theme} {
+    @keyframes :global(animation-fade-pulse_#{$theme}) {
         0% {
             opacity: 0.3;
             background: map-get($map, $color-secondary);
