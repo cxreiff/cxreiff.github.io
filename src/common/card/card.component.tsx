@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, ReactElement } from 'react'
 import cn from 'classnames'
 
 import { Image } from '~/src/common/image/image.component'
@@ -7,8 +7,8 @@ import styles from './card.module.scss'
 type CardProps = {
     image?: string,
     primary?: string,
-    secondary?: string,
-    tertiary?: string,
+    secondary?: string | ReactElement,
+    tertiary?: string | ReactElement,
     onClick?: () => void,
 }
 

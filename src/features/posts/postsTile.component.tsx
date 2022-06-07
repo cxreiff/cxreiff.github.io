@@ -19,7 +19,7 @@ const PostsTile: FC<PostsTileProps> = ({ id, post }) => {
         <Card
             onClick={() => navigate(`/posts/${id}`)}
             primary={title}
-            secondary={new Date(date).toDateString()}
+            secondary={<time>{new Date(date).toDateString()}</time>}
             tertiary={description}
         />
     )

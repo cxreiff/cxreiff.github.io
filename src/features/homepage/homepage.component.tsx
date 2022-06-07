@@ -26,9 +26,9 @@ const Homepage: FC = () => {
             />
             <div className={styles.aboutme}>
                 <header>
-                    <h2>
+                    <h1>
                         About Me
-                    </h2>
+                    </h1>
                     <ThemeControl className={styles.theme_buttons} />
                 </header>
                 <p>

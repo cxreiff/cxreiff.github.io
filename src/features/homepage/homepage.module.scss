@@ -39,8 +39,9 @@
     header {
         display: flex;
 
-        h2 {
+        h1 {
             flex: 1;
+            font-size: 1.7rem;
             
             @include themed(true) {
                 color: t($color-dark);

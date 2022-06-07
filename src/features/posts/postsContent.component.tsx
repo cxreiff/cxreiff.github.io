@@ -19,7 +19,10 @@ const PostsContent: FC = () => {
 
     return (
         <section>
-            <Card primary={title} secondary={new Date(date).toDateString()} />
+            <Card
+                primary={title}
+                secondary={<time>{new Date(date).toDateString()}</time>}
+            />
             <ReactMarkdown
                 className={styles.posts_content}
                 children={content}

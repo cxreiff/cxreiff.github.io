@@ -21,9 +21,9 @@ exports[`should render 1`] = `
       class="aboutme"
     >
       <header>
-        <h2>
+        <h1>
           About Me
-        </h2>
+        </h1>
         <span
           class="theme_buttons"
         >
