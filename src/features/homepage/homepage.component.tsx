@@ -43,9 +43,9 @@ const Homepage: FC = () => {
                 <p>
                     The site itself also serves as an example (and test environment) of some of my preferred
                     front-end technologies, libraries, and approaches. The source code for the site is
-                    publically available <a href={GITHUB_SITE_PROJECT_URL}>here</a>, and links to resources
-                    and libraries that I have found useful building the site can be
-                    found <Link to={'/posts/portfolio-site-design'}>here</Link>.
+                    publically available at its <a href={GITHUB_SITE_PROJECT_URL}>repository</a>, and links
+                    to resources and libraries that I have found useful building the site can be found in
+                    this <Link to={'/posts/portfolio-site-design'}>post</Link>.
                 </p>
                 <br />
                 <IconParagraph icon={<FileText />}>

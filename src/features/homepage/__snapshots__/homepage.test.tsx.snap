@@ -48,17 +48,17 @@ exports[`should render 1`] = `
         This is my personal site, where I've put photos, writing, and various projects I've been working on.
       </p>
       <p>
-        The site itself also serves as an example (and test environment) of some of my preferred front-end technologies, libraries, and approaches. The source code for the site is publically available 
+        The site itself also serves as an example (and test environment) of some of my preferred front-end technologies, libraries, and approaches. The source code for the site is publically available at its 
         <a
           href="https://github.com/jaxreiff/jaxreiff.github.io"
         >
-          here
+          repository
         </a>
-        , and links to resources and libraries that I have found useful building the site can be found 
+        , and links to resources and libraries that I have found useful building the site can be found in this 
         <a
           href="#/posts/portfolio-site-design"
         >
-          here
+          post
         </a>
         .
       </p>

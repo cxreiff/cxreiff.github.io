@@ -3,6 +3,7 @@ import useInfiniteScroll from 'react-infinite-scroll-hook'
 
 import { useAppSelector, useAppDispatch } from '~/src/app/store'
 import { ImageLightbox } from '~/src/common/imageLightbox/imageLightbox.component'
+import { Loader } from '~/src/common/loader/loader.component'
 
 import { fetchPhotos } from './photos.slice'
 
@@ -13,6 +14,7 @@ const Photos: FC = () => {
     const dispatch = useAppDispatch()
     const dispatchFetchPhotos = () => { void dispatch(fetchPhotos()) }
     const photoSets = useAppSelector((state) => state.photos.photoSets)
+    const loading = useAppSelector((state) => state.photos.status === 'pending')
 
     const [numberOfPhotosVisible, setNumberOfPhotosVisible] = useState(9)
 
@@ -28,7 +30,7 @@ const Photos: FC = () => {
 
     useEffect(() => dispatchFetchPhotos(), [dispatch])
 
-    return (
+    return loading ? <Loader /> : (
         <section className={styles.photos}>
             {photoSets.slice(0, numberOfPhotosVisible).map((photoSet, index) => (
                 <article key={index} className={styles.tile}>
