@@ -110,7 +110,7 @@ exports[`should render 1`] = `
         <span
           class="content"
         >
-          My front-end development résumé can be found 
+          My full-stack development resume can be found 
           <a
             href="https://jaxreiff.com/resume/resume.pdf#toolbar=0"
           >
