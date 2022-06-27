@@ -49,7 +49,7 @@ const Homepage: FC = () => {
                 </p>
                 <br />
                 <IconParagraph icon={<FileText />}>
-                    My front-end development résumé can be found <a href={RESUME_URL}>here</a>.
+                    My full-stack development resume can be found <a href={RESUME_URL}>here</a>.
                 </IconParagraph>
                 <IconParagraph icon={<Github />}>
                     My GitHub profile can be found <a href={GITHUB_URL}>here</a>.
