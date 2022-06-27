@@ -29,7 +29,9 @@
     br ~ p {
         @include fadeup();
 
-        &:nth-last-child(1) { animation-delay: 150ms; }
+        &:nth-last-child(1) {
+            animation-delay: 150ms;
+        }
     }
     
     a {
