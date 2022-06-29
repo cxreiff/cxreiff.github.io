@@ -10,10 +10,10 @@
     }
 
     &>nav {
+        position: relative;
         margin: 2rem 1rem;
         
         @include box_shadow();
-        @include background_noise();
 
         @include themed(true) {
             background-color: t($color-primary);
