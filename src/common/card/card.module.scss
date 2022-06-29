@@ -2,11 +2,12 @@
 @use '../../themed.scss' as *;
 
 .card {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 1rem;
     
-    @include card($color-lighter, true, true);
+    @include card($color-lighter, true);
     @include text_spacing();
 
     div {

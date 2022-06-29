@@ -13,6 +13,29 @@
 
 .image {
     @include card($color-background-container, true);
+
+    @include is_larger_than($sm-breakpoint) {
+        position: relative;
+
+        svg {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('../../assets/svg/aboutme_arrows.svg');;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: 50%;
+            z-index: 1;
+            height: 100%;
+            width: 100%;
+            transition: opacity 0.2s ease-in;
+
+            opacity: 0;
+            &:hover, &:active {
+                opacity: 0.8;
+            }
+        }
+    }
 }
 
 .aboutme {
