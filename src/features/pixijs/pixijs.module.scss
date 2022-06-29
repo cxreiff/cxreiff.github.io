@@ -5,13 +5,13 @@
     line-height: 0;
     min-width: 0;
     
-    @include card($color-light, true, false);
+    @include card($color-light, true);
     background-color: #EEDDDD !important;
 
     &:fullscreen,
     &.fullscreen_fallback {
         
-        @include card($color-background-container, true, true);
+        @include card($color-background-container, true);
 
         @include themed(true) {
             background-color: t($color-background-container) !important;

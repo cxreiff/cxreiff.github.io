@@ -33,11 +33,10 @@ $xs-breakpoint: 365px;
     }
 }
 
-@mixin card($background, $shadow: false, $noise: false) {
+@mixin card($background, $shadow: false) {
     border-radius: $roundness;
     overflow: hidden;
 
-    @if ($noise) { @include background_noise(); }
     @if ($shadow) { @include drop_shadow(); }
 
     @include themed(true) {
@@ -118,25 +117,6 @@ $xs-breakpoint: 365px;
     }
 }
 
-@mixin background_noise() {
-    position: relative;
-    &:before {
-        pointer-events: none;
-        content: "";
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-        opacity: 0.75;
-        background-size: 60px 60px;
-
-        @include themed() {
-            background-image: t($background-image-noise)
-        }
-    }
-}
-
 @mixin fadeup () {
     :global {
         animation: fadein 1s ease-out, slideup 1s cubic-bezier(0.2, 0.75, 0, 1);
@@ -169,7 +149,7 @@ $xs-breakpoint: 365px;
 }
 @mixin turbulence_animated() {
     :global {
-        animation: turbulence 1s linear infinite;
+        animation: turbulence 0.8s linear infinite;
     }
 }
 @keyframes :global(turbulence) {
