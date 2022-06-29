@@ -29,7 +29,7 @@ module.exports = {
     '@typescript-eslint/no-useless-constructor': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
     '@typescript-eslint/no-empty-function': ['error', {
-      allow: ['private-constructors', 'methods']
+      allow: ['private-constructors', 'methods', 'arrowFunctions']
     }],
   },
 }
