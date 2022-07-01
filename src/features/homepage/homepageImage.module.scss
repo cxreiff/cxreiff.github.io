@@ -4,7 +4,7 @@
 .homepage_image {
     @include card($color-background-container, true);
 
-    &>svg {
+    &>.homepage_image_svg {
         transition: opacity 0.2s ease-in, stroke-dashoffset 0.2s ease-in-out;
         stroke-dasharray: 265;
         stroke-dashoffset: 265;
