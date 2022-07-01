@@ -11,7 +11,6 @@ exports[`should open lightbox 1`] = `
       >
         <img
           alt="test image"
-          class="content"
           src="test"
         />
         <svg
@@ -114,7 +113,6 @@ exports[`should render 1`] = `
       >
         <img
           alt="test image"
-          class="content"
           src="test"
         />
         <svg

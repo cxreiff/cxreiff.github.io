@@ -7,7 +7,6 @@ exports[`should render 1`] = `
   >
     <img
       alt="test image"
-      class="content"
       src="test"
     />
     <svg
@@ -24,7 +23,6 @@ exports[`should unhide on image load 1`] = `
   >
     <img
       alt="test image"
-      class="content"
       src="test"
     />
     <svg

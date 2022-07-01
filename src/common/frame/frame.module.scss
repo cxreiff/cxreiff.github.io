@@ -6,12 +6,12 @@
     height: 100%;
     overflow: hidden;
 
-    &>svg {
+    &>svg:last-child {
         position: relative;
         z-index: -1;
     }
 
-    &>.content {
+    &>*:first-child {
         max-width: 100%;
         max-height: 100%;
         position: absolute;
@@ -22,22 +22,13 @@
         margin: auto;
     }
 
-    &.hidden>.content {
+    &.hidden>*:first-child  {
         display: none;
     }
 
-    &:not(.hidden)>.content {
+    &:not(.hidden)>*:first-child  {
         :global {
-            animation: fadeIn ease-in 0.3s;
+            animation: fadein ease-in 0.3s;
         }
-    }
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
     }
 }
