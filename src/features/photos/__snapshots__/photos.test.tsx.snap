@@ -16,7 +16,6 @@ exports[`should render 1`] = `
             class="frame interactive hidden"
           >
             <img
-              class="content"
               src="https://jaxreiff-static.sfo3.cdn.digitaloceanspaces.com/photos/sm_photo_00.png"
             />
             <svg

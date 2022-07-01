@@ -10,7 +10,6 @@ exports[`should render 1`] = `
         class="frame hidden"
       >
         <img
-          class="content"
           src="test"
         />
         <svg

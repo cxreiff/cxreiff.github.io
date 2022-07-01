@@ -1,0 +1,20 @@
+@use '../../shared.scss' as *;
+@use '../../themed.scss' as *;
+
+.homepage_image {
+    @include card($color-background-container, true);
+
+    &>svg {
+        transition: opacity 0.2s ease-in, stroke-dashoffset 0.2s ease-in-out;
+        stroke-dasharray: 265;
+        stroke-dashoffset: 265;
+        opacity: 0;
+        @media (hover: hover) {
+            &:hover, &:active {
+                transition: opacity 0.2s ease-in, stroke-dashoffset 0.5s ease-in-out;
+                opacity: 0.8;
+                stroke-dashoffset: 0;
+            }
+        }
+    }
+}

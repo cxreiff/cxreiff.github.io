@@ -7,7 +7,6 @@ exports[`should hide when loading prop is true 1`] = `
   >
     <img
       alt="test"
-      class="content"
       src="test"
     />
     <svg
@@ -25,7 +24,6 @@ exports[`should render 1`] = `
   >
     <img
       alt="test"
-      class="content"
       src="test"
     />
     <svg
