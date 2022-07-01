@@ -3,7 +3,7 @@
 .image_svg_overlay {
     position: relative;
 
-    svg:nth-child(2) {
+    .svg_overlay {
         position: absolute;
         inset: 0;
         z-index: 1;
