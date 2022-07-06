@@ -87,7 +87,7 @@
     "@types/jest": "^27.4.1",
     "@types/jsdom": "^16.2.3",
     "@types/matter-js": "^0.17.7",
-    "@types/react": "^17.0.43",
+    "@types/react": "^18.0.15",
     "@types/react-syntax-highlighter": "^13.5.2",
     "@types/redux-logger": "^3.0.8",
     "@types/xml2js": "^0.4.9",
