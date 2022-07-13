@@ -9,8 +9,11 @@
         stroke-dasharray: 265;
         stroke-dashoffset: 265;
         opacity: 0;
-        @media (hover: hover) {
-            &:hover, &:active {
+    }
+
+    @media (hover: hover) {
+        &:hover, &:active {
+            &>.homepage_image_svg {
                 transition: opacity 0.2s ease-in, stroke-dashoffset 0.5s ease-in-out;
                 opacity: 0.8;
                 stroke-dashoffset: 0;
