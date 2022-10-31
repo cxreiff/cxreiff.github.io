@@ -31,6 +31,19 @@ exports[`should render 1`] = `
         babylon.js
       </footer>
     </article>
+    <article
+      class="card card_clickable"
+    >
+      
+      <header>
+        <h4>
+          bevy project
+        </h4>
+      </header>
+      <footer>
+        rust, WASM, bevy
+      </footer>
+    </article>
   </section>
 </div>
 `;
