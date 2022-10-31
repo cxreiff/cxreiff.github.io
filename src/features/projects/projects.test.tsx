@@ -22,4 +22,7 @@ test('should navigate to each project', () => {
 
     fireEvent.click(getByText('babylon.js project'))
     expect(mockNavigate).toHaveBeenCalledWith('/projects/babylonjs')
+
+    fireEvent.click(getByText('bevy project'))
+    expect(mockNavigate).toHaveBeenCalledWith('/projects/beverage')
 })

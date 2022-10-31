@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { Card } from '~/src/common/card/card.component'
 import pixijs from '~/src/assets/svg/pixijs.svg'
 import babylonjs from '~/src/assets/svg/babylonjs.svg'
+import bevy from '~/src/assets/svg/bevy.svg'
 
 import styles from './projects.module.scss'
 
@@ -24,6 +25,12 @@ const Projects: FC = () => {
                 primary={'babylon.js project'}
                 secondary={'babylon.js'}
                 onClick={() => navigate('/projects/babylonjs')}
+            />
+            <Card
+                image={bevy}
+                primary={'bevy project'}
+                secondary={'rust, WASM, bevy'}
+                onClick={() => navigate('/projects/beverage')}
             />
         </section>
     )
