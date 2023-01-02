@@ -7,7 +7,7 @@
     flex-wrap: wrap;
     margin-bottom: 1rem;
     
-    @include card($color-lighter, true);
+    @include card($color-lighter, false, true);
     @include text_spacing();
 
     div {
@@ -43,7 +43,7 @@
 
 .card_clickable {
     @include interactive(
-        0.4rem,
+        0.25rem,
         $roundness,
         $color-dark,
         $color-darker,

@@ -9,7 +9,7 @@ exports[`should render 1`] = `
       class="frame homepage_image image_svg_overlay hidden"
     >
       <img
-        alt="image of site author Jax Reiff"
+        alt="image of site author Cooper Reiff"
         src="https://jaxreiff-static.sfo3.cdn.digitaloceanspaces.com/assets/aboutme.png"
       />
       <svg
@@ -111,7 +111,7 @@ exports[`should render 1`] = `
         >
           My full-stack development resume can be found 
           <a
-            href="https://jaxreiff.com/resume/resume.pdf#toolbar=0"
+            href="https://cooperreiff.com/resume/resume.pdf#toolbar=0"
           >
             here
           </a>

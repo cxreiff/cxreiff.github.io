@@ -1,13 +1,13 @@
 {
-  "name": "jaxreiff-site",
+  "name": "cooperreiff-site",
   "version": "1.0.0",
-  "description": "Portfolio site for Jax Reiff.",
-  "author": "Jax Reiff <jaxreiff@me.com> (https://jaxreiff.com)",
-  "homepage": "https://jaxreiff.com/",
+  "description": "Portfolio site for Cooper Reiff.",
+  "author": "Cooper Reiff <cooper@cooperreiff.com> (https://cooperreiff.com)",
+  "homepage": "https://cooperreiff.com/",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jaxreiff/jaxreiff.github.io.git"
+    "url": "git+https://github.com/jaxreiff/cooperreiff.github.io.git"
   },
   "scripts": {
     "start": "parcel src/index.html",

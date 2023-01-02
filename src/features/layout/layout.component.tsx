@@ -38,7 +38,7 @@ export const Layout: FC<LayoutProps> = ({ children, routes }) => {
                 <ul>
                     <li aria-label={'navigate to home'} className={styles.logo}>
                         <a onClick={() => navigate('')}>
-                            jax reiff
+                            cooper reiff
                         </a>
                     </li>
                     {routes.filter(({ path }) => path).map(({ path }) => (
