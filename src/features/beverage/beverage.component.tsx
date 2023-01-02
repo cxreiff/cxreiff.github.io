@@ -7,7 +7,7 @@ import styles from './beverage.module.scss'
 const Beverage: FC = () => {
     return (
         <Frame aspect={3/2} className={styles.frame}>
-            <iframe src={'https://jaxreiff.com/beverage/'} />
+            <iframe src={'https://cooperreiff.com/beverage/'} />
         </Frame>
     )
 }

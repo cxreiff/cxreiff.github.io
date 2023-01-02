@@ -21,7 +21,7 @@
     line-height: 0;
     font-size: 0;
     
-    @include card($color-background-container, true);
+    @include card($color-background-container, false, true);
     
     img {
         @include hover_scale(1.04);

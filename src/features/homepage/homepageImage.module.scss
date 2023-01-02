@@ -2,7 +2,7 @@
 @use '../../themed.scss' as *;
 
 .homepage_image {
-    @include card($color-background-container, true);
+    @include card($color-background-container, false, true);
 
     &>.homepage_image_svg {
         transition: opacity 0.2s ease-in, stroke-dashoffset 0.2s ease-in-out;
