@@ -10,6 +10,10 @@
         grid-template-columns: 1fr 1fr;
     }
 
+    @include is_larger_than($md-breakpoint) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
     img {
         @include themed(true) {
             filter: brightness(t($svg-brightness));

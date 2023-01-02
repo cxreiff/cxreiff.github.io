@@ -76,7 +76,9 @@ Type safety for your styles! Style rules silently not applying because of naming
 ```tsx
 import styles from './style.module.scss'
 ...
-<div className={styles.main}> Hello World! </div>
+<div className={styles.main}>
+    Hello World!
+</div>
 ````
 ...next time you run 'tsc' TypeScript will make sure that 'main' actually exists in the definition of the imported style.
 
