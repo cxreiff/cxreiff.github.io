@@ -1,4 +1,4 @@
-export const DOCUMENT_TITLE_ROOT = 'jax reiff'
+export const DOCUMENT_TITLE_ROOT = 'cooper reiff'
 
 export const PHOTO_SIZE_PREFIXES = {
     SMALL: 'sm',
@@ -6,7 +6,7 @@ export const PHOTO_SIZE_PREFIXES = {
     LARGE: 'lg',
 }
 
-export const RESUME_URL = 'https://jaxreiff.com/resume/resume.pdf#toolbar=0'
+export const RESUME_URL = 'https://cooperreiff.com/resume/resume.pdf#toolbar=0'
 export const GITHUB_URL = 'https://github.com/jaxreiff'
 export const GITHUB_SITE_PROJECT_URL = 'https://github.com/jaxreiff/jaxreiff.github.io'
 

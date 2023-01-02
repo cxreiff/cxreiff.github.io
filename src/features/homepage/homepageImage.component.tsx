@@ -10,7 +10,7 @@ export const HomepageImage: FC = () => (
         className={styles.homepage_image}
         aspect={900/600}
         source={IMAGE_URLS.ABOUT_ME}
-        alt={'image of site author Jax Reiff'}
+        alt={'image of site author Cooper Reiff'}
     >
         <svg
             className={styles.homepage_image_svg}

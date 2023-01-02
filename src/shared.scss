@@ -1,7 +1,7 @@
 @use './themed.scss' as *;
 
 $font-family: montserrat, Trebuchet MS, Verdana, Geneva, sans-serif;
-$roundness: 0.2rem;
+$roundness: 1px;
 $cubic-curve: cubic-bezier(0.45, 0.05, 0.55, 0.95);
 
 $md-breakpoint: 1200px;
@@ -21,23 +21,24 @@ $xs-breakpoint: 365px;
     margin-bottom: 1rem;
 }
 
-@mixin box_shadow() {
+@mixin hard_shadow() {
     @include themed(true) {
-        box-shadow: t($default-box-shadow);
+        box-shadow: t($default-hard-shadow);
     }
 }
 
-@mixin drop_shadow() {
+@mixin soft_shadow() {
     @include themed(true) {
-        box-shadow: t($default-drop-shadow);
+        box-shadow: t($default-soft-shadow);
     }
 }
 
-@mixin card($background, $shadow: false) {
+@mixin card($background, $hard-shadow: false, $soft-shadow: false) {
     border-radius: $roundness;
     overflow: hidden;
 
-    @if ($shadow) { @include drop_shadow(); }
+    @if ($hard-shadow) { @include hard_shadow(); }
+    @if ($soft-shadow) { @include soft_shadow(); }
 
     @include themed(true) {
         background-color: t($background);
@@ -68,7 +69,7 @@ $xs-breakpoint: 365px;
             right: $gutter;
             bottom: $gutter;
             left: $gutter;
-            border-radius: max(0.2rem, $hover-radius);
+            border-radius: max(2px, $hover-radius);
             transition: opacity 0.15s $cubic-curve;
             overflow: hidden;
             

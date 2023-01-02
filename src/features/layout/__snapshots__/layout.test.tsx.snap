@@ -51,7 +51,7 @@ exports[`should expand menu 1`] = `
           class="logo"
         >
           <a>
-            jax reiff
+            cooper reiff
           </a>
         </li>
         <li
@@ -157,7 +157,7 @@ exports[`should render 1`] = `
           class="logo"
         >
           <a>
-            jax reiff
+            cooper reiff
           </a>
         </li>
         <li

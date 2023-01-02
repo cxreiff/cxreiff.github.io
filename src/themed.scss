@@ -3,10 +3,10 @@ $color-text-default: 'color-text-default';
 $color-text-link: 'color-text-link';
 $color-background-default: 'color-background-default';
 $color-background-container: 'color-background-container';
-$default-drop-shadow: 'default-drop-shadow';
-$default-box-shadow: 'default-box-shadow';
-$color-border-box-shadow: 'color-border-box-shadow';
-$color-border-drop-shadow: 'color-border-drop-shadow';
+$default-hard-shadow: 'default-hard-shadow';
+$default-soft-shadow: 'default-soft-shadow';
+$color-border-hard-shadow: 'color-border-hard-shadow';
+$color-border-soft-shadow: 'color-border-soft-shadow';
 $color-lighter: 'color-lighter';
 $color-light: 'color-light';
 $color-primary: 'color-primary';
@@ -30,8 +30,8 @@ $themes: (
         color-tertiary: #AA7777,
         color-dark: #3D3333,
         color-darker: #221111,
-        default-drop-shadow: (0 0 0 1px transparent, rgba(#3D3333, 0.5) 3px 3px 5px),
-        default-box-shadow: (0 0 0 1px #3D3333, #3D3333 2px 2px, rgba(#3D3333, 0.5) 3px 3px 5px),
+        default-hard-shadow: (0 0 0 1px transparent, rgba(#3D3333, 1) 0px 3px 0px),
+        default-soft-shadow: (0 0 0 1px transparent, rgba(#3D3333, 0.4) 2px 2px 5px),
         animation-fade-pulse: animation-fade-pulse_lightmode,
         svg-brightness: 0,
     ),
@@ -47,8 +47,8 @@ $themes: (
         color-tertiary: #7777AA,
         color-dark: #33333D,
         color-darker: #111122,
-        default-drop-shadow: (0 0 0 1px transparent, rgba(#33333D, 0.5) 3px 3px 5px),
-        default-box-shadow: (0 0 0 1px #33333D, #33333D 2px 2px, rgba(#3D3333, 0.5) 3px 3px 5px),
+        default-hard-shadow: (0 0 0 1px transparent, rgba(#33333D, 1) 0px 3px 0px),
+        default-soft-shadow: (0 0 0 1px transparent, rgba(#33333D, 0.4) 2px 2px 5px),
         animation-fade-pulse: animation-fade-pulse_bluish,
         svg-brightness: 0,
     ),
@@ -64,8 +64,8 @@ $themes: (
         color-tertiary: #77AA77,
         color-dark: #333D33,
         color-darker: #112211,
-        default-drop-shadow: (0 0 0 1px transparent, rgba(#333D33, 0.5) 3px 3px 5px),
-        default-box-shadow: (0 0 0 1px #333D33, #333D33 2px 2px, rgba(#3D3333, 0.5) 3px 3px 5px),
+        default-hard-shadow: (0 0 0 1px transparent, rgba(#333D33, 1) 0px 3px 0px),
+        default-soft-shadow: (0 0 0 1px transparent, rgba(#333D33, 0.4) 2px 2px 5px),
         animation-fade-pulse: animation-fade-pulse_greenish,
         svg-brightness: 0,
     ),
@@ -81,8 +81,8 @@ $themes: (
         color-tertiary: #AA77AA,
         color-dark: #CCCDCC,
         color-darker: #EEDDEE,
-        default-drop-shadow: 0 0 0 1px #BBBDBB,
-        default-box-shadow: 0 0 0 1px #BBBDBB,
+        default-hard-shadow: 0 0 0 1px #BBBDBB,
+        default-soft-shadow: 0 0 0 1px #BBBDBB,
         animation-fade-pulse: animation-fade-pulse_darkmode,
         background-image-noise: none,
         svg-brightness: 0.9,
