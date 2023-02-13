@@ -1,10 +1,14 @@
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 import { Provider } from 'react-redux'
 import { HashRouter } from 'react-router-dom'
 
 import store from './store'
 
-export const Wrapper: FC = ({ children }) => {
+type WrapperProps = {
+  children?: ReactNode,
+}
+
+export const Wrapper: FC<WrapperProps> = ({ children }) => {
   return (
     <Provider store={store}>
       <HashRouter>

@@ -1,4 +1,4 @@
-import { FC, useState, useLayoutEffect } from 'react'
+import { FC, ReactNode, useState, useLayoutEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { Menu } from 'lucide-preact'
 import cn from 'classnames'
@@ -11,8 +11,9 @@ import styles from './layout.module.scss'
 
 type LayoutProps = {
     routes: RouteDefinition[],
+    children?: ReactNode,
 }
-
+  
 export const Layout: FC<LayoutProps> = ({ children, routes }) => {
     
     const pathname = useLocation().pathname

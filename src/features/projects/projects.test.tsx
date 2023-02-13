@@ -3,6 +3,7 @@ import { render, fireEvent } from '@testing-library/preact'
 import Projects from './projects.component'
 
 const mockNavigate = jest.fn()
+// eslint-disable-next-line @typescript-eslint/no-unsafe-return
 jest.mock('react-router-dom', () => ({
     ...jest.requireActual('react-router-dom'),
     useNavigate: () => mockNavigate,
