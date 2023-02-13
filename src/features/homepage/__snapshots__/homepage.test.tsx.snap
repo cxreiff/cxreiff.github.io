@@ -10,7 +10,7 @@ exports[`should render 1`] = `
     >
       <img
         alt="image of site author Cooper Reiff"
-        src="https://jaxreiff-static.sfo3.cdn.digitaloceanspaces.com/assets/aboutme.png"
+        src="https://cxreiff.sfo3.cdn.digitaloceanspaces.com/assets/aboutme.png"
       />
       <svg
         viewBox="0 0 1.5 1"
@@ -49,7 +49,7 @@ exports[`should render 1`] = `
       <p>
         The site itself also serves as an example (and test environment) of some of my preferred front-end technologies, libraries, and approaches. The source code for the site is publically available at its 
         <a
-          href="https://github.com/jaxreiff/jaxreiff.github.io"
+          href="https://github.com/cxreiff/cxreiff.github.io"
         >
           repository
         </a>
@@ -149,7 +149,7 @@ exports[`should render 1`] = `
         >
           My GitHub profile can be found 
           <a
-            href="https://github.com/jaxreiff"
+            href="https://github.com/cxreiff"
           >
             here
           </a>
