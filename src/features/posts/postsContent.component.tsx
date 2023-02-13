@@ -33,9 +33,9 @@ const PostsContent: FC = () => {
                             <SyntaxHighlighter
                                 className={styles.posts_content_code}
                                 children={String(children).replace(/\n$/, '')}
-                                style={theme === Theme.DARKMODE ? styleDark : styleLight}
                                 language={(!inline && match) ? match[1] : 'text'}
                                 {...props}
+                                style={theme === Theme.DARKMODE ? styleDark : styleLight}
                             />
                         )
                     }

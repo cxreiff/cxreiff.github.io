@@ -1,9 +1,10 @@
-import { FC, ReactElement } from 'react'
+import { FC, ReactElement, ReactNode } from 'react'
 
 import styles from './iconParagraph.module.scss'
 
 type IconParagraphProps = {
     icon: ReactElement,
+    children?: ReactNode,
 }
 
 export const IconParagraph: FC<IconParagraphProps> = ({ icon, children }) => (

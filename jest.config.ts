@@ -2,9 +2,9 @@ import type { Config } from '@jest/types';
 
 const config: Config.InitialOptions = {
   preset: 'ts-jest',
-  testEnvironment: 'jsdom',
   clearMocks: true,
   automock: false,
+  testEnvironment: "jsdom",
   roots: [
     '<rootDir>/src'
   ],
@@ -47,6 +47,7 @@ const config: Config.InitialOptions = {
     + '|react-syntax-highlighter'
     + '|is-plain-obj'
     + '|tslib'
+    + '|@testing-library/preact'
     + ')/)'
   ]
 };
