@@ -50,7 +50,7 @@
     "@pixi/text": "^6.3.2",
     "@pixi/ticker": "^6.3.2",
     "@pixi/utils": "^6.3.2",
-    "@reduxjs/toolkit": "^1.8.1",
+    "@reduxjs/toolkit": "^1.9.2",
     "assets": "^3.0.1",
     "babylonjs-hook": "^0.1.1",
     "buffer": "^6.0.3",
