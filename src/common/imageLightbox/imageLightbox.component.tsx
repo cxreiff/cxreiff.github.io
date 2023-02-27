@@ -1,23 +1,29 @@
-import { FC, useState } from 'react'
-import { Lightbox } from 'react-modal-image'
-import cn from 'classnames'
+import { FC, useState } from "react";
+import { Lightbox } from "react-modal-image";
+import cn from "classnames";
 
-import { Image } from '~/src/common/image/image.component'
+import { Image } from "~/src/common/image/image.component";
 
-import styles from './imageLightbox.module.scss'
+import styles from "./imageLightbox.module.scss";
 
 type ImageLightboxProps = {
-  aspect: number,
-  small: string,
-  medium: string,
-  large: string,
-  alt?: string,
-  className?: string,
-}
+  aspect: number;
+  small: string;
+  medium: string;
+  large: string;
+  alt?: string;
+  className?: string;
+};
 
-export const ImageLightbox: FC<ImageLightboxProps> = ({ aspect, small, medium, large, alt, className }) => {
-
-  const [opened, setOpened] = useState(false)
+export const ImageLightbox: FC<ImageLightboxProps> = ({
+  aspect,
+  small,
+  medium,
+  large,
+  alt,
+  className,
+}) => {
+  const [opened, setOpened] = useState(false);
 
   return (
     <div className={cn(styles.image_lightbox, className)}>
@@ -29,16 +35,18 @@ export const ImageLightbox: FC<ImageLightboxProps> = ({ aspect, small, medium, l
           alt={alt}
         />
       </div>
-      { opened && (
+      {opened && (
         <Lightbox
           medium={medium}
           large={large}
           alt={alt}
           hideDownload={true}
           hideClose={true}
-          onClose={() => {setOpened(false)}}
+          onClose={() => {
+            setOpened(false);
+          }}
         />
       )}
     </div>
-  )
-}
+  );
+};

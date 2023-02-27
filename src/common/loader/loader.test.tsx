@@ -1,9 +1,10 @@
-import { render } from '@testing-library/preact'
+import { test, expect } from "vitest";
+import { render } from "@testing-library/preact";
 
-import { Loader } from './loader.component'
+import { Loader } from "./loader.component";
 
-test('should render', () => {
-    const { container } = render(<Loader />)
+test("should render", () => {
+  const { container } = render(<Loader />);
 
-    expect(container).toMatchSnapshot()
-})
+  expect(container).toMatchSnapshot();
+});

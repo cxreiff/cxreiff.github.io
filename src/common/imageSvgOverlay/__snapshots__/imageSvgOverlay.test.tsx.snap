@@ -1,0 +1,16 @@
+// Vitest Snapshot v1
+
+exports[`should render 1`] = `
+<div>
+  <div
+    class="_frame_331539 _image_svg_overlay_003598 _hidden_331539"
+  >
+    <img
+      src="https://cxreiff.sfo3.cdn.digitaloceanspaces.com/assets/aboutme.png"
+    />
+    <svg
+      viewBox="0 0 1.5 1"
+    />
+  </div>
+</div>
+`;

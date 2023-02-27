@@ -1,13 +1,13 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
 exports[`should render 1`] = `
 <div>
   <article
-    class="card"
+    class="_card_9e273c"
   >
     <div>
       <div
-        class="frame hidden"
+        class="_frame_331539 _hidden_331539"
       >
         <img
           src="test"

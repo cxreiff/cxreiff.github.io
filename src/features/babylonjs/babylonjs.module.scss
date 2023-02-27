@@ -1,6 +1,0 @@
-@use '../../shared.scss' as *;
-@use '../../themed.scss' as *;
-
-.babylonjs {
-    @include card($color-light, true);
-}

@@ -1,0 +1,16 @@
+// Vitest Snapshot v1
+
+exports[`should render 1`] = `
+<div>
+  <div
+    class="_frame_331539 _frame_2528c6"
+  >
+    <iframe
+      src="https://cooperreiff.com"
+    />
+    <svg
+      viewBox="0 0 1.5 1"
+    />
+  </div>
+</div>
+`;

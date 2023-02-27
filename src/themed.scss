@@ -1,147 +1,165 @@
-
-$color-text-default: 'color-text-default';
-$color-text-link: 'color-text-link';
-$color-background-default: 'color-background-default';
-$color-background-container: 'color-background-container';
-$default-hard-shadow: 'default-hard-shadow';
-$default-soft-shadow: 'default-soft-shadow';
-$color-border-hard-shadow: 'color-border-hard-shadow';
-$color-border-soft-shadow: 'color-border-soft-shadow';
-$color-lighter: 'color-lighter';
-$color-light: 'color-light';
-$color-primary: 'color-primary';
-$color-secondary: 'color-secondary';
-$color-tertiary: 'color-tertiary';
-$color-dark: 'color-dark';
-$color-darker: 'color-darker';
-$animation-fade-pulse: 'animation-fade-pulse';
-$svg-brightness: 'svg-brightness';
+$color-text-default: "color-text-default";
+$color-text-link: "color-text-link";
+$color-background-default: "color-background-default";
+$color-background-container: "color-background-container";
+$default-hard-shadow: "default-hard-shadow";
+$default-soft-shadow: "default-soft-shadow";
+$color-border-hard-shadow: "color-border-hard-shadow";
+$color-border-soft-shadow: "color-border-soft-shadow";
+$color-lighter: "color-lighter";
+$color-light: "color-light";
+$color-primary: "color-primary";
+$color-secondary: "color-secondary";
+$color-tertiary: "color-tertiary";
+$color-dark: "color-dark";
+$color-darker: "color-darker";
+$animation-fade-pulse: "animation-fade-pulse";
+$svg-brightness: "svg-brightness";
 
 $themes: (
-   lightmode: (
-        color-text-default: #000000,
-        color-text-link: #AA7777,
-        color-background-default: #FFFFFF,
-        color-background-container: #221111,
-        color-lighter: #E7E7E7,
-        color-light: #EEDDDD,
-        color-primary: #DDCCCC,
-        color-secondary: #AA9999,
-        color-tertiary: #AA7777,
-        color-dark: #3D3333,
-        color-darker: #221111,
-        default-hard-shadow: (0 0 0 1px transparent, rgba(#3D3333, 1) 0px 3px 0px),
-        default-soft-shadow: (0 0 0 1px transparent, rgba(#3D3333, 0.4) 2px 2px 5px),
-        animation-fade-pulse: animation-fade-pulse_lightmode,
-        svg-brightness: 0,
+  lightmode: (
+    color-text-default: #000000,
+    color-text-link: #aa7777,
+    color-background-default: #ffffff,
+    color-background-container: #221111,
+    color-lighter: #e7e7e7,
+    color-light: #eedddd,
+    color-primary: #ddcccc,
+    color-secondary: #aa9999,
+    color-tertiary: #aa7777,
+    color-dark: #3d3333,
+    color-darker: #221111,
+    default-hard-shadow: (
+      0 0 0 1px transparent,
+      rgba(#3d3333, 1) 0px 3px 0px,
     ),
-    bluish: (
-        color-text-default: #000000,
-        color-text-link: #7777AA,
-        color-background-default: #FFFFFF,
-        color-background-container: #111122,
-        color-lighter: #E7E7E7,
-        color-light: #DDDDEE,
-        color-primary: #CCCCDD,
-        color-secondary: #9999AA,
-        color-tertiary: #7777AA,
-        color-dark: #33333D,
-        color-darker: #111122,
-        default-hard-shadow: (0 0 0 1px transparent, rgba(#33333D, 1) 0px 3px 0px),
-        default-soft-shadow: (0 0 0 1px transparent, rgba(#33333D, 0.4) 2px 2px 5px),
-        animation-fade-pulse: animation-fade-pulse_bluish,
-        svg-brightness: 0,
+    default-soft-shadow: (
+      0 0 0 1px transparent,
+      rgba(#3d3333, 0.4) 2px 2px 5px,
     ),
-    greenish: (
-        color-text-default: #000000,
-        color-text-link: #77AA77,
-        color-background-default: #FFFFFF,
-        color-background-container: #112211,
-        color-lighter: #E7E7E7,
-        color-light: #DDEEDD,
-        color-primary: #CCDDCC,
-        color-secondary: #99AA99,
-        color-tertiary: #77AA77,
-        color-dark: #333D33,
-        color-darker: #112211,
-        default-hard-shadow: (0 0 0 1px transparent, rgba(#333D33, 1) 0px 3px 0px),
-        default-soft-shadow: (0 0 0 1px transparent, rgba(#333D33, 0.4) 2px 2px 5px),
-        animation-fade-pulse: animation-fade-pulse_greenish,
-        svg-brightness: 0,
+    animation-fade-pulse: animation-fade-pulse_lightmode,
+    svg-brightness: 0,
+  ),
+  bluish: (
+    color-text-default: #000000,
+    color-text-link: #7777aa,
+    color-background-default: #ffffff,
+    color-background-container: #111122,
+    color-lighter: #e7e7e7,
+    color-light: #ddddee,
+    color-primary: #ccccdd,
+    color-secondary: #9999aa,
+    color-tertiary: #7777aa,
+    color-dark: #33333d,
+    color-darker: #111122,
+    default-hard-shadow: (
+      0 0 0 1px transparent,
+      rgba(#33333d, 1) 0px 3px 0px,
     ),
-    darkmode: (
-        color-text-default: #FFFFFF,
-        color-text-link: #CC99CC,
-        color-background-default: #000000,
-        color-background-container: #000000,
-        color-lighter: #111111,
-        color-light: #554455,
-        color-primary: #000000,
-        color-secondary: #AA99AA,
-        color-tertiary: #AA77AA,
-        color-dark: #CCCDCC,
-        color-darker: #EEDDEE,
-        default-hard-shadow: 0 0 0 1px #BBBDBB,
-        default-soft-shadow: 0 0 0 1px #BBBDBB,
-        animation-fade-pulse: animation-fade-pulse_darkmode,
-        background-image-noise: none,
-        svg-brightness: 0.9,
+    default-soft-shadow: (
+      0 0 0 1px transparent,
+      rgba(#33333d, 0.4) 2px 2px 5px,
     ),
+    animation-fade-pulse: animation-fade-pulse_bluish,
+    svg-brightness: 0,
+  ),
+  greenish: (
+    color-text-default: #000000,
+    color-text-link: #669966,
+    color-background-default: #ffffff,
+    color-background-container: #112211,
+    color-lighter: #e7e7e7,
+    color-light: #ddeedd,
+    color-primary: #ccddcc,
+    color-secondary: #99aa99,
+    color-tertiary: #669966,
+    color-dark: #333d33,
+    color-darker: #112211,
+    default-hard-shadow: (
+      0 0 0 1px transparent,
+      rgba(#333d33, 1) 0px 3px 0px,
+    ),
+    default-soft-shadow: (
+      0 0 0 1px transparent,
+      rgba(#333d33, 0.4) 2px 2px 5px,
+    ),
+    animation-fade-pulse: animation-fade-pulse_greenish,
+    svg-brightness: 0,
+  ),
+  darkmode: (
+    color-text-default: #ffffff,
+    color-text-link: #cc99cc,
+    color-background-default: #000000,
+    color-background-container: #000000,
+    color-lighter: #111111,
+    color-light: #554455,
+    color-primary: #000000,
+    color-secondary: #aa99aa,
+    color-tertiary: #aa77aa,
+    color-dark: #cccdcc,
+    color-darker: #eeddee,
+    default-hard-shadow: 0 0 0 1px #bbbdbb,
+    default-soft-shadow: 0 0 0 1px #bbbdbb,
+    animation-fade-pulse: animation-fade-pulse_darkmode,
+    background-image-noise: none,
+    svg-brightness: 0.9,
+  ),
 );
 
 @mixin themed($fade: false) {
-    @each $theme, $map in $themes {
-        :global(.theme--#{$theme}) & {
-            $theme-map: () !global;
-            @each $key, $submap in $map {
-                $value: map-get($map, '#{$key}');
-                $theme-map: map-merge($theme-map, ($key: $value)) !global;
-            }
-            @content;
-            $theme-map: null !global;
-        }
-        @if ($fade) {
-            :global(.theme--transition) & {
-                @include color_transitions();
-            }
-        }
+  @each $theme, $map in $themes {
+    :global(.theme--#{$theme}) & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get($map, "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
     }
+    @if ($fade) {
+      :global(.theme--transition) & {
+        @include color_transitions();
+      }
+    }
+  }
 }
 
 @function t($key) {
-    @return map-get($theme-map, $key);
+  @return map-get($theme-map, $key);
 }
 
 @function value_by_theme($theme, $key) {
-    @return map-get(map-get($themes, $theme), '#{$key}');
+  @return map-get(map-get($themes, $theme), "#{$key}");
 }
 
 @mixin color_transitions() {
-    transition: color 0.2s ease-out,
-        background 0.2s ease-out,
-        background-color 0.2s ease-out,
-        border-color 0.2s ease-out,
-        box-shadow 0.2s ease-out,
-        text-shadow 0.2s ease-out,
-        stroke 0.2s ease-out,
-        filter 0.2s ease-out;
+  transition: color 0.2s ease-out, background 0.2s ease-out,
+    background-color 0.2s ease-out, border-color 0.2s ease-out,
+    box-shadow 0.2s ease-out, text-shadow 0.2s ease-out, stroke 0.2s ease-out,
+    filter 0.2s ease-out;
 }
 
 @each $theme, $map in $themes {
-    @keyframes :global(animation-fade-pulse_#{$theme}) {
-        0% {
-            opacity: 0.3;
-            background: map-get($map, $color-secondary);
-        }
-
-        40% {
-            opacity: 1;
-            background: map-get($map, $color-tertiary);
-        }
-
-        80% {
-            opacity: 0.3;
-            background: map-get($map, $color-secondary);
-        }
+  @keyframes :global(animation-fade-pulse_#{$theme}) {
+    0% {
+      opacity: 0.3;
+      background: map-get($map, $color-secondary);
     }
+
+    40% {
+      opacity: 1;
+      background: map-get($map, $color-tertiary);
+    }
+
+    80% {
+      opacity: 0.3;
+      background: map-get($map, $color-secondary);
+    }
+  }
 }

@@ -1,32 +1,30 @@
-@use '../../shared.scss' as *;
-@use '../../themed.scss' as *;
+@use "../../shared.scss" as *;
+@use "../../themed.scss" as *;
 
 $num-colors: 4;
 
 .loader {
+  margin: 2rem 1rem 1rem;
+  text-align: center;
 
-    margin: 2rem 1rem 1rem;
-    text-align: center;
+  span {
+    display: inline-block;
+    width: 1rem;
+    height: 2rem;
+    margin: 0.25rem;
+    opacity: 0.3;
 
-    span {
-        display: inline-block;
-        width: 1rem;
-        height: 2rem;
-        margin: 0.25rem;
-        opacity: 0.3;
-        
-        @include themed(true) {
-            :global {
-                animation: t($animation-fade-pulse) ease-in-out 1.5s infinite;
-            }
-            background: t($color-secondary);
-        }
-        
-        @for $i from 0 to $num-colors {
-            &:nth-child(#{$num-colors}n + #{$i + 1}) {
-                animation-delay: $i * 250ms;
-            }
-        }
+    @include themed(true) {
+      :global {
+        animation: t($animation-fade-pulse) ease-in-out 1.5s infinite;
+      }
+      background: t($color-secondary);
     }
 
+    @for $i from 0 to $num-colors {
+      &:nth-child(#{$num-colors}n + #{$i + 1}) {
+        animation-delay: $i * 250ms;
+      }
+    }
+  }
 }

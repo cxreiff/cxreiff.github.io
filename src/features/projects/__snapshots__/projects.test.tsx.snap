@@ -1,14 +1,25 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
 exports[`should render 1`] = `
 <div>
   <section
-    class="projects"
+    class="_projects_b1d851"
   >
     <article
-      class="card card_clickable"
+      class="_card_9e273c _card_clickable_9e273c"
     >
-      
+      <div>
+        <div
+          class="_frame_331539 _hidden_331539"
+        >
+          <img
+            src="/src/assets/svg/pixijs.svg"
+          />
+          <svg
+            viewBox="0 0 1.6 1"
+          />
+        </div>
+      </div>
       <header>
         <h4>
           asteroids game
@@ -19,9 +30,20 @@ exports[`should render 1`] = `
       </footer>
     </article>
     <article
-      class="card card_clickable"
+      class="_card_9e273c _card_clickable_9e273c"
     >
-      
+      <div>
+        <div
+          class="_frame_331539 _hidden_331539"
+        >
+          <img
+            src="/src/assets/svg/babylonjs.svg"
+          />
+          <svg
+            viewBox="0 0 1.6 1"
+          />
+        </div>
+      </div>
       <header>
         <h4>
           babylon.js project
@@ -32,9 +54,20 @@ exports[`should render 1`] = `
       </footer>
     </article>
     <article
-      class="card card_clickable"
+      class="_card_9e273c _card_clickable_9e273c"
     >
-      
+      <div>
+        <div
+          class="_frame_331539 _hidden_331539"
+        >
+          <img
+            src="/src/assets/svg/bevy.svg"
+          />
+          <svg
+            viewBox="0 0 1.6 1"
+          />
+        </div>
+      </div>
       <header>
         <h4>
           bevy project
