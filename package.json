@@ -81,7 +81,7 @@
     "normalize.css": "^8.0.1",
     "parcel": "^2.8.3",
     "postcss": "^8.4.21",
-    "postcss-modules": "^4.3.0",
+    "postcss-modules": "^6.0.0",
     "preact": "^10.12.1",
     "prettier": "^2.8.4",
     "process": "^0.11.10",
