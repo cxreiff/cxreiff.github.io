@@ -1,1 +1,2 @@
-**/*.snap
+package-lock.json
+*.snap

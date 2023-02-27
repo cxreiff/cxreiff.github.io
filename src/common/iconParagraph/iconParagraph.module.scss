@@ -1,19 +1,19 @@
-@use '../../shared.scss' as *;
-@use '../../themed.scss' as *;
+@use "../../shared.scss" as *;
+@use "../../themed.scss" as *;
 
 .paragraph {
-    display: flex;
+  display: flex;
 
-    .icon {
-        margin: 0 0.6rem 0 0;
-        align-self: center;
-        
-        @include themed(true) {
-            color: t($color-secondary);
-        }
-    }
+  .icon {
+    margin: 0 0.6rem 0 0;
+    align-self: center;
 
-    .content {
-        flex: 1;
+    @include themed(true) {
+      color: t($color-secondary);
     }
+  }
+
+  .content {
+    flex: 1;
+  }
 }

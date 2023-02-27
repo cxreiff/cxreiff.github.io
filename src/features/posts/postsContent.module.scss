@@ -1,16 +1,16 @@
-@use '../../shared.scss' as *;
-@use '../../themed.scss' as *;
+@use "../../shared.scss" as *;
+@use "../../themed.scss" as *;
 
 .posts_content {
-    @include text_spacing();
+  @include text_spacing();
 
-    a {
-        @include interactive_secondary($color-text-link, $color-light);
-        line-height: 1.5rem;
-    }
+  a {
+    @include interactive_secondary($color-text-link, $color-light);
+    line-height: 1.5rem;
+  }
 }
 
 .posts_content_code {
-    @include card($color-light, true);
-    @include text_spacing();
+  @include card($color-light, true);
+  @include text_spacing();
 }

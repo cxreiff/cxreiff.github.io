@@ -1,53 +1,53 @@
-@use '../../shared.scss' as *;
-@use '../../themed.scss' as *;
+@use "../../shared.scss" as *;
+@use "../../themed.scss" as *;
 
 .card {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-    
-    @include card($color-lighter, false, true);
-    @include text_spacing();
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
 
-    div {
-        width: 100%;
-    }
+  @include card($color-lighter, false, true);
+  @include text_spacing();
 
-    header {
-        flex: 1 0;
-        font-size: 1.2rem;
-        
-        h4 {
-            margin: 0.5rem 0;
-        }
-    }
+  div {
+    width: 100%;
+  }
 
-    footer {
-        flex: 0 0 auto;
-        font-size: 0.9rem;
-        padding: 0.5rem;
-    }
+  header {
+    flex: 1 0;
+    font-size: 1.2rem;
 
-    p {
-        flex: 0 0 100%;
-        font-size: 0.9rem;
-        margin-top: 0;
-        padding-top: 1rem;
-        
-        @include themed(true) {
-            border-top: 2px solid t($color-secondary);
-        }
+    h4 {
+      margin: 0.5rem 0;
     }
+  }
+
+  footer {
+    flex: 0 0 auto;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  p {
+    flex: 0 0 100%;
+    font-size: 0.9rem;
+    margin-top: 0;
+    padding-top: 1rem;
+
+    @include themed(true) {
+      border-top: 2px solid t($color-secondary);
+    }
+  }
 }
 
 .card_clickable {
-    @include interactive(
-        0.25rem,
-        $roundness,
-        $color-dark,
-        $color-darker,
-        $color-dark,
-        $color-darker,
-    );
+  @include interactive(
+    0.25rem,
+    $roundness,
+    $color-dark,
+    $color-darker,
+    $color-dark,
+    $color-darker
+  );
 }

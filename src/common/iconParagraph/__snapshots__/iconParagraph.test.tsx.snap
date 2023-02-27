@@ -1,12 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
 exports[`should render 1`] = `
 <div>
   <p
-    class="paragraph"
+    class="_paragraph_3d2a92"
   >
     <span
-      class="icon"
+      class="_icon_3d2a92"
     >
       <svg
         class="lucide lucide-moon"
@@ -22,12 +22,12 @@ exports[`should render 1`] = `
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+          d="M12 3a6.364 6.364 0 0 0 9 9 9 9 0 1 1-9-9Z"
         />
       </svg>
     </span>
     <span
-      class="content"
+      class="_content_3d2a92"
     >
       TEST
     </span>

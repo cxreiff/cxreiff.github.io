@@ -1,43 +1,53 @@
-@use '../../shared.scss' as *;
-@use '../../themed.scss' as *;
+@use "../../shared.scss" as *;
+@use "../../themed.scss" as *;
 
 .homepage_about {
-    padding: 0rem 1rem;
+  padding: 0rem 1rem;
+
+  @include is_larger_than($sm-breakpoint) {
+    padding: 1rem 2rem;
+
+    @include themed(true) {
+      border-right: 3px dashed t($color-secondary);
+    }
+  }
+
+  p:first-child {
+    text-align: center;
+    margin: 0 0 2rem;
+    display: none;
 
     @include is_larger_than($sm-breakpoint) {
-        padding: 1rem 2rem;
-        
-        @include themed(true) {
-            border-right: 3px dashed t($color-secondary);
-        }
+      display: inherit;
     }
-    
-    br ~ p {
-        @include fadeup();
+  }
 
-        &:nth-last-child(1) {
-            animation-delay: 150ms;
-        }
-    }
-    
-    a {
-        @include interactive_secondary($color-text-link, $color-light);
-    }
-    
-    header {
-        display: flex;
+  br ~ p {
+    @include fadeup();
 
-        h1 {
-            flex: 1;
-            font-size: 1.7rem;
-            
-            @include themed(true) {
-                color: t($color-dark);
-            }
-        }
-
-        .theme_buttons {
-            align-self: center;
-        }
+    &:nth-last-child(1) {
+      animation-delay: 125ms;
     }
+  }
+
+  a {
+    @include interactive_secondary($color-text-link, $color-light);
+  }
+
+  header {
+    display: flex;
+
+    h1 {
+      flex: 1;
+      font-size: 1.7rem;
+
+      @include themed(true) {
+        color: t($color-dark);
+      }
+    }
+
+    .theme_buttons {
+      align-self: center;
+    }
+  }
 }

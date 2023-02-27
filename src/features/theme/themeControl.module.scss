@@ -1,46 +1,51 @@
-@use '../../shared.scss' as *;
-@use '../../themed.scss' as *;
+@use "../../shared.scss" as *;
+@use "../../themed.scss" as *;
 
-.lightmode_button, .greenish_button, .bluish_button {
-    position: relative;
-    box-sizing: initial;
-    display: inline-block;
-    border-radius: 42%;
-    width: 1.4rem;
-    height: 1.4rem;
-    padding: 0;
-    margin: 0 0.25rem;
-    border: 3px solid transparent;
+.lightmode_button,
+.greenish_button,
+.bluish_button {
+  position: relative;
+  box-sizing: initial;
+  display: inline-block;
+  border-radius: 42%;
+  width: 1rem;
+  height: 1rem;
+  padding: 0;
+  margin: 0 0.5rem;
+  border: 3px solid transparent;
 
-    @include interactive(
-        0.15rem,
-        42%,
-        $color-dark,
-        $color-darker,
-        $color-darker,
-        $color-lighter,
-    );
+  @include interactive(
+    0.15rem,
+    42%,
+    $color-dark,
+    $color-darker,
+    $color-darker,
+    $color-lighter
+  );
 
-    @media (hover: hover) {
-        @include turbulence_static();
-        
-        &:hover {
-            @include turbulence_animated();
-        }
+  @media (hover: hover) {
+    @include turbulence_static();
+
+    &:hover {
+      @include turbulence_animated();
     }
-        
-    &.current_theme {
-        @include themed() {
-            border-color: t($color-tertiary);
-        }
+  }
+
+  &.current_theme {
+    @include themed() {
+      border-color: t($color-tertiary);
     }
+  }
 }
 .lightmode_button {
-    background-color: value_by_theme('lightmode', $color-secondary);
+  color: value_by_theme("lightmode", $color-tertiary);
+  background-color: value_by_theme("lightmode", $color-secondary);
 }
 .greenish_button {
-    background-color: value_by_theme('greenish', $color-secondary);
+  color: value_by_theme("greenish", $color-tertiary);
+  background-color: value_by_theme("greenish", $color-secondary);
 }
 .bluish_button {
-    background-color: value_by_theme('bluish', $color-secondary);
+  color: value_by_theme("bluish", $color-tertiary);
+  background-color: value_by_theme("bluish", $color-secondary);
 }

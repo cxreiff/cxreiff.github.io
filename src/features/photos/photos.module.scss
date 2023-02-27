@@ -1,29 +1,29 @@
-@use '../../shared.scss' as *;
-@use '../../themed.scss' as *;
+@use "../../shared.scss" as *;
+@use "../../themed.scss" as *;
 
 .photos {
-    display: grid;
-    gap: 1rem 1rem;
-    grid-template-columns: 1fr;
-    
-    @include is_larger_than($sm-breakpoint) {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
+  display: grid;
+  gap: 1rem 1rem;
+  grid-template-columns: 1fr;
+
+  @include is_larger_than($sm-breakpoint) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 .photo {
-    @include themed(true) {
-        background-color: t($color-background-container);
-    }
+  @include themed(true) {
+    background-color: t($color-background-container);
+  }
 }
 
 .tile {
-    line-height: 0;
-    font-size: 0;
-    
-    @include card($color-background-container, false, true);
-    
-    img {
-        @include hover_scale(1.04);
-    }
+  line-height: 0;
+  font-size: 0;
+
+  @include card($color-background-container, false, true);
+
+  img {
+    @include hover_scale(1.04);
+  }
 }

@@ -1,46 +1,35 @@
-@use './shared.scss' as *;
-@use './themed.scss' as *;
+@use "./shared.scss" as *;
+@use "./themed.scss" as *;
 
 html {
-    @include is_larger_than($md-breakpoint) {
-        margin-left: calc(100vw - 100%);
-        margin-right: 0;
-    }
+  @include is_larger_than($md-breakpoint) {
+    margin-left: calc(100vw - 100%);
+    margin-right: 0;
+  }
 }
 
 body {
-    font-family: $font-family;
-    font-weight: 300;
-    letter-spacing: -0.02em;
-    padding: 0;
-    opacity: 0;
+  font-family: $font-family;
+  font-weight: 300;
+  padding: 0;
 
-    @include themed(true) {
-        background: t($color-background-default);
-        color: t($color-text-default);
-    }
-}
-body.font_loaded,
-body.font_failed {
-    :global {
-        animation-name: fadein;
-        animation-duration: 250ms;
-        animation-timing-function: ease-in;
-        animation-iteration-count: 1;
-    }
-    opacity: 1;
+  :global {
+    animation-name: fadein;
+    animation-duration: 250ms;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+  }
+
+  @include themed(true) {
+    background: t($color-background-default);
+    color: t($color-text-default);
+  }
 }
 
 p {
-    line-height: 1.5rem;
+  line-height: 1.5rem;
 
-    @include is_larger_than($sm-breakpoint) {
-        text-align: justify;
-    }
-}
-
-@font-face {
-    font-family: montserrat;
-    src: url('/src/assets/fonts/montserrat-light.woff2');
-    font-display: block;
+  @include is_larger_than($sm-breakpoint) {
+    text-align: justify;
+  }
 }

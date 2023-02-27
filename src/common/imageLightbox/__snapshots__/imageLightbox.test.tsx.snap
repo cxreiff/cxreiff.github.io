@@ -1,13 +1,13 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
 exports[`should open lightbox 1`] = `
 <div>
   <div
-    class="image_lightbox"
+    class="_image_lightbox_8b4657"
   >
     <div>
       <div
-        class="frame interactive hidden"
+        class="_frame_331539 _interactive_8b4657 _hidden_331539"
       >
         <img
           alt="test image"
@@ -105,11 +105,11 @@ exports[`should open lightbox 1`] = `
 exports[`should render 1`] = `
 <div>
   <div
-    class="image_lightbox"
+    class="_image_lightbox_8b4657"
   >
     <div>
       <div
-        class="frame interactive hidden"
+        class="_frame_331539 _interactive_8b4657 _hidden_331539"
       >
         <img
           alt="test image"

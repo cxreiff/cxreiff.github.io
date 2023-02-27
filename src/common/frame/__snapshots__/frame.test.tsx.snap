@@ -1,9 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
 exports[`should hide when loading prop is true 1`] = `
 <div>
   <div
-    class="frame hidden"
+    class="_frame_331539 _hidden_331539"
   >
     <img
       alt="test"
@@ -19,7 +19,7 @@ exports[`should hide when loading prop is true 1`] = `
 exports[`should render 1`] = `
 <div>
   <div
-    class="frame test"
+    class="_frame_331539 test"
     style="background: red;"
   >
     <img

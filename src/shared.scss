@@ -1,7 +1,10 @@
-@use './themed.scss' as *;
+@use "./themed.scss" as *;
 
-$font-family: montserrat, Trebuchet MS, Verdana, Geneva, sans-serif;
+$font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+  Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
 $roundness: 1px;
+$navbar-height: 2.75rem;
 $cubic-curve: cubic-bezier(0.45, 0.05, 0.55, 0.95);
 
 $md-breakpoint: 1200px;
@@ -9,157 +12,203 @@ $sm-breakpoint: 768px;
 $xs-breakpoint: 385px;
 
 @mixin is_larger_than($breakpoint) {
-    @media only screen and (min-width: $breakpoint) { @content; }
+  @media only screen and (min-width: $breakpoint) {
+    @content;
+  }
 }
 
 @mixin is_smaller_than($breakpoint) {
-    @media only screen and (max-width: calc($breakpoint - 1px)) { @content; }
+  @media only screen and (max-width: calc($breakpoint - 1px)) {
+    @content;
+  }
 }
 
 @mixin text_spacing() {
-    padding: 0.5rem 1rem;
-    margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
 }
 
 @mixin hard_shadow() {
-    @include themed(true) {
-        box-shadow: t($default-hard-shadow);
-    }
+  @include themed(true) {
+    box-shadow: t($default-hard-shadow);
+  }
 }
 
 @mixin soft_shadow() {
-    @include themed(true) {
-        box-shadow: t($default-soft-shadow);
-    }
+  @include themed(true) {
+    box-shadow: t($default-soft-shadow);
+  }
 }
 
 @mixin card($background, $hard-shadow: false, $soft-shadow: false) {
-    border-radius: $roundness;
-    overflow: hidden;
+  border-radius: $roundness;
+  overflow: hidden;
 
-    @if ($hard-shadow) { @include hard_shadow(); }
-    @if ($soft-shadow) { @include soft_shadow(); }
+  @if ($hard-shadow) {
+    @include hard_shadow();
+  }
+  @if ($soft-shadow) {
+    @include soft_shadow();
+  }
 
-    @include themed(true) {
-        background-color: t($background);
-    }
+  @include themed(true) {
+    background-color: t($background);
+  }
 }
 
 @mixin hover_scale($ratio) {
-    @media (hover: hover) {
-        transition: transform 0.2s $cubic-curve;
+  @media (hover: hover) {
+    transition: transform 0.2s $cubic-curve;
 
-        &:hover {
-            transform: scale($ratio);
-        }
+    &:hover {
+      transform: scale($ratio);
     }
+  }
 }
 
-@mixin interactive($gutter, $hover-radius, $hover-bg, $hover-color, $active-bg, $active-color) {
-    cursor: pointer;
-    
-    @media (hover: hover) {
-        &::after {
-            opacity: 0;
-            content: '';
-            position: absolute;
-            width: calc(100% - ($gutter * 2));
-            height: calc(100% - ($gutter * 2));
-            top: $gutter;
-            right: $gutter;
-            bottom: $gutter;
-            left: $gutter;
-            border-radius: max(2px, $hover-radius);
-            transition: opacity 0.15s $cubic-curve;
-            overflow: hidden;
-            
-            @include themed(true) {
-                background: t($hover-bg);
-                color: t($hover-color);
-            }
-        }
+@mixin interactive(
+  $gutter,
+  $hover-radius,
+  $hover-bg,
+  $hover-color,
+  $active-bg,
+  $active-color
+) {
+  cursor: pointer;
 
-        &:hover::after {
-            opacity: 0.2;
-        }
+  @media (hover: hover) {
+    &::after {
+      opacity: 0;
+      content: "";
+      position: absolute;
+      width: calc(100% - ($gutter * 2));
+      height: calc(100% - ($gutter * 2));
+      top: $gutter;
+      right: $gutter;
+      bottom: $gutter;
+      left: $gutter;
+      border-radius: max(2px, $hover-radius);
+      transition: opacity 0.15s $cubic-curve;
+      overflow: hidden;
 
-        &:active::after {
-            transition: none;
-            width: 100%;
-            height: 100%;
-            inset: 0;
-            opacity: 0.6;
-            border-radius: inherit;
-            
-            @include themed(true) {
-                background: t($active-bg);
-                color: t($active-color);
-            }
-        }
+      @include themed(true) {
+        background: t($hover-bg);
+        color: t($hover-color);
+      }
     }
+
+    &:hover::after {
+      opacity: 0.2;
+    }
+
+    &:active::after {
+      transition: none;
+      width: 100%;
+      height: 100%;
+      inset: 0;
+      opacity: 0.6;
+      border-radius: inherit;
+
+      @include themed(true) {
+        background: t($active-bg);
+        color: t($active-color);
+      }
+    }
+  }
 }
 
 @mixin interactive_secondary($text-color, $highlight-color) {
-    padding: 1px 2px 2px;
-    margin: -1px -2px -2px;
-    text-underline-offset: 2px;
-    transition: background-size 0.2s;
+  padding: 1px 2px 2px;
+  margin: -1px -2px -2px;
+  text-underline-offset: 2px;
+  transition: background-size 0.2s;
 
-    @include themed(true) {
-        color: t($text-color);
-        background: linear-gradient(to right, t($highlight-color), t($highlight-color));
-        background-position: 0 100%;
-        background-repeat: no-repeat;
-        background-size: 100% 0em;
-        
-        &:hover {
-          background-size: 100% 100%;
-        }
+  @include themed(true) {
+    color: t($text-color);
+    background: linear-gradient(
+      to right,
+      t($highlight-color),
+      t($highlight-color)
+    );
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 0em;
+
+    &:hover {
+      background-size: 100% 100%;
     }
+  }
 }
 
-@mixin fadeup () {
-    :global {
-        animation: fadein 1s ease-out, slideup 1s cubic-bezier(0.2, 0.75, 0, 1);
-        animation-fill-mode: both;
-    }
+@mixin fadeup() {
+  :global {
+    animation: fadein 1s ease-out, slideup 1s cubic-bezier(0.2, 0.75, 0, 1);
+    animation-fill-mode: both;
+  }
 }
 @keyframes :global(fadein) {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 @keyframes :global(slideup) {
-    0% { transform: translateY(3rem); }
-    100% { transform: translateY(0); }
+  0% {
+    transform: translateY(3rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @function turbulence_inline($id: 0) {
-    @return map-get((
-        0: url('#turbulence_0'),
-        1: url('#turbulence_1'),
-        2: url('#turbulence_2'),
-        3: url('#turbulence_3'),
-        4: url('#turbulence_4'),
-        5: url('#turbulence_5'),
-        6: url('#turbulence_6'),
-        7: url('#turbulence_7'),
-    ), $id);
+  @return map-get(
+    (
+      0: url("#turbulence_0"),
+      1: url("#turbulence_1"),
+      2: url("#turbulence_2"),
+      3: url("#turbulence_3"),
+      4: url("#turbulence_4"),
+      5: url("#turbulence_5"),
+      6: url("#turbulence_6"),
+      7: url("#turbulence_7"),
+    ),
+    $id
+  );
 }
 @mixin turbulence_static() {
-    filter: turbulence_inline(0);
+  filter: turbulence_inline(0);
 }
 @mixin turbulence_animated() {
-    :global {
-        animation: turbulence 0.8s linear infinite;
-    }
+  :global {
+    animation: turbulence 0.8s linear infinite;
+  }
 }
 @keyframes :global(turbulence) {
-    0% { filter: turbulence_inline(0); }
-    12.5% { filter: turbulence_inline(1); }
-    25% { filter: turbulence_inline(2); }
-    37.5% { filter: turbulence_inline(3); }
-    50% { filter: turbulence_inline(4); }
-    62.5% { filter: turbulence_inline(5); }
-    75% { filter: turbulence_inline(6); }
-    100% { filter: turbulence_inline(7); }
+  0% {
+    filter: turbulence_inline(0);
+  }
+  12.5% {
+    filter: turbulence_inline(1);
+  }
+  25% {
+    filter: turbulence_inline(2);
+  }
+  37.5% {
+    filter: turbulence_inline(3);
+  }
+  50% {
+    filter: turbulence_inline(4);
+  }
+  62.5% {
+    filter: turbulence_inline(5);
+  }
+  75% {
+    filter: turbulence_inline(6);
+  }
+  100% {
+    filter: turbulence_inline(7);
+  }
 }
