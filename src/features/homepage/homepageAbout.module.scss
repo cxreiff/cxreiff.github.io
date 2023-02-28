@@ -12,42 +12,23 @@
     }
   }
 
-  p:first-child {
-    text-align: center;
-    margin: 0 0 2rem;
-    display: none;
-
-    @include is_larger_than($sm-breakpoint) {
-      display: inherit;
-    }
+  .theme_buttons {
+    margin-left: 0.75rem;
   }
 
   br ~ p {
     @include fadeup();
 
+    &:nth-last-child(2) {
+      animation-delay: 75ms;
+    }
+
     &:nth-last-child(1) {
-      animation-delay: 125ms;
+      animation-delay: 150ms;
     }
   }
 
   a {
     @include interactive_secondary($color-text-link, $color-light);
-  }
-
-  header {
-    display: flex;
-
-    h1 {
-      flex: 1;
-      font-size: 1.7rem;
-
-      @include themed(true) {
-        color: t($color-dark);
-      }
-    }
-
-    .theme_buttons {
-      align-self: center;
-    }
   }
 }

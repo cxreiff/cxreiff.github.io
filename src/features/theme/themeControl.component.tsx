@@ -16,7 +16,7 @@ export const ThemeControl: FC<ThemeControlProps> = ({ className }) => {
   const theme = useAppSelector((state) => state.theme.theme);
 
   return (
-    <span className={className}>
+    <span className={cn(className, styles.theme_control)}>
       <button
         aria-label={"change theme to red color scheme"}
         className={cn(styles.lightmode_button, {

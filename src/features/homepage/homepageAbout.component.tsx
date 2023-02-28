@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
-import { Github, FileText } from "lucide-preact";
+import { Github, FileText, Paintbrush } from "lucide-preact";
 
 import { IconParagraph } from "~/src/common/iconParagraph/iconParagraph.component";
 import { ThemeControl } from "~/src/features/theme/themeControl.component";
@@ -15,12 +15,9 @@ import styles from "./homepageAbout.module.scss";
 export const HomepageAbout: FC = () => (
   <div className={styles.homepage_about}>
     <p>
-      <ThemeControl className={styles.theme_buttons} />
-    </p>
-    <p>
-      Hello! I am a software engineer specializing in front-end development. I
-      have experience building clients with tools like TypeScript and React, and
-      have expertise across the full stack as well.
+      <strong>Hello!</strong> I am a software engineer specializing in front-end
+      development. I build clients with tools like TypeScript and React, and
+      develop across the full stack as well.
     </p>
     <p>
       This is my personal site, where I've put photos, writing, and various
@@ -35,6 +32,9 @@ export const HomepageAbout: FC = () => (
       this <Link to={"/posts/portfolio-site-design"}>post</Link>.
     </p>
     <br />
+    <IconParagraph icon={<Paintbrush />}>
+      Try a different color? <ThemeControl className={styles.theme_buttons} />
+    </IconParagraph>
     <IconParagraph icon={<FileText />}>
       My full-stack development resume can be found{" "}
       <a href={RESUME_URL}>here</a>.
