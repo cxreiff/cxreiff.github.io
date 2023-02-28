@@ -1,51 +1,55 @@
 @use "../../shared.scss" as *;
 @use "../../themed.scss" as *;
 
-.lightmode_button,
-.greenish_button,
-.bluish_button {
-  position: relative;
-  box-sizing: initial;
-  display: inline-block;
-  border-radius: 42%;
-  width: 1rem;
-  height: 1rem;
-  padding: 0;
-  margin: 0 0.5rem;
-  border: 3px solid transparent;
+.theme_control {
+  white-space: nowrap;
 
-  @include interactive(
-    0.15rem,
-    42%,
-    $color-dark,
-    $color-darker,
-    $color-darker,
-    $color-lighter
-  );
+  button {
+    position: relative;
+    box-sizing: initial;
+    vertical-align: text-bottom;
+    border-radius: 42%;
+    width: 1rem;
+    height: 1rem;
+    padding: 0;
+    margin: 0 0.25rem;
+    border: 3px solid transparent;
+    display: inline-block;
 
-  @media (hover: hover) {
-    @include turbulence_static();
+    @include interactive(
+      0.15rem,
+      42%,
+      $color-dark,
+      $color-darker,
+      $color-darker,
+      $color-lighter
+    );
 
-    &:hover {
-      @include turbulence_animated();
+    @media (hover: hover) {
+      @include turbulence_static();
+
+      &:hover {
+        @include turbulence_animated();
+      }
     }
-  }
 
-  &.current_theme {
-    @include themed() {
-      border-color: t($color-tertiary);
+    &.current_theme {
+      @include themed() {
+        border-color: t($color-secondary);
+      }
     }
   }
 }
+
 .lightmode_button {
   color: value_by_theme("lightmode", $color-tertiary);
-  background-color: value_by_theme("lightmode", $color-secondary);
+  background-color: value_by_theme("lightmode", $color-light);
 }
 .greenish_button {
   color: value_by_theme("greenish", $color-tertiary);
-  background-color: value_by_theme("greenish", $color-secondary);
+  background-color: value_by_theme("greenish", $color-light);
 }
 .bluish_button {
   color: value_by_theme("bluish", $color-tertiary);
-  background-color: value_by_theme("bluish", $color-secondary);
+  background-color: value_by_theme("bluish", $color-light);
 }
