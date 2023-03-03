@@ -28,6 +28,10 @@
     }
   }
 
+  strong {
+    font-weight: bold;
+  }
+
   a {
     @include interactive_secondary($color-text-link, $color-light);
   }

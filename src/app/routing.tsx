@@ -19,13 +19,18 @@ const PostsContent = lazy(
 );
 
 const Pixijs = () => (
-  <IFrame aspect={8 / 5} url={PIXIJS_URL} title={"pixijs"} />
+  <IFrame aspect={15.5 / 9} url={PIXIJS_URL} title={"pixijs"} />
 );
 const Babylonjs = () => (
   <IFrame aspect={3 / 2} url={BABYLONJS_URL} title={"babylonjs"} />
 );
 const Beverage = () => (
-  <IFrame aspect={3 / 2} url={BEVERAGE_URL} title={"beverage"} />
+  <IFrame
+    aspect={3 / 2}
+    mobileAspect={2 / 3}
+    url={BEVERAGE_URL}
+    title={"beverage"}
+  />
 );
 
 export type RouteDefinition = {
