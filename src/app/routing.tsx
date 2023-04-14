@@ -17,6 +17,7 @@ const Posts = lazy(() => import("~/src/features/posts/posts.component"));
 const PostsContent = lazy(
   () => import("~/src/features/posts/postsContent.component")
 );
+const Shaders = lazy(() => import("~/src/features/shaders/shaders.component"));
 
 const Pixijs = () => (
   <IFrame aspect={15.5 / 9} url={PIXIJS_URL} title={"pixijs"} />
@@ -65,6 +66,10 @@ export const ROUTES: RouteDefinition[] = [
       {
         path: "beverage",
         Component: Beverage,
+      },
+      {
+        path: "shaders",
+        Component: Shaders,
       },
     ],
   },

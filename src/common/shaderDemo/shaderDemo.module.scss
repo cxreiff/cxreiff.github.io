@@ -1,0 +1,32 @@
+@use "../../shared.scss" as *;
+@use "../../themed.scss" as *;
+
+.shader_demo {
+  @include is_larger_than($sm-breakpoint) {
+    display: grid;
+    gap: 1rem;
+    align-items: center;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.shader_syntax {
+  & > pre {
+    @include card($color-background-container, true, false);
+
+    margin: 0 !important;
+    &:not(:last-child) {
+      margin-bottom: 1rem !important;
+    }
+  }
+}
+
+.shader_view {
+  height: 240px;
+  margin-bottom: 1rem;
+
+  @include is_larger_than($sm-breakpoint) {
+    height: 100%;
+    margin-bottom: initial;
+  }
+}

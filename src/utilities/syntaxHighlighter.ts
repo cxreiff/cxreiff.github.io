@@ -1,7 +1,7 @@
 import { PrismLight } from "react-syntax-highlighter";
 import {
-  prism,
-  vscDarkPlus,
+  duotoneLight,
+  duotoneDark,
 } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 /**
@@ -15,6 +15,9 @@ PrismLight.registerLanguage("tsx", tsx);
 import scss from "react-syntax-highlighter/dist/esm/languages/prism/scss";
 PrismLight.registerLanguage("json", scss);
 
+import glsl from "react-syntax-highlighter/dist/esm/languages/prism/glsl";
+PrismLight.registerLanguage("glsl", glsl);
+
 export const SyntaxHighlighter = PrismLight;
-export const styleLight = prism;
-export const styleDark = vscDarkPlus;
+export const styleLight = duotoneLight;
+export const styleDark = duotoneDark;
