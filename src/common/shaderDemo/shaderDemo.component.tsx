@@ -7,20 +7,17 @@ import {
   styleLight,
   styleDark,
 } from "~/src/utilities/syntaxHighlighter";
-import { ShaderView } from "../shaderView/shaderView.component";
+import {
+  ShaderView,
+  ShaderViewProps,
+} from "../shaderView/shaderView.component";
 
 import styles from "./shaderDemo.module.scss";
 
-type ShaderDemoProps = {
-  vertexShader: string;
-  fragmentShader: string;
-  position: number[][];
-};
-
-export const ShaderDemo: FC<ShaderDemoProps> = ({
+export const ShaderDemo: FC<ShaderViewProps> = ({
   vertexShader,
   fragmentShader,
-  position,
+  ...props
 }) => {
   const theme = useAppSelector((state) => state.theme.theme);
 
@@ -30,7 +27,7 @@ export const ShaderDemo: FC<ShaderDemoProps> = ({
         <ShaderView
           vertexShader={vertexShader}
           fragmentShader={fragmentShader}
-          position={position}
+          {...props}
         />
       </div>
       <div className={styles.shader_syntax}>

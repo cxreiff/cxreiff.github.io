@@ -2,6 +2,8 @@
 @use "../../themed.scss" as *;
 
 .shader_demo {
+  margin-bottom: 2rem;
+
   @include is_larger_than($sm-breakpoint) {
     display: grid;
     gap: 1rem;

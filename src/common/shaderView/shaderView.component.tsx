@@ -1,5 +1,5 @@
 import { FC, useEffect, useRef } from "react";
-import Regl, { Vec2, Buffer } from "regl";
+import Regl, { Vec2, Vec4, PrimitiveType } from "regl";
 
 import { Frame } from "../frame/frame.component";
 import styles from "./shaderView.module.scss";
@@ -10,19 +10,21 @@ interface Uniforms {
 }
 
 interface Attributes {
-  position: Buffer;
+  position: Vec4[];
 }
 
-type ShaderCanvasProps = {
+export type ShaderViewProps = {
   vertexShader: string;
   fragmentShader: string;
-  position: number[][];
+  position: Vec4[];
+  primitive: PrimitiveType;
 };
 
-export const ShaderView: FC<ShaderCanvasProps> = ({
+export const ShaderView: FC<ShaderViewProps> = ({
   vertexShader,
   fragmentShader,
   position,
+  primitive,
 }) => {
   const ref = useRef<HTMLCanvasElement>(null);
 
@@ -33,7 +35,7 @@ export const ShaderView: FC<ShaderCanvasProps> = ({
         vert: vertexShader,
         frag: fragmentShader,
         attributes: {
-          position: regl.buffer(position),
+          position,
         },
         uniforms: {
           u_resolution: [
@@ -42,7 +44,8 @@ export const ShaderView: FC<ShaderCanvasProps> = ({
           ],
           u_time: regl.context("time"),
         },
-        count: position.length,
+        primitive,
+        count: 4,
       });
       regl.frame(() => {
         regl.clear({ color: [0, 0, 0, 0], depth: 1 });
@@ -52,8 +55,8 @@ export const ShaderView: FC<ShaderCanvasProps> = ({
   }, [ref, vertexShader, fragmentShader]);
 
   return (
-    <Frame aspect={2 / 2.1} className={styles.shader_view}>
-      <canvas ref={ref} width={1000} height={1000} />
+    <Frame aspect={1 / 1} className={styles.shader_view}>
+      <canvas ref={ref} width={800} height={800} />
     </Frame>
   );
 };
