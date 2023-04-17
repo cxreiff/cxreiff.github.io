@@ -1,4 +1,5 @@
-import { FC } from "react";
+import cn from "classnames";
+import { FC, useState } from "react";
 
 import { useAppSelector } from "~/src/app/store";
 import { Theme } from "~/src/features/theme/theme.slice";
@@ -20,9 +21,13 @@ export const ShaderDemo: FC<ShaderViewProps> = ({
   ...props
 }) => {
   const theme = useAppSelector((state) => state.theme.theme);
+  const [expanded, setExpanded] = useState(false);
 
   return (
-    <section className={styles.shader_demo}>
+    <section
+      className={cn(styles.shader_demo, { [styles.expanded]: expanded })}
+      onClick={() => setExpanded(!expanded)}
+    >
       <div className={styles.shader_view}>
         <ShaderView
           vertexShader={vertexShader}

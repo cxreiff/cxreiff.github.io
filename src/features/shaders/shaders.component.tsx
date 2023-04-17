@@ -7,6 +7,8 @@ import vertexShader1 from "~src/assets/shaders/shader1.vert";
 import fragmentShader1 from "~src/assets/shaders/shader1.frag";
 import vertexShader2 from "~src/assets/shaders/shader2.vert";
 import fragmentShader2 from "~src/assets/shaders/shader2.frag";
+import vertexShader3 from "~src/assets/shaders/shader3.vert";
+import fragmentShader3 from "~src/assets/shaders/shader3.frag";
 
 const Shaders: FC = () => (
   <section>
@@ -26,6 +28,17 @@ const Shaders: FC = () => (
         {
           vertexShader: vertexShader2,
           fragmentShader: fragmentShader2,
+          primitive: "triangle strip",
+          position: [
+            [-0.7, -0.7, +0, +1],
+            [+0.7, -0.7, +0, +1],
+            [-0.7, +0.7, +0, +1],
+            [+0.7, +0.7, +0, +1],
+          ],
+        },
+        {
+          vertexShader: vertexShader3,
+          fragmentShader: fragmentShader3,
           primitive: "triangle strip",
           position: [
             [-0.7, -0.7, +0, +1],
