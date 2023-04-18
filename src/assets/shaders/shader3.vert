@@ -1,18 +1,28 @@
 precision mediump float;
 
 uniform float u_time;
-
 attribute vec4 position;
 
-void main() {
-    mat3 rotation = mat3(
-        vec3(1.0,         0.0,         0.0),
-        vec3(0.0,  cos(u_time),  sin(u_time)),
-        vec3(0.0, -sin(u_time),  cos(u_time))
+mat4 rotate_x(float theta)
+{
+    return mat4(
+        vec4(1.0,         0.0,        0.0, 0.0),
+        vec4(0.0,  cos(theta), sin(theta), 0.0),
+        vec4(0.0, -sin(theta), cos(theta), 0.0),
+        vec4(0.0,         0.0,        0.0, 1.0)
     );
+}
 
-    vec3 projected = rotation * position.xyz;
-    float perspective_ratio = projected.z * 0.3 + 1.0;
+mat4 projection(float perspective)
+{
+    return mat4(
+        vec4(1.0, 0.0, 0.0, 0.0),
+        vec4(0.0, 1.0, 0.0, 0.0),
+        vec4(0.0, 0.0, 1.0, perspective),
+        vec4(0.0, 0.0, 0.0, 1.0)
+    );
+}
 
-    gl_Position = vec4(projected / perspective_ratio, 1.0);
+void main() {
+    gl_Position = projection(0.3) * rotate_x(u_time) * position;
 }
