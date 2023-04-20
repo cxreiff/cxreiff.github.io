@@ -1,5 +1,5 @@
 import { FC, useEffect, useRef } from "react";
-import Regl, { Vec2, Vec4, PrimitiveType } from "regl";
+import Regl, { Vec2, PrimitiveType } from "regl";
 
 import { Frame } from "../frame/frame.component";
 import styles from "./shaderView.module.scss";
@@ -10,13 +10,13 @@ interface Uniforms {
 }
 
 interface Attributes {
-  position: Vec4[];
+  position: number[][];
 }
 
 export type ShaderViewProps = {
   vertexShader: string;
   fragmentShader: string;
-  position: Vec4[];
+  position: number[][];
   primitive: PrimitiveType;
 };
 

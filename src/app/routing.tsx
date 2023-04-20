@@ -70,6 +70,12 @@ export const ROUTES: RouteDefinition[] = [
       {
         path: "shaders",
         Component: Shaders,
+        children: [
+          {
+            path: ":category",
+            Component: Shaders,
+          },
+        ],
       },
     ],
   },

@@ -1,0 +1,58 @@
+@use "../../shared.scss" as *;
+@use "../../themed.scss" as *;
+
+.subnavigation {
+  @include card($color-lighter, true, false);
+
+  margin: 0 0 2rem 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  @include is_larger_than($sm-breakpoint) {
+    flex-direction: row;
+  }
+
+  & > li {
+    position: relative;
+    width: 100%;
+
+    @include interactive(
+      0.25rem,
+      $roundness,
+      $color-dark,
+      $color-darker,
+      $color-darker,
+      $color-lighter
+    );
+
+    a {
+      width: 100%;
+      display: inline-block;
+      position: relative;
+      padding: 0 1.25rem;
+      line-height: 2rem;
+      text-decoration: none;
+
+      @include themed(true) {
+        color: t($color-darker);
+      }
+    }
+
+    @include themed(true) {
+      &.current {
+        background: t($color-darker);
+
+        a {
+          color: t($color-lighter);
+        }
+      }
+    }
+
+    @include is_larger_than($sm-breakpoint) {
+      width: min-content;
+    }
+  }
+}

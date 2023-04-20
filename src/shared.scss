@@ -78,6 +78,7 @@ $xs-breakpoint: 385px;
 
   @media (hover: hover) {
     &::after {
+      pointer-events: none;
       opacity: 0;
       content: "";
       position: absolute;
