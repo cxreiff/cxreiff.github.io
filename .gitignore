@@ -7,3 +7,4 @@ tsm
 coverage
 node_modules
 *.scss.d.ts
+*.scss.json

@@ -18,7 +18,7 @@ const Projects: FC = () => {
         image={teapot}
         primary={"shaders"}
         secondary={"webgl, regl.js, glsl"}
-        onClick={() => navigate("/projects/shaders")}
+        onClick={() => navigate("/projects/shaders/basic")}
       />
       <Card
         image={bevy}
