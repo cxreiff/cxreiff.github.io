@@ -55,6 +55,9 @@ devDependencies:
   '@typescript-eslint/parser':
     specifier: ^5.59.0
     version: 5.59.0(eslint@8.38.0)(typescript@5.0.4)
+  angle-normals:
+    specifier: ^1.0.0
+    version: 1.0.0
   assets:
     specifier: ^3.0.1
     version: 3.0.1
@@ -64,6 +67,9 @@ devDependencies:
   buffer:
     specifier: ^5.5.0
     version: 5.7.1
+  bunny:
+    specifier: ^1.0.1
+    version: 1.0.1
   classnames:
     specifier: ^2.3.2
     version: 2.3.2
@@ -82,6 +88,9 @@ devDependencies:
   events:
     specifier: ^3.3.0
     version: 3.3.0
+  gl-matrix:
+    specifier: ^3.4.3
+    version: 3.4.3
   gray-matter:
     specifier: ^4.0.3
     version: 4.0.3
@@ -2299,6 +2308,10 @@ packages:
       uri-js: 4.4.1
     dev: true
 
+  /angle-normals@1.0.0:
+    resolution: {integrity: sha512-QF3h4vmrAmlFHF8Lwzgdz6Z/Yb5a2/klWxpqUpRCbFgXKe2d7Ey5PRMi4gS73PP+SYjZa+S46HtjuHlHv4w6BA==}
+    dev: true
+
   /ansi-escapes@4.3.2:
     resolution: {integrity: sha512-gKXj5ALrKWQLsYG9jlTRmR/xKluxHV+Z9QEwNIgCfM1/uwPMCuzVVnh5mwTd+OuBZcwSIMbqssNWRm1lE51QaQ==}
     engines: {node: '>=8'}
@@ -2587,6 +2600,10 @@ packages:
     dependencies:
       esbuild: 0.14.54
       load-tsconfig: 0.2.3
+    dev: true
+
+  /bunny@1.0.1:
+    resolution: {integrity: sha512-KsMt755E0AVYjeUnQeOPtVNGuDLiWjJ6VIoyywLmVx5R6QliuL5AS0X/gi+ORDDlBZfOaDBAqdqCv5XAlF9tCQ==}
     dev: true
 
   /cac@6.7.14:
@@ -4083,6 +4100,10 @@ packages:
     engines: {node: '>= 0.8.0'}
     dependencies:
       readable-stream: 1.1.14
+    dev: true
+
+  /gl-matrix@3.4.3:
+    resolution: {integrity: sha512-wcCp8vu8FT22BnvKVPjXa/ICBWRq/zjFfdofZy1WSpQZpphblv12/bOQLBC1rMM7SGOFS9ltVmKOHil5+Ml7gA==}
     dev: true
 
   /glob-parent@5.1.2:
