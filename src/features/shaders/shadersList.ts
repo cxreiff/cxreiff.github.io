@@ -1,3 +1,4 @@
+import fs from "fs";
 import { ShaderViewProps } from "~src/common/shaderView/shaderView.component";
 
 import square from "~src/assets/shaders/square.json";
@@ -12,6 +13,10 @@ import vertexBasic3 from "~src/assets/shaders/basic3.vert";
 import fragmentBasic3 from "~src/assets/shaders/basic3.frag";
 import vertexBasic4 from "~src/assets/shaders/basic4.vert";
 import fragmentBasic4 from "~src/assets/shaders/basic4.frag";
+import vertexTexture1 from "~src/assets/shaders/texture1.vert";
+import fragmentTexture1 from "~src/assets/shaders/texture1.frag";
+
+const kitty = fs.readFileSync("src/assets/images/kitty.png");
 
 export const CATEGORIES = ["basic", "textures", "shading", "other"] as const;
 
@@ -44,7 +49,17 @@ export const SHADERS_LIST: { [K in Category]: ShaderViewProps[] } = {
       position: square.map(([x, y, z, h]) => [x * 0.8, y * 0.8, z, h]),
     },
   ],
-  textures: [],
+  textures: [
+    {
+      vertexShader: vertexTexture1,
+      fragmentShader: fragmentTexture1,
+      primitive: "triangle strip",
+      position: square.map(([x, y, z, h]) => [x * 0.8, y * 0.8, z, h]),
+      textures: {
+        "textures[0]": kitty,
+      },
+    },
+  ],
   shading: [],
   other: [
     {
