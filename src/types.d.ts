@@ -34,6 +34,21 @@ declare module "*.vert" {
   export default value;
 }
 
+declare module "teapot" {
+  const cells: number[][];
+  const positions: number[][];
+}
+
+declare module "bunny" {
+  const cells: number[][];
+  const positions: number[][];
+}
+
+declare module "angle-normals" {
+  const angleNormals: (cells: number[][], positions: number[][]) => number[][];
+  export default angleNormals;
+}
+
 declare module "react-modal-image";
 
 declare module "react-syntax-highlighter/dist/esm/languages/prism";

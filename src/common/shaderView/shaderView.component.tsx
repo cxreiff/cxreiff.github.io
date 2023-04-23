@@ -5,6 +5,10 @@ import ReglInit, {
   Regl,
   Texture2D,
   NDArrayLike,
+  MaybeDynamicUniforms,
+  Uniforms,
+  Attributes,
+  DefaultContext,
 } from "regl";
 import { getPixels } from "ndarray-pixels";
 import { NdArray } from "ndarray";
@@ -14,13 +18,16 @@ import styles from "./shaderView.module.scss";
 
 type BufferMap = { [key: string]: Buffer };
 type Texture2DMap = { [key: string]: Texture2D };
+type UniformsGetter = (
+  regl: Regl
+) => MaybeDynamicUniforms<Uniforms, DefaultContext, never>;
 
-interface Uniforms {
+interface MyUniforms extends Uniforms {
   u_resolution: Vec2;
   u_time: number;
 }
 
-interface Attributes {
+interface MyAttributes extends Attributes {
   position: number[][];
 }
 
@@ -28,7 +35,9 @@ export type ShaderViewProps = {
   vertexShader: string;
   fragmentShader: string;
   position: number[][];
+  elements: number[] | number[][];
   primitive: PrimitiveType;
+  uniforms?: UniformsGetter;
   textures?: BufferMap;
 };
 
@@ -56,26 +65,30 @@ async function runShaders(
   vertexShader: string,
   fragmentShader: string,
   position: number[][],
+  elements: number[] | number[][],
   primitive: PrimitiveType,
-  textures: BufferMap
+  uniforms?: UniformsGetter,
+  textures: BufferMap = {}
 ) {
+  const computedUniforms = uniforms ? uniforms(regl) : {};
   const textureArrayMap = await importTextures(textures, regl);
-  const drawVertices = regl<Uniforms, Attributes>({
+  const drawVertices = regl<MyUniforms, MyAttributes>({
     vert: vertexShader,
     frag: fragmentShader,
     attributes: {
       position,
     },
+    elements,
     uniforms: {
       u_resolution: [
         regl.context("viewportWidth"),
         regl.context("viewportHeight"),
       ],
       u_time: regl.context("time"),
+      ...computedUniforms,
       ...textureArrayMap,
     },
     primitive,
-    count: 4,
   });
   regl.frame(() => {
     regl.clear({ color: [0, 0, 0, 0], depth: 1 });
@@ -87,8 +100,10 @@ export const ShaderView: FC<ShaderViewProps> = ({
   vertexShader,
   fragmentShader,
   position,
+  elements,
   primitive,
-  textures = {},
+  uniforms,
+  textures,
 }) => {
   const ref = useRef<HTMLCanvasElement>(null);
 
@@ -99,11 +114,22 @@ export const ShaderView: FC<ShaderViewProps> = ({
         vertexShader,
         fragmentShader,
         position,
+        elements,
         primitive,
+        uniforms,
         textures
       );
     }
-  }, [ref, vertexShader, fragmentShader, position, primitive, textures]);
+  }, [
+    ref,
+    vertexShader,
+    fragmentShader,
+    position,
+    elements,
+    primitive,
+    uniforms,
+    textures,
+  ]);
 
   return (
     <Frame aspect={1 / 1} className={styles.shader_view}>
