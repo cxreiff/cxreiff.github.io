@@ -2,8 +2,9 @@ import { FC } from "react";
 import { useParams } from "react-router-dom";
 
 import { Subnavigation } from "~src/common/subnavigation/subnavigation.component";
-import { ShaderDemo } from "~src/common/shaderDemo/shaderDemo.component";
+import { CodeDemo } from "~src/common/codeDemo/codeDemo.component";
 import { CATEGORIES, Category, SHADERS_LIST } from "./shadersList";
+import { ShaderView } from "~src/common/shaderView/shaderView.component";
 
 const Shaders: FC = () => {
   let { category } = useParams<{ category: Category }>();
@@ -21,8 +22,10 @@ const Shaders: FC = () => {
           label: nav_category,
         }))}
       />
-      {SHADERS_LIST[category].map((shaderProps, index) => (
-        <ShaderDemo key={index} {...shaderProps} />
+      {SHADERS_LIST[category].map(({ procedure, code }, index) => (
+        <CodeDemo key={index} excerpts={code}>
+          <ShaderView procedure={procedure} />
+        </CodeDemo>
       ))}
     </section>
   );
