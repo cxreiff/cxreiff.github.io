@@ -9,6 +9,7 @@ import ReglInit, {
   Uniforms,
   Attributes,
   DefaultContext,
+  MaybeDynamicAttributes,
 } from "regl";
 import { getPixels } from "ndarray-pixels";
 import { NdArray } from "ndarray";
@@ -16,27 +17,32 @@ import { NdArray } from "ndarray";
 import { Frame } from "../frame/frame.component";
 import styles from "./shaderView.module.scss";
 
-type BufferMap = { [key: string]: Buffer };
-type Texture2DMap = { [key: string]: Texture2D };
-type UniformsGetter = (
-  regl: Regl
-) => MaybeDynamicUniforms<Uniforms, DefaultContext, never>;
-
+type MyProps = never;
 interface MyUniforms extends Uniforms {
   u_resolution: Vec2;
   u_time: number;
 }
-
 interface MyAttributes extends Attributes {
   position: number[][];
 }
 
+type BufferMap = { [key: string]: Buffer };
+type Texture2DMap = { [key: string]: Texture2D };
+
+type UniformsGetter = (
+  regl: Regl
+) => MaybeDynamicUniforms<Uniforms, DefaultContext, MyProps>;
+
+type AttributesGetter = (
+  regl: Regl
+) => MaybeDynamicAttributes<MyAttributes, DefaultContext, MyProps>;
+
 export type ShaderViewProps = {
   vertexShader: string;
   fragmentShader: string;
-  position: number[][];
-  elements: number[] | number[][];
   primitive: PrimitiveType;
+  elements: number[] | number[][];
+  attributes: AttributesGetter;
   uniforms?: UniformsGetter;
   textures?: BufferMap;
 };
@@ -52,8 +58,8 @@ async function importTextures(
   const result: Texture2DMap = {};
   for (const key in buffers) {
     result[key] = regl.texture(
-      // cardinal sin committed as regl.texture() types don't
-      // allow Uint8Array, but handle that data type properly.
+      // cardinal sin committed as regl.texture() types do not
+      // allow Uint8Array, but do handle that data type properly.
       (await importTexture(buffers[key])) as unknown as NDArrayLike
     );
   }
@@ -62,23 +68,25 @@ async function importTextures(
 
 async function runShaders(
   regl: Regl,
-  vertexShader: string,
-  fragmentShader: string,
-  position: number[][],
-  elements: number[] | number[][],
-  primitive: PrimitiveType,
-  uniforms?: UniformsGetter,
-  textures: BufferMap = {}
+  {
+    vertexShader,
+    fragmentShader,
+    elements,
+    primitive,
+    attributes,
+    uniforms,
+    textures = {},
+  }: ShaderViewProps
 ) {
+  const computedAttributes = attributes(regl);
   const computedUniforms = uniforms ? uniforms(regl) : {};
   const textureArrayMap = await importTextures(textures, regl);
-  const drawVertices = regl<MyUniforms, MyAttributes>({
+  const drawVertices = regl<MyUniforms, MyAttributes, MyProps>({
     vert: vertexShader,
     frag: fragmentShader,
-    attributes: {
-      position,
-    },
+    primitive,
     elements,
+    attributes: computedAttributes,
     uniforms: {
       u_resolution: [
         regl.context("viewportWidth"),
@@ -88,7 +96,6 @@ async function runShaders(
       ...computedUniforms,
       ...textureArrayMap,
     },
-    primitive,
   });
   regl.frame(() => {
     regl.clear({ color: [0, 0, 0, 0], depth: 1 });
@@ -96,39 +103,22 @@ async function runShaders(
   });
 }
 
-export const ShaderView: FC<ShaderViewProps> = ({
-  vertexShader,
-  fragmentShader,
-  position,
-  elements,
-  primitive,
-  uniforms,
-  textures,
-}) => {
+export const ShaderView: FC<ShaderViewProps> = (props) => {
   const ref = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     if (ref.current) {
-      runShaders(
-        ReglInit(ref.current),
-        vertexShader,
-        fragmentShader,
-        position,
-        elements,
-        primitive,
-        uniforms,
-        textures
-      );
+      runShaders(ReglInit(ref.current), props);
     }
   }, [
     ref,
-    vertexShader,
-    fragmentShader,
-    position,
-    elements,
-    primitive,
-    uniforms,
-    textures,
+    props.vertexShader,
+    props.fragmentShader,
+    props.elements,
+    props.primitive,
+    props.attributes,
+    props.uniforms,
+    props.textures,
   ]);
 
   return (
