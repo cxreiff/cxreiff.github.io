@@ -1,4 +1,4 @@
-// PLAIN MESH
+// DIFFUSION LIGHTING (BROKEN)
 // https://github.com/mikolalysenko/bunny
 
 precision mediump float;
