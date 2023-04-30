@@ -31,7 +31,8 @@ mat4 view_frustum(
     float aspect,
     float near,
     float far
-) { //[demo_hide]
+) //[demo_hide]
+{
 
     return mat4(
         vec4(1.0/tan(angle), 0.0, 0.0, 0.0),
