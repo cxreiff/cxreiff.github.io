@@ -4,8 +4,9 @@ import { Procedure } from "~src/common/shaderView/shaderView.component";
 import { ShaderDemo } from "../shadersList";
 import { mvMatrix, standardProjection } from "../shadersShared";
 
-import vertexShader from "~src/assets/shaders/lighting1.vert";
-import fragmentShader from "~src/assets/shaders/lighting1.frag";
+import vertexShader from "~src/assets/shaders/lighting3.vert";
+import fragmentShader from "~src/assets/shaders/lighting3.frag";
+import angleNormals from "angle-normals";
 
 const procedure: Procedure = (regl) => {
   const drawBunny = regl({
@@ -19,6 +20,7 @@ const procedure: Procedure = (regl) => {
     },
     attributes: {
       position: bunny.positions,
+      normal: angleNormals(bunny.cells, bunny.positions),
     },
   });
   regl.frame(() => {

@@ -3,8 +3,7 @@ precision mediump float;
 uniform float u_time;
 attribute vec4 position;
 
-mat4 rotate_x(float theta)
-{
+mat4 rotate_x(float theta) {
     return mat4(
         vec4(1.0,         0.0,        0.0, 0.0),
         vec4(0.0,  cos(theta), sin(theta), 0.0),
@@ -13,8 +12,7 @@ mat4 rotate_x(float theta)
     );
 }
 
-mat4 projection(float perspective)
-{
+mat4 projection(float perspective) {
     return mat4(
         vec4(1.0, 0.0, 0.0, 0.0),
         vec4(0.0, 1.0, 0.0, 0.0),

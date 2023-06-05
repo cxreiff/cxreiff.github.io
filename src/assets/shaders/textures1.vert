@@ -33,7 +33,6 @@ mat4 view_frustum(
     float far
 ) //[demo_hide]
 {
-
     return mat4(
         vec4(1.0/tan(angle), 0.0, 0.0, 0.0),
         vec4(0.0, aspect/tan(angle), 0.0, 0.0),
