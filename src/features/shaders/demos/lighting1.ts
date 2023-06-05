@@ -8,9 +8,8 @@ import {
   standardProjection,
 } from "../shadersShared";
 
-import vertexShader from "~src/assets/shaders/shading2.vert";
-import fragmentShader from "~src/assets/shaders/shading2.frag";
-import angleNormals from "angle-normals";
+import vertexShader from "~src/assets/shaders/lighting1.vert";
+import fragmentShader from "~src/assets/shaders/lighting1.frag";
 
 const procedure: Procedure = (regl) => {
   const drawBunny = regl({
@@ -30,7 +29,6 @@ const procedure: Procedure = (regl) => {
     },
     attributes: {
       position: bunny.positions,
-      normal: angleNormals(bunny.cells, bunny.positions),
     },
   });
   regl.frame(() => {
