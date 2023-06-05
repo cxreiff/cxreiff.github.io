@@ -49,3 +49,6 @@ export const standardProjection = ({
     0.01,
     1000.0
   );
+
+export const mvMatrix = (context: DefaultContext) =>
+  mat4.multiply(mat4.create(), lookingFromOrigin(), rotatingInView(context));

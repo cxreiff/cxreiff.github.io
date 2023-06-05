@@ -2,14 +2,11 @@ import bunny from "bunny";
 
 import { Procedure } from "~src/common/shaderView/shaderView.component";
 import { ShaderDemo } from "../shadersList";
-import {
-  lookingFromOrigin,
-  rotatingInView,
-  standardProjection,
-} from "../shadersShared";
+import { mvMatrix, standardProjection } from "../shadersShared";
 
-import vertexShader from "~src/assets/shaders/shading1.vert";
-import fragmentShader from "~src/assets/shaders/shading1.frag";
+import vertexShader from "~src/assets/shaders/lighting2.vert";
+import fragmentShader from "~src/assets/shaders/lighting2.frag";
+import angleNormals from "angle-normals";
 
 const procedure: Procedure = (regl) => {
   const drawBunny = regl({
@@ -23,12 +20,12 @@ const procedure: Procedure = (regl) => {
         viewportWidth,
         viewportHeight,
       ],
-      model: rotatingInView,
-      view: lookingFromOrigin,
+      mv_matrix: mvMatrix,
       projection: standardProjection,
     },
     attributes: {
       position: bunny.positions,
+      normal: angleNormals(bunny.cells, bunny.positions),
     },
   });
   regl.frame(() => {
