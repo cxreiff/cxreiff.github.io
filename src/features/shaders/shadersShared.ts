@@ -30,7 +30,7 @@ export const rotatingInView = ({ tick }: DefaultContext) => {
   const rotateY = mat4.rotateY(
     mat4.create(),
     mat4.create(),
-    (tick * Math.PI) / 300
+    (tick * Math.PI) / 400
   );
   return mat4.multiply(translate, translate, rotateY);
 };

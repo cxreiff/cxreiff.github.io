@@ -16,7 +16,7 @@ void main() {
 
     vec4 diffuse_factor = max(-dot(normal, light_direction), 0.0) * light_diffuse;
     vec4 ambient_diffuse_factor = diffuse_factor + light_ambient;
-    vec4 specular_factor = max(pow(-dot(reflection, eye), 5.0), 0.0) * light_specular;
+    vec4 specular_factor = pow(max(-dot(reflection, eye), 0.0), 12.0) * light_specular;
 
     gl_FragColor = specular_factor + ambient_diffuse_factor * base_color;
 }
