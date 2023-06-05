@@ -1,3 +1,4 @@
+import { readFileSync } from "fs";
 import bunny from "bunny";
 
 import { Procedure } from "~src/common/shaderView/shaderView.component";
@@ -6,6 +7,7 @@ import { mvMatrix, standardProjection } from "../shadersShared";
 
 import vertexShader from "~src/assets/shaders/lighting1.vert";
 import fragmentShader from "~src/assets/shaders/lighting1.frag";
+const markdown = readFileSync("src/assets/shaders/lighting1.md", "utf-8");
 
 const procedure: Procedure = (regl) => {
   const drawBunny = regl({
@@ -30,6 +32,7 @@ const procedure: Procedure = (regl) => {
 const demo: ShaderDemo = {
   procedure,
   code: [
+    { language: "markdown", code: markdown },
     { language: "glsl", code: vertexShader },
     { language: "glsl", code: fragmentShader },
   ],
