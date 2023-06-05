@@ -1,6 +1,3 @@
-// MESH RENDER
-// https://github.com/mikolalysenko/bunny
-
 precision mediump float;
 
 attribute vec3 position;

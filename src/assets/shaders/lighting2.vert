@@ -1,6 +1,3 @@
-// DIFFUSION LIGHTING
-// https://github.com/mikolalysenko/bunny
-
 precision mediump float;
 
 uniform mat4 mv_matrix, projection;

@@ -18,6 +18,9 @@ PrismLight.registerLanguage("json", scss);
 import glsl from "react-syntax-highlighter/dist/esm/languages/prism/glsl";
 PrismLight.registerLanguage("glsl", glsl);
 
+import markdown from "react-syntax-highlighter/dist/esm/languages/prism/markdown";
+PrismLight.registerLanguage("markdown", markdown);
+
 export const SyntaxHighlighter = PrismLight;
 export const styleLight = duotoneLight;
 export const styleDark = duotoneDark;
