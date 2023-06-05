@@ -15,11 +15,6 @@ const procedure: Procedure = (regl) => {
     frag: fragmentShader,
     elements: bunny.cells,
     uniforms: {
-      u_time: ({ time }) => time,
-      u_resolution: ({ viewportWidth, viewportHeight }) => [
-        viewportWidth,
-        viewportHeight,
-      ],
       mv_matrix: mvMatrix,
       projection: standardProjection,
     },
