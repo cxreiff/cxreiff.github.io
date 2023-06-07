@@ -23,7 +23,7 @@ const Shaders: FC = () => {
         }))}
       />
       {SHADERS_LIST[category].map(({ procedure, code }, index) => (
-        <CodeDemo key={index} excerpts={code}>
+        <CodeDemo key={`${category!}${index}`} excerpts={code}>
           <ShaderView procedure={procedure} />
         </CodeDemo>
       ))}

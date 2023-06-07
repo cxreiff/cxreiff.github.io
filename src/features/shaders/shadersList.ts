@@ -9,12 +9,14 @@ import textures1 from "./demos/textures1";
 import lighting1 from "./demos/lighting1";
 import lighting2 from "./demos/lighting2";
 import lighting3 from "./demos/lighting3";
+import shadows1 from "./demos/shadows1";
 import assorted1 from "./demos/assorted1";
 
 export const CATEGORIES = [
   "basic",
   "textures",
   "lighting",
+  "shadows",
   "assorted",
 ] as const;
 
@@ -26,5 +28,6 @@ export const SHADERS_LIST: { [K in Category]: ShaderDemo[] } = {
   basic: [basic1, basic2, basic3, basic4],
   textures: [textures1],
   lighting: [lighting1, lighting2, lighting3],
+  shadows: [shadows1],
   assorted: [assorted1],
 };
