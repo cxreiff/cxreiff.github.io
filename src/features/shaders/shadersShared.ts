@@ -26,7 +26,7 @@ export async function importTextures(
 }
 
 export const rotatingInView = ({ tick }: DefaultContext) => {
-  const translate = mat4.translate(mat4.create(), mat4.create(), [0, -5, 20]);
+  const translate = mat4.translate(mat4.create(), mat4.create(), [0, -5, -20]);
   const rotateY = mat4.rotateY(
     mat4.create(),
     mat4.create(),
@@ -36,7 +36,7 @@ export const rotatingInView = ({ tick }: DefaultContext) => {
 };
 
 export const lookingFromOrigin = () =>
-  mat4.lookAt(mat4.create(), [0, 0, 0], [0, 0, 1], [0, 1, 0]);
+  mat4.lookAt(mat4.create(), [0, 0, 0], [0, 0, -1], [0, 1, 0]);
 
 export const standardProjection = ({
   viewportWidth,

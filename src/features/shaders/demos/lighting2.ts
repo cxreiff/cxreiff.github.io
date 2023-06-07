@@ -4,7 +4,11 @@ import angleNormals from "angle-normals";
 
 import { Procedure } from "~src/common/shaderView/shaderView.component";
 import { ShaderDemo } from "../shadersList";
-import { mvMatrix, standardProjection } from "../shadersShared";
+import {
+  lookingFromOrigin,
+  mvMatrix,
+  standardProjection,
+} from "../shadersShared";
 
 import vertexShader from "~src/assets/shaders/lighting2.vert";
 import fragmentShader from "~src/assets/shaders/lighting2.frag";
@@ -17,6 +21,7 @@ const procedure: Procedure = (regl) => {
     frag: fragmentShader,
     elements: bunny.cells,
     uniforms: {
+      view: lookingFromOrigin,
       mv_matrix: mvMatrix,
       projection: standardProjection,
     },
