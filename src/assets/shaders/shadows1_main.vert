@@ -1,8 +1,12 @@
+// MAIN VERTEX SHADER
+
+//[demo_hide]
 precision mediump float;
 
 uniform mat4 model, view, projection, light_projection, light_view;
 attribute vec3 position, normal;
 varying vec3 frag_position, frag_normal, frag_shadow, v_normal;
+//[demo_hide_end]
 
 void main() {
     vec4 world_position = model * vec4(position, 1.0);

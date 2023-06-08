@@ -1,3 +1,6 @@
+// MAIN FRAGMENT SHADER
+
+//[demo_hide]
 precision mediump float;
 
 uniform float min_bias, max_bias;
@@ -12,6 +15,7 @@ const vec3 base_color =  vec3(0.6, 0.4, 0.8);
 const vec3 light_diffuse = vec3(0.8, 0.8, 0.8);
 const vec3 light_ambient = vec3(0.2, 0.2, 0.2);
 const vec3 light_specular = vec3(0.8, 0.8, 0.8);
+//[demo_hide_end]
 
 float sample_shadow_map(vec2 coords, float z, float bias) {
     float a = texture2D(shadow_map, coords).z;
