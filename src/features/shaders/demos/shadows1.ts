@@ -99,6 +99,8 @@ const demo: ShaderDemo = {
   procedure,
   code: [
     { language: "markdown", code: markdown },
+    { language: "glsl", code: vertexShaderDepth },
+    { language: "glsl", code: fragmentShaderDepth },
     { language: "glsl", code: vertexShaderMain },
     { language: "glsl", code: fragmentShaderMain },
   ],
