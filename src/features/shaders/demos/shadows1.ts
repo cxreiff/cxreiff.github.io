@@ -34,13 +34,6 @@ const procedure: Procedure = (regl) => {
 
   const drawBunny = new Mesh(bunny.positions, bunny.cells).drawable(regl);
 
-  const camera = mat4.lookAt(
-    mat4.create(),
-    [0, 15, 0],
-    [0, -3, -20],
-    [0, 1, 0]
-  );
-
   const fbo = regl.framebuffer({
     color: regl.texture({
       width: 2048,
@@ -56,6 +49,7 @@ const procedure: Procedure = (regl) => {
       light_direction: [0.8, -1.0, 0.6],
     },
     uniforms: {
+      view: mat4.lookAt(mat4.create(), [0, 15, 0], [0, -3, -20], [0, 1, 0]),
       light_direction: ({ light_direction }) => light_direction,
       light_view: ({ light_direction }) =>
         mat4.lookAt(
@@ -87,15 +81,11 @@ const procedure: Procedure = (regl) => {
       regl.clear({ depth: 1, color: [0, 0, 0, 1] });
       drawBunny({
         translation: [0, -3, -20],
-        rotation: [0.0, (tick * Math.PI) / 400.0, 0.0],
-        scale: [1.0, 1.0, 1.0],
-        view: camera,
+        rotation: [0.0, (tick * Math.PI) / 800.0, 0.0],
       });
       drawPlane({
         translation: [0.0, -5.0, -20.0],
-        rotation: [0.0, 0.0, 0.0],
         scale: [20.0, 20.0, 20.0],
-        view: camera,
       });
     };
     drawGlobal(() => {

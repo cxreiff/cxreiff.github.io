@@ -4,10 +4,9 @@ import { Regl } from "regl";
 import { standardProjection } from "./shadersShared";
 
 type DrawableProps = {
-  translation: vec3;
-  rotation: vec3;
-  scale: vec3;
-  view: mat4;
+  translation?: vec3;
+  rotation?: vec3;
+  scale?: vec3;
 };
 
 export class Mesh {
@@ -32,14 +31,19 @@ export class Mesh {
       uniforms: {
         model: (_, { translation, rotation, scale }: DrawableProps) => {
           const m = mat4.identity(mat4.create());
-          mat4.translate(m, m, translation);
-          mat4.rotateX(m, m, rotation[0]);
-          mat4.rotateY(m, m, rotation[1]);
-          mat4.rotateZ(m, m, rotation[2]);
-          mat4.scale(m, m, scale);
+          if (translation) {
+            mat4.translate(m, m, translation);
+          }
+          if (rotation) {
+            mat4.rotateX(m, m, rotation[0]);
+            mat4.rotateY(m, m, rotation[1]);
+            mat4.rotateZ(m, m, rotation[2]);
+          }
+          if (scale) {
+            mat4.scale(m, m, scale);
+          }
           return m;
         },
-        view: (_, { view }: DrawableProps) => view,
         projection: standardProjection,
       },
       attributes: {

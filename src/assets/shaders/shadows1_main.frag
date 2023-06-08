@@ -24,13 +24,13 @@ void main() {
     vec3 view_normal = normalize((view * model * vec4(frag_normal, 0.0)).xyz);
     vec3 view_light = (view * normalize(vec4(light_direction, 0.0))).xyz;
 
-    float cos_theta = dot(view_normal, view_light);
     vec3 ambient = light_ambient * base_color;
-    vec3 diffuse = max(-cos_theta, 0.0) * light_diffuse;
+    float cos_theta = dot(view_normal, -view_light);
+    vec3 diffuse = max(cos_theta, 0.0) * light_diffuse;
 
     vec3 reflection = reflect(view_light, view_normal);
-    float reflected_cos_theta = dot(reflection, view_position);
-    vec3 specular = pow(max(-reflected_cos_theta, 0.0), 20.0) * light_specular;
+    float reflected_cos_theta = dot(-reflection, view_position);
+    vec3 specular = pow(max(reflected_cos_theta, 0.0), 20.0) * light_specular;
 
     vec2 coords = frag_shadow.xy * 0.5 + 0.5;
     float bias = max(max_bias * (1.0 - cos_theta), min_bias);
