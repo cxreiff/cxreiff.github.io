@@ -1,6 +1,6 @@
 precision mediump float;
 
-uniform mat4 mv_matrix, view;
+uniform mat4 view;
 varying vec3 frag_normal;
 
 const vec4 base_color =  vec4(0.6, 0.4, 0.8, 1.0);
