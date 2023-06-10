@@ -64,7 +64,7 @@ export const ROUTES: RouteDefinition[] = [
         Component: Babylonjs,
       },
       {
-        path: "beverage",
+        path: "breakout",
         Component: Beverage,
       },
       {

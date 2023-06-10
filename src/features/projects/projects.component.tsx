@@ -22,19 +22,19 @@ const Projects: FC = () => {
       />
       <Card
         image={bevy}
-        primary={"bevy project"}
+        primary={"breakout"}
         secondary={"rust, WASM, bevy"}
-        onClick={() => navigate("/projects/beverage")}
+        onClick={() => navigate("/projects/breakout")}
       />
       <Card
         image={pixijs}
-        primary={"asteroids game"}
+        primary={"asteroids"}
         secondary={"pixi.js, matter.js"}
         onClick={() => navigate("/projects/pixijs/asteroids")}
       />
       <Card
         image={babylonjs}
-        primary={"babylon.js project"}
+        primary={"babylon.js test"}
         secondary={"babylon.js"}
         onClick={() => navigate("/projects/babylonjs")}
       />
