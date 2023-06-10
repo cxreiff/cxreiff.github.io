@@ -49,7 +49,7 @@ const procedure: Procedure = (regl) => {
       light_direction: [0.8, -1.0, 0.6],
     },
     uniforms: {
-      view: mat4.lookAt(mat4.create(), [0, 15, 0], [0, -3, -20], [0, 1, 0]),
+      view: mat4.lookAt(mat4.create(), [0, 16, 8], [0, -3, -20], [0, 1, 0]),
       light_direction: ({ light_direction }) => light_direction,
       light_view: ({ light_direction }) =>
         mat4.lookAt(
@@ -85,7 +85,7 @@ const procedure: Procedure = (regl) => {
       });
       drawPlane({
         translation: [0.0, -5.0, -20.0],
-        scale: [20.0, 20.0, 20.0],
+        scale: [24.0, 24.0, 24.0],
       });
     };
     drawGlobal(() => {
