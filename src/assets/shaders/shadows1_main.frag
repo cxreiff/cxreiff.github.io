@@ -13,7 +13,7 @@ varying vec3 frag_position, frag_normal, frag_shadow;
 
 const vec3 base_color =  vec3(0.6, 0.4, 0.8);
 const vec3 light_diffuse = vec3(0.8, 0.8, 0.8);
-const vec3 light_ambient = vec3(0.2, 0.2, 0.2);
+const vec3 light_ambient = vec3(0.1, 0.1, 0.1);
 const vec3 light_specular = vec3(0.8, 0.8, 0.8);
 //[demo_hide_end]
 
@@ -30,7 +30,7 @@ void main() {
 
     vec3 ambient = light_ambient * base_color;
     float cos_theta = dot(view_normal, -view_light);
-    vec3 diffuse = max(cos_theta, 0.0) * light_diffuse;
+    vec3 diffuse = max(cos_theta, 0.0) * light_diffuse * base_color;
 
     vec3 reflection = reflect(view_light, view_normal);
     float reflected_cos_theta = dot(-reflection, view_position);
@@ -45,5 +45,5 @@ void main() {
     float s3 = sample_shadow_map(coords + texel_size * vec2(1.0, 1.0), frag_shadow.z, bias);
     float shadow = (s0 + s1 + s2 + s3) / 4.0;
 
-    gl_FragColor = vec4((specular * shadow) + (ambient + diffuse * shadow) * base_color, 1.0);
+    gl_FragColor = vec4(shadow * (specular + diffuse) + ambient, 1.0);
 }
