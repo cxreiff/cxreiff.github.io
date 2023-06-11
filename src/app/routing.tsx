@@ -5,7 +5,7 @@ import { Loader } from "~/src/common/loader/loader.component";
 import { IFrame } from "~/src/common/iframe/iframe.component";
 import {
   DOCUMENT_TITLE_ROOT,
-  BEVERAGE_URL,
+  BREAKOUT_URL,
   PLATFORMER_URL,
   PIXIJS_URL,
   BABYLONJS_URL,
@@ -26,12 +26,12 @@ const Pixijs = () => (
 const Babylonjs = () => (
   <IFrame aspect={3 / 2} url={BABYLONJS_URL} title={"babylonjs"} />
 );
-const Beverage = () => (
+const Breakout = () => (
   <IFrame
     aspect={3 / 2}
     mobileAspect={2 / 3}
-    url={BEVERAGE_URL}
-    title={"beverage"}
+    url={BREAKOUT_URL}
+    title={"breakout"}
   />
 );
 const Platformer = () => (
@@ -69,7 +69,7 @@ export const ROUTES: RouteDefinition[] = [
       },
       {
         path: "breakout",
-        Component: Beverage,
+        Component: Breakout,
       },
       {
         path: "platformer",
