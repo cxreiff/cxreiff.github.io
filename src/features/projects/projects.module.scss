@@ -11,7 +11,7 @@
   }
 
   @include is_larger_than($md-breakpoint) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   img {

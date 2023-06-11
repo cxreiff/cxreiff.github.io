@@ -5,9 +5,10 @@ import { Loader } from "~/src/common/loader/loader.component";
 import { IFrame } from "~/src/common/iframe/iframe.component";
 import {
   DOCUMENT_TITLE_ROOT,
+  BEVERAGE_URL,
+  PLATFORMER_URL,
   PIXIJS_URL,
   BABYLONJS_URL,
-  BEVERAGE_URL,
 } from "~/src/utilities/constants";
 
 import Homepage from "~/src/features/homepage/homepage.component";
@@ -32,6 +33,9 @@ const Beverage = () => (
     url={BEVERAGE_URL}
     title={"beverage"}
   />
+);
+const Platformer = () => (
+  <IFrame aspect={16 / 10} url={PLATFORMER_URL} title={"platformer"} />
 );
 
 export type RouteDefinition = {
@@ -66,6 +70,10 @@ export const ROUTES: RouteDefinition[] = [
       {
         path: "breakout",
         Component: Beverage,
+      },
+      {
+        path: "platformer",
+        Component: Platformer,
       },
       {
         path: "shaders",
