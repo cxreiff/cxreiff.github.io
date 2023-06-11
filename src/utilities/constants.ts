@@ -7,9 +7,10 @@ export const PHOTO_SIZE_PREFIXES = {
 };
 
 export const SITE_BASE_URL = "https://cooperreiff.com/";
+export const BEVERAGE_URL = `${SITE_BASE_URL}beverage`;
+export const PLATFORMER_URL = `${SITE_BASE_URL}untitled`;
 export const PIXIJS_URL = `${SITE_BASE_URL}pixijs_runner`;
 export const BABYLONJS_URL = `${SITE_BASE_URL}babylonjs_runner`;
-export const BEVERAGE_URL = `${SITE_BASE_URL}beverage`;
 
 export const RESUME_URL = "https://cooperreiff.com/resume/resume.pdf#toolbar=0";
 export const GITHUB_URL = "https://github.com/cxreiff";

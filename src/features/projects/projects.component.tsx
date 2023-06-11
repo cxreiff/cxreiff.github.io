@@ -3,9 +3,10 @@ import { useNavigate } from "react-router-dom";
 
 import { Card } from "~/src/common/card/card.component";
 import teapot from "~/src/assets/svg/teapot.svg";
+import breakout from "~/src/assets/svg/breakout.svg";
+import platformer from "~/src/assets/svg/platformer.svg";
 import pixijs from "~/src/assets/svg/pixijs.svg";
 import babylonjs from "~/src/assets/svg/babylonjs.svg";
-import bevy from "~/src/assets/svg/bevy.svg";
 
 import styles from "./projects.module.scss";
 
@@ -21,10 +22,16 @@ const Projects: FC = () => {
         onClick={() => navigate("/projects/shaders/basic")}
       />
       <Card
-        image={bevy}
+        image={breakout}
         primary={"breakout"}
         secondary={"rust, WASM, bevy"}
         onClick={() => navigate("/projects/breakout")}
+      />
+      <Card
+        image={platformer}
+        primary={"platformer"}
+        secondary={"rust, WASM, bevy"}
+        onClick={() => navigate("/projects/platformer")}
       />
       <Card
         image={pixijs}
