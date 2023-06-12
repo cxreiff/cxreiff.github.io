@@ -5,6 +5,7 @@ import { Card } from "~/src/common/card/card.component";
 import teapot from "~/src/assets/svg/teapot.svg";
 import breakout from "~/src/assets/svg/breakout.svg";
 import platformer from "~/src/assets/svg/platformer.svg";
+import hex_tiles from "~/src/assets/svg/hex_tiles.svg";
 import pixijs from "~/src/assets/svg/pixijs.svg";
 import babylonjs from "~/src/assets/svg/babylonjs.svg";
 
@@ -32,6 +33,12 @@ const Projects: FC = () => {
         primary={"platformer"}
         secondary={"rust, WASM, bevy"}
         onClick={() => navigate("/projects/platformer")}
+      />
+      <Card
+        image={hex_tiles}
+        primary={"hex tiles"}
+        secondary={"rust, WASM, bevy"}
+        onClick={() => navigate("/projects/hex_tiles")}
       />
       <Card
         image={pixijs}
