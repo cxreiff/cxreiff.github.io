@@ -9,6 +9,7 @@ export const PHOTO_SIZE_PREFIXES = {
 export const SITE_BASE_URL = "https://cooperreiff.com/";
 export const BREAKOUT_URL = `${SITE_BASE_URL}breakout`;
 export const PLATFORMER_URL = `${SITE_BASE_URL}platformer`;
+export const HEX_TILES_URL = `${SITE_BASE_URL}hex_tiles`;
 export const PIXIJS_URL = `${SITE_BASE_URL}pixijs_runner`;
 export const BABYLONJS_URL = `${SITE_BASE_URL}babylonjs_runner`;
 

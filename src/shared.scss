@@ -163,6 +163,17 @@ $xs-breakpoint: 385px;
     transform: translateY(0);
   }
 }
+@keyframes :global(animation-delayed-fade) {
+  0% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 @function turbulence_inline($id: 0) {
   @return map-get(

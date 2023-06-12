@@ -7,6 +7,7 @@ import {
   DOCUMENT_TITLE_ROOT,
   BREAKOUT_URL,
   PLATFORMER_URL,
+  HEX_TILES_URL,
   PIXIJS_URL,
   BABYLONJS_URL,
 } from "~/src/utilities/constants";
@@ -37,6 +38,9 @@ const Breakout = () => (
 const Platformer = () => (
   <IFrame aspect={16 / 10} url={PLATFORMER_URL} title={"platformer"} />
 );
+const HexTiles = () => (
+  <IFrame aspect={16 / 10} url={HEX_TILES_URL} title={"hex tiles"} />
+);
 
 export type RouteDefinition = {
   path: string;
@@ -45,10 +49,7 @@ export type RouteDefinition = {
 };
 
 export const ROUTES: RouteDefinition[] = [
-  {
-    path: "",
-    Component: Homepage,
-  },
+  { path: "", Component: Homepage },
   {
     path: "projects",
     Component: Projects,
@@ -56,50 +57,24 @@ export const ROUTES: RouteDefinition[] = [
       {
         path: "pixijs",
         Component: Pixijs,
-        children: [
-          {
-            path: ":id",
-            Component: Pixijs,
-          },
-        ],
+        children: [{ path: ":id", Component: Pixijs }],
       },
-      {
-        path: "babylonjs",
-        Component: Babylonjs,
-      },
-      {
-        path: "breakout",
-        Component: Breakout,
-      },
-      {
-        path: "platformer",
-        Component: Platformer,
-      },
+      { path: "babylonjs", Component: Babylonjs },
+      { path: "breakout", Component: Breakout },
+      { path: "platformer", Component: Platformer },
+      { path: "hex_tiles", Component: HexTiles },
       {
         path: "shaders",
         Component: Shaders,
-        children: [
-          {
-            path: ":category",
-            Component: Shaders,
-          },
-        ],
+        children: [{ path: ":category", Component: Shaders }],
       },
     ],
   },
-  {
-    path: "photos",
-    Component: Photos,
-  },
+  { path: "photos", Component: Photos },
   {
     path: "posts",
     Component: Posts,
-    children: [
-      {
-        path: ":id",
-        Component: PostsContent,
-      },
-    ],
+    children: [{ path: ":id", Component: PostsContent }],
   },
 ];
 

@@ -7,6 +7,10 @@ $num-colors: 4;
   margin: 2rem 1rem 1rem;
   text-align: center;
 
+  :global {
+    animation: animation-delayed-fade ease-in-out 1s;
+  }
+
   span {
     display: inline-block;
     width: 1rem;
