@@ -57,7 +57,11 @@ export const fetchPhotos = createAsyncThunk<PhotoSet[]>(
 const photosSlice = createSlice({
   name: "photos",
   initialState,
-  reducers: {},
+  reducers: {
+    clearPhotos: (state) => {
+      state.photoSets = [];
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchPhotos.pending, (state) => {
       state.status = "pending";
@@ -72,4 +76,5 @@ const photosSlice = createSlice({
   },
 });
 
+export const { clearPhotos } = photosSlice.actions;
 export default photosSlice.reducer;

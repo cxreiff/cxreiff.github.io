@@ -5,15 +5,14 @@ import { useAppSelector, useAppDispatch } from "~/src/app/store";
 import { ImageLightbox } from "~/src/common/imageLightbox/imageLightbox.component";
 import { Loader } from "~/src/common/loader/loader.component";
 
-import { fetchPhotos } from "./photos.slice";
+import { fetchPhotos, clearPhotos } from "./photos.slice";
 
 import styles from "./photos.module.scss";
 
 const Photos: FC = () => {
   const dispatch = useAppDispatch();
-  const dispatchFetchPhotos = () => {
-    void dispatch(fetchPhotos());
-  };
+  const dispatchFetchPhotos = () => dispatch(fetchPhotos());
+  const dispatchClearPhotos = () => void dispatch(clearPhotos());
   const photoSets = useAppSelector((state) => state.photos.photoSets);
   const loading = useAppSelector((state) => state.photos.status === "pending");
 
@@ -29,7 +28,10 @@ const Photos: FC = () => {
     onLoadMore: () => setNumberOfPhotosVisible(numberOfPhotosVisible + 3),
   });
 
-  useEffect(() => dispatchFetchPhotos(), [dispatch]);
+  useEffect(() => {
+    dispatchFetchPhotos();
+    return () => dispatchClearPhotos();
+  }, [dispatch]);
 
   return loading ? (
     <Loader />
