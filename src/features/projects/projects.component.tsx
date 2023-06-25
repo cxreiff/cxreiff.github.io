@@ -29,16 +29,16 @@ const Projects: FC = () => {
         onClick={() => navigate("/projects/breakout")}
       />
       <Card
-        image={platformer}
-        primary={"platformer"}
-        secondary={"rust, WASM, bevy"}
-        onClick={() => navigate("/projects/platformer")}
-      />
-      <Card
         image={hex_tiles}
         primary={"hex tiles"}
         secondary={"rust, WASM, bevy"}
         onClick={() => navigate("/projects/hex_tiles")}
+      />
+      <Card
+        image={platformer}
+        primary={"platformer"}
+        secondary={"rust, WASM, bevy"}
+        onClick={() => navigate("/projects/platformer")}
       />
       <Card
         image={pixijs}

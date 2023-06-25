@@ -15,8 +15,6 @@ import posts from "./markdown";
 import styles from "./postsContent.module.scss";
 
 const PostsContent: FC = () => {
-  console.debug(useParams());
-
   const { id = "" } = useParams<{ id: string }>();
   const {
     content,

@@ -15,6 +15,9 @@ PrismLight.registerLanguage("tsx", tsx);
 import scss from "react-syntax-highlighter/dist/esm/languages/prism/scss";
 PrismLight.registerLanguage("json", scss);
 
+import rust from "react-syntax-highlighter/dist/esm/languages/prism/rust";
+PrismLight.registerLanguage("rust", rust);
+
 import glsl from "react-syntax-highlighter/dist/esm/languages/prism/glsl";
 PrismLight.registerLanguage("glsl", glsl);
 
