@@ -14,6 +14,7 @@ export type Post = {
 const MARKDOWN_ENCODING = "utf8";
 const MARKDOWN_POSTS = [
   readFileSync("src/assets/markdown/post1.md", MARKDOWN_ENCODING),
+  readFileSync("src/assets/markdown/post2.md", MARKDOWN_ENCODING),
 ];
 
 const posts = MARKDOWN_POSTS.reduce((previous, current) => {

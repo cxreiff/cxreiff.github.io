@@ -5,9 +5,15 @@ import PostsTile from "./postsTile.component";
 
 const Posts: FC = () => (
   <section>
-    {Object.keys(posts).map((id: string) => {
-      return <PostsTile key={id} id={id} post={posts[id]} />;
-    })}
+    {Object.keys(posts)
+      .sort(
+        (a, b) =>
+          new Date(posts[b].data.date).getTime() -
+          new Date(posts[a].data.date).getTime()
+      )
+      .map((id: string) => {
+        return <PostsTile key={id} id={id} post={posts[id]} />;
+      })}
   </section>
 );
 
