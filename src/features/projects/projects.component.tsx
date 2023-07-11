@@ -6,6 +6,7 @@ import teapot from "~/src/assets/svg/teapot.svg";
 import breakout from "~/src/assets/svg/breakout.svg";
 import platformer from "~/src/assets/svg/platformer.svg";
 import hex_tiles from "~/src/assets/svg/hex_tiles.svg";
+import waves from "~/src/assets/svg/waves.svg";
 import pixijs from "~/src/assets/svg/pixijs.svg";
 import babylonjs from "~/src/assets/svg/babylonjs.svg";
 
@@ -33,6 +34,12 @@ const Projects: FC = () => {
         primary={"hex tiles"}
         secondary={"rust, WASM, bevy"}
         onClick={() => navigate("/projects/hex_tiles")}
+      />
+      <Card
+        image={waves}
+        primary={"bevy misc"}
+        secondary={"bevy, WGSL"}
+        onClick={() => navigate("/projects/sketches/1")}
       />
       <Card
         image={platformer}

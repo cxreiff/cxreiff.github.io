@@ -40,15 +40,27 @@ $xs-breakpoint: 385px;
   }
 }
 
-@mixin card($background, $hard-shadow: false, $soft-shadow: false) {
+@mixin outlined() {
+  @include themed(true) {
+    box-shadow: t($default-outlined);
+  }
+}
+
+@mixin card(
+  $background,
+  $hard-shadow: false,
+  $soft-shadow: false,
+  $outlined: false
+) {
   border-radius: $roundness;
   overflow: hidden;
 
   @if ($hard-shadow) {
     @include hard_shadow();
-  }
-  @if ($soft-shadow) {
+  } @else if ($soft-shadow) {
     @include soft_shadow();
+  } @else if ($outlined) {
+    @include outlined();
   }
 
   @include themed(true) {
