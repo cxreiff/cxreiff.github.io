@@ -5,7 +5,7 @@ import { IFrame } from "~src/common/iframe/iframe.component";
 import { Subnavigation } from "~src/common/subnavigation/subnavigation.component";
 import { BEVY_SKETCHES_URL } from "~src/utilities/constants";
 
-const SKETCHES = ["1", "2"] as const;
+const SKETCHES = ["1", "2", "3"] as const;
 type SketchId = (typeof SKETCHES)[number];
 
 const Sketches: FC = () => {
