@@ -4,6 +4,7 @@ $color-background-default: "color-background-default";
 $color-background-container: "color-background-container";
 $default-hard-shadow: "default-hard-shadow";
 $default-soft-shadow: "default-soft-shadow";
+$default-outlined: "default-outlined";
 $color-border-hard-shadow: "color-border-hard-shadow";
 $color-border-soft-shadow: "color-border-soft-shadow";
 $color-lighter: "color-lighter";
@@ -37,6 +38,10 @@ $themes: (
       0 0 0 1px transparent,
       rgba(#5d4444, 0.4) 2px 2px 5px,
     ),
+    default-outlined: (
+      0 0 0 1px #5d4444,
+      rgba(#5d4444, 1) 0px 8px 0px -5px,
+    ),
     animation-fade-pulse: animation-fade-pulse_lightmode,
     svg-brightness: 0,
   ),
@@ -59,6 +64,10 @@ $themes: (
     default-soft-shadow: (
       0 0 0 1px transparent,
       rgba(#44445d, 0.4) 2px 2px 5px,
+    ),
+    default-outlined: (
+      0 0 0 1px #44445d,
+      rgba(#44445d, 1) 0px 8px 0px -5px,
     ),
     animation-fade-pulse: animation-fade-pulse_bluish,
     svg-brightness: 0,
@@ -83,6 +92,10 @@ $themes: (
       0 0 0 1px transparent,
       rgba(#445d44, 0.4) 2px 2px 5px,
     ),
+    default-outlined: (
+      0 0 0 1px #445d44,
+      rgba(#445d44, 1) 0px 8px 0px -5px,
+    ),
     animation-fade-pulse: animation-fade-pulse_greenish,
     svg-brightness: 0,
   ),
@@ -100,6 +113,7 @@ $themes: (
     color-darker: #eeddee,
     default-hard-shadow: 0 0 0 1px #bbbdbb,
     default-soft-shadow: 0 0 0 1px #bbbdbb,
+    default-outlined: 0 0 0 1px #bbbdbb,
     animation-fade-pulse: animation-fade-pulse_darkmode,
     background-image-noise: none,
     svg-brightness: 0.9,

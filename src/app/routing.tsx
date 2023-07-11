@@ -15,6 +15,7 @@ import {
 import Homepage from "~/src/features/homepage/homepage.component";
 import Projects from "~/src/features/projects/projects.component";
 import Photos from "~/src/features/photos/photos.component";
+import Sketches from "~/src/features/sketches/sketches.component";
 const Posts = lazy(() => import("~/src/features/posts/posts.component"));
 const PostsContent = lazy(
   () => import("~/src/features/posts/postsContent.component")
@@ -67,6 +68,11 @@ export const ROUTES: RouteDefinition[] = [
         path: "shaders",
         Component: Shaders,
         children: [{ path: ":category", Component: Shaders }],
+      },
+      {
+        path: "sketches",
+        Component: Sketches,
+        children: [{ path: ":id", Component: Sketches }],
       },
     ],
   },

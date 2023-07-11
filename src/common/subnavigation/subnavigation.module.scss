@@ -2,7 +2,7 @@
 @use "../../themed.scss" as *;
 
 .subnavigation {
-  @include card($color-lighter, true, false);
+  @include card($color-lighter, false, false, true);
 
   margin: 0 0 2rem 0;
   padding: 0;

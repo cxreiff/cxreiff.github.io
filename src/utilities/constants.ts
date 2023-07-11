@@ -12,6 +12,7 @@ export const PLATFORMER_URL = `${SITE_BASE_URL}platformer`;
 export const HEX_TILES_URL = `${SITE_BASE_URL}hex_tiles`;
 export const PIXIJS_URL = `${SITE_BASE_URL}pixijs_runner`;
 export const BABYLONJS_URL = `${SITE_BASE_URL}babylonjs_runner`;
+export const BEVY_SKETCHES_URL = `${SITE_BASE_URL}bevy_sketches`;
 
 export const RESUME_URL = "https://cooperreiff.com/resume/resume.pdf#toolbar=0";
 export const GITHUB_URL = "https://github.com/cxreiff";

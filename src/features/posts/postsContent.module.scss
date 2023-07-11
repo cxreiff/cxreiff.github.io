@@ -11,6 +11,6 @@
 }
 
 .posts_content_code {
-  @include card($color-light, true);
+  @include card($color-light, false, false, true);
   @include text_spacing();
 }
