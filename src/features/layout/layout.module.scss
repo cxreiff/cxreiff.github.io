@@ -12,10 +12,8 @@
   & > nav {
     position: relative;
     margin: 2rem 1rem;
-    border-radius: $roundness;
 
     @include card($color-transparent, false);
-    overflow: visible;
 
     ul {
       position: relative;
