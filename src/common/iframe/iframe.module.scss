@@ -2,7 +2,7 @@
 @use "../../themed.scss" as *;
 
 .frame {
-  @include card($color-light, false, true);
+  @include card($color-black, true);
 
   iframe {
     width: 100%;

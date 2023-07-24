@@ -4,8 +4,6 @@ const LOCAL_STORAGE_KEY = "theme";
 
 export enum Theme {
   LIGHTMODE = "lightmode",
-  GREENISH = "greenish",
-  BLUISH = "bluish",
   DARKMODE = "darkmode",
 }
 
@@ -29,12 +27,9 @@ for (const theme of Object.values(Theme)) {
   }
 }
 
-export const setTheme = createAsyncThunk(
-  "theme/setTheme",
-  async (theme: Theme) => {
-    await new Promise((resolve) => setTimeout(resolve, 200));
-  }
-);
+export const setTheme = createAsyncThunk("theme/setTheme", async (_: Theme) => {
+  await new Promise((resolve) => setTimeout(resolve, 200));
+});
 
 const themeSlice = createSlice({
   name: "theme",

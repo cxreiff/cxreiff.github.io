@@ -8,14 +8,7 @@
   background-color: initial;
   padding: 0;
 
-  @include interactive(
-    0.25rem,
-    $roundness,
-    $color-dark,
-    $color-darker,
-    $color-dark,
-    $color-darker
-  );
+  @include interactive();
 
   & > svg {
     width: 60%;
@@ -23,8 +16,8 @@
     padding: 20%;
     stroke-width: 3px;
 
-    @include themed(true) {
-      stroke: t($color-tertiary);
+    @include themed() {
+      stroke: t($color-primary);
     }
   }
 }

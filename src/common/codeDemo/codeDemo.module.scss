@@ -14,7 +14,7 @@
 
 .shader_syntax {
   & > pre {
-    @include card($color-background-container, false, false, true);
+    @include card($color-background-container, true);
 
     margin: 0 !important;
     &:not(:last-child) {

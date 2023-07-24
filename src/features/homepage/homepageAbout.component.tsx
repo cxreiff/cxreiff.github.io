@@ -28,7 +28,7 @@ export const HomepageAbout: FC = () => (
     </p>
     <br />
     <IconParagraph icon={<Paintbrush />}>
-      Try a different theme? <ThemeControl className={styles.theme_buttons} />
+      Toggle the theme? <ThemeControl className={styles.theme_buttons} />
     </IconParagraph>
     <IconParagraph icon={<FileText />}>
       My full-stack development resume can be found{" "}

@@ -13,14 +13,7 @@ body {
   font-weight: 300;
   padding: 0;
 
-  :global {
-    animation-name: fadein;
-    animation-duration: 250ms;
-    animation-timing-function: ease-in;
-    animation-iteration-count: 1;
-  }
-
-  @include themed(true) {
+  @include themed() {
     background: t($color-background-default);
     color: t($color-text-default);
   }

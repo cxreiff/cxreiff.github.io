@@ -5,8 +5,6 @@ import { useAppSelector, useAppDispatch } from "~/src/app/store";
 import { setTheme, Theme } from "~/src/features/theme/theme.slice";
 import { IconButton } from "~/src/common/iconButton/iconButton.component";
 
-import styles from "./themeToggle.module.scss";
-
 type ThemeToggleProps = {
   className?: string;
 };
@@ -23,7 +21,7 @@ export const ThemeToggle: FC<ThemeToggleProps> = ({ className }) => {
           ? "toggle dark mode off"
           : "toggle dark mode on"
       }
-      className={styles.theme_toggle}
+      className={className}
       onClick={() =>
         dispatchSetTheme(
           theme === Theme.DARKMODE ? Theme.LIGHTMODE : Theme.DARKMODE

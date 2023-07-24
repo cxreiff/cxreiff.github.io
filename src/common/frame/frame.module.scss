@@ -28,7 +28,7 @@
 
   &:not(.hidden) > *:first-child {
     :global {
-      animation: fadein ease-in 0.3s;
+      animation: fadein ease-in 300ms;
     }
   }
 }

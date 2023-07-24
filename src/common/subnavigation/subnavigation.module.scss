@@ -2,7 +2,7 @@
 @use "../../themed.scss" as *;
 
 .subnavigation {
-  @include card($color-lighter, false, false, true);
+  @include card();
 
   margin: 0 0 2rem 0;
   padding: 0;
@@ -19,14 +19,7 @@
     position: relative;
     width: 100%;
 
-    @include interactive(
-      0.25rem,
-      $roundness,
-      $color-dark,
-      $color-darker,
-      $color-darker,
-      $color-lighter
-    );
+    @include interactive();
 
     a {
       width: 100%;
@@ -36,17 +29,17 @@
       line-height: 2rem;
       text-decoration: none;
 
-      @include themed(true) {
-        color: t($color-darker);
+      @include themed() {
+        color: t($color-quinary);
       }
     }
 
-    @include themed(true) {
+    @include themed() {
       &.current {
-        background: t($color-darker);
+        background: t($color-quinary);
 
         a {
-          color: t($color-lighter);
+          color: t($color-background-default);
         }
       }
     }

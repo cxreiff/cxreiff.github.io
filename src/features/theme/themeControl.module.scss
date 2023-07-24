@@ -16,14 +16,7 @@
     border: 3px solid transparent;
     display: inline-block;
 
-    @include interactive(
-      0.15rem,
-      42%,
-      $color-dark,
-      $color-darker,
-      $color-darker,
-      $color-lighter
-    );
+    @include interactive(0.15rem, 42%);
 
     @media (hover: hover) {
       @include turbulence_static();
@@ -42,14 +35,10 @@
 }
 
 .lightmode_button {
-  color: value_by_theme("lightmode", $color-tertiary);
-  background-color: value_by_theme("lightmode", $color-light);
+  color: value_by_theme("lightmode", $color-primary);
+  background-color: value_by_theme("lightmode", $color-tertiary);
 }
-.greenish_button {
-  color: value_by_theme("greenish", $color-tertiary);
-  background-color: value_by_theme("greenish", $color-light);
-}
-.bluish_button {
-  color: value_by_theme("bluish", $color-tertiary);
-  background-color: value_by_theme("bluish", $color-light);
+.darkmode_button {
+  color: value_by_theme("darkmode", $color-primary);
+  background-color: value_by_theme("darkmode", $color-tertiary);
 }
