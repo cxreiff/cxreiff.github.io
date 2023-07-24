@@ -5,12 +5,12 @@
   border-radius: $roundness;
   padding: 0rem 1rem 1rem;
 
-  @include themed() {
-    border: 2px dashed t($color-quaternary);
-  }
-
   @include is_larger_than($sm-breakpoint) {
-    padding: 1rem 2rem 2rem;
+    padding: 2rem 3rem;
+
+    @include themed() {
+      border: 2px dashed t($color-quaternary);
+    }
   }
 
   .theme_buttons {

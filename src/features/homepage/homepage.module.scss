@@ -11,9 +11,10 @@
   }
 
   .projects {
-    margin-top: 3rem;
+    margin-top: 1rem;
 
     @include is_larger_than($sm-breakpoint) {
+      margin-top: 3rem;
       grid-column: span 2;
     }
   }
