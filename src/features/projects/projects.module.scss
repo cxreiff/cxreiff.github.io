@@ -15,7 +15,7 @@
   }
 
   img {
-    @include themed(true) {
+    @include themed() {
       filter: brightness(t($svg-brightness));
     }
   }

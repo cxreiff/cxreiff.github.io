@@ -18,25 +18,18 @@ export const ThemeControl: FC<ThemeControlProps> = ({ className }) => {
   return (
     <span className={cn(className, styles.theme_control)}>
       <button
-        aria-label={"change theme to red color scheme"}
+        aria-label={"change theme to light color scheme"}
         className={cn(styles.lightmode_button, {
           [styles.current_theme]: theme === Theme.LIGHTMODE,
         })}
         onClick={() => dispatchSetTheme(Theme.LIGHTMODE)}
       />
       <button
-        aria-label={"change theme to green color scheme"}
-        className={cn(styles.greenish_button, {
-          [styles.current_theme]: theme === Theme.GREENISH,
+        aria-label={"change theme to dark color scheme"}
+        className={cn(styles.darkmode_button, {
+          [styles.current_theme]: theme === Theme.DARKMODE,
         })}
-        onClick={() => dispatchSetTheme(Theme.GREENISH)}
-      />
-      <button
-        aria-label={"change theme to blue color scheme"}
-        className={cn(styles.bluish_button, {
-          [styles.current_theme]: theme === Theme.BLUISH,
-        })}
-        onClick={() => dispatchSetTheme(Theme.BLUISH)}
+        onClick={() => dispatchSetTheme(Theme.DARKMODE)}
       />
     </span>
   );

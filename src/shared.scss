@@ -28,49 +28,28 @@ $xs-breakpoint: 385px;
   margin-bottom: 1rem;
 }
 
-@mixin hard_shadow() {
-  @include themed(true) {
-    box-shadow: t($default-hard-shadow);
+@mixin border_shadow() {
+  @include themed() {
+    box-shadow: 0 0 0 1px t($color-quaternary);
   }
 }
 
-@mixin soft_shadow() {
-  @include themed(true) {
-    box-shadow: t($default-soft-shadow);
-  }
-}
-
-@mixin outlined() {
-  @include themed(true) {
-    box-shadow: t($default-outlined);
-  }
-}
-
-@mixin card(
-  $background,
-  $hard-shadow: false,
-  $soft-shadow: false,
-  $outlined: false
-) {
+@mixin card($background: $color-transparent, $border_shadow: true) {
   border-radius: $roundness;
   overflow: hidden;
 
-  @if ($hard-shadow) {
-    @include hard_shadow();
-  } @else if ($soft-shadow) {
-    @include soft_shadow();
-  } @else if ($outlined) {
-    @include outlined();
+  @if ($border_shadow) {
+    @include border_shadow();
   }
 
-  @include themed(true) {
+  @include themed() {
     background-color: t($background);
   }
 }
 
 @mixin hover_scale($ratio) {
   @media (hover: hover) {
-    transition: transform 0.2s $cubic-curve;
+    transition: transform 200ms $cubic-curve;
 
     &:hover {
       transform: scale($ratio);
@@ -79,12 +58,12 @@ $xs-breakpoint: 385px;
 }
 
 @mixin interactive(
-  $gutter,
-  $hover-radius,
-  $hover-bg,
-  $hover-color,
-  $active-bg,
-  $active-color
+  $gutter: 0.25rem,
+  $hover-radius: $roundness,
+  $hover-bg: $color-quaternary,
+  $hover-color: $color-quinary,
+  $active-bg: $color-quaternary,
+  $active-color: $color-quinary
 ) {
   cursor: pointer;
 
@@ -101,10 +80,10 @@ $xs-breakpoint: 385px;
       bottom: $gutter;
       left: $gutter;
       border-radius: max(2px, $hover-radius);
-      transition: opacity 0.15s $cubic-curve;
+      transition: opacity 200ms $cubic-curve;
       overflow: hidden;
 
-      @include themed(true) {
+      @include themed() {
         background: t($hover-bg);
         color: t($hover-color);
       }
@@ -119,10 +98,10 @@ $xs-breakpoint: 385px;
       width: 100%;
       height: 100%;
       inset: 0;
-      opacity: 0.6;
+      opacity: 0.4;
       border-radius: inherit;
 
-      @include themed(true) {
+      @include themed() {
         background: t($active-bg);
         color: t($active-color);
       }
@@ -130,13 +109,16 @@ $xs-breakpoint: 385px;
   }
 }
 
-@mixin interactive_secondary($text-color, $highlight-color) {
+@mixin interactive_secondary(
+  $text-color: $color-text-link,
+  $highlight-color: $color-tertiary
+) {
   padding: 1px 2px 2px;
   margin: -1px -2px -2px;
   text-underline-offset: 2px;
   transition: background-size 0.2s;
 
-  @include themed(true) {
+  @include themed() {
     color: t($text-color);
     background: linear-gradient(
       to right,
@@ -153,26 +135,12 @@ $xs-breakpoint: 385px;
   }
 }
 
-@mixin fadeup() {
-  :global {
-    animation: fadein 1s ease-out, slideup 1s cubic-bezier(0.2, 0.75, 0, 1);
-    animation-fill-mode: both;
-  }
-}
 @keyframes :global(fadein) {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
-  }
-}
-@keyframes :global(slideup) {
-  0% {
-    transform: translateY(3rem);
-  }
-  100% {
-    transform: translateY(0);
   }
 }
 @keyframes :global(animation-delayed-fade) {
@@ -207,7 +175,7 @@ $xs-breakpoint: 385px;
 }
 @mixin turbulence_animated() {
   :global {
-    animation: turbulence 0.8s linear infinite;
+    animation: turbulence 800ms linear infinite;
   }
 }
 @keyframes :global(turbulence) {

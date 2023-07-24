@@ -5,12 +5,12 @@
   @include text_spacing();
 
   a {
-    @include interactive_secondary($color-text-link, $color-light);
+    @include interactive_secondary();
     line-height: 1.5rem;
   }
 }
 
 .posts_content_code {
-  @include card($color-light, false, false, true);
+  @include card();
   @include text_spacing();
 }

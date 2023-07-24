@@ -55,7 +55,7 @@ export const Layout: FC<LayoutProps> = ({ children, routes }) => {
               </li>
             ))}
         </ul>
-        <ThemeToggle />
+        <ThemeToggle className={styles.theme_toggle} />
       </nav>
       <main>{children}</main>
     </div>

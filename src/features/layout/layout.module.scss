@@ -14,7 +14,7 @@
     margin: 2rem 1rem;
     border-radius: $roundness;
 
-    @include card($color-primary, true);
+    @include card($color-transparent, false);
     overflow: visible;
 
     ul {
@@ -29,7 +29,7 @@
 
       @include is_larger_than($sm-breakpoint) {
         flex-direction: row;
-        margin-right: calc($navbar-height + 0.1rem);
+        margin-right: calc($navbar-height + 0.25rem);
       }
     }
 
@@ -49,8 +49,8 @@
         vertical-align: middle;
         line-height: $navbar-height;
 
-        @include themed(true) {
-          color: t($color-darker);
+        @include themed() {
+          color: t($color-quinary);
         }
       }
     }
@@ -67,10 +67,9 @@
       }
 
       a {
-        width: calc(100% - 2rem);
+        width: 100%;
         white-space: nowrap;
         font-size: 2.2rem;
-        margin: 0 1rem;
         padding: 1.125rem 0;
         height: 0.5rem;
         line-height: 0.25rem;
@@ -94,8 +93,8 @@
             display: inline-block;
             transition: transform 0.1s ease-out, text-shadow 0.1s ease-out;
 
-            @include themed(true) {
-              color: t($color-tertiary);
+            @include themed() {
+              color: t($color-primary);
             }
           }
           @media (hover: hover) {
@@ -104,13 +103,13 @@
               transform: translateY(-5px) scale(1.1);
             }
             &:hover:before {
-              @include themed(true) {
-                text-shadow: -1px 0px 0 t($color-tertiary);
+              @include themed() {
+                text-shadow: -1px 0px 0 t($color-primary);
               }
             }
             &:hover:after {
-              @include themed(true) {
-                text-shadow: 1px 0px 0 t($color-tertiary);
+              @include themed() {
+                text-shadow: 1px 0px 0 t($color-primary);
               }
             }
           }
@@ -127,30 +126,18 @@
       }
 
       & > a {
-        @include interactive(
-          0.25rem,
-          $roundness,
-          $color-dark,
-          $color-darker,
-          $color-darker,
-          $color-lighter
-        );
+        @include interactive();
       }
     }
 
     li.current {
       a {
         text-decoration: underline;
-
-        @include themed(true) {
-          color: t($color-lighter);
-          background: t($color-dark);
-        }
       }
     }
 
     @include is_larger_than($sm-breakpoint) {
-      li.navlink:not(.current):after {
+      li.navlink:after {
         content: "";
         opacity: 0.2;
         position: absolute;
@@ -159,13 +146,13 @@
         top: 20%;
         right: -2px;
 
-        @include themed(true) {
-          border-left: 2px solid t($color-dark);
+        @include themed() {
+          border-left: 2px solid t($color-quaternary);
         }
       }
     }
     @include is_smaller_than($sm-breakpoint) {
-      li.navlink:not(.current):not(:first-child):not(:last-child):after {
+      li.navlink:not(:first-child):not(:last-child):after {
         content: "";
         opacity: 0.2;
         position: absolute;
@@ -174,13 +161,12 @@
         left: 25%;
         bottom: -2px;
 
-        @include themed(true) {
-          border-top: 2px solid t($color-dark);
+        @include themed() {
+          border-top: 2px solid t($color-quaternary);
         }
       }
     }
 
-    /* Hiding and showing navbar at mobile sizes. */
     ul {
       max-height: $navbar-height;
 
@@ -216,4 +202,11 @@
   @include is_larger_than($sm-breakpoint) {
     display: none;
   }
+}
+
+.theme_toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
 }
