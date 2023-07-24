@@ -9,4 +9,12 @@
   @include is_larger_than($sm-breakpoint) {
     grid-template-columns: 5fr 8fr;
   }
+
+  .projects {
+    margin-top: 3rem;
+
+    @include is_larger_than($sm-breakpoint) {
+      grid-column: span 2;
+    }
+  }
 }

@@ -29,7 +29,7 @@
 
       @include is_larger_than($sm-breakpoint) {
         flex-direction: row;
-        margin-right: calc($navbar-height + 0.25rem);
+        margin-right: calc($navbar-height + 0.75rem);
       }
     }
 
