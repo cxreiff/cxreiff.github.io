@@ -4,12 +4,13 @@ import cn from "classnames";
 import { Image } from "~/src/common/image/image.component";
 import styles from "./card.module.scss";
 
-type CardProps = {
+export type CardProps = {
   image?: string;
   primary?: string;
   secondary?: string | ReactElement;
   tertiary?: string | ReactElement;
   onClick?: () => void;
+  className?: string;
 };
 
 export const Card: FC<CardProps> = ({
@@ -18,14 +19,15 @@ export const Card: FC<CardProps> = ({
   secondary,
   tertiary,
   onClick,
+  className,
 }) => (
   <article
-    className={cn(styles.card, { [styles.card_clickable]: onClick })}
+    className={cn(className, styles.card, { [styles.card_clickable]: onClick })}
     onClick={onClick}
   >
     {image && (
       <div>
-        <Image source={image} aspect={800 / 500} />
+        <Image source={image} aspect={9 / 5} />
       </div>
     )}
     {primary && (

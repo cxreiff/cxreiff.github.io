@@ -13,7 +13,7 @@ exports[`should render 1`] = `
           src="test"
         />
         <svg
-          viewBox="0 0 1.6 1"
+          viewBox="0 0 1.8 1"
         />
       </div>
     </div>
