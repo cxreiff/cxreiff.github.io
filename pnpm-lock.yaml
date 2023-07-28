@@ -149,6 +149,9 @@ devDependencies:
   react:
     specifier: npm:@preact/compat@^17.1.2
     version: /@preact/compat@17.1.2(preact@10.13.0)
+  react-activity-calendar:
+    specifier: ^2.0.2
+    version: 2.0.2(@preact/compat@17.1.2)(@preact/compat@17.1.2)
   react-dom:
     specifier: npm:@preact/compat@^17.1.2
     version: /@preact/compat@17.1.2(preact@10.13.0)
@@ -1880,6 +1883,10 @@ packages:
     resolution: {integrity: sha512-KnRanxnpfpjUTqTCXslZSEdLfXExwgNxYPdiO2WGUj8+HDjFi8R3k5RVKPeSCzLjCcshCAtVO2QBbVuAV4kTnw==}
     dev: true
 
+  /@types/chroma-js@2.4.0:
+    resolution: {integrity: sha512-JklMxityrwjBTjGY2anH8JaTx3yjRU3/sEHSblLH1ba5lqcSh1LnImXJZO5peJfXyqKYWjHTGy4s5Wz++hARrw==}
+    dev: true
+
   /@types/debug@4.1.7:
     resolution: {integrity: sha512-9AonUzyTjXXhEOa0DnqpzZi6VHlqKMswga9EXjpXnnqxwLtdvPPtlO8evrI5D9S6asFRCQ6v+wpiUKbw+vKqyg==}
     dependencies:
@@ -2815,6 +2822,10 @@ packages:
       fsevents: 2.3.2
     dev: true
 
+  /chroma-js@2.4.2:
+    resolution: {integrity: sha512-U9eDw6+wt7V8z5NncY2jJfZa+hUH8XEj8FQHgFJTrUFnJfXYf4Ml4adI2vXZOjqRDpFWtYVWypDfZwnJ+HIR4A==}
+    dev: true
+
   /chrome-trace-event@1.0.3:
     resolution: {integrity: sha512-p3KULyQg4S7NIHixdwbGX+nFHkoBiA4YQmyWtjb8XngSKV124nJmRysgAeujbUVb15vh+RvFUfCPqU7rXk+hZg==}
     engines: {node: '>=6.0'}
@@ -3075,6 +3086,13 @@ packages:
 
   /data-uri-to-buffer@0.0.3:
     resolution: {integrity: sha512-Cp+jOa8QJef5nXS5hU7M1DWzXPEIoVR3kbV0dQuVGwROZg8bGf1DcCnkmajBTnvghTtSNMUdRrPjgaT6ZQucbw==}
+    dev: true
+
+  /date-fns@2.30.0:
+    resolution: {integrity: sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==}
+    engines: {node: '>=0.11'}
+    dependencies:
+      '@babel/runtime': 7.21.0
     dev: true
 
   /debug@4.3.4:
@@ -5680,6 +5698,7 @@ packages:
   /node-gyp-build-optional-packages@5.0.7:
     resolution: {integrity: sha512-YlCCc6Wffkx0kHkmam79GKvDQ6x+QZkMjFGrIMxgFNILFvGSbCp2fCBC55pGTT9gVaz8Na5CLmxt/urtzRv36w==}
     hasBin: true
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -6278,6 +6297,19 @@ packages:
 
   /queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
+    dev: true
+
+  /react-activity-calendar@2.0.2(@preact/compat@17.1.2)(@preact/compat@17.1.2):
+    resolution: {integrity: sha512-gUm7j8rgBgYnrfBQkR4y3gl/gPI1By2Yfg1O1EpYuOdYdRsTtn404H4eH9+iZBCAeZjG49NBPo/BmjvOSyaChg==}
+    peerDependencies:
+      react: ^17.0.0 || ^18.0.0
+      react-dom: ^17.0.0 || ^18.0.0
+    dependencies:
+      '@types/chroma-js': 2.4.0
+      chroma-js: 2.4.2
+      date-fns: 2.30.0
+      react: /@preact/compat@17.1.2(preact@10.13.0)
+      react-dom: /@preact/compat@17.1.2(preact@10.13.0)
     dev: true
 
   /react-error-overlay@6.0.9:
