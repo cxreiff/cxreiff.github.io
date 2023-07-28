@@ -5,6 +5,15 @@
   border-radius: $roundness;
   padding: 0rem 1rem 1rem;
 
+  .github_calendar {
+    margin: 2.5rem 0 0;
+    display: none;
+
+    @include is_larger_than($sm-breakpoint) {
+      display: block;
+    }
+  }
+
   @include is_larger_than($sm-breakpoint) {
     padding: 2rem 3rem;
 
@@ -17,11 +26,33 @@
     margin-left: 0.75rem;
   }
 
+  br + p {
+    margin-top: 0rem;
+  }
+
   strong {
     font-weight: bold;
   }
 
   a {
     @include interactive_secondary();
+  }
+}
+
+.bottom_half {
+  display: grid;
+
+  .contributions {
+    height: 100%;
+    display: none;
+  }
+
+  @include is_larger_than($md-breakpoint) {
+    grid-gap: 2rem;
+    grid-template-columns: 2fr 1fr;
+
+    .contributions {
+      display: block;
+    }
   }
 }

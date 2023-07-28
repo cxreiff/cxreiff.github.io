@@ -16,8 +16,6 @@ export const BEVY_SKETCHES_URL = `${SITE_BASE_URL}bevy_sketches`;
 
 export const RESUME_URL = "https://cooperreiff.com/resume/resume.pdf#toolbar=0";
 export const GITHUB_URL = "https://github.com/cxreiff";
-export const GITHUB_SITE_PROJECT_URL =
-  "https://github.com/cxreiff/cxreiff.github.io";
 
 export const OBJECT_STORE_ASSETS_URL =
   "https://cxreiff.sfo3.cdn.digitaloceanspaces.com/";

@@ -1,0 +1,48 @@
+@use "../../themed.scss" as *;
+
+.contributions {
+  cursor: pointer;
+  text-align: center;
+  opacity: 0;
+  transition: 0.5s opacity ease-in-out;
+  margin-bottom: -2rem;
+
+  rect {
+    @include color_transitions();
+  }
+
+  @for $i from 1 through 100 {
+    g:nth-last-of-type(#{$i}) {
+      opacity: 0;
+      transition: 0.5s opacity ease-in-out;
+      transition-delay: #{$i * 0.03} + s;
+    }
+  }
+
+  span {
+    font-size: 0.75em;
+  }
+
+  span {
+    padding-top: 3px;
+  }
+  text,
+  span {
+    opacity: 0;
+    transition: 0.3s opacity ease-in-out;
+  }
+
+  &.loaded {
+    opacity: 1;
+    g {
+      opacity: 1;
+    }
+
+    &:hover {
+      text,
+      span {
+        opacity: 1;
+      }
+    }
+  }
+}

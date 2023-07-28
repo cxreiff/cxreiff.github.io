@@ -79,7 +79,7 @@ $themes: (
   transition: color 200ms ease-out, background 200ms ease-out,
     background-color 200ms ease-out, border-color 200ms ease-out,
     box-shadow 200ms ease-out, text-shadow 200ms ease-out, stroke 200ms ease-out,
-    filter 200ms ease-out;
+    filter 200ms ease-out, fill 200ms ease-out;
 }
 
 @each $theme, $map in $themes {
