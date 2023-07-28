@@ -17,7 +17,7 @@ export const HomepageAbout: FC = () => (
     </p>
     <p>
       I'm also interested in real-time graphics programming, and have been
-      spending my free time brushing up on math and writing shader code.
+      spending my free time brushing up on my math and writing shader code.
     </p>
     <br />
     <p className={styles.bottom_half}>
@@ -26,14 +26,16 @@ export const HomepageAbout: FC = () => (
           Toggle the theme? <ThemeControl className={styles.theme_buttons} />
         </IconParagraph>
         <IconParagraph icon={<FileText />}>
-          My full-stack development resume can be found{" "}
-          <a href={RESUME_URL}>here</a>.
+          My developer resume can be found <a href={RESUME_URL}>here</a>.
         </IconParagraph>
         <IconParagraph icon={<Github />}>
           My GitHub profile can be found <a href={GITHUB_URL}>here</a>.
         </IconParagraph>
       </div>
-      <Contributions className={styles.contributions} numberOfDays={94} />
+      <Contributions
+        className={styles.contributions}
+        numberOfDays={119 + new Date().getDay()}
+      />
     </p>
   </div>
 );
