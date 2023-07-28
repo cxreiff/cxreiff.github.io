@@ -49,7 +49,7 @@
 
   @include is_larger_than($md-breakpoint) {
     grid-gap: 2rem;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 4fr 3fr;
 
     .contributions {
       display: block;
