@@ -1,8 +1,8 @@
 import { Procedure } from "~src/common/shaderView/shaderView.component";
 import { ShaderDemo } from "../shadersList";
 
-import vertexShader from "~src/assets/shaders/assorted1.vert";
-import fragmentShader from "~src/assets/shaders/assorted1.frag";
+import vertexShader from "~src/assets/shaders/assorted3.vert";
+import fragmentShader from "~src/assets/shaders/assorted3.frag";
 import square from "~src/assets/shaders/square.json";
 
 const procedure: Procedure = (regl) => {
