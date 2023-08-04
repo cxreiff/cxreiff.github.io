@@ -12,7 +12,7 @@ float circle(in vec2 uv, in float radius, in vec2 center) {
     );
 }
 
-void main(){
+void main() {
     vec2 uv = gl_FragCoord.xy / u_resolution;
 
     vec3 color = vec3(

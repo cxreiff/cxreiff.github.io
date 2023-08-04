@@ -15,12 +15,16 @@ export const ShaderView: FC<ShaderViewProps> = ({ procedure }) => {
 
   useEffect(() => {
     if (ref.current) {
-      procedure(
-        ReglInit({
-          canvas: ref.current,
-          extensions: "oes_texture_float",
-        })
-      );
+      const regl = ReglInit({
+        canvas: ref.current,
+        extensions: "oes_texture_float",
+      });
+
+      procedure(regl);
+
+      return () => {
+        regl.destroy();
+      };
     }
   }, [ref, procedure]);
 

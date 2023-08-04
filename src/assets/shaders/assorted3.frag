@@ -28,20 +28,20 @@ float box(vec2 st, vec2 size, float smoothEdges) {
     return uv.x * uv.y;
 }
 
-void main(void) {
-    vec2 st = gl_FragCoord.xy/u_resolution.xy;
+void main() {
+    vec2 st = gl_FragCoord.xy / u_resolution.xy;
     vec3 color = vec3(0.0);
     vec2 pos = floor(st * 24.);
 
     st = tile(st, 24.);
     st = rotate2D(st, PI * 0.25);
     
-    float emphasis = sin(( u_time * 1.5 + pos.x));
+    float emphasis = sin((u_time * 1.5 + pos.x));
 
     color = vec3(box(
         st,
-        vec2(0.4 + (pos.y / 24.)),
-        0.2*(emphasis + 1.0)
+        vec2(0.4 + sin(pos.y / (PI * 2.)) * 0.8),
+        0.2 * (emphasis + 1.0)
     ));
 
     gl_FragColor = vec4(color, 1.0);
