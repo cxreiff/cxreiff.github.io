@@ -1,12 +1,17 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { useParams } from "react-router-dom";
+import cn from "classnames";
 
 import { Subnavigation } from "~src/common/subnavigation/subnavigation.component";
 import { CodeDemo } from "~src/common/codeDemo/codeDemo.component";
 import { CATEGORIES, Category, SHADERS_LIST } from "./shadersList";
 import { ShaderView } from "~src/common/shaderView/shaderView.component";
+import { Toggle } from "~src/common/toggle/toggle.component";
+
+import styles from "./shaders.module.scss";
 
 const Shaders: FC = () => {
+  const [codeVisible, setCodeVisible] = useState(true);
   let { category } = useParams<{ category: Category }>();
 
   if (!(category && CATEGORIES.includes(category))) {
@@ -21,12 +26,27 @@ const Shaders: FC = () => {
           route: `/projects/shaders/${nav_category}`,
           label: nav_category,
         }))}
+        options={[
+          <Toggle key={"show_code"} value={codeVisible} setter={setCodeVisible}>
+            show code
+          </Toggle>,
+        ]}
       />
-      {SHADERS_LIST[category].map(({ procedure, code }, index) => (
-        <CodeDemo key={`${category!}${index}`} excerpts={code}>
-          <ShaderView procedure={procedure} />
-        </CodeDemo>
-      ))}
+      <div
+        className={cn(styles.shader_list, {
+          [styles.code_visible]: codeVisible,
+        })}
+      >
+        {SHADERS_LIST[category].map(({ procedure, code }, index) =>
+          codeVisible ? (
+            <CodeDemo key={`${category!}${index}`} excerpts={code}>
+              <ShaderView procedure={procedure} />
+            </CodeDemo>
+          ) : (
+            <ShaderView key={index} procedure={procedure} />
+          )
+        )}
+      </div>
     </section>
   );
 };

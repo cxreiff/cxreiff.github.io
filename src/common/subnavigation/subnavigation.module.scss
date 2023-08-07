@@ -6,46 +6,84 @@
 
   margin: 0 0 2rem 0;
   padding: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
   position: relative;
+  display: grid;
 
   @include is_larger_than($sm-breakpoint) {
-    flex-direction: row;
+    grid-template-columns: 1fr auto;
   }
 
-  & > li {
-    position: relative;
-    width: 100%;
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
 
-    @include interactive();
+    &:last-child {
+      display: flex;
+      flex-direction: row-reverse;
+    }
 
-    a {
-      width: 100%;
-      display: inline-block;
+    @include is_larger_than($sm-breakpoint) {
+      flex-direction: row;
+    }
+
+    & > li {
       position: relative;
-      padding: 0 1.25rem;
-      line-height: 2rem;
-      text-decoration: none;
+      width: 100%;
+      display: flex;
+      align-items: center;
 
-      @include themed() {
-        color: t($color-quinary);
+      @include is_larger_than($sm-breakpoint) {
+        width: min-content;
+      }
+
+      & > * {
+        line-height: 2rem;
+        padding: 0 1.25rem;
       }
     }
 
-    @include themed() {
-      &.current {
-        background: t($color-quinary);
+    &:first-child > li {
+      @include interactive();
 
-        a {
-          color: t($color-background-default);
+      & > a {
+        display: inline-block;
+        position: relative;
+        padding: 0 1.25rem;
+        white-space: nowrap;
+        text-decoration: none;
+
+        @include themed() {
+          color: t($color-quinary);
+        }
+      }
+
+      @include themed() {
+        &.current {
+          background: t($color-quinary);
+
+          a {
+            color: t($color-background-default);
+          }
         }
       }
     }
 
-    @include is_larger_than($sm-breakpoint) {
-      width: min-content;
+    &:last-child {
+      @include themed() {
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+        border-top: 2px solid t($color-secondary);
+
+        @include is_larger_than($sm-breakpoint) {
+          padding: 0;
+          margin: 0;
+          border: none;
+        }
+      }
     }
   }
 }

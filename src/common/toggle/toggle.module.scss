@@ -1,0 +1,75 @@
+@use "../../shared.scss" as *;
+@use "../../themed.scss" as *;
+
+.toggle {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  flex-direction: row-reverse;
+
+  @include is_larger_than($sm-breakpoint) {
+    flex-direction: row;
+  }
+
+  & > input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked + span > span {
+      @include themed() {
+        background-color: t($color-primary);
+      }
+
+      &:before {
+        transform: translateX(1.2rem);
+      }
+    }
+  }
+
+  & > span {
+    white-space: nowrap;
+    position: relative;
+    display: inline-block;
+    width: 2.4rem;
+    height: 1.2rem;
+
+    & > span {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: 3rem;
+
+      @include themed() {
+        background-color: t($color-tertiary);
+        transition: 0.2s;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        height: 0.8rem;
+        width: 0.8rem;
+        left: 0.2rem;
+        bottom: 0.2rem;
+        border-radius: 50%;
+
+        @include themed() {
+          background-color: t($color-quaternary);
+          transition: 0.2s;
+        }
+      }
+    }
+  }
+
+  & > *:last-child {
+    margin: 0 0.75rem 0 0rem;
+
+    @include is_larger_than($sm-breakpoint) {
+      margin: 0 0 0 0.75rem;
+    }
+  }
+}

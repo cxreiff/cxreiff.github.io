@@ -1,0 +1,17 @@
+@use "../../shared.scss" as *;
+@use "../../themed.scss" as *;
+
+.shader_list {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: minmax(0, 1fr);
+  width: 100%;
+
+  @include is_larger_than($sm-breakpoint) {
+    grid-template-columns: 1fr 1fr 1fr;
+
+    &.code_visible {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+}
