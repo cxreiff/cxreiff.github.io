@@ -21,7 +21,7 @@ const PROJECTS: ProjectCard[] = [
     image: teapot,
     primary: "shaders",
     secondary: "webgl, regl.js, glsl",
-    route: "/projects/shaders/basic",
+    route: "/projects/shaders/assorted",
   },
   {
     image: breakout,
