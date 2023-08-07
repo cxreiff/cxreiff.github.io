@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 
-export function useMeasuredRef<T extends HTMLElement>() {
+export const useMeasuredRef = <T extends HTMLElement>() => {
   const ref = useRef<T | null>(null);
   const [rect, setRect] = useState<DOMRect>(new DOMRect());
 
@@ -18,4 +18,4 @@ export function useMeasuredRef<T extends HTMLElement>() {
   }, [ref.current]);
 
   return [ref, rect] as const;
-}
+};

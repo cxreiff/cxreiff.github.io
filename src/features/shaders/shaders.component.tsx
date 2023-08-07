@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import { useParams } from "react-router-dom";
 import cn from "classnames";
 
@@ -7,11 +7,15 @@ import { CodeDemo } from "~src/common/codeDemo/codeDemo.component";
 import { CATEGORIES, Category, SHADERS_LIST } from "./shadersList";
 import { ShaderView } from "~src/common/shaderView/shaderView.component";
 import { Toggle } from "~src/common/toggle/toggle.component";
+import { useLocalStorage } from "~src/hooks/useLocalStorage";
 
 import styles from "./shaders.module.scss";
 
 const Shaders: FC = () => {
-  const [codeVisible, setCodeVisible] = useState(true);
+  const [codeVisible, setCodeVisible] = useLocalStorage(
+    "SHADER_CODE_VISIBLE",
+    true
+  );
   let { category } = useParams<{ category: Category }>();
 
   if (!(category && CATEGORIES.includes(category))) {

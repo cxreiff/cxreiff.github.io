@@ -7,9 +7,9 @@ export const MEDIA_QUERIES = {
   MOBILE: "only screen and (hover: none) and (max-width: 768px)",
 } as const;
 
-export function useMediaQuery(
+export const useMediaQuery = (
   query: (typeof MEDIA_QUERIES)[keyof typeof MEDIA_QUERIES]
-) {
+) => {
   const [matches, setMatches] = useState(window.matchMedia(query).matches);
 
   useEffect(() => {
@@ -20,4 +20,4 @@ export function useMediaQuery(
   }, [matches]);
 
   return matches;
-}
+};
