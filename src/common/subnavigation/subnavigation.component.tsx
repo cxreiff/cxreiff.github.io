@@ -23,10 +23,12 @@ export const Subnavigation: FC<SubnavigationProps> = ({
         </li>
       ))}
     </ul>
-    <ul>
-      {options.map((option, index) => (
-        <li key={index}>{option}</li>
-      ))}
-    </ul>
+    {options.length > 0 && (
+      <ul>
+        {options.map((option, index) => (
+          <li key={index}>{option}</li>
+        ))}
+      </ul>
+    )}
   </section>
 );
