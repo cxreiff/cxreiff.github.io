@@ -13,12 +13,6 @@
   @include is_larger_than($md-breakpoint) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
-
-  img {
-    @include themed() {
-      filter: brightness(t($svg-brightness));
-    }
-  }
 }
 
 .see_more {

@@ -5,12 +5,7 @@ import { Card } from "./card.component";
 
 test("should render", () => {
   const { container, getAllByText } = render(
-    <Card
-      image={"test"}
-      primary={"test"}
-      secondary={"test"}
-      tertiary={"test"}
-    />
+    <Card svg={"test"} primary={"test"} secondary={"test"} tertiary={"test"} />
   );
 
   expect(getAllByText("test")).toHaveLength(3);
@@ -21,7 +16,7 @@ test("should call provided callback", () => {
   const mockHandler = vi.fn();
   const { getAllByText } = render(
     <Card
-      image={"test"}
+      svg={"test"}
       primary={"test"}
       secondary={"test"}
       tertiary={"test"}

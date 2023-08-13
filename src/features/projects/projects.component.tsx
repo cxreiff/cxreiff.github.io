@@ -18,43 +18,43 @@ type ProjectCard = CardProps & { route: string };
 
 const PROJECTS: ProjectCard[] = [
   {
-    image: teapot,
+    svg: teapot,
     primary: "shaders",
     secondary: "webgl, regl.js, glsl",
     route: "/projects/shaders/assorted",
   },
   {
-    image: breakout,
+    svg: breakout,
     primary: "breakout",
     secondary: "rust, WASM, bevy",
     route: "/projects/breakout",
   },
   {
-    image: hex_tiles,
+    svg: hex_tiles,
     primary: "hex tiles",
     secondary: "rust, WASM, bevy",
     route: "/projects/hex_tiles",
   },
   {
-    image: waves,
+    svg: waves,
     primary: "bevy misc",
     secondary: "bevy, WGSL",
     route: "/projects/sketches/1",
   },
   {
-    image: platformer,
+    svg: platformer,
     primary: "platformer",
     secondary: "rust, WASM, bevy",
     route: "/projects/platformer",
   },
   {
-    image: pixijs,
+    svg: pixijs,
     primary: "asteroids",
     secondary: "pixi.js, matter.js",
     route: "/projects/pixijs/asteroids",
   },
   {
-    image: babylonjs,
+    svg: babylonjs,
     primary: "babylon.js test",
     secondary: "babylon.js",
     route: "/projects/babylonjs",
@@ -62,7 +62,7 @@ const PROJECTS: ProjectCard[] = [
 ];
 
 const MORE_PROJECTS: ProjectCard = {
-  image: arrow,
+  svg: arrow,
   primary: "see all projects...",
   route: "/projects",
 };

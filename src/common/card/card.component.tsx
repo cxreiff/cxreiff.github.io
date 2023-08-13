@@ -1,11 +1,10 @@
 import { FC, ReactElement } from "react";
 import cn from "classnames";
 
-import { Image } from "~/src/common/image/image.component";
 import styles from "./card.module.scss";
 
 export type CardProps = {
-  image?: string;
+  svg?: string;
   primary?: string;
   secondary?: string | ReactElement;
   tertiary?: string | ReactElement;
@@ -14,7 +13,7 @@ export type CardProps = {
 };
 
 export const Card: FC<CardProps> = ({
-  image,
+  svg,
   primary,
   secondary,
   tertiary,
@@ -25,10 +24,11 @@ export const Card: FC<CardProps> = ({
     className={cn(className, styles.card, { [styles.card_clickable]: onClick })}
     onClick={onClick}
   >
-    {image && (
-      <div>
-        <Image source={image} aspect={9 / 5} />
-      </div>
+    {svg && (
+      <div
+        className={styles.svg}
+        style={{ mask: `url(${svg}) no-repeat center / contain` }}
+      />
     )}
     {primary && (
       <header>
