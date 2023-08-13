@@ -16,7 +16,7 @@
     border: 3px solid transparent;
     display: inline-block;
 
-    @include interactive(0.15rem, 42%);
+    @include interactive(true, 0.15rem, 42%);
 
     @media (hover: hover) {
       @include turbulence_static();

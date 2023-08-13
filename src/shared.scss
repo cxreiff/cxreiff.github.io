@@ -58,6 +58,7 @@ $xs-breakpoint: 385px;
 }
 
 @mixin interactive(
+  $contained: true,
   $gutter: 0.25rem,
   $hover-radius: $roundness,
   $hover-bg: $color-quaternary,
@@ -95,11 +96,14 @@ $xs-breakpoint: 385px;
 
     &:active::after {
       transition: none;
-      width: 100%;
-      height: 100%;
-      inset: 0;
       opacity: 0.4;
-      border-radius: inherit;
+
+      @if $contained {
+        width: 100%;
+        height: 100%;
+        inset: 0;
+        border-radius: inherit;
+      }
 
       @include themed() {
         background: t($active-bg);
