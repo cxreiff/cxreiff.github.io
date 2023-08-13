@@ -9,7 +9,7 @@ type ToggleProps = {
 
 export const Toggle: FC<ToggleProps> = ({ value, setter, children }) => (
   <label className={styles.toggle}>
-    {children}
+    <span>{children}</span>
     <input
       type={"checkbox"}
       checked={value}

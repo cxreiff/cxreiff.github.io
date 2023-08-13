@@ -6,12 +6,14 @@
   align-items: center;
   white-space: nowrap;
 
+  @include interactive();
+
   & > input {
     opacity: 0;
     width: 0;
     height: 0;
 
-    &:checked + span > span {
+    &:checked + :last-child > span {
       @include themed() {
         background-color: t($color-primary);
       }
@@ -22,7 +24,7 @@
     }
   }
 
-  & > span {
+  & > :last-child {
     white-space: nowrap;
     position: relative;
     display: inline-block;
@@ -60,7 +62,11 @@
     }
   }
 
-  & > *:last-child {
-    margin: 0 0 0 0.75rem;
+  & > :first-child {
+    padding-right: 0.5rem;
+  }
+
+  & > :last-child {
+    margin-left: auto;
   }
 }
