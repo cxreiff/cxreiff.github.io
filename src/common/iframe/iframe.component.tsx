@@ -25,6 +25,7 @@ export const IFrame: FC<IFrameProps> = ({
     <Frame
       aspect={shouldUseMobileAspect ? mobileAspect : aspect}
       className={styles.frame}
+      canFullscreen
     >
       <iframe src={url} title={title} />
     </Frame>

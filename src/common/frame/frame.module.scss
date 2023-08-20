@@ -31,4 +31,17 @@
       animation: fadein ease-in 300ms;
     }
   }
+
+  .fullscreen_button {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    inset: 0.5rem 0.5rem auto auto;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &:hover > .fullscreen_button {
+    opacity: 0.8;
+  }
 }

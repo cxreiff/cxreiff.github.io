@@ -29,7 +29,7 @@ export const ShaderView: FC<ShaderViewProps> = ({ procedure }) => {
   }, [ref, procedure]);
 
   return (
-    <Frame aspect={1 / 1} className={styles.shader_view}>
+    <Frame aspect={1 / 1} className={styles.shader_view} canFullscreen>
       <canvas ref={ref} width={800} height={800} />
     </Frame>
   );
