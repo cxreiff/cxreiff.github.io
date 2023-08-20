@@ -1,4 +1,3 @@
-import { FC } from "react";
 import cn from "classnames";
 
 import { useAppSelector, useAppDispatch } from "~/src/app/store";
@@ -10,7 +9,7 @@ type ThemeControlProps = {
   className?: string;
 };
 
-export const ThemeControl: FC<ThemeControlProps> = ({ className }) => {
+export const ThemeControl = ({ className }: ThemeControlProps) => {
   const dispatch = useAppDispatch();
   const dispatchSetTheme = (theme: Theme) => void dispatch(setTheme(theme));
   const theme = useAppSelector((state) => state.theme.theme);

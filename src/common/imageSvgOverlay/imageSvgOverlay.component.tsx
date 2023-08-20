@@ -1,4 +1,4 @@
-import { FC, ReactElement, SVGProps, cloneElement, useState } from "react";
+import { ReactElement, SVGProps, cloneElement, useState } from "react";
 import cn from "classnames";
 
 type ImageSvgOverlayProps = {
@@ -13,13 +13,13 @@ import { Frame } from "~/src/common/frame/frame.component";
 
 import styles from "./imageSvgOverlay.module.scss";
 
-export const ImageSvgOverlay: FC<ImageSvgOverlayProps> = ({
+export const ImageSvgOverlay = ({
   aspect,
   source,
   alt,
   className,
   children,
-}) => {
+}: ImageSvgOverlayProps) => {
   const [loading, setLoading] = useState(true);
 
   const svg = cloneElement(children, {

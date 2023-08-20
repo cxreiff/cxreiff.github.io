@@ -1,4 +1,4 @@
-import { FC, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import useInfiniteScroll from "react-infinite-scroll-hook";
 
 import { useAppSelector, useAppDispatch } from "~/src/app/store";
@@ -9,7 +9,7 @@ import { fetchPhotos, clearPhotos } from "./photos.slice";
 
 import styles from "./photos.module.scss";
 
-const Photos: FC = () => {
+const Photos = () => {
   const dispatch = useAppDispatch();
   const dispatchFetchPhotos = () => dispatch(fetchPhotos());
   const dispatchClearPhotos = () => void dispatch(clearPhotos());

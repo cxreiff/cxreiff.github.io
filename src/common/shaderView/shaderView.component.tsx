@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import ReglInit, { Regl } from "regl";
 
 import { Frame } from "../frame/frame.component";
@@ -10,7 +10,7 @@ export type ShaderViewProps = {
   procedure: Procedure;
 };
 
-export const ShaderView: FC<ShaderViewProps> = ({ procedure }) => {
+export const ShaderView = ({ procedure }: ShaderViewProps) => {
   const ref = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {

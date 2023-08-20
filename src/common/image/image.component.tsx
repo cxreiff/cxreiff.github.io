@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { useState } from "react";
 
 type ImageProps = {
   aspect: number;
@@ -9,7 +9,7 @@ type ImageProps = {
 
 import { Frame } from "~/src/common/frame/frame.component";
 
-export const Image: FC<ImageProps> = ({ aspect, source, alt, className }) => {
+export const Image = ({ aspect, source, alt, className }: ImageProps) => {
   const [loading, setLoading] = useState(true);
 
   return (

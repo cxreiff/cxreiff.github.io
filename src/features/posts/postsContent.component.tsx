@@ -1,4 +1,3 @@
-import { FC } from "react";
 import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 
@@ -14,7 +13,7 @@ import {
 import posts from "./markdown";
 import styles from "./postsContent.module.scss";
 
-const PostsContent: FC = () => {
+const PostsContent = () => {
   const { id = "" } = useParams<{ id: string }>();
   const {
     content,

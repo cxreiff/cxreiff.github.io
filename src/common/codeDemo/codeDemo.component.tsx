@@ -1,4 +1,4 @@
-import { FC, ReactElement } from "react";
+import { ReactElement } from "react";
 
 import { useAppSelector } from "~/src/app/store";
 import { Theme } from "~/src/features/theme/theme.slice";
@@ -24,7 +24,7 @@ type CodeDemoProps = {
   excerpts: Excerpt[];
 };
 
-export const CodeDemo: FC<CodeDemoProps> = ({ children, excerpts }) => {
+export const CodeDemo = ({ children, excerpts }: CodeDemoProps) => {
   const theme = useAppSelector((state) => state.theme.theme);
 
   return (

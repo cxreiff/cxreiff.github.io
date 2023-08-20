@@ -1,4 +1,3 @@
-import { FC } from "react";
 import { useParams } from "react-router-dom";
 import cn from "classnames";
 
@@ -11,7 +10,7 @@ import { useLocalStorage } from "~src/hooks/useLocalStorage";
 
 import styles from "./shaders.module.scss";
 
-const Shaders: FC = () => {
+const Shaders = () => {
   const [codeVisible, setCodeVisible] = useLocalStorage(
     "SHADER_CODE_VISIBLE",
     true

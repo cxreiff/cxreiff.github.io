@@ -1,13 +1,14 @@
-import { Dispatch, FC, SetStateAction } from "react";
+import { ReactNode, Dispatch, SetStateAction } from "react";
 
 import styles from "./toggle.module.scss";
 
 type ToggleProps = {
   value: boolean;
   setter: Dispatch<SetStateAction<boolean>>;
+  children: ReactNode;
 };
 
-export const Toggle: FC<ToggleProps> = ({ value, setter, children }) => (
+export const Toggle = ({ value, setter, children }: ToggleProps) => (
   <label className={styles.toggle}>
     <span>{children}</span>
     <input

@@ -1,5 +1,3 @@
-import { FC } from "react";
-
 import { Frame } from "~/src/common/frame/frame.component";
 import { MEDIA_QUERIES, useMediaQuery } from "~src/hooks/useMediaQuery";
 
@@ -12,12 +10,12 @@ type IFrameProps = {
   url: string;
 };
 
-export const IFrame: FC<IFrameProps> = ({
+export const IFrame = ({
   aspect,
   url,
   title,
   mobileAspect = aspect,
-}) => {
+}: IFrameProps) => {
   const isLargerThanSM = useMediaQuery(MEDIA_QUERIES.LARGER_THAN_SM);
   const shouldUseMobileAspect = aspect !== mobileAspect && !isLargerThanSM;
 

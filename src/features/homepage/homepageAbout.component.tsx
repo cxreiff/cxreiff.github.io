@@ -1,4 +1,3 @@
-import { FC } from "react";
 import { Github, FileText, Paintbrush } from "lucide-preact";
 
 import { Contributions } from "~src/common/contributions/contributions.component";
@@ -8,7 +7,7 @@ import { RESUME_URL, GITHUB_URL } from "~/src/utilities/constants";
 
 import styles from "./homepageAbout.module.scss";
 
-export const HomepageAbout: FC = () => (
+export const HomepageAbout = () => (
   <div className={styles.homepage_about}>
     <p>
       <strong>Hello!</strong> I am a software engineer experienced with frontend

@@ -1,5 +1,4 @@
 import {
-  FC,
   useRef,
   ReactNode,
   CSSProperties,
@@ -24,14 +23,14 @@ type FrameProps = {
   children: ReactNode;
 };
 
-export const Frame: FC<FrameProps> = ({
+export const Frame = ({
   aspect,
   loading = false,
   canFullscreen = false,
   className,
   style,
   children,
-}) => {
+}: FrameProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const [fullscreen, setFullscreen] = useState(false);
 

@@ -1,4 +1,3 @@
-import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import cn from "classnames";
 
@@ -84,9 +83,9 @@ const ProjectList = (projects: ProjectCard[]) => {
   );
 };
 
-export const MiniProjects: FC = () =>
+export const MiniProjects = () =>
   ProjectList([...PROJECTS.slice(0, 3), MORE_PROJECTS]);
 
-const Projects: FC = () => ProjectList(PROJECTS);
+const Projects = () => ProjectList(PROJECTS);
 
 export default Projects;

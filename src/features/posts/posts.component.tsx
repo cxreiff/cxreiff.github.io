@@ -1,9 +1,7 @@
-import { FC } from "react";
-
 import posts from "./markdown";
 import PostsTile from "./postsTile.component";
 
-const Posts: FC = () => (
+const Posts = () => (
   <section>
     {Object.keys(posts)
       .sort(

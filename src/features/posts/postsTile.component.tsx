@@ -1,4 +1,3 @@
-import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { Card } from "~/src/common/card/card.component";
@@ -9,7 +8,7 @@ type PostsTileProps = {
   post: Post;
 };
 
-const PostsTile: FC<PostsTileProps> = ({ id, post }) => {
+const PostsTile = ({ id, post }: PostsTileProps) => {
   const navigate = useNavigate();
 
   const {

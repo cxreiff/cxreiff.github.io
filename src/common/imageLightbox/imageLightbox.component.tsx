@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { useState } from "react";
 import { Lightbox } from "react-modal-image";
 import cn from "classnames";
 
@@ -15,14 +15,14 @@ type ImageLightboxProps = {
   className?: string;
 };
 
-export const ImageLightbox: FC<ImageLightboxProps> = ({
+export const ImageLightbox = ({
   aspect,
   small,
   medium,
   large,
   alt,
   className,
-}) => {
+}: ImageLightboxProps) => {
   const [opened, setOpened] = useState(false);
 
   return (

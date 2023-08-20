@@ -1,6 +1,4 @@
-import { FC } from "react";
-
-export const Filters: FC = () => {
+export const Filters = () => {
   return (
     <>
       <Turbulence />

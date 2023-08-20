@@ -1,12 +1,10 @@
-import { FC } from "react";
-
 import { MiniProjects } from "~src/features/projects/projects.component";
 import { HomepageImage } from "./homepageImage.component";
 import { HomepageAbout } from "./homepageAbout.component";
 
 import styles from "./homepage.module.scss";
 
-const Homepage: FC = () => (
+const Homepage = () => (
   <section className={styles.homepage}>
     <HomepageImage />
     <HomepageAbout />

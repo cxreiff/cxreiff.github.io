@@ -1,4 +1,4 @@
-import { FC, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import cn from "classnames";
 import ActivityCalendar, { Activity } from "react-activity-calendar";
 
@@ -29,10 +29,10 @@ type ContributionsProps = {
   className?: string;
 };
 
-export const Contributions: FC<ContributionsProps> = ({
+export const Contributions = ({
   className,
   numberOfDays = 366,
-}) => {
+}: ContributionsProps) => {
   const theme = useAppSelector((state) => state.theme.theme);
   const [activity, setActivity] = useState<Activity[]>([]);
   const [loaded, setLoaded] = useState(false);

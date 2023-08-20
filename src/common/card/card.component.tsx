@@ -1,4 +1,4 @@
-import { FC, ReactElement } from "react";
+import { ReactNode } from "react";
 import cn from "classnames";
 
 import styles from "./card.module.scss";
@@ -6,20 +6,20 @@ import styles from "./card.module.scss";
 export type CardProps = {
   svg?: string;
   primary?: string;
-  secondary?: string | ReactElement;
-  tertiary?: string | ReactElement;
+  secondary?: ReactNode;
+  tertiary?: ReactNode;
   onClick?: () => void;
   className?: string;
 };
 
-export const Card: FC<CardProps> = ({
+export const Card = ({
   svg,
   primary,
   secondary,
   tertiary,
   onClick,
   className,
-}) => (
+}: CardProps) => (
   <article
     className={cn(className, styles.card, { [styles.card_clickable]: onClick })}
     onClick={onClick}

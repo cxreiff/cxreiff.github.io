@@ -1,4 +1,3 @@
-import { FC } from "react";
 import { Provider } from "react-redux";
 import { HashRouter } from "react-router-dom";
 
@@ -7,7 +6,7 @@ import store from "./store";
 import { Filters } from "./filters";
 import { Routing, ROUTES } from "./routing";
 
-const App: FC = () => {
+const App = () => {
   return (
     <Provider store={store}>
       <HashRouter>

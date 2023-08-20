@@ -84,7 +84,7 @@ export const ROUTES: RouteDefinition[] = [
   },
 ];
 
-export const Routing: FC = () => {
+export const Routing = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {

@@ -1,4 +1,3 @@
-import { FC } from "react";
 import { Moon, Sun } from "lucide-preact";
 
 import { useAppSelector, useAppDispatch } from "~/src/app/store";
@@ -9,7 +8,7 @@ type ThemeToggleProps = {
   className?: string;
 };
 
-export const ThemeToggle: FC<ThemeToggleProps> = ({ className }) => {
+export const ThemeToggle = ({ className }: ThemeToggleProps) => {
   const dispatch = useAppDispatch();
   const dispatchSetTheme = (theme: Theme) => void dispatch(setTheme(theme));
   const theme = useAppSelector((state) => state.theme.theme);

@@ -1,4 +1,4 @@
-import { FC, ReactNode, useState, useLayoutEffect } from "react";
+import { ReactNode, useState, useLayoutEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Menu } from "lucide-preact";
 import cn from "classnames";
@@ -14,7 +14,7 @@ type LayoutProps = {
   children?: ReactNode;
 };
 
-export const Layout: FC<LayoutProps> = ({ children, routes }) => {
+export const Layout = ({ children, routes }: LayoutProps) => {
   const pathname = useLocation().pathname;
   const navigate = useNavigate();
   const [expanded, setExpanded] = useState(false);

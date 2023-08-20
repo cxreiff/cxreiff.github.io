@@ -1,11 +1,9 @@
-import { FC } from "react";
-
 import { ImageSvgOverlay } from "~/src/common/imageSvgOverlay/imageSvgOverlay.component";
 import { IMAGE_URLS } from "~/src/utilities/constants";
 
 import styles from "./homepageImage.module.scss";
 
-export const HomepageImage: FC = () => (
+export const HomepageImage = () => (
   <ImageSvgOverlay
     className={styles.homepage_image}
     aspect={900 / 600}

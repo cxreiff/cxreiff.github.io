@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import cn from "classnames";
 
@@ -10,11 +10,11 @@ type SubnavigationProps = {
   options?: ReactNode[];
 };
 
-export const Subnavigation: FC<SubnavigationProps> = ({
+export const Subnavigation = ({
   routes,
   current,
   options = [],
-}) => (
+}: SubnavigationProps) => (
   <section className={styles.subnavigation}>
     <ul>
       {routes.map(({ route, label }) => (
