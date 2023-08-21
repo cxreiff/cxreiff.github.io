@@ -58,7 +58,7 @@ export const Frame = ({
     >
       {children}
       <svg viewBox={`0 0 ${aspect} 1`} />
-      {canFullscreen && (
+      {canFullscreen && document.fullscreenEnabled && (
         <IconButton
           className={styles.fullscreen_button}
           onClick={() => setFullscreen(!fullscreen)}
