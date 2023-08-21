@@ -11,7 +11,7 @@ import styles from "./photos.module.scss";
 const Photos = () => {
   const dispatch = useAppDispatch();
   const dispatchFetchPhotos = () => dispatch(fetchPhotos());
-  const dispatchClearPhotos = () => void dispatch(clearPhotos());
+  const dispatchClearPhotos = () => dispatch(clearPhotos());
   const photoSets = useAppSelector((state) => state.photos.photoSets);
   const loading = useAppSelector((state) => state.photos.status === "pending");
 
@@ -29,7 +29,7 @@ const Photos = () => {
 
   useEffect(() => {
     dispatchFetchPhotos();
-    return () => dispatchClearPhotos();
+    return () => void dispatchClearPhotos();
   }, [dispatch]);
 
   return loading ? (

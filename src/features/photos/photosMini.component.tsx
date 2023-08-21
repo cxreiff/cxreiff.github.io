@@ -19,7 +19,7 @@ export const PhotosMini = () => {
 
   useEffect(() => {
     dispatchFetchPhotos();
-    return () => dispatchClearPhotos();
+    return () => void dispatchClearPhotos();
   }, [dispatch]);
 
   return (
