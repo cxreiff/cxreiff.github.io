@@ -62,7 +62,7 @@ const PROJECTS: ProjectCard[] = [
 
 const MORE_PROJECTS: ProjectCard = {
   svg: arrow,
-  primary: "see all projects...",
+  primary: "projects",
   route: "/projects",
 };
 
@@ -83,7 +83,7 @@ const ProjectList = (projects: ProjectCard[]) => {
   );
 };
 
-export const MiniProjects = () =>
+export const ProjectsMini = () =>
   ProjectList([...PROJECTS.slice(0, 3), MORE_PROJECTS]);
 
 const Projects = () => ProjectList(PROJECTS);

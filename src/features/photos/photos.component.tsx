@@ -4,8 +4,7 @@ import useInfiniteScroll from "react-infinite-scroll-hook";
 import { useAppSelector, useAppDispatch } from "~/src/app/store";
 import { ImageLightbox } from "~/src/common/imageLightbox/imageLightbox.component";
 import { Loader } from "~/src/common/loader/loader.component";
-
-import { fetchPhotos, clearPhotos } from "./photos.slice";
+import { clearPhotos, fetchPhotos } from "./photos.slice";
 
 import styles from "./photos.module.scss";
 
@@ -41,8 +40,8 @@ const Photos = () => {
         <article key={index} className={styles.tile}>
           <ImageLightbox
             aspect={1 / 1}
-            {...photoSet}
             className={styles.photo}
+            {...photoSet}
           />
         </article>
       ))}
