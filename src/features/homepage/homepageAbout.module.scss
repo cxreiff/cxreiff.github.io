@@ -15,7 +15,7 @@
   }
 
   @include is_larger_than($sm-breakpoint) {
-    padding: 2rem 3rem;
+    padding: 1.5rem 3rem;
 
     @include themed() {
       border: 2px dashed t($color-quaternary);

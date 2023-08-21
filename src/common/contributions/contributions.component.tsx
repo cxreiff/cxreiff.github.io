@@ -31,7 +31,7 @@ type ContributionsProps = {
 
 export const Contributions = ({
   className,
-  numberOfDays = 366,
+  numberOfDays = 365,
 }: ContributionsProps) => {
   const theme = useAppSelector((state) => state.theme.theme);
   const [activity, setActivity] = useState<Activity[]>([]);
