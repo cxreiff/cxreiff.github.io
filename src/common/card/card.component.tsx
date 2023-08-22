@@ -30,12 +30,16 @@ export const Card = ({
         style={{ mask: `url(${svg}) no-repeat center / contain` }}
       />
     )}
-    {primary && (
-      <header>
-        <h4>{primary}</h4>
-      </header>
+    {(primary || secondary) && (
+      <div className={styles.title}>
+        {primary && (
+          <header>
+            <h4>{primary}</h4>
+          </header>
+        )}
+        {secondary && <footer>{secondary}</footer>}
+      </div>
     )}
-    {secondary && <footer>{secondary}</footer>}
     {tertiary && <p>{tertiary}</p>}
   </article>
 );

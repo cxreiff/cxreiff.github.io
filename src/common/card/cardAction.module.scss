@@ -1,0 +1,40 @@
+@use "../../shared.scss" as *;
+@use "../../themed.scss" as *;
+
+.card_action {
+  padding: 0.5rem 0;
+
+  &.match_height {
+    height: calc(100% - 1rem);
+
+    & > div:first-child {
+      flex: 1;
+      margin: auto;
+
+      @include is_larger_than($sm-breakpoint) {
+        margin: 1rem;
+      }
+    }
+
+    & > div:nth-child(2) {
+      padding: 0;
+    }
+
+    & header > h4 {
+      margin: auto;
+
+      @include is_larger_than($sm-breakpoint) {
+        margin: 0.5rem 0;
+      }
+    }
+  }
+
+  @include themed() {
+    box-shadow: 0 0 0 2px rgba(t($color-quaternary), 0.2);
+  }
+
+  & header > h4 {
+    text-align: center;
+    font-size: 1rem;
+  }
+}

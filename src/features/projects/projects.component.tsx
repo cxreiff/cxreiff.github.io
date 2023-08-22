@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import cn from "classnames";
 
 import { Card, CardProps } from "~/src/common/card/card.component";
+import { CardAction } from "~src/common/card/cardAction.component";
 import teapot from "~/src/assets/svg/teapot.svg";
 import breakout from "~/src/assets/svg/breakout.svg";
 import platformer from "~/src/assets/svg/platformer.svg";
@@ -71,14 +72,13 @@ const ProjectList = (projects: ProjectCard[]) => {
 
   return (
     <section className={styles.projects}>
-      {projects.map(({ route, ...props }, index) => (
-        <Card
-          key={index}
-          className={cn({ [styles.see_more]: route === "/projects" })}
-          onClick={() => navigate(route)}
-          {...props}
-        />
-      ))}
+      {projects.map(({ route, ...props }, index) =>
+        route === "/projects" ? (
+          <CardAction key={index} onClick={() => navigate(route)} {...props} />
+        ) : (
+          <Card key={index} onClick={() => navigate(route)} {...props} />
+        )
+      )}
     </section>
   );
 };

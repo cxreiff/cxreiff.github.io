@@ -4,7 +4,7 @@ import cn from "classnames";
 
 import { useAppDispatch, useAppSelector } from "~src/app/store";
 import { ImageLightbox } from "~src/common/imageLightbox/imageLightbox.component";
-import { Card } from "~src/common/card/card.component";
+import { CardAction } from "~src/common/card/cardAction.component";
 import { clearPhotos, fetchPhotos } from "./photos.slice";
 import arrow from "~/src/assets/svg/arrow.svg";
 
@@ -37,11 +37,11 @@ export const PhotosMini = () => {
           />
         </article>
       ))}
-      <Card
-        className={styles.see_more}
+      <CardAction
         svg={arrow}
         primary={"photos"}
         onClick={() => navigate("/photos")}
+        matchHeight
       />
     </section>
   );

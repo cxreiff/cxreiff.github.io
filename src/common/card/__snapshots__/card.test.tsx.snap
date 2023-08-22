@@ -9,14 +9,18 @@ exports[`should render 1`] = `
       class="_svg_9e273c"
       style="mask: url(test) no-repeat center / contain;"
     />
-    <header>
-      <h4>
+    <div
+      class="_title_9e273c"
+    >
+      <header>
+        <h4>
+          test
+        </h4>
+      </header>
+      <footer>
         test
-      </h4>
-    </header>
-    <footer>
-      test
-    </footer>
+      </footer>
+    </div>
     <p>
       test
     </p>
