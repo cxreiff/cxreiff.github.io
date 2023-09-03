@@ -1,16 +1,15 @@
 import { useNavigate } from "react-router-dom";
-import cn from "classnames";
 
-import { Card, CardProps } from "~/src/common/card/card.component";
-import { CardAction } from "~src/common/card/cardAction.component";
-import teapot from "~/src/assets/svg/teapot.svg";
-import breakout from "~/src/assets/svg/breakout.svg";
-import platformer from "~/src/assets/svg/platformer.svg";
-import hex_tiles from "~/src/assets/svg/hex_tiles.svg";
-import waves from "~/src/assets/svg/waves.svg";
-import pixijs from "~/src/assets/svg/pixijs.svg";
-import babylonjs from "~/src/assets/svg/babylonjs.svg";
-import arrow from "~/src/assets/svg/arrow.svg";
+import { Card, CardProps } from "src/common/card/card.component";
+import { CardAction } from "src/common/card/cardAction.component";
+import teapot from "src/assets/svg/teapot.svg";
+import breakout from "src/assets/svg/breakout.svg";
+import platformer from "src/assets/svg/platformer.svg";
+import hex_tiles from "src/assets/svg/hex_tiles.svg";
+import waves from "src/assets/svg/waves.svg";
+import pixijs from "src/assets/svg/pixijs.svg";
+import babylonjs from "src/assets/svg/babylonjs.svg";
+import arrow from "src/assets/svg/arrow.svg";
 
 import styles from "./projects.module.scss";
 

@@ -1,12 +1,12 @@
 import { ReactElement } from "react";
 
-import { useAppSelector } from "~/src/app/store";
-import { Theme } from "~/src/features/theme/theme.slice";
+import { useAppSelector } from "src/app/store";
+import { Theme } from "src/features/theme/theme.slice";
 import {
   SyntaxHighlighter,
   styleLight,
   styleDark,
-} from "~/src/utilities/syntaxHighlighter";
+} from "src/utilities/syntaxHighlighter";
 
 import styles from "./codeDemo.module.scss";
 

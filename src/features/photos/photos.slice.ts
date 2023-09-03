@@ -4,7 +4,7 @@ import xml2js from "xml2js";
 import {
   OBJECT_STORE_ASSETS_URL,
   PHOTO_SIZE_PREFIXES,
-} from "~/src/utilities/constants";
+} from "src/utilities/constants";
 
 type PhotoSet = {
   small: string;

@@ -1,5 +1,5 @@
-import { ImageSvgOverlay } from "~/src/common/imageSvgOverlay/imageSvgOverlay.component";
-import { IMAGE_URLS } from "~/src/utilities/constants";
+import { ImageSvgOverlay } from "src/common/imageSvgOverlay/imageSvgOverlay.component";
+import { IMAGE_URLS } from "src/utilities/constants";
 
 import styles from "./homepageImage.module.scss";
 

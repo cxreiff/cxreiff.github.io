@@ -1,14 +1,14 @@
 import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 
-import { useAppSelector } from "~/src/app/store";
-import { Theme } from "~/src/features/theme/theme.slice";
-import { Card } from "~/src/common/card/card.component";
+import { useAppSelector } from "src/app/store";
+import { Theme } from "src/features/theme/theme.slice";
+import { Card } from "src/common/card/card.component";
 import {
   SyntaxHighlighter,
   styleLight,
   styleDark,
-} from "~/src/utilities/syntaxHighlighter";
+} from "src/utilities/syntaxHighlighter";
 
 import posts from "./markdown";
 import styles from "./postsContent.module.scss";

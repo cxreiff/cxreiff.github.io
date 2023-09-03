@@ -7,7 +7,7 @@ type ImageProps = {
   className?: string;
 };
 
-import { Frame } from "~/src/common/frame/frame.component";
+import { Frame } from "src/common/frame/frame.component";
 
 export const Image = ({ aspect, source, alt, className }: ImageProps) => {
   const [loading, setLoading] = useState(true);

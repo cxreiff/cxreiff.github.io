@@ -1,5 +1,5 @@
-import { ProjectsMini } from "~src/features/projects/projects.component";
-import { PhotosMini } from "~src/features/photos/photosMini.component";
+import { ProjectsMini } from "src/features/projects/projects.component";
+import { PhotosMini } from "src/features/photos/photosMini.component";
 import { HomepageImage } from "./homepageImage.component";
 import { HomepageAbout } from "./homepageAbout.component";
 

@@ -1,7 +1,7 @@
 import cn from "classnames";
 
-import { useAppSelector, useAppDispatch } from "~/src/app/store";
-import { setTheme, Theme } from "~/src/features/theme/theme.slice";
+import { useAppSelector, useAppDispatch } from "src/app/store";
+import { setTheme, Theme } from "src/features/theme/theme.slice";
 
 import styles from "./themeControl.module.scss";
 

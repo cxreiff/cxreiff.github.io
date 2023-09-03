@@ -14,9 +14,6 @@
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "baseUrl": ".",
-    "paths": {
-      "~*": ["./*"]
-    },
     "rootDirs": [".", "./tsm"]
   },
   "include": ["./src/**/*", "./vitest.config.ts", "./vitest.setup.ts"]

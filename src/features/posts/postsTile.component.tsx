@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-import { Card } from "~/src/common/card/card.component";
+import { Card } from "src/common/card/card.component";
 import { Post } from "./markdown";
 
 type PostsTileProps = {

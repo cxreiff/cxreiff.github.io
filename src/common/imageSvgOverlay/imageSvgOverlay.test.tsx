@@ -2,7 +2,7 @@ import { test, expect } from "vitest";
 import { render } from "@testing-library/preact";
 
 import { ImageSvgOverlay } from "./imageSvgOverlay.component";
-import { IMAGE_URLS } from "~/src/utilities/constants";
+import { IMAGE_URLS } from "src/utilities/constants";
 
 test("should render", () => {
   const { container } = render(

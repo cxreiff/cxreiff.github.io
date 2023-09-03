@@ -2,14 +2,14 @@ import { readFileSync } from "fs";
 import { mat4, vec3 } from "gl-matrix";
 import bunny from "bunny";
 
-import { Procedure } from "~src/common/shaderView/shaderView.component";
+import { Procedure } from "src/common/shaderView/shaderView.component";
 import { ShaderDemo } from "../shadersList";
 import { Mesh } from "../mesh";
 
-import vertexShaderMain from "~src/assets/shaders/shadows1_main.vert";
-import fragmentShaderMain from "~src/assets/shaders/shadows1_main.frag";
-import vertexShaderDepth from "~src/assets/shaders/shadows1_depth.vert";
-import fragmentShaderDepth from "~src/assets/shaders/shadows1_depth.frag";
+import vertexShaderMain from "src/assets/shaders/shadows1_main.vert";
+import fragmentShaderMain from "src/assets/shaders/shadows1_main.frag";
+import vertexShaderDepth from "src/assets/shaders/shadows1_depth.vert";
+import fragmentShaderDepth from "src/assets/shaders/shadows1_depth.frag";
 const markdown = readFileSync("src/assets/shaders/shadows1.md", "utf-8");
 
 const procedure: Procedure = (regl) => {

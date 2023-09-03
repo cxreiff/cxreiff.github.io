@@ -1,9 +1,9 @@
 import { Github, FileText, Paintbrush } from "lucide-preact";
 
-import { Contributions } from "~src/common/contributions/contributions.component";
-import { IconParagraph } from "~/src/common/iconParagraph/iconParagraph.component";
-import { ThemeControl } from "~/src/features/theme/themeControl.component";
-import { RESUME_URL, GITHUB_URL } from "~/src/utilities/constants";
+import { Contributions } from "src/common/contributions/contributions.component";
+import { IconParagraph } from "src/common/iconParagraph/iconParagraph.component";
+import { ThemeControl } from "src/features/theme/themeControl.component";
+import { RESUME_URL, GITHUB_URL } from "src/utilities/constants";
 
 import styles from "./homepageAbout.module.scss";
 

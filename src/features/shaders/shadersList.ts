@@ -1,5 +1,5 @@
-import { Procedure } from "~src/common/shaderView/shaderView.component";
-import { Excerpt } from "~src/common/codeDemo/codeDemo.component";
+import { Procedure } from "src/common/shaderView/shaderView.component";
+import { Excerpt } from "src/common/codeDemo/codeDemo.component";
 
 import assorted1 from "./demos/assorted1";
 import assorted2 from "./demos/assorted2";

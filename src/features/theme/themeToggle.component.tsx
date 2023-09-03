@@ -1,8 +1,8 @@
 import { Moon, Sun } from "lucide-preact";
 
-import { useAppSelector, useAppDispatch } from "~/src/app/store";
-import { setTheme, Theme } from "~/src/features/theme/theme.slice";
-import { IconButton } from "~/src/common/iconButton/iconButton.component";
+import { useAppSelector, useAppDispatch } from "src/app/store";
+import { setTheme, Theme } from "src/features/theme/theme.slice";
+import { IconButton } from "src/common/iconButton/iconButton.component";
 
 type ThemeToggleProps = {
   className?: string;

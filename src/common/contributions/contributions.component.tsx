@@ -2,9 +2,9 @@ import { useEffect, useMemo, useState } from "react";
 import cn from "classnames";
 import ActivityCalendar, { Activity } from "react-activity-calendar";
 
-import { useAppSelector } from "~src/app/store";
-import { Theme } from "~src/features/theme/theme.slice";
-import { GITHUB_URL } from "~src/utilities/constants";
+import { useAppSelector } from "src/app/store";
+import { Theme } from "src/features/theme/theme.slice";
+import { GITHUB_URL } from "src/utilities/constants";
 
 import styles from "./contributions.module.scss";
 

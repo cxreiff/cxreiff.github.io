@@ -9,7 +9,7 @@ type ImageSvgOverlayProps = {
   children: ReactElement<SVGProps<SVGElement>>;
 };
 
-import { Frame } from "~/src/common/frame/frame.component";
+import { Frame } from "src/common/frame/frame.component";
 
 import styles from "./imageSvgOverlay.module.scss";
 

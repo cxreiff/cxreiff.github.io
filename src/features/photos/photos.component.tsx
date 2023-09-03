@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import useInfiniteScroll from "react-infinite-scroll-hook";
 
-import { useAppSelector, useAppDispatch } from "~/src/app/store";
-import { ImageLightbox } from "~/src/common/imageLightbox/imageLightbox.component";
-import { Loader } from "~/src/common/loader/loader.component";
+import { useAppSelector, useAppDispatch } from "src/app/store";
+import { ImageLightbox } from "src/common/imageLightbox/imageLightbox.component";
+import { Loader } from "src/common/loader/loader.component";
 import { clearPhotos, fetchPhotos } from "./photos.slice";
 
 import styles from "./photos.module.scss";

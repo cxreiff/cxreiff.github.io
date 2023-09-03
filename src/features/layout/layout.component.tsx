@@ -3,9 +3,9 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { Menu } from "lucide-preact";
 import cn from "classnames";
 
-import { RouteDefinition } from "~/src/app/routing";
-import { IconButton } from "~/src/common/iconButton/iconButton.component";
-import { ThemeToggle } from "~/src/features/theme/themeToggle.component";
+import { RouteDefinition } from "src/app/routing";
+import { IconButton } from "src/common/iconButton/iconButton.component";
+import { ThemeToggle } from "src/features/theme/themeToggle.component";
 
 import styles from "./layout.module.scss";
 

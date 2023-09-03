@@ -1,5 +1,5 @@
-import { Frame } from "~/src/common/frame/frame.component";
-import { MEDIA_QUERIES, useMediaQuery } from "~src/hooks/useMediaQuery";
+import { Frame } from "src/common/frame/frame.component";
+import { MEDIA_QUERIES, useMediaQuery } from "src/hooks/useMediaQuery";
 
 import styles from "./iframe.module.scss";
 

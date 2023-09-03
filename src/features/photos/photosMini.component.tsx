@@ -2,11 +2,11 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import cn from "classnames";
 
-import { useAppDispatch, useAppSelector } from "~src/app/store";
-import { ImageLightbox } from "~src/common/imageLightbox/imageLightbox.component";
-import { CardAction } from "~src/common/card/cardAction.component";
+import { useAppDispatch, useAppSelector } from "src/app/store";
+import { ImageLightbox } from "src/common/imageLightbox/imageLightbox.component";
+import { CardAction } from "src/common/card/cardAction.component";
 import { clearPhotos, fetchPhotos } from "./photos.slice";
-import arrow from "~/src/assets/svg/arrow.svg";
+import arrow from "src/assets/svg/arrow.svg";
 
 import styles from "./photos.module.scss";
 

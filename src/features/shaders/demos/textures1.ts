@@ -1,12 +1,12 @@
 import fs from "fs";
 
-import { Procedure } from "~src/common/shaderView/shaderView.component";
+import { Procedure } from "src/common/shaderView/shaderView.component";
 import { ShaderDemo } from "../shadersList";
 import { importTextures } from "../shadersShared";
 
-import vertexShader from "~src/assets/shaders/textures1.vert";
-import fragmentShader from "~src/assets/shaders/textures1.frag";
-import square from "~src/assets/shaders/square.json";
+import vertexShader from "src/assets/shaders/textures1.vert";
+import fragmentShader from "src/assets/shaders/textures1.frag";
+import square from "src/assets/shaders/square.json";
 
 const kitty = fs.readFileSync("src/assets/images/kitty.png");
 

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Lightbox } from "react-modal-image";
 import cn from "classnames";
 
-import { Image } from "~/src/common/image/image.component";
+import { Image } from "src/common/image/image.component";
 
 import styles from "./imageLightbox.module.scss";
 

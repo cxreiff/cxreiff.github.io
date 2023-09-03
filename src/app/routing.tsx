@@ -1,8 +1,8 @@
 import { FC, ReactNode, Suspense, useEffect, lazy } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
-import { Loader } from "~/src/common/loader/loader.component";
-import { IFrame } from "~/src/common/iframe/iframe.component";
+import { Loader } from "src/common/loader/loader.component";
+import { IFrame } from "src/common/iframe/iframe.component";
 import {
   DOCUMENT_TITLE_ROOT,
   BREAKOUT_URL,
@@ -10,17 +10,17 @@ import {
   HEX_TILES_URL,
   PIXIJS_URL,
   BABYLONJS_URL,
-} from "~/src/utilities/constants";
+} from "src/utilities/constants";
 
-import Homepage from "~/src/features/homepage/homepage.component";
-import Projects from "~/src/features/projects/projects.component";
-import Photos from "~/src/features/photos/photos.component";
-import Sketches from "~/src/features/sketches/sketches.component";
-const Posts = lazy(() => import("~/src/features/posts/posts.component"));
+import Homepage from "src/features/homepage/homepage.component";
+import Projects from "src/features/projects/projects.component";
+import Photos from "src/features/photos/photos.component";
+import Sketches from "src/features/sketches/sketches.component";
+const Posts = lazy(() => import("src/features/posts/posts.component"));
 const PostsContent = lazy(
-  () => import("~/src/features/posts/postsContent.component")
+  () => import("src/features/posts/postsContent.component")
 );
-const Shaders = lazy(() => import("~/src/features/shaders/shaders.component"));
+const Shaders = lazy(() => import("src/features/shaders/shaders.component"));
 
 const Pixijs = () => (
   <IFrame aspect={15.5 / 9} url={PIXIJS_URL} title={"pixijs"} />

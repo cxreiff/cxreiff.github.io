@@ -2,12 +2,12 @@ import { readFileSync } from "fs";
 import { mat4 } from "gl-matrix";
 import bunny from "bunny";
 
-import { Procedure } from "~src/common/shaderView/shaderView.component";
+import { Procedure } from "src/common/shaderView/shaderView.component";
 import { ShaderDemo } from "../shadersList";
 import { Mesh } from "../mesh";
 
-import vertexShader from "~src/assets/shaders/lighting2.vert";
-import fragmentShader from "~src/assets/shaders/lighting2.frag";
+import vertexShader from "src/assets/shaders/lighting2.vert";
+import fragmentShader from "src/assets/shaders/lighting2.frag";
 const markdown = readFileSync("src/assets/shaders/lighting2.md", "utf-8");
 
 const procedure: Procedure = (regl) => {

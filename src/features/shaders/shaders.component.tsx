@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
 import cn from "classnames";
 
-import { Subnavigation } from "~src/common/subnavigation/subnavigation.component";
-import { CodeDemo } from "~src/common/codeDemo/codeDemo.component";
+import { Subnavigation } from "src/common/subnavigation/subnavigation.component";
+import { CodeDemo } from "src/common/codeDemo/codeDemo.component";
 import { CATEGORIES, Category, SHADERS_LIST } from "./shadersList";
-import { ShaderView } from "~src/common/shaderView/shaderView.component";
-import { Toggle } from "~src/common/toggle/toggle.component";
-import { useLocalStorage } from "~src/hooks/useLocalStorage";
+import { ShaderView } from "src/common/shaderView/shaderView.component";
+import { Toggle } from "src/common/toggle/toggle.component";
+import { useLocalStorage } from "src/hooks/useLocalStorage";
 
 import styles from "./shaders.module.scss";
 
