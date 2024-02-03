@@ -1,34 +1,19 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import cn from "classnames";
 
-import { useAppDispatch, useAppSelector } from "src/app/store";
 import { ImageLightbox } from "src/common/imageLightbox/imageLightbox.component";
 import { CardAction } from "src/common/card/cardAction.component";
-import { clearPhotos, fetchPhotos } from "./photos.slice";
 import arrow from "src/assets/svg/arrow.svg";
 
 import styles from "./photos.module.scss";
+import { PHOTO_SETS } from "src/features/photos/photosList";
+import { useNavigate } from "react-router-dom";
 
 export const PhotosMini = () => {
   const navigate = useNavigate();
-  const dispatch = useAppDispatch();
-  const dispatchFetchPhotos = () => dispatch(fetchPhotos());
-  const dispatchClearPhotos = () => dispatch(clearPhotos());
-  const photoSets = useAppSelector((state) => state.photos.photoSets);
-
-  useEffect(() => {
-    dispatchFetchPhotos();
-    return () => void dispatchClearPhotos();
-  }, [dispatch]);
 
   return (
-    <section
-      className={cn(styles.photos, styles.mini, {
-        [styles.loading]: photoSets.length === 0,
-      })}
-    >
-      {photoSets.slice(0, 7).map((photoSet, index) => (
+    <section className={cn(styles.photos, styles.mini)}>
+      {PHOTO_SETS.slice(0, 7).map((photoSet, index) => (
         <article key={index} className={styles.tile}>
           <ImageLightbox
             aspect={1 / 1}

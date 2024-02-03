@@ -17,8 +17,7 @@ export const BEVY_SKETCHES_URL = `${SITE_BASE_URL}bevy_sketches`;
 export const RESUME_URL = `${SITE_BASE_URL}resume/resume.pdf#toolbar=0`;
 export const GITHUB_URL = "https://github.com/cxreiff";
 
-export const OBJECT_STORE_ASSETS_URL =
-  "https://cxreiff.sfo3.cdn.digitaloceanspaces.com/";
+export const OBJECT_STORE_ASSETS_URL = "https://assets.cxreiff.com/";
 
 export const IMAGE_URLS = {
   ABOUT_ME: `${OBJECT_STORE_ASSETS_URL}assets/aboutme.png`,

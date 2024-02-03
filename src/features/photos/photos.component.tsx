@@ -1,23 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import useInfiniteScroll from "react-infinite-scroll-hook";
 
-import { useAppSelector, useAppDispatch } from "src/app/store";
 import { ImageLightbox } from "src/common/imageLightbox/imageLightbox.component";
-import { Loader } from "src/common/loader/loader.component";
-import { clearPhotos, fetchPhotos } from "./photos.slice";
 
 import styles from "./photos.module.scss";
+import { PHOTO_SETS } from "src/features/photos/photosList";
 
 const Photos = () => {
-  const dispatch = useAppDispatch();
-  const dispatchFetchPhotos = () => dispatch(fetchPhotos());
-  const dispatchClearPhotos = () => dispatch(clearPhotos());
-  const photoSets = useAppSelector((state) => state.photos.photoSets);
-  const loading = useAppSelector((state) => state.photos.status === "pending");
-
   const [numberOfPhotosVisible, setNumberOfPhotosVisible] = useState(9);
 
-  const hasNextPage = numberOfPhotosVisible <= photoSets.length;
+  const hasNextPage = numberOfPhotosVisible <= PHOTO_SETS.length;
 
   const [sentryRef] = useInfiniteScroll({
     loading: false,
@@ -27,16 +19,9 @@ const Photos = () => {
     onLoadMore: () => setNumberOfPhotosVisible(numberOfPhotosVisible + 3),
   });
 
-  useEffect(() => {
-    dispatchFetchPhotos();
-    return () => void dispatchClearPhotos();
-  }, [dispatch]);
-
-  return loading ? (
-    <Loader />
-  ) : (
+  return (
     <section className={styles.photos}>
-      {photoSets.slice(0, numberOfPhotosVisible).map((photoSet, index) => (
+      {PHOTO_SETS.slice(0, numberOfPhotosVisible).map((photoSet, index) => (
         <article key={index} className={styles.tile}>
           <ImageLightbox
             aspect={1 / 1}
