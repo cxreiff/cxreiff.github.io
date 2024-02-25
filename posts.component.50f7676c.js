@@ -242,6 +242,6 @@ function tC(t,e,n,i,g,o){t.tag=null,t.dump=n,ta(t,n,!1)||ta(t,n,!0);var c=l.call
  * with the expected properties.
  */t.exports=function(t){return"object"!==n(t)&&(t={content:t}),"object"!==n(t.data)&&(t.data={}),t.contents&&null==t.content&&(t.content=t.contents),// set non-enumerable properties on the file object
 g.define(t,"orig",g.toBuffer(t.content)),g.define(t,"language",t.language||""),g.define(t,"matter",t.matter||""),g.define(t,"stringify",function(e,n){return n&&n.language&&(t.language=n.language),i(t,e,n)}),// strip BOM and ensure that "file.content" is a string
-t.content=g.toString(t.content),t.isEmpty=!1,t.excerpt="",t}}),parcelRequire.register("46gmg",function(t,e){var n=parcelRequire("gcPQF"),i=parcelRequire("fasvS");t.exports=function(t,e,g){let r=i(g),o=n(t,r);if("function"!=typeof o.parse)throw TypeError('expected "'+t+'.parse" to be a function');return o.parse(e,r)}});//# sourceMappingURL=posts.component.311b76ec.js.map
+t.content=g.toString(t.content),t.isEmpty=!1,t.excerpt="",t}}),parcelRequire.register("46gmg",function(t,e){var n=parcelRequire("gcPQF"),i=parcelRequire("fasvS");t.exports=function(t,e,g){let r=i(g),o=n(t,r);if("function"!=typeof o.parse)throw TypeError('expected "'+t+'.parse" to be a function');return o.parse(e,r)}});//# sourceMappingURL=posts.component.50f7676c.js.map
 
-//# sourceMappingURL=posts.component.311b76ec.js.map
+//# sourceMappingURL=posts.component.50f7676c.js.map
