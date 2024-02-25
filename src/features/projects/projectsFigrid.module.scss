@@ -1,0 +1,49 @@
+@use "../../shared.scss" as *;
+@use "../../themed.scss" as *;
+
+.projects_figrid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @include is_larger_than($sm-breakpoint) {
+    flex-direction: row;
+
+    div,
+    figure {
+      width: 50%;
+    }
+  }
+
+  div,
+  figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    justify-content: center;
+    align-items: center;
+
+    @include themed() {
+      border: 2px solid t($color-secondary);
+    }
+  }
+
+  figure {
+    gap: 1rem;
+  }
+
+  img {
+    object-fit: contain;
+    max-width: 100%;
+  }
+
+  h4 {
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  a {
+    @include interactive_secondary();
+  }
+}

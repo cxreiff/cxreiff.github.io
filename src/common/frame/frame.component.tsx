@@ -11,7 +11,7 @@ import cn from "classnames";
 import { IconButton } from "../iconButton/iconButton.component";
 
 import styles from "./frame.module.scss";
-import { Maximize, Minimize } from "lucide-preact";
+import { MaximizeIcon, MinimizeIcon } from "lucide-preact";
 
 type FrameProps = {
   aspect: number;
@@ -63,7 +63,7 @@ export const Frame = ({
           className={styles.fullscreen_button}
           onClick={() => setFullscreen(!fullscreen)}
         >
-          {fullscreen ? <Minimize /> : <Maximize />}
+          {fullscreen ? <MinimizeIcon /> : <MaximizeIcon />}
         </IconButton>
       )}
     </div>

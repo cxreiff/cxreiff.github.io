@@ -16,6 +16,7 @@ import Homepage from "src/features/homepage/homepage.component";
 import Projects from "src/features/projects/projects.component";
 import Photos from "src/features/photos/photos.component";
 import Sketches from "src/features/sketches/sketches.component";
+import ProjectsFigrid from "src/features/projects/projectsFigrid.component";
 const Posts = lazy(() => import("src/features/posts/posts.component"));
 const PostsContent = lazy(
   () => import("src/features/posts/postsContent.component")
@@ -55,6 +56,10 @@ export const ROUTES: RouteDefinition[] = [
     path: "projects",
     Component: Projects,
     children: [
+      {
+        path: "figrid",
+        Component: ProjectsFigrid,
+      },
       {
         path: "pixijs",
         Component: Pixijs,

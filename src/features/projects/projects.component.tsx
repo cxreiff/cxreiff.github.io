@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 import { Card, CardProps } from "src/common/card/card.component";
 import { CardAction } from "src/common/card/cardAction.component";
+import figrid from "src/assets/svg/figrid.svg";
 import teapot from "src/assets/svg/teapot.svg";
 import breakout from "src/assets/svg/breakout.svg";
 import platformer from "src/assets/svg/platformer.svg";
@@ -17,22 +18,28 @@ type ProjectCard = CardProps & { route: string };
 
 const PROJECTS: ProjectCard[] = [
   {
+    svg: figrid,
+    primary: "figrid.io",
+    secondary: "remix, mysql, radix ui",
+    route: "/projects/figrid",
+  },
+  {
     svg: teapot,
     primary: "shaders",
     secondary: "webgl, regl.js, glsl",
     route: "/projects/shaders/assorted",
   },
   {
-    svg: breakout,
-    primary: "breakout",
-    secondary: "rust, WASM, bevy",
-    route: "/projects/breakout",
-  },
-  {
     svg: hex_tiles,
     primary: "hex tiles",
     secondary: "rust, WASM, bevy",
     route: "/projects/hex_tiles",
+  },
+  {
+    svg: breakout,
+    primary: "breakout",
+    secondary: "rust, WASM, bevy",
+    route: "/projects/breakout",
   },
   {
     svg: waves,

@@ -1,4 +1,4 @@
-import { Moon, Sun } from "lucide-preact";
+import { MoonIcon, SunIcon } from "lucide-preact";
 
 import { useAppSelector, useAppDispatch } from "src/app/store";
 import { setTheme, Theme } from "src/features/theme/theme.slice";
@@ -27,7 +27,7 @@ export const ThemeToggle = ({ className }: ThemeToggleProps) => {
         )
       }
     >
-      {theme === Theme.DARKMODE ? <Sun /> : <Moon />}
+      {theme === Theme.DARKMODE ? <SunIcon /> : <MoonIcon />}
     </IconButton>
   );
 };

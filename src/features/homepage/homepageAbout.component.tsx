@@ -1,4 +1,4 @@
-import { Github, FileText, Paintbrush } from "lucide-preact";
+import { GithubIcon, FileTextIcon, PaintbrushIcon } from "lucide-preact";
 
 import { Contributions } from "src/common/contributions/contributions.component";
 import { IconParagraph } from "src/common/iconParagraph/iconParagraph.component";
@@ -21,13 +21,13 @@ export const HomepageAbout = () => (
     <br />
     <p className={styles.bottom_half}>
       <div>
-        <IconParagraph icon={<Paintbrush />}>
+        <IconParagraph icon={<PaintbrushIcon />}>
           Toggle the theme? <ThemeControl className={styles.theme_buttons} />
         </IconParagraph>
-        <IconParagraph icon={<FileText />}>
+        <IconParagraph icon={<FileTextIcon />}>
           My developer resume can be found <a href={RESUME_URL}>here</a>.
         </IconParagraph>
-        <IconParagraph icon={<Github />}>
+        <IconParagraph icon={<GithubIcon />}>
           My GitHub profile can be found <a href={GITHUB_URL}>here</a>.
         </IconParagraph>
       </div>

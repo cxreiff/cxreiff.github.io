@@ -1,12 +1,12 @@
 import { test, expect } from "vitest";
 import { render } from "@testing-library/preact";
-import { Moon } from "lucide-preact";
+import { MoonIcon } from "lucide-preact";
 
 import { IconParagraph } from "./iconParagraph.component";
 
 test("should render", () => {
   const { container, getByRole, getByText } = render(
-    <IconParagraph icon={<Moon role={"img"} />}>TEST</IconParagraph>
+    <IconParagraph icon={<MoonIcon role={"img"} />}>TEST</IconParagraph>
   );
 
   expect(getByRole("img")).toBeInTheDocument();

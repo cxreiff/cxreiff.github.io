@@ -1,6 +1,6 @@
 import { ReactNode, useState, useLayoutEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Menu } from "lucide-preact";
+import { MenuIcon } from "lucide-preact";
 import cn from "classnames";
 
 import { RouteDefinition } from "src/app/routing";
@@ -35,7 +35,7 @@ export const Layout = ({ children, routes }: LayoutProps) => {
           className={styles.menu_button}
           onClick={() => setExpanded(!expanded)}
         >
-          <Menu />
+          <MenuIcon />
         </IconButton>
         <ul>
           <li aria-label={"navigate to home"} className={styles.logo}>
