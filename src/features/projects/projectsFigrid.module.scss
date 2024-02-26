@@ -2,22 +2,15 @@
 @use "../../themed.scss" as *;
 
 .projects_figrid {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 2rem;
 
   @include is_larger_than($sm-breakpoint) {
-    flex-direction: row;
-
-    div,
-    figure {
-      width: 50%;
-    }
+    grid-template-columns: 1fr 1fr;
   }
 
-  div,
-  figure {
-    margin: 0;
+  & > div:first-child {
     display: flex;
     flex-direction: column;
     padding: 1rem 2rem;
@@ -29,13 +22,18 @@
     }
   }
 
-  figure {
-    gap: 1rem;
-  }
+  & > div:last-child {
+    padding: 1rem;
 
-  img {
-    object-fit: contain;
-    max-width: 100%;
+    & > div {
+      height: 100%;
+      width: 100%;
+    }
+
+    @include themed() {
+      background: t($color-background-container);
+      border: 2px solid t($color-secondary);
+    }
   }
 
   h4 {
