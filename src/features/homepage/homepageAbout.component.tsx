@@ -21,9 +21,6 @@ export const HomepageAbout = () => (
     <br />
     <p className={styles.bottom_half}>
       <div>
-        <IconParagraph icon={<PaintbrushIcon />}>
-          Toggle the theme? <ThemeControl className={styles.theme_buttons} />
-        </IconParagraph>
         <IconParagraph icon={<FileTextIcon />}>
           My developer resume can be found <a href={RESUME_URL}>here</a>.
         </IconParagraph>

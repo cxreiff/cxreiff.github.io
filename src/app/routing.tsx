@@ -17,10 +17,12 @@ import Projects from "src/features/projects/projects.component";
 import Photos from "src/features/photos/photos.component";
 import Sketches from "src/features/sketches/sketches.component";
 import ProjectsFigrid from "src/features/projects/projectsFigrid.component";
-const Posts = lazy(() => import("src/features/posts/posts.component"));
-const PostsContent = lazy(
-  () => import("src/features/posts/postsContent.component")
-);
+
+// const Posts = lazy(() => import("src/features/posts/posts.component"));
+// const PostsContent = lazy(
+//   () => import("src/features/posts/postsContent.component")
+// );
+
 const Shaders = lazy(() => import("src/features/shaders/shaders.component"));
 
 const Pixijs = () => (
@@ -82,11 +84,11 @@ export const ROUTES: RouteDefinition[] = [
     ],
   },
   { path: "photos", Component: Photos },
-  {
-    path: "posts",
-    Component: Posts,
-    children: [{ path: ":id", Component: PostsContent }],
-  },
+  // {
+  //   path: "posts",
+  //   Component: Posts,
+  //   children: [{ path: ":id", Component: PostsContent }],
+  // },
 ];
 
 export const Routing = () => {
