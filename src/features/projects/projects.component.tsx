@@ -26,7 +26,7 @@ const PROJECTS: ProjectCard[] = [
   {
     svg: teapot,
     primary: "shaders",
-    secondary: "webgl, regl.js, glsl",
+    secondary: "webgl, regl.js, GLSL",
     route: "/projects/shaders/assorted",
   },
   {
@@ -44,7 +44,7 @@ const PROJECTS: ProjectCard[] = [
   {
     svg: waves,
     primary: "bevy misc",
-    secondary: "bevy, WGSL",
+    secondary: "rust, bevy, WGSL",
     route: "/projects/sketches/1",
   },
   {
