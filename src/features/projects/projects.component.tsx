@@ -11,6 +11,7 @@ import waves from "src/assets/svg/waves.svg";
 import pixijs from "src/assets/svg/pixijs.svg";
 import babylonjs from "src/assets/svg/babylonjs.svg";
 import arrow from "src/assets/svg/arrow.svg";
+import webgl from "src/assets/svg/webgl.svg";
 
 import styles from "./projects.module.scss";
 
@@ -64,6 +65,12 @@ const PROJECTS: ProjectCard[] = [
     primary: "babylon.js test",
     secondary: "babylon.js",
     route: "/projects/babylonjs",
+  },
+  {
+    svg: webgl,
+    primary: "plain webgl",
+    secondary: "webGL, GLSL",
+    route: "/projects/webgl",
   },
 ];
 

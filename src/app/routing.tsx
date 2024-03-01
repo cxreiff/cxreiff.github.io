@@ -10,6 +10,7 @@ import {
   HEX_TILES_URL,
   PIXIJS_URL,
   BABYLONJS_URL,
+  PLAIN_WEBGL_URL,
 } from "src/utilities/constants";
 
 import Homepage from "src/features/homepage/homepage.component";
@@ -45,6 +46,9 @@ const Platformer = () => (
 const HexTiles = () => (
   <IFrame aspect={16 / 10} url={HEX_TILES_URL} title={"hex tiles"} />
 );
+const PlainWebGL = () => (
+  <IFrame aspect={16 / 10} url={PLAIN_WEBGL_URL} title={"hex tiles"} />
+);
 
 export type RouteDefinition = {
   path: string;
@@ -71,6 +75,7 @@ export const ROUTES: RouteDefinition[] = [
       { path: "breakout", Component: Breakout },
       { path: "platformer", Component: Platformer },
       { path: "hex_tiles", Component: HexTiles },
+      { path: "webgl", Component: PlainWebGL },
       {
         path: "shaders",
         Component: Shaders,
