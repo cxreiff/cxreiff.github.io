@@ -27,6 +27,7 @@ const Sketches = () => {
         aspect={16 / 9}
         url={`${BEVY_SKETCHES_URL}?id=${id}`}
         title={"bevy sketch"}
+        canFullscreen
       />
     </section>
   );

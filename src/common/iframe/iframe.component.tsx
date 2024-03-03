@@ -8,6 +8,7 @@ type IFrameProps = {
   mobileAspect?: number;
   title: string;
   url: string;
+  canFullscreen?: boolean;
 };
 
 export const IFrame = ({
@@ -15,6 +16,7 @@ export const IFrame = ({
   url,
   title,
   mobileAspect = aspect,
+  canFullscreen = false,
 }: IFrameProps) => {
   const isLargerThanSM = useMediaQuery(MEDIA_QUERIES.LARGER_THAN_SM);
   const shouldUseMobileAspect = aspect !== mobileAspect && !isLargerThanSM;
@@ -23,7 +25,7 @@ export const IFrame = ({
     <Frame
       aspect={shouldUseMobileAspect ? mobileAspect : aspect}
       className={styles.frame}
-      canFullscreen
+      canFullscreen={canFullscreen}
     >
       <iframe src={url} title={title} />
     </Frame>

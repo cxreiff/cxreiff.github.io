@@ -28,10 +28,15 @@ import ProjectsFigrid from "src/features/projects/projectsFigrid.component";
 const Shaders = lazy(() => import("src/features/shaders/shaders.component"));
 
 const Pixijs = () => (
-  <IFrame aspect={15.5 / 9} url={PIXIJS_URL} title={"pixijs"} />
+  <IFrame aspect={15.5 / 9} url={PIXIJS_URL} title={"pixijs"} canFullscreen />
 );
 const Babylonjs = () => (
-  <IFrame aspect={3 / 2} url={BABYLONJS_URL} title={"babylonjs"} />
+  <IFrame
+    aspect={3 / 2}
+    url={BABYLONJS_URL}
+    title={"babylonjs"}
+    canFullscreen
+  />
 );
 const Breakout = () => (
   <IFrame
@@ -39,16 +44,32 @@ const Breakout = () => (
     mobileAspect={2 / 3}
     url={BREAKOUT_URL}
     title={"breakout"}
+    canFullscreen
   />
 );
 const Platformer = () => (
-  <IFrame aspect={16 / 10} url={PLATFORMER_URL} title={"platformer"} />
+  <IFrame
+    aspect={16 / 10}
+    url={PLATFORMER_URL}
+    title={"platformer"}
+    canFullscreen
+  />
 );
 const HexTiles = () => (
-  <IFrame aspect={16 / 10} url={HEX_TILES_URL} title={"hex tiles"} />
+  <IFrame
+    aspect={16 / 10}
+    url={HEX_TILES_URL}
+    title={"hex tiles"}
+    canFullscreen
+  />
 );
 const PlainWebGL = () => (
-  <IFrame aspect={16 / 10} url={PLAIN_WEBGL_URL} title={"hex tiles"} />
+  <IFrame
+    aspect={16 / 10}
+    url={PLAIN_WEBGL_URL}
+    title={"hex tiles"}
+    canFullscreen
+  />
 );
 const BigfootMap = () => (
   <IFrame aspect={16 / 10} url={BIGFOOT_MAP_URL} title={"bigfoot sightings"} />
