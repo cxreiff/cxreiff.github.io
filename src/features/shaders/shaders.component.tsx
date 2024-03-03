@@ -30,7 +30,12 @@ const Shaders = () => {
           label: nav_category,
         }))}
         options={[
-          <Toggle key={"show_code"} value={codeVisible} setter={setCodeVisible}>
+          <Toggle
+            key={"show_code"}
+            className={styles.toggle}
+            value={codeVisible}
+            setter={setCodeVisible}
+          >
             show code
           </Toggle>,
         ]}
