@@ -12,6 +12,7 @@ import pixijs from "src/assets/svg/pixijs.svg";
 import babylonjs from "src/assets/svg/babylonjs.svg";
 import arrow from "src/assets/svg/arrow.svg";
 import webgl from "src/assets/svg/webgl.svg";
+import bigfoot from "src/assets/svg/bigfoot.svg";
 
 import styles from "./projects.module.scss";
 
@@ -21,7 +22,7 @@ const PROJECTS: ProjectCard[] = [
   {
     svg: figrid,
     primary: "figrid.io",
-    secondary: "remix, mysql, radix ui",
+    secondary: "remix, radix ui",
     route: "/projects/figrid",
   },
   {
@@ -29,6 +30,12 @@ const PROJECTS: ProjectCard[] = [
     primary: "shaders",
     secondary: "webgl, regl.js, GLSL",
     route: "/projects/shaders/assorted",
+  },
+  {
+    svg: bigfoot,
+    primary: "bigfoot",
+    secondary: "deck.gl, maplibreGL",
+    route: "/projects/bigfoot",
   },
   {
     svg: hex_tiles,
@@ -87,7 +94,12 @@ const ProjectList = (projects: ProjectCard[]) => {
     <section className={styles.projects}>
       {projects.map(({ route, ...props }, index) =>
         route === "/projects" ? (
-          <CardAction key={index} onClick={() => navigate(route)} {...props} />
+          <CardAction
+            className={styles.see_more}
+            key={index}
+            onClick={() => navigate(route)}
+            {...props}
+          />
         ) : (
           <Card key={index} onClick={() => navigate(route)} {...props} />
         )
@@ -97,7 +109,7 @@ const ProjectList = (projects: ProjectCard[]) => {
 };
 
 export const ProjectsMini = () =>
-  ProjectList([...PROJECTS.slice(0, 3), MORE_PROJECTS]);
+  ProjectList([...PROJECTS.slice(0, 4), MORE_PROJECTS]);
 
 const Projects = () => ProjectList(PROJECTS);
 

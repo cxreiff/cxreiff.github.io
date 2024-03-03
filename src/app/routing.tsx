@@ -11,6 +11,7 @@ import {
   PIXIJS_URL,
   BABYLONJS_URL,
   PLAIN_WEBGL_URL,
+  BIGFOOT_MAP_URL,
 } from "src/utilities/constants";
 
 import Homepage from "src/features/homepage/homepage.component";
@@ -49,6 +50,9 @@ const HexTiles = () => (
 const PlainWebGL = () => (
   <IFrame aspect={16 / 10} url={PLAIN_WEBGL_URL} title={"hex tiles"} />
 );
+const BigfootMap = () => (
+  <IFrame aspect={16 / 10} url={BIGFOOT_MAP_URL} title={"bigfoot sightings"} />
+);
 
 export type RouteDefinition = {
   path: string;
@@ -76,6 +80,7 @@ export const ROUTES: RouteDefinition[] = [
       { path: "platformer", Component: Platformer },
       { path: "hex_tiles", Component: HexTiles },
       { path: "webgl", Component: PlainWebGL },
+      { path: "bigfoot", Component: BigfootMap },
       {
         path: "shaders",
         Component: Shaders,
