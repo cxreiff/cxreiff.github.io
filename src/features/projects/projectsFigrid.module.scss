@@ -43,5 +43,7 @@
 
   a {
     @include interactive_secondary();
+
+    white-space: nowrap;
   }
 }
