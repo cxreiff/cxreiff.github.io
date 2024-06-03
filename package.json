@@ -110,7 +110,7 @@
     "timers-browserify": "^2.0.12",
     "typed-scss-modules": "^8.0.0",
     "typescript": "^5.0.4",
-    "vite": "^5.0.12",
+    "vite": "^5.0.13",
     "vitest": "^1.2.2",
     "vitest-fetch-mock": "^0.2.2",
     "xml2js": "^0.6.0"
