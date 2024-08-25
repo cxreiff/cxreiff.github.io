@@ -28,7 +28,6 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "preact",
     "prettier",
     "plugin:jsx-a11y/recommended"
   ],

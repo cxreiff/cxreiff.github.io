@@ -11,7 +11,7 @@ export const useLocalStorage = <T>(
       currentValue = JSON.parse(
         localStorage.getItem(key) || String(defaultValue)
       ) as T;
-    } catch (error) {
+    } catch {
       currentValue = defaultValue;
     }
 
