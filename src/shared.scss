@@ -24,8 +24,10 @@ $xs-breakpoint: 385px;
 }
 
 @mixin text_spacing() {
-  padding: 0.5rem 1rem;
-  margin-bottom: 1rem;
+  & {
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+  }
 }
 
 @mixin border_shadow() {

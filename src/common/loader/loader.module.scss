@@ -19,10 +19,11 @@ $num-colors: 4;
     opacity: 0.3;
 
     @include themed() {
+      background: t($color-secondary);
+
       :global {
         animation: t($animation-fade-pulse) ease-in-out 1.5s infinite;
       }
-      background: t($color-secondary);
     }
 
     @for $i from 0 to $num-colors {

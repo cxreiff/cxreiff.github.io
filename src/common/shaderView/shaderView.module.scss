@@ -2,10 +2,10 @@
 @use "../../themed.scss" as *;
 
 .shader_view {
-  @include card($color-black, true);
-
   width: 100%;
   height: 100%;
+
+  @include card($color-black, true);
 
   & > canvas {
     margin: 0;

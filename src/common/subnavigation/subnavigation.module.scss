@@ -2,12 +2,12 @@
 @use "../../themed.scss" as *;
 
 .subnavigation {
-  @include card();
-
   margin: 0 0 2rem 0;
   padding: 0;
   position: relative;
   display: grid;
+
+  @include card();
 
   @include is_larger_than($sm-breakpoint) {
     grid-template-columns: 1fr auto;

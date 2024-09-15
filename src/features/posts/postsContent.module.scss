@@ -5,8 +5,9 @@
   @include text_spacing();
 
   a {
-    @include interactive_secondary();
     line-height: 1.5rem;
+
+    @include interactive_secondary();
   }
 }
 
